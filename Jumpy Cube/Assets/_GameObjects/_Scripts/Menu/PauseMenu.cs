@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     public bool isPaused;
 
     TimelinePlayer timelinePlayer;
+    LoadLevel loadLevel;
 
     #region SingleTon
     public static PauseMenu Instance;
@@ -40,6 +41,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         timelinePlayer = TimelinePlayer.Instance;
+        loadLevel = LoadLevel.Instance;
 
         inGameMenu.SetActive(true);
         pauseMenu.SetActive(false);
@@ -95,4 +97,8 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
+    public void HomeButton()
+    {
+        loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+    }
 }

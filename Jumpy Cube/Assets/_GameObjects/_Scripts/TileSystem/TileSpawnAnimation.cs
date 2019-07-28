@@ -40,7 +40,6 @@ public class TileSpawnAnimation : MonoBehaviour
 
         if (Mathf.Abs(transform.position.x - player.position.x) < offSet)
         {
-            Debug.Log("Called");
             transform.localPosition = finalPos;
         }
     }

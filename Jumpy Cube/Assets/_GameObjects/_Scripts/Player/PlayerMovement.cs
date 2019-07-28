@@ -173,12 +173,10 @@ public class PlayerMovement : MonoBehaviour
         if (Mathf.Abs(rb.velocity.x) < movementSpeed - 2)
         {
             rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(-movementSpeed, rb.velocity.y, 0), Time.deltaTime * 15);
-            Debug.Log("This");
         }
         else
         {
             rb.velocity = new Vector3(-movementSpeed, rb.velocity.y, 0);
-            Debug.Log("That");
         }
     }
 

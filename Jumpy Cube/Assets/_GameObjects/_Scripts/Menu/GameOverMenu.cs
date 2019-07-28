@@ -26,6 +26,7 @@ public class GameOverMenu : MonoBehaviour
     Texture2D screenCapture;
 
     PlayerDeath playerDeath;
+    LoadLevel loadLevel;
 
     #region SingleTon
     public static GameOverMenu Instance;
@@ -46,6 +47,7 @@ public class GameOverMenu : MonoBehaviour
     void Start()
     {
         playerDeath = PlayerDeath.Instance;
+        loadLevel = LoadLevel.Instance;
 
         gameOverMenu.SetActive(false);
         currentTime = 0;
@@ -156,4 +158,8 @@ public class GameOverMenu : MonoBehaviour
         isProcessing = false;
     }
 
+    public void HomeButton()
+    {
+        loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+    }
 }
