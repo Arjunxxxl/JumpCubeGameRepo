@@ -14,7 +14,11 @@ public class MainMenu : MonoBehaviour
     public GameObject levels;
     public GameObject stats;
     public GameObject settings;
-    
+    public GameObject optimizationMenu;
+
+    [Header("Optimization menues")]
+    public GameObject optimizationRunning;
+    public GameObject optimizationDone;
 
     [Header("Buttons")]
     public Button[] allbuttons;
@@ -54,6 +58,7 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
+        optimizationMenu.SetActive(false);
 
         foreach (Button b in allbuttons)
         {
@@ -80,6 +85,7 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
+        optimizationMenu.SetActive(false);
 
         foreach (Button b in allbuttons)
         {
@@ -101,7 +107,7 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
-        
+        optimizationMenu.SetActive(false);
     }
 
     public void StoreButton()
@@ -111,6 +117,7 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
+        optimizationMenu.SetActive(false);
     }
 
     public void LevelButton()
@@ -120,6 +127,7 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(true);
         stats.SetActive(false);
         settings.SetActive(false);
+        optimizationMenu.SetActive(false);
     }
 
     public void StatsButton()
@@ -129,6 +137,7 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(true);
         settings.SetActive(false);
+        optimizationMenu.SetActive(false);
     }
 
     public void SettingButton()
@@ -138,5 +147,26 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(true);
+        optimizationMenu.SetActive(false);
+    }
+
+    public void OptimizeTheGame()
+    {
+        homeMenu.SetActive(false);
+        store.SetActive(false);
+        levels.SetActive(false);
+        stats.SetActive(false);
+        settings.SetActive(false);
+        optimizationMenu.SetActive(true);
+    }
+
+    public void OptimizeTheGame_done_stop()
+    {
+        homeMenu.SetActive(true);
+        store.SetActive(false);
+        levels.SetActive(false);
+        stats.SetActive(false);
+        settings.SetActive(false);
+        optimizationMenu.SetActive(false);
     }
 }

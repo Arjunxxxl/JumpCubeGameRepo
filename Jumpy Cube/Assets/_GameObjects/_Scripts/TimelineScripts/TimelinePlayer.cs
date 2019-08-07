@@ -13,6 +13,9 @@ public class TimelinePlayer : MonoBehaviour
     [Header("Tap to play pressed Playables")]
     public PlayableDirector menuToInGameMenuDirector;
 
+    [Header("Level optimization")]
+    public PlayableDirector optimizationAnimation;
+
     #region SingleTon
     public static TimelinePlayer Instance;
     private void Awake()
@@ -31,6 +34,7 @@ public class TimelinePlayer : MonoBehaviour
     private void Start()
     {
         pausePlayable.Stop();
+        optimizationAnimation.Stop();
     }
 
     public void PlayPausePlayable()
@@ -60,4 +64,13 @@ public class TimelinePlayer : MonoBehaviour
         menuToInGameMenuDirector.Play();
     }
 
+    public void PlayOptimizationAnimation()
+    {
+        optimizationAnimation.Play();
+    }
+
+    public void StopOptimizationAnimation()
+    {
+        optimizationAnimation.Stop();
+    }
 }
