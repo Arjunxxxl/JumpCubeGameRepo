@@ -15,6 +15,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Optimizer : MonoBehaviour
 {
+    [Header("Things to optimize")]
     public PostProcessProfile pp;
     public PostProcessLayer ppLayer;
     public PostProcessVolume ppVol;
@@ -34,6 +35,8 @@ public class Optimizer : MonoBehaviour
 
     MainMenu mainMenu;
     TimelinePlayer timelinePlayer;
+    OptimizedSavedData optimizedSavedData;
+    SavedData savedData;
 
     float fps_val;
 
@@ -61,6 +64,8 @@ public class Optimizer : MonoBehaviour
         fps = FPScounter.Instance;
         mainMenu = MainMenu.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        optimizedSavedData = OptimizedSavedData.Instance;
+        savedData = SavedData.Instance;
 
         pp.TryGetSettings(out bloom);
         pp.TryGetSettings(out vignette);
@@ -69,6 +74,15 @@ public class Optimizer : MonoBehaviour
         pp.TryGetSettings(out autoExposure);
 
         mainMenu.OptimizeTheGame_done_stop();
+
+        if(savedData.isRunningForFirstTime)
+        {
+            Optimize();
+        }
+        else
+        {
+            LoadOptimisedData();
+        }
     }
 
     // Update is called once per frame
@@ -194,5 +208,83 @@ public class Optimizer : MonoBehaviour
         mainMenu.optimizationDone.SetActive(true);
 
         timelinePlayer.StopOptimizationAnimation();
+
+        Save_optimize_preference();
+    }
+
+    void Save_optimize_preference()
+    {
+        optimizedSavedData.SaveOptimizedData(hailEffect.activeSelf, skyGradient.isActiveAndEnabled,
+                colorGrading.enabled.value, chromaticAberration.enabled.value, vignette.enabled.value, bloom.enabled.value);
+    }
+
+    void LoadOptimisedData()
+    {
+        if(optimizedSavedData.savedOptimisezData[0] == 1)
+        {
+            hailEffect.SetActive(true);
+        }
+        else
+        {
+            hailEffect.SetActive(false);
+        }
+
+        if(optimizedSavedData.savedOptimisezData[1] == 1)
+        {
+            skyGradient.enabled = true;
+        }
+        else
+        {
+            skyGradient.enabled = false;
+        }
+
+        if (optimizedSavedData.savedOptimisezData[6] == 1)
+        {
+            ppLayer.enabled = true;
+            ppVol.enabled = true;
+        }
+        else
+        {
+            ppLayer.enabled = false;
+            ppVol.enabled = false;
+
+            return;
+        }
+
+        if (optimizedSavedData.savedOptimisezData[2] == 1)
+        {
+            colorGrading.enabled.value = true;
+        }
+        else
+        {
+            colorGrading.enabled.value = false;
+        }
+
+        if (optimizedSavedData.savedOptimisezData[3] == 1)
+        {
+            chromaticAberration.enabled.value = true;
+        }
+        else
+        {
+            chromaticAberration.enabled.value = false;
+        }
+
+        if (optimizedSavedData.savedOptimisezData[4] == 1)
+        {
+            vignette.enabled.value = true;
+        }
+        else
+        {
+            vignette.enabled.value = false;
+        }
+
+        if (optimizedSavedData.savedOptimisezData[5] == 1)
+        {
+            bloom.enabled.value = true;
+        }
+        else
+        {
+            bloom.enabled.value = false;
+        }
     }
 }
