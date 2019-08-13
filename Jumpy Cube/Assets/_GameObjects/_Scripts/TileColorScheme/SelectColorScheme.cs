@@ -16,17 +16,20 @@ public class SelectColorScheme : MonoBehaviour
     public Color col_scm_1_2;
     public Gradient col_scm_1_grad;
     public Color landParticleSystemColor_1;
+    public Color spikesColor_1;
     
     [Header("Color Scheme 2")]
     public Color col_scm_2_1;
     public Color col_scm_2_2;
     public Gradient col_scm_2_grad;
     public Color landParticleSystemColor_2;
+    public Color spikesColor_2;
 
     [Header("Material")]
     public Material playerMaterial;
     public Material[] floor;
     public Material[] ceil;
+    public Material spikesMaterial;
 
     [Header("Particle System")]
     public ParticleSystem landParticleSystem;
@@ -65,6 +68,7 @@ public class SelectColorScheme : MonoBehaviour
             gradientCamera.gradient = col_scm_1_grad;
             var main = landParticleSystem.main;
             main.startColor = landParticleSystemColor_1;
+            spikesMaterial.SetColor("_BaseColor", spikesColor_1);
 
             for (int i = 0; i<30; i++)
             {
@@ -85,6 +89,7 @@ public class SelectColorScheme : MonoBehaviour
             gradientCamera.gradient = col_scm_2_grad;
             var main = landParticleSystem.main;
             main.startColor = landParticleSystemColor_2;
+            spikesMaterial.SetColor("_BaseColor", spikesColor_2);
 
             for (int i = 0; i < 30; i++)
             {

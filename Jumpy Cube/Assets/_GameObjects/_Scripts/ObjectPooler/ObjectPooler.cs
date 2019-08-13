@@ -12,6 +12,16 @@ public class ObjectPooler : MonoBehaviour
         public int size = 4;
     }
 
+    public List<Pool> pools;
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
+    string tileTag;
+
+    [Header("Custom Parent Data")]
+    public Transform storeBgEffectParent;
+
+    [Header("Custom Lists")]
+    public List<RectTransform> storeBGEffectList;
+
     #region SingleTon
     public static ObjectPooler Instance;
     private void Awake()
@@ -24,16 +34,14 @@ public class ObjectPooler : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SetUpPool();
     }
     #endregion
 
-    public List<Pool> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
-    string tileTag;
-
     private void Start()
     {
-        SetUpPool();
+        //SetUpPool();
     }
 
     void SetUpPool()
@@ -52,7 +60,11 @@ public class ObjectPooler : MonoBehaviour
                 obj.SetActive(false);
                 obj.transform.parent = transform;
 
-
+                if(obj.GetComponent<RectTransform>())
+                {
+                    obj.transform.parent = storeBgEffectParent;
+                    storeBGEffectList.Add(obj.GetComponent<RectTransform>());
+                }
 
                 objectPool.Enqueue(obj);
             }
@@ -78,5 +90,21 @@ public class ObjectPooler : MonoBehaviour
 
         return objToSpawn;
     }
-    
+
+    public GameObject SpawnFormPool_UI(string tileTag)
+    {
+
+        if (!poolDictionary.ContainsKey(tileTag))
+        {
+            Debug.Log(tileTag);
+            return null;
+        }
+
+        GameObject objToSpawn = poolDictionary[tileTag].Dequeue();
+        objToSpawn.SetActive(true);
+        poolDictionary[tileTag].Enqueue(objToSpawn);
+
+        return objToSpawn;
+    }
+
 }

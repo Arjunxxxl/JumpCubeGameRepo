@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - CubeBoughtManager
     - CubeColorManager
     - DistanceScore
+    - FPScounter
     - FollowScript
     - GameOverMenu
     - Imphenzia.GradientSkyCamera
@@ -13,12 +14,17 @@ ScriptsOnlyBuild:
     - LoadLevel
     - MainMenu
     - ObjectPooler
+    - OptimizedSavedData
+    - Optimizer
     - PPDebugScript
     - PauseMenu
     - PlayerDeath
     - PlayerMovement
     - PlayerSpawner
+    - SavedData
     - SelectColorScheme
+    - StoreBgEffect
+    - StoreBgEffectSpawner
     - StoreScrolling
     - TilePool
     - TileSpawnAnimation
@@ -168,65 +174,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10084}
+      Script: {instanceID: 9988}
     - Class: 114
-      Script: {instanceID: 10196}
+      Script: {instanceID: 10086}
     - Class: 114
-      Script: {instanceID: 10328}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10384}
+      Script: {instanceID: 10200}
     - Class: 114
-      Script: {instanceID: 10478}
+      Script: {instanceID: 10332}
     - Class: 114
-      Script: {instanceID: 10482}
+      Script: {instanceID: 10346}
     - Class: 114
-      Script: {instanceID: 10486}
+      Script: {instanceID: 10390}
     - Class: 114
-      Script: {instanceID: 10496}
+      Script: {instanceID: 10484}
     - Class: 114
-      Script: {instanceID: 10500}
+      Script: {instanceID: 10488}
+    - Class: 114
+      Script: {instanceID: 10492}
     - Class: 114
       Script: {instanceID: 10502}
     - Class: 114
-      Script: {instanceID: 10530}
+      Script: {instanceID: 10506}
     - Class: 114
-      Script: {instanceID: 10670}
+      Script: {instanceID: 10508}
     - Class: 114
-      Script: {instanceID: 10690}
+      Script: {instanceID: 10536}
     - Class: 114
-      Script: {instanceID: 10726}
+      Script: {instanceID: 10676}
     - Class: 114
-      Script: {instanceID: 10736}
+      Script: {instanceID: 10696}
     - Class: 114
-      Script: {instanceID: 10796}
+      Script: {instanceID: 10732}
     - Class: 114
-      Script: {instanceID: 10940}
+      Script: {instanceID: 10742}
     - Class: 114
-      Script: {instanceID: 11044}
+      Script: {instanceID: 10802}
     - Class: 114
-      Script: {instanceID: 11108}
+      Script: {instanceID: 10838}
     - Class: 114
-      Script: {instanceID: 11176}
+      Script: {instanceID: 10948}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11022}
     - Class: 114
-      Script: {instanceID: 11548}
+      Script: {instanceID: 11054}
     - Class: 114
-      Script: {instanceID: 11688}
+      Script: {instanceID: 11118}
+    - Class: 114
+      Script: {instanceID: 11186}
+    - Class: 114
+      Script: {instanceID: 11216}
+    - Class: 114
+      Script: {instanceID: 11558}
     - Class: 114
       Script: {instanceID: 11698}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 11708}
     - Class: 114
-      Script: {instanceID: 11798}
+      Script: {instanceID: 11762}
     - Class: 114
-      Script: {instanceID: 11830}
+      Script: {instanceID: 11808}
     - Class: 114
-      Script: {instanceID: 11832}
+      Script: {instanceID: 11840}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11842}
     - Class: 114
-      Script: {instanceID: 152528}
+      Script: {instanceID: 11856}
+    - Class: 114
+      Script: {instanceID: 56522}
+    - Class: 114
+      Script: {instanceID: 75150}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -782,6 +800,12 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 2548ffe1b177843b8292f39299824e1d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SavedData
+  - hash:
+      serializedVersion: 2
       Hash: bd3f0ca738703903e759f77536ed74fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -818,6 +842,12 @@ ScriptsOnlyBuild:
     className: LWRPAdditionalCameraData
   - hash:
       serializedVersion: 2
+      Hash: d0c6ac69da3854852cc8911e7f5242a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadLevel
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
@@ -830,7 +860,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: dfe95ea47ccb701d8e4e9afeea9f21e6
+      Hash: a1972436c7aa3780939dfc1e18f57678
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -966,6 +996,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: 1f0eb54a4e7e12dbb6ece61baac7156f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OptimizedSavedData
   - hash:
       serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
@@ -1292,6 +1328,12 @@ ScriptsOnlyBuild:
     className: TileSpawner
   - hash:
       serializedVersion: 2
+      Hash: 45e80bf3a03eb16faeb030d48b18080b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Optimizer
+  - hash:
+      serializedVersion: 2
       Hash: bd3f0ca738703903e759f77536ed74fd
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1320,6 +1362,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 144236ad9446960794a81b78fdaf64bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FPScounter
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1532,7 +1580,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 6a1c80ac1234d1b3f0fa8d40010fb7c5
+      Hash: 6e02241f22e7722a1300d87ea0bf022d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectPooler
@@ -1544,7 +1592,7 @@ ScriptsOnlyBuild:
     className: PlayerDeath
   - hash:
       serializedVersion: 2
-      Hash: 12577ff291e456a935b862d2d95b8695
+      Hash: 4943f3d09cc8958d68dff7f0902c02c3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -1568,10 +1616,16 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: d0c6ac69da3854852cc8911e7f5242a6
+      Hash: 6ff321d55c1adae84e133168567602ab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LoadLevel
+    className: StoreBgEffect
+  - hash:
+      serializedVersion: 2
+      Hash: 9ba3e7ec3e7a1f08617fc95c7789d09a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StoreBgEffectSpawner
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity
