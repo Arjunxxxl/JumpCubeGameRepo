@@ -14,7 +14,8 @@ public class TileSpawner : MonoBehaviour
 
     [Header("Tiles data")]
     public int totalTilesTypes;
-    public int totalTilesPerType;
+    public List<int> tileTypeSpawnPool;
+    public List<int> tileTypeActivePool;
     public int lastTileIndex;
     public int tile_typeIndex;
     public int tilePrefabIndex;
@@ -29,8 +30,12 @@ public class TileSpawner : MonoBehaviour
     {
         tilePool = TilePool.Instance;
         activeTiles = new List<GameObject>();
+        tileTypeSpawnPool = new List<int>();
+        tileTypeActivePool = new List<int>();
 
-        if(!player)
+        SetEachTileProbability();
+
+        if (!player)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
@@ -43,7 +48,7 @@ public class TileSpawner : MonoBehaviour
             }
             else if(i == 2)
             {
-                SpawnTile(15);
+                SpawnTile();
             }
             else
             {
@@ -82,19 +87,17 @@ public class TileSpawner : MonoBehaviour
 
     int RandonTileTypeIndex()
     {
-        if (totalTilesTypes <= 1)
-        {
-            return 0;
-        }
+        int randomIndex = 0;
+        int val;
 
-        int randomIndex = lastTileIndex;
+        randomIndex = Random.Range(0, tileTypeSpawnPool.Count - 1);
 
-        while (randomIndex == lastTileIndex)
-        {
-            randomIndex = Random.Range(1, totalTilesTypes);
-        }
+        val = tileTypeSpawnPool[randomIndex];
 
-        return randomIndex;
+        tileTypeActivePool.Add(tileTypeSpawnPool[randomIndex]);
+        tileTypeSpawnPool.RemoveAt(randomIndex);
+
+        return val;
     }
 
     void RemoveTile()
@@ -102,6 +105,23 @@ public class TileSpawner : MonoBehaviour
         GameObject tile_toRemove = activeTiles[0];
         tile_toRemove.SetActive(false);
         activeTiles.RemoveAt(0);
+
+        tileTypeSpawnPool.Add(tileTypeActivePool[0]);
+        tileTypeActivePool.RemoveAt(0);
+    }
+
+    void SetEachTileProbability()               //use this to introduce easy, medium and hard mode
+    {
+        for (int i1 = 0; i1 < totalTilesTypes; i1++)
+        {
+            tileTypeSpawnPool.Add(i1);
+            tileTypeSpawnPool.Add(i1);
+            tileTypeSpawnPool.Add(i1);
+            tileTypeSpawnPool.Add(i1);
+            tileTypeSpawnPool.Add(i1);
+            tileTypeSpawnPool.Add(i1);
+            tileTypeSpawnPool.Add(i1);
+        }
     }
 
 }

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FPScounter : MonoBehaviour
 {
     public float current, avgFrameRate;
 
     Optimizer optimizer;
+
+    public TMP_Text fpsTxt;
 
     #region SingleTon
     public static FPScounter Instance;
@@ -35,11 +38,14 @@ public class FPScounter : MonoBehaviour
     {
         if(!optimizer.isOptimizing)
         {
-            return;
+            //return;
         }
 
         current = 0;
         current = (1f / Time.unscaledDeltaTime);
         avgFrameRate = (int)current;
+
+        fpsTxt.text = avgFrameRate + "";
     }
+    
 }

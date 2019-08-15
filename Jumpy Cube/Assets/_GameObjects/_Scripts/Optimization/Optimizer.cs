@@ -109,9 +109,9 @@ public class Optimizer : MonoBehaviour
 
     IEnumerator OptimizeHail()
     {
-        yield return new WaitForSeconds(checkingDelay);
+        yield return new WaitForSeconds(checkingDelay + 4f);
 
-        if (fps_val < 30)
+        if (fps_val < 26)
         {
             hailEffect.SetActive(false);
         }
@@ -127,7 +127,7 @@ public class Optimizer : MonoBehaviour
     {
         yield return new WaitForSeconds(checkingDelay);
 
-        if (fps_val < 30)
+        if (fps_val < 26)
         {
             skyGradient.enabled = (false);
         }
@@ -143,7 +143,7 @@ public class Optimizer : MonoBehaviour
     {
         yield return new WaitForSeconds(checkingDelay);
 
-        if (fps_val < 30)
+        if (fps_val < 26)
         {
             colorGrading.enabled.value = false;
         }
@@ -159,7 +159,7 @@ public class Optimizer : MonoBehaviour
     {
         yield return new WaitForSeconds(checkingDelay);
 
-        if (fps_val < 30)
+        if (fps_val < 26)
         {
             chromaticAberration.enabled.value = false;
         }
@@ -175,7 +175,7 @@ public class Optimizer : MonoBehaviour
     {
         yield return new WaitForSeconds(checkingDelay);
 
-        if (fps_val < 30)
+        if (fps_val < 26)
         {
             vignette.enabled.value = false;
         }
@@ -191,7 +191,7 @@ public class Optimizer : MonoBehaviour
     {
         yield return new WaitForSeconds(checkingDelay);
 
-        if (fps_val < 30)
+        if (fps_val < 26)
         {
             bloom.enabled.value = false;
             ppVol.enabled = false;
@@ -208,6 +208,8 @@ public class Optimizer : MonoBehaviour
         mainMenu.optimizationDone.SetActive(true);
 
         timelinePlayer.StopOptimizationAnimation();
+
+        isOptimizing = false;
 
         Save_optimize_preference();
     }

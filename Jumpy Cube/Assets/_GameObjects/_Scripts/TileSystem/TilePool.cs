@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class TilePool : MonoBehaviour
 {
+
     [System.Serializable]
     public class Pool
     {
         public string tag;
         public GameObject prefab;
-        public int size = 4;
+        public int size = 5;
+    }
+
+    [System.Serializable]
+    public class PoolType
+    {
+        public int tileTypeIndex;
+        public List<Pool> poolObject;
     }
 
     #region SingleTon
@@ -27,7 +35,7 @@ public class TilePool : MonoBehaviour
     }
     #endregion
 
-    public List<Pool> pools;
+    public List<PoolType> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     string tileTag;
 
@@ -40,30 +48,32 @@ public class TilePool : MonoBehaviour
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach (Pool pool in pools)
+        foreach (PoolType poolType in pools)
         {
-            Queue<GameObject> objectPool = new Queue<GameObject>();
 
-            for (int i = 0; i < pool.size; i++)
+
+            for (int a = 0; a < poolType.poolObject.Count; a++)
             {
-                GameObject obj;
-                obj = Instantiate(pool.prefab);
+                Queue<GameObject> objectPool = new Queue<GameObject>();
+                for (int i = 0; i < poolType.poolObject[a].size; i++)
+                {
+                    GameObject obj;
+                    obj = Instantiate(poolType.poolObject[a].prefab);
 
-                obj.SetActive(false);
-                obj.transform.parent = transform;
+                    obj.SetActive(false);
+                    obj.transform.parent = transform;
 
-
-
-                objectPool.Enqueue(obj);
+                    objectPool.Enqueue(obj);
+                }
+                poolDictionary.Add(poolType.poolObject[a].tag, objectPool);
             }
-            poolDictionary.Add(pool.tag, objectPool);
         }
     }
 
-    public GameObject SpawnTile(int tileType, Vector3 pos, Quaternion rot)
+    public GameObject SpawnTile(int tileTypeIndex, Vector3 pos, Quaternion rot, int tileIndex = -1)
     {
         GameObject tile;
-        Generate_TileTag(tileType);
+        Generate_TileTag(tileTypeIndex);
         tile = SpawnFormPool(tileTag, pos, rot);
         return tile;
     }
@@ -73,7 +83,7 @@ public class TilePool : MonoBehaviour
 
         if (!poolDictionary.ContainsKey(tileTag))
         {
-            Debug.Log(tileTag);
+            Debug.Log(tileTag + " DOES NOT EXIST -----");
             return null;
         }
 
@@ -88,7 +98,14 @@ public class TilePool : MonoBehaviour
 
     void Generate_TileTag(int tileType)
     {
-        tileTag = "tile" + tileType;
+        if (tileType == 0)
+        {
+            tileTag = "tile" + tileType + "_" + 0;
+        }
+        else
+        {
+            tileTag = "tile" + tileType + "_" + Random.Range(0, 9);
+        }
     }
 
 }
