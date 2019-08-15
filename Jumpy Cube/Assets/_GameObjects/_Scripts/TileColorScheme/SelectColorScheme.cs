@@ -15,6 +15,7 @@ public class SelectColorScheme : MonoBehaviour
     public Color col_scm_1_1;
     public Color col_scm_1_2;
     public Gradient col_scm_1_grad;
+    public Color camBGcolor_1;
     public Color landParticleSystemColor_1;
     public Color spikesColor_1;
     
@@ -22,6 +23,7 @@ public class SelectColorScheme : MonoBehaviour
     public Color col_scm_2_1;
     public Color col_scm_2_2;
     public Gradient col_scm_2_grad;
+    public Color camBGcolor_2;
     public Color landParticleSystemColor_2;
     public Color spikesColor_2;
 
@@ -35,6 +37,7 @@ public class SelectColorScheme : MonoBehaviour
     public ParticleSystem landParticleSystem;
 
     public Imphenzia.GradientSkyCamera gradientCamera;
+    public Camera mainCamera;
 
     #region SingleTon
     public static SelectColorScheme Instance;
@@ -69,6 +72,7 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = landParticleSystemColor_1;
             spikesMaterial.SetColor("_BaseColor", spikesColor_1);
+            mainCamera.backgroundColor = camBGcolor_1;
 
             for (int i = 0; i<30; i++)
             {
@@ -90,6 +94,7 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = landParticleSystemColor_2;
             spikesMaterial.SetColor("_BaseColor", spikesColor_2);
+            mainCamera.backgroundColor = camBGcolor_2;
 
             for (int i = 0; i < 30; i++)
             {

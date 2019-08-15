@@ -77,7 +77,8 @@ public class Optimizer : MonoBehaviour
 
         if(savedData.isRunningForFirstTime)
         {
-            Optimize();
+            //Optimize();
+            Save_optimize_preference();
         }
         else
         {

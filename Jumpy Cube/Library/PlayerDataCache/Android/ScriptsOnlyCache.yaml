@@ -60,7 +60,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.Timeline.Editor.dll:
     - UnityEditor.Timeline.SequenceHierarchy
-    - UnityEditor.Timeline.TimelineAssetViewModel
     - UnityEditor.Timeline.TimelineWindow
     Unity.Timeline.dll:
     - UnityEngine.Timeline.AnimationTrack
@@ -560,7 +559,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 8e6d247b79be6394500f2a607b26769b
+      Hash: 96346c72c407b70096f5557e4e6648a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectColorScheme
