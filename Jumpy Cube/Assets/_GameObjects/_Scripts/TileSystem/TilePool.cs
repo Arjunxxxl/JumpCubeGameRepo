@@ -73,7 +73,7 @@ public class TilePool : MonoBehaviour
     public GameObject SpawnTile(int tileTypeIndex, Vector3 pos, Quaternion rot, int tileIndex = -1)
     {
         GameObject tile;
-        Generate_TileTag(tileTypeIndex);
+        Generate_TileTag(tileTypeIndex, tileIndex);
         tile = SpawnFormPool(tileTag, pos, rot);
         return tile;
     }
@@ -96,7 +96,7 @@ public class TilePool : MonoBehaviour
         return objToSpawn;
     }
 
-    void Generate_TileTag(int tileType)
+    void Generate_TileTag(int tileType, int index)
     {
         if (tileType == 0)
         {
@@ -104,7 +104,14 @@ public class TilePool : MonoBehaviour
         }
         else
         {
-            tileTag = "tile" + tileType + "_" + Random.Range(0, 9);
+            if (index == -1)
+            {
+                tileTag = "tile" + tileType + "_" + Random.Range(0, 9);
+            }
+            else
+            {
+                tileTag = "tile" + tileType + "_" + index;
+            }
         }
     }
 

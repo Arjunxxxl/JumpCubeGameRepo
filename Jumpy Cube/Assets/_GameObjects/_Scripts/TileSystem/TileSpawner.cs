@@ -48,7 +48,7 @@ public class TileSpawner : MonoBehaviour
             }
             else if(i == 2)
             {
-                SpawnTile();
+                SpawnTile(5, 2);
             }
             else
             {
@@ -67,17 +67,31 @@ public class TileSpawner : MonoBehaviour
         }
     }
 
-    void SpawnTile(int index = -1)
+    void SpawnTile(int index = -1, int tileIndex = -1)
     {
         tile_typeIndex = RandonTileTypeIndex();
 
         if (index == -1)
         {
-            spawnedTile = tilePool.SpawnTile(tile_typeIndex, Vector3.left * spawnX, Quaternion.identity);
+            if (tileIndex == -1)
+            {
+                spawnedTile = tilePool.SpawnTile(tile_typeIndex, Vector3.left * spawnX, Quaternion.identity);
+            }
+            else
+            {
+                spawnedTile = tilePool.SpawnTile(tile_typeIndex, Vector3.left * spawnX, Quaternion.identity, tileIndex);
+            }
         }
         else
         {
-            spawnedTile = tilePool.SpawnTile(index, Vector3.left * spawnX, Quaternion.identity);
+            if (tileIndex == -1)
+            {
+                spawnedTile = tilePool.SpawnTile(index, Vector3.left * spawnX, Quaternion.identity);
+            }
+            else
+            {
+                spawnedTile = tilePool.SpawnTile(index, Vector3.left * spawnX, Quaternion.identity, tileIndex);
+            }
         }
 
         spawnX += tileLength;
