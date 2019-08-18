@@ -9,19 +9,24 @@ public class FollowScript : MonoBehaviour
     Vector3 finalPos;
     public Vector3 offSet;
     public float followSpeed = 5f;
-
+    
     Vector3 refVelocity;
 
     ParticleSystem hailEffect;
 
     PlayerSpawner playerSpawner;
     PlayerDeath playerDeath;
+    PlayerMovement playerMovement;
+    public bool isDownGravity;
 
     // Start is called before the first frame update
     void Start()
     {
         playerSpawner = PlayerSpawner.Instance;
         playerDeath = PlayerDeath.Instance;
+        playerMovement = PlayerMovement.Instance;
+
+        isDownGravity = playerMovement.isDownGravity;
 
         if (!target)
         {
@@ -29,10 +34,23 @@ public class FollowScript : MonoBehaviour
         }
 
         hailEffect = transform.GetChild(0).GetComponent<ParticleSystem>();
+
+        if(isDownGravity)
+        {
+            var main = hailEffect.main;
+            main.gravityModifier = 1f;
+        }
+        else
+        {
+            var main = hailEffect.main;
+            main.gravityModifier = -1f;
+        }
     }
 
     private void Update()
     {
+        isDownGravity = playerMovement.isDownGravity;
+
         if (!playerSpawner.isDisolveEffectDone || playerDeath.isDead)
         {
             var vel = hailEffect.velocityOverLifetime;
@@ -48,6 +66,17 @@ public class FollowScript : MonoBehaviour
             {
                 vel.enabled = true;
             }
+        }
+
+        if (isDownGravity)
+        {
+            var main = hailEffect.main;
+            main.gravityModifier = 1f;
+        }
+        else
+        {
+            var main = hailEffect.main;
+            main.gravityModifier = -1f;
         }
     }
 

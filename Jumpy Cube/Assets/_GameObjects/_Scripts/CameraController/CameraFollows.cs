@@ -12,10 +12,12 @@ public class CameraFollows : MonoBehaviour
 
     [Header("Offset Data")]
     public float offSetChangeSpeed = 2f;
+    public float offSetChangeSpeedWhenGravityChanges = 1f;
     public float offSetChangeSpeed_whenDied = 0.5f;
     public Vector3 menuOffSet;
     public Vector3 startingOffset;
     public Vector3 normalOffset;
+    public Vector3 upGravityOffset;
     public Vector3 deathOffset;
 
 
@@ -23,8 +25,11 @@ public class CameraFollows : MonoBehaviour
 
     PlayerDeath playerDeath;
     PlayerSpawner playerSpawner;
+    PlayerMovement playerMovement;
     MainMenu mainMenu;
     public bool isDead;
+    public bool isDownGravity;
+    public bool isGravityChanged;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +37,11 @@ public class CameraFollows : MonoBehaviour
         playerDeath = PlayerDeath.Instance;
         playerSpawner = PlayerSpawner.Instance;
         mainMenu = MainMenu.Instance;
+        playerMovement = PlayerMovement.Instance;
+
         isDead = playerDeath.isDead;
+        isDownGravity = playerMovement.isDownGravity;
+        isGravityChanged = playerMovement.isGravityChanged;
 
         if(!target)
         {
@@ -48,6 +57,9 @@ public class CameraFollows : MonoBehaviour
     private void Update()
     {
         isDead = playerDeath.isDead;
+        isDownGravity = playerMovement.isDownGravity;
+        isGravityChanged = playerMovement.isGravityChanged;
+
         if (isDead)
         {
             offSet = Vector3.Lerp(offSet, deathOffset, Time.deltaTime * offSetChangeSpeed_whenDied);
@@ -59,7 +71,18 @@ public class CameraFollows : MonoBehaviour
         }
         else if(playerSpawner.isDisolveEffectDone)
         {
-            offSet = Vector3.Lerp(offSet, normalOffset, Time.deltaTime * offSetChangeSpeed);
+            if (!isGravityChanged)
+            {
+                offSet = Vector3.Lerp(offSet, normalOffset, Time.deltaTime * offSetChangeSpeed);
+            }
+            else if (isGravityChanged && !isDownGravity)
+            {
+                offSet = Vector3.Lerp(offSet, upGravityOffset, Time.deltaTime * offSetChangeSpeedWhenGravityChanges);
+            }
+            else if (isGravityChanged && isDownGravity)
+            {
+                offSet = Vector3.Lerp(offSet, normalOffset, Time.deltaTime * offSetChangeSpeedWhenGravityChanges);
+            }
         }
         else if(!playerSpawner.isDisolveEffectDone)
         {

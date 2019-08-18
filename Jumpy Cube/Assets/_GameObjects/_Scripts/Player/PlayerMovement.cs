@@ -37,6 +37,12 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 landEffectOffSet;
     public Vector3 landEffectRotation;
 
+    [Header("Gravity for player data")]
+    public Vector3 downGravity = new Vector3(0, -25f, 0);
+    public Vector3 upGravity = new Vector3(0, 25f, 0);
+    public bool isDownGravity;
+    public bool isGravityChanged;
+
     public TrailRenderer playerTrail;
     public bool isDead;
 
@@ -62,6 +68,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        isDownGravity = true;
+        isGravityChanged = false;
 
 #if UNITY_EDITOR
         rotationSpeed = editorRotationSpeed;
@@ -93,6 +102,10 @@ public class PlayerMovement : MonoBehaviour
         playerTrail.enabled = false;
 
         cameraShake.Stop();
+
+        Physics.gravity = downGravity;
+        isDownGravity = true;
+        isGravityChanged = false;
     }
 
     // Update is called once per frame
@@ -159,7 +172,14 @@ public class PlayerMovement : MonoBehaviour
 
         if(rotateTheCube)
         {
-            transform.Rotate(Vector3.forward * rotationSpeed, Space.World);
+            if (isDownGravity)
+            {
+                transform.Rotate(Vector3.forward * rotationSpeed, Space.World);
+            }
+            else
+            {
+                transform.Rotate(Vector3.forward * rotationSpeed * -1f, Space.World);
+            }
         }
 
     }
@@ -219,6 +239,48 @@ public class PlayerMovement : MonoBehaviour
         if(other.CompareTag("Ground") && playerSpawner.isDisolveEffectDone)
         {
             //StartCoroutine(cameraShake.Shake(0.15f, movementSpeed * cameraShakeMagnitude));
+        }
+
+        if(other.gameObject.CompareTag("ChangeGravityArea"))
+        {
+            Physics.gravity = upGravity;
+            isDownGravity = false;
+            isGravityChanged = true;
+
+            if (upVelocity > 0)
+            {
+                upVelocity *= -1;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("ChangeGravityArea") && Physics.gravity != upGravity)
+        {
+            Physics.gravity = upGravity;
+            isDownGravity = false;
+            isGravityChanged = true;
+
+            if (upVelocity > 0)
+            {
+                upVelocity *= -1;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("ChangeGravityArea"))
+        {
+            Physics.gravity = downGravity;
+            isDownGravity = true;
+            isGravityChanged = true;
+
+            if (upVelocity < 0)
+            {
+                upVelocity *= -1;
+            }
         }
     }
 
