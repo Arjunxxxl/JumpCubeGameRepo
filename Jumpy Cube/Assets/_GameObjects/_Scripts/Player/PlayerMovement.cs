@@ -43,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
     public bool isDownGravity;
     public bool isGravityChanged;
 
+    [Header("Ground Tag")]
+    public static string GroundFloor = "Ground_Floor";
+    public static string GroundCeil = "Ground_Ceil";
+    public string currentGround;
+
     public TrailRenderer playerTrail;
     public bool isDead;
 
@@ -71,6 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
         isDownGravity = true;
         isGravityChanged = false;
+
+        Physics.gravity = downGravity;
+
+        currentGround = GroundFloor;
 
 #if UNITY_EDITOR
         rotationSpeed = editorRotationSpeed;
@@ -106,6 +115,8 @@ public class PlayerMovement : MonoBehaviour
         Physics.gravity = downGravity;
         isDownGravity = true;
         isGravityChanged = false;
+
+        currentGround = GroundFloor;
     }
 
     // Update is called once per frame
@@ -202,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
+        if(collision.gameObject.CompareTag(currentGround))
         {
             rb.useGravity = true;
             rotateTheCube = false;
@@ -222,11 +233,20 @@ public class PlayerMovement : MonoBehaviour
 
             numberOfJumps = 0;
         }
+
+        if(collision.gameObject.CompareTag(GroundCeil) && currentGround == GroundFloor)
+        {
+            PlayLandHitEffect();
+        }
+        else if (collision.gameObject.CompareTag(GroundFloor) && currentGround == GroundCeil)
+        {
+            PlayLandHitEffect();
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag(currentGround))
         {
             rb.useGravity = true;
             groundExit = true;
@@ -236,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Ground") && playerSpawner.isDisolveEffectDone)
+        if(other.CompareTag(currentGround) && playerSpawner.isDisolveEffectDone)
         {
             //StartCoroutine(cameraShake.Shake(0.15f, movementSpeed * cameraShakeMagnitude));
         }
@@ -251,6 +271,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 upVelocity *= -1;
             }
+
+            currentGround = GroundCeil;
         }
     }
 
@@ -265,6 +287,11 @@ public class PlayerMovement : MonoBehaviour
             if (upVelocity > 0)
             {
                 upVelocity *= -1;
+            }
+
+            if (currentGround != GroundCeil)
+            {
+                currentGround = GroundCeil;
             }
         }
     }
@@ -281,6 +308,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 upVelocity *= -1;
             }
+
+            currentGround = GroundFloor;
         }
     }
 
@@ -291,5 +320,11 @@ public class PlayerMovement : MonoBehaviour
             spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
             spawnedLandEffect.GetComponent<ParticleSystem>().Play();
         }
+    }
+
+    void PlayLandHitEffect()
+    {
+        spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
+        spawnedLandEffect.GetComponent<ParticleSystem>().Play();
     }
 }

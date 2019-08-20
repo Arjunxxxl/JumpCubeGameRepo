@@ -10,6 +10,8 @@ TagManager:
   - Cube
   - forceField
   - ChangeGravityArea
+  - Ground_Floor
+  - Ground_Ceil
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,8 @@ public class SelectColorScheme : MonoBehaviour
     public Color camBGcolor_1;
     public Color landParticleSystemColor_1;
     public Color spikesColor_1;
+    [ColorUsage(true, true)]
+    public Color gravityFieldColor_1;
     
     [Header("Color Scheme 2")]
     public Color col_scm_2_1;
@@ -26,12 +28,15 @@ public class SelectColorScheme : MonoBehaviour
     public Color camBGcolor_2;
     public Color landParticleSystemColor_2;
     public Color spikesColor_2;
+    [ColorUsage(true, true)]
+    public Color gravityFieldColor_2;
 
     [Header("Material")]
     public Material playerMaterial;
     public Material[] floor;
     public Material[] ceil;
     public Material spikesMaterial;
+    public Material[] gravityFieldMat;
 
     [Header("Particle System")]
     public ParticleSystem landParticleSystem;
@@ -87,6 +92,11 @@ public class SelectColorScheme : MonoBehaviour
                     ceil[i].SetColor("_BaseColor", col_scm_1_1);
                 }
             }
+
+            foreach(Material mat in gravityFieldMat)
+            {
+                mat.SetColor("_EmissionColor", gravityFieldColor_1);
+            }
         }
         else if (selectedColorScheme == 2)
         {
@@ -109,8 +119,12 @@ public class SelectColorScheme : MonoBehaviour
                     ceil[i].SetColor("_BaseColor", col_scm_2_1);
                 }
             }
+
+            foreach (Material mat in gravityFieldMat)
+            {
+                mat.SetColor("_EmissionColor", gravityFieldColor_2);
+            }
         }
-        
         
     }
 
