@@ -52,7 +52,7 @@ public class TileSpawner : MonoBehaviour
             }
             else
             {
-                SpawnTile(6, 0);
+                SpawnTile(5, 5);
             }
         }
     }
