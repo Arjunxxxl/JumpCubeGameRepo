@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public static string GroundFloor = "Ground_Floor";
     public static string GroundCeil = "Ground_Ceil";
     public string currentGround;
+    
 
     public TrailRenderer playerTrail;
     public bool isDead;
@@ -103,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         rotateTheCube = false;
         isGrounded = false;
         isDead = playerDeath.isDead;
-
+        
         groundEnter = false;
         groundExit = false;
 
@@ -202,12 +203,13 @@ public class PlayerMovement : MonoBehaviour
 
         //rb.MovePosition(transform.position + (Vector3.right * -1 * movementSpeed * Time.fixedDeltaTime));
         if (Mathf.Abs(rb.velocity.x) < movementSpeed - 2)
-        {
-            rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(-movementSpeed, rb.velocity.y, 0), Time.deltaTime * 15);
+            {
+                rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(-movementSpeed, rb.velocity.y, 0), Time.deltaTime * 15);
         }
         else
         {
             rb.velocity = new Vector3(-movementSpeed, rb.velocity.y, 0);
+            
         }
     }
 

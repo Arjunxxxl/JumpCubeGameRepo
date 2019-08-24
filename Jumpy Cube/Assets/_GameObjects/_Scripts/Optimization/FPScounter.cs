@@ -7,6 +7,9 @@ public class FPScounter : MonoBehaviour
 {
     public float current, avgFrameRate;
 
+    public float delay = 0.5f;
+    public float t;
+
     Optimizer optimizer;
 
     public TMP_Text fpsTxt;
@@ -36,6 +39,14 @@ public class FPScounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(t < delay)
+        {
+            t += Time.deltaTime;
+            return;
+        }
+
+        t = 0;
+
         if(!optimizer.isOptimizing)
         {
             //return;

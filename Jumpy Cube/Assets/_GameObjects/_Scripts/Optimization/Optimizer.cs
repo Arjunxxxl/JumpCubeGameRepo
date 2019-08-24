@@ -78,11 +78,11 @@ public class Optimizer : MonoBehaviour
         if(savedData.isRunningForFirstTime)
         {
             //Optimize();
-            Save_optimize_preference();
+           // Save_optimize_preference();
         }
         else
         {
-            LoadOptimisedData();
+           // LoadOptimisedData();
         }
     }
 

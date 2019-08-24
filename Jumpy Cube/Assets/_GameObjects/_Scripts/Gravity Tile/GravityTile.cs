@@ -25,20 +25,15 @@ public class GravityTile : MonoBehaviour
                     return;
                 }
             }
-            Debug.Log("enter");
+
             other.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (!other)
-        {
-            return;
-        }
-
-        collidingObj = other.gameObject;
-        if (collidingObj.tag == "forceField")
+        
+        if (other.gameObject.tag == "forceField")
         {
             foreach (GameObject o in exceptions)
             {
@@ -47,7 +42,7 @@ public class GravityTile : MonoBehaviour
                     return;
                 }
             }
-            Debug.Log("stay");
+
             other.gameObject.SetActive(false);
         }
     }

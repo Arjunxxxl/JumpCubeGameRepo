@@ -6,23 +6,37 @@ using UnityEngine.UI;
 
 public class PPDebugScript : MonoBehaviour
 {
-    public PostProcessProfile pp;
+    public PostProcessProfile pp, g_pp;
 
-    public InputField blooom_intisity, bloomthreshold, vigneetIntensity, vigneetSmoothing, ChromAbb_intensity, colorgrattPostExp, colorgratContrast, autoExpMin, autoExpMax;
+    public GameObject PPset;
+
+    public InputField blooom_intisity, bloomthreshold, vigneetIntensity, vigneetSmoothing, colorgrattPostExp, colorgratContrast, saturation;
+
+    [Space]
+    public bool b;
+
+    public InputField g_blooom_intisity, g_bloomthreshold, g_vigneetIntensity, g_vigneetSmoothing, g_colorgrattPostExp, g_colorgratContrast, g_saturation;
 
     Bloom bloom;
     Vignette vignette;
-    ChromaticAberration chromaticAberration;
     ColorGrading colorGrading;
-    AutoExposure autoExposure;
+
+    Bloom g_bloom;
+    Vignette g_vignette;
+    ColorGrading g_colorGrading;
 
     private void Start()
     {
         pp.TryGetSettings(out bloom);
         pp.TryGetSettings(out vignette);
-        pp.TryGetSettings(out chromaticAberration);
         pp.TryGetSettings(out colorGrading);
-        pp.TryGetSettings(out autoExposure);
+
+        g_pp.TryGetSettings(out g_bloom);
+        g_pp.TryGetSettings(out g_vignette);
+        g_pp.TryGetSettings(out g_colorGrading);
+
+        PPset.SetActive(false);
+        b = false;
     }
 
     public void SetBoomIntensity()
@@ -44,11 +58,7 @@ public class PPDebugScript : MonoBehaviour
     {
         vignette.smoothness.value = float.Parse(vigneetSmoothing.text);
     }
-
-    public void SetChrom_intensity()
-    {
-        chromaticAberration.intensity.value = float.Parse(ChromAbb_intensity.text);
-    }
+    
 
     public void SetColorGradPostExp()
     {
@@ -60,13 +70,64 @@ public class PPDebugScript : MonoBehaviour
         colorGrading.contrast.value = float.Parse(colorgratContrast.text);
     }
 
-    public void SetAutoExpMin()
+    public void SetColorGradSAturation()
     {
-        autoExposure.minLuminance.value = float.Parse(autoExpMin.text);
+        colorGrading.saturation.value = float.Parse(saturation.text);
     }
 
-    public void SetAutoExpMax()
+    /// <summary>
+    /// //////////////////////////////////////////////////////
+    /// </summary>
+
+    public void G_SetBoomIntensity()
     {
-        autoExposure.maxLuminance.value = float.Parse(autoExpMax.text);
+        g_bloom.intensity.value = float.Parse(g_blooom_intisity.text);
     }
+
+    public void G_SetBoomThreshold()
+    {
+        g_bloom.threshold.value = float.Parse(g_bloomthreshold.text);
+    }
+
+    public void G_SetVigneetIntensity()
+    {
+        g_vignette.intensity.value = float.Parse(g_vigneetIntensity.text);
+    }
+
+    public void G_SetVigneetSmoothing()
+    {
+        g_vignette.smoothness.value = float.Parse(g_vigneetSmoothing.text);
+    }
+
+
+    public void G_SetColorGradPostExp()
+    {
+        g_colorGrading.postExposure.value = float.Parse(g_colorgrattPostExp.text);
+    }
+
+    public void G_SetColorGradContrast()
+    {
+        g_colorGrading.contrast.value = float.Parse(g_colorgratContrast.text);
+    }
+
+    public void G_SetColorGradSAturation()
+    {
+        g_colorGrading.saturation.value = float.Parse(g_saturation.text);
+    }
+
+    public void TogglePPSet()
+    {
+        Time.timeScale = 0;
+        if(!b)
+        {
+            b = true;
+            PPset.SetActive(true);
+        }
+        else
+        {
+            b = false;
+            PPset.SetActive(false);
+        }
+    }
+
 }

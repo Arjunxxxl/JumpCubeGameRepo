@@ -71,9 +71,9 @@ public class TileSpawnAnimation : MonoBehaviour
     {
         its = transform.position.x;
         players = player.position.x;
-        differnce = transform.position.x - player.position.x;
+        differnce = its - players;
 
-        if (Mathf.Abs(transform.position.x - player.position.x) < offSet)
+        if (Mathf.Abs(its - players) < offSet)
         {
             playerSpeed = playerMovement.movementSpeed;
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, finalPos, Time.deltaTime * speed * playerSpeed);

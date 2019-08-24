@@ -35,16 +35,8 @@ public class FollowScript : MonoBehaviour
 
         hailEffect = transform.GetChild(0).GetComponent<ParticleSystem>();
 
-        if(isDownGravity)
-        {
-            var main = hailEffect.main;
-            main.gravityModifier = 1f;
-        }
-        else
-        {
-            var main = hailEffect.main;
-            main.gravityModifier = -1f;
-        }
+        var main = hailEffect.main;
+        main.gravityModifier = 1f;
     }
 
     private void Update()

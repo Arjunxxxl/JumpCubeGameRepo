@@ -18,13 +18,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.5
+    value: 5
   threshold:
     overrideState: 1
     value: 2
   softKnee:
     overrideState: 1
-    value: 1
+    value: 0.5
   clamp:
     overrideState: 1
     value: 65472
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -193,16 +193,16 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 10
+    value: 50
   brightness:
     overrideState: 1
     value: 0
   postExposure:
     overrideState: 1
-    value: 1.5
+    value: 2
   contrast:
     overrideState: 1
-    value: 20
+    value: 0
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
@@ -1466,10 +1466,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.4
+    value: 0.35
   smoothness:
     overrideState: 1
-    value: 0.65
+    value: 0.8
   roundness:
     overrideState: 1
     value: 1
