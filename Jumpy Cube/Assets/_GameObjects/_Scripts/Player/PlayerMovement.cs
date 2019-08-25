@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity for player data")]
     public Vector3 downGravity = new Vector3(0, -25f, 0);
     public Vector3 upGravity = new Vector3(0, 25f, 0);
+    public Vector3 changingGravity = new Vector3(0, 50f, 0);
     public bool isDownGravity;
     public bool isGravityChanged;
 
@@ -47,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     public static string GroundFloor = "Ground_Floor";
     public static string GroundCeil = "Ground_Ceil";
     public string currentGround;
-    
+
 
     public TrailRenderer playerTrail;
     public bool isDead;
@@ -66,11 +67,11 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance;
     private void Awake()
     {
-        if(!Instance)
+        if (!Instance)
         {
             Instance = this;
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -88,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         rotationSpeed = androidRotationSpeed;
 #endif
     }
-#endregion
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -104,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         rotateTheCube = false;
         isGrounded = false;
         isDead = playerDeath.isDead;
-        
+
         groundEnter = false;
         groundExit = false;
 
@@ -129,16 +130,16 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector3.zero;
             return;
         }
-        
-        if(playerSpawner.isDisolveEffectDone)
+
+        if (playerSpawner.isDisolveEffectDone)
         {
-            if(!playerTrail.enabled)
+            if (!playerTrail.enabled)
             {
                 playerTrail.enabled = true;
             }
         }
 
-        if(isDead)
+        if (isDead)
         {
             rb.velocity = Vector3.zero;
             rb.useGravity = false;
@@ -146,23 +147,23 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if(!rb.useGravity)
+            if (!rb.useGravity)
             {
                 rb.useGravity = true;
             }
         }
 
-        if(pauseMenu.isPaused)
+        if (pauseMenu.isPaused)
         {
             return;
         }
 
-        if(groundExit)
+        if (groundExit)
         {
             currentTime += Time.deltaTime;
         }
 
-        if(Input.GetMouseButtonDown(0) && numberOfJumps < maxNumverOfJumps)
+        if (Input.GetMouseButtonDown(0) && numberOfJumps < maxNumverOfJumps)
         {
             if (currentTime < checkTime && numberOfJumps < maxNumverOfJumps)
             {
@@ -176,13 +177,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector3(rb.velocity.x, upVelocity, 0);
                 //rb.AddForce(Vector3.up * upVelocity, ForceMode.VelocityChange);
-                numberOfJumps+=2;
+                numberOfJumps += 2;
                 rotateTheCube = true;
                 isGrounded = false;
             }
         }
 
-        if(rotateTheCube)
+        if (rotateTheCube)
         {
             if (isDownGravity)
             {
@@ -203,19 +204,19 @@ public class PlayerMovement : MonoBehaviour
 
         //rb.MovePosition(transform.position + (Vector3.right * -1 * movementSpeed * Time.fixedDeltaTime));
         if (Mathf.Abs(rb.velocity.x) < movementSpeed - 2)
-            {
-                rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(-movementSpeed, rb.velocity.y, 0), Time.deltaTime * 15);
+        {
+            rb.velocity = Vector3.Lerp(rb.velocity, new Vector3(-movementSpeed, rb.velocity.y, 0), Time.deltaTime * 15);
         }
         else
         {
             rb.velocity = new Vector3(-movementSpeed, rb.velocity.y, 0);
-            
+
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag(currentGround))
+        if (collision.gameObject.CompareTag(currentGround))
         {
             rb.useGravity = true;
             rotateTheCube = false;
@@ -225,6 +226,21 @@ public class PlayerMovement : MonoBehaviour
             groundExit = false;
 
             PlayLandEffect();
+
+            if (isDownGravity)
+            {
+                if (Physics.gravity != downGravity)
+                {
+                    Physics.gravity = downGravity;
+                }
+            }
+            else
+            {
+                if (Physics.gravity != upGravity)
+                {
+                    Physics.gravity = upGravity;
+                }
+            }
 
             currentTime = 0;
 
@@ -236,7 +252,7 @@ public class PlayerMovement : MonoBehaviour
             numberOfJumps = 0;
         }
 
-        if(collision.gameObject.CompareTag(GroundCeil) && currentGround == GroundFloor)
+        if (collision.gameObject.CompareTag(GroundCeil) && currentGround == GroundFloor)
         {
             PlayLandHitEffect();
         }
@@ -258,14 +274,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag(currentGround) && playerSpawner.isDisolveEffectDone)
+        if (other.CompareTag(currentGround) && playerSpawner.isDisolveEffectDone)
         {
             //StartCoroutine(cameraShake.Shake(0.15f, movementSpeed * cameraShakeMagnitude));
         }
 
-        if(other.gameObject.CompareTag("ChangeGravityArea"))
+        if (other.gameObject.CompareTag("ChangeGravityArea"))
         {
-            Physics.gravity = upGravity;
+            Physics.gravity = changingGravity;
             isDownGravity = false;
             isGravityChanged = true;
 
@@ -302,7 +318,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ChangeGravityArea"))
         {
-            Physics.gravity = downGravity;
+            Physics.gravity = changingGravity * -1f;
             isDownGravity = true;
             isGravityChanged = true;
 
@@ -317,7 +333,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayLandEffect()
     {
-        if(groundEnter && (numberOfJumps > 0 || currentTime > checkTime))
+        if (groundEnter && (numberOfJumps > 0 || currentTime > checkTime))
         {
             spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
             spawnedLandEffect.GetComponent<ParticleSystem>().Play();

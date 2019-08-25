@@ -48,11 +48,11 @@ public class TileSpawner : MonoBehaviour
             }
             else if(i == 2)
             {
-                SpawnTile(6, 0);
+                SpawnTile(7, 1);
             }
             else
             {
-                SpawnTile(5, 5);
+                SpawnTile(7, 1);
             }
         }
     }
