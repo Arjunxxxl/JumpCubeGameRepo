@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - SavedData
     - SelectColorScheme
     - SpikesAnimation
+    - SpikesShooting
     - StoreBgEffect
     - StoreBgEffectSpawner
     - StoreScrolling
@@ -222,37 +223,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10844}
     - Class: 114
-      Script: {instanceID: 10954}
+      Script: {instanceID: 10928}
     - Class: 114
-      Script: {instanceID: 11028}
+      Script: {instanceID: 10956}
     - Class: 114
-      Script: {instanceID: 11060}
+      Script: {instanceID: 11030}
     - Class: 114
       Script: {instanceID: 11062}
     - Class: 114
-      Script: {instanceID: 11126}
+      Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11194}
+      Script: {instanceID: 11128}
     - Class: 114
-      Script: {instanceID: 11224}
+      Script: {instanceID: 11196}
     - Class: 114
-      Script: {instanceID: 11430}
+      Script: {instanceID: 11226}
     - Class: 114
-      Script: {instanceID: 11568}
+      Script: {instanceID: 11432}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11710}
     - Class: 114
-      Script: {instanceID: 11772}
+      Script: {instanceID: 11720}
     - Class: 114
-      Script: {instanceID: 11818}
+      Script: {instanceID: 11774}
     - Class: 114
-      Script: {instanceID: 11850}
+      Script: {instanceID: 11820}
     - Class: 114
       Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 11866}
+      Script: {instanceID: 11854}
+    - Class: 114
+      Script: {instanceID: 11868}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -370,7 +373,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: e8ad5016676ec7b5270b9613c042fb19
+      Hash: 9b202b863c7b90291af653e4bd8123f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -1370,6 +1373,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Lightweight.Runtime.dll
     namespaceName: UnityEngine.Rendering.LWRP
     className: LWRPAdditionalLightData
+  - hash:
+      serializedVersion: 2
+      Hash: 6cf9afdafe121bf6445a7f450d55b099
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpikesShooting
   - hash:
       serializedVersion: 2
       Hash: c62c6453ec89f9df3dd772439977fd86

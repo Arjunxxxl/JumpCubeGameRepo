@@ -19,6 +19,14 @@ public class FollowScript : MonoBehaviour
     PlayerMovement playerMovement;
     public bool isDownGravity;
 
+    private void Awake()
+    {
+        hailEffect = transform.GetChild(0).GetComponent<ParticleSystem>();
+
+        var main = hailEffect.main;
+        main.gravityModifier = 1f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
