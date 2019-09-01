@@ -26,6 +26,7 @@ public class TileSpawnAnimation : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        
 
         playerMovement = PlayerMovement.Instance;
         playerSpeed = playerMovement.movementSpeed;

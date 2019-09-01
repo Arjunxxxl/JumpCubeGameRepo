@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - CameraShake
     - CubeBoughtManager
     - CubeColorManager
+    - Diamond
     - DistanceScore
     - FPScounter
     - FollowScript
@@ -215,47 +216,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10702}
     - Class: 114
-      Script: {instanceID: 10738}
+      Script: {instanceID: 10726}
     - Class: 114
-      Script: {instanceID: 10748}
+      Script: {instanceID: 10740}
     - Class: 114
-      Script: {instanceID: 10808}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10844}
+      Script: {instanceID: 10810}
     - Class: 114
-      Script: {instanceID: 10928}
+      Script: {instanceID: 10846}
     - Class: 114
-      Script: {instanceID: 10956}
+      Script: {instanceID: 10930}
     - Class: 114
-      Script: {instanceID: 11030}
+      Script: {instanceID: 10958}
     - Class: 114
-      Script: {instanceID: 11062}
+      Script: {instanceID: 11032}
     - Class: 114
       Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11128}
+      Script: {instanceID: 11066}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11130}
     - Class: 114
-      Script: {instanceID: 11226}
+      Script: {instanceID: 11198}
     - Class: 114
-      Script: {instanceID: 11432}
+      Script: {instanceID: 11228}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11434}
     - Class: 114
-      Script: {instanceID: 11710}
+      Script: {instanceID: 11572}
     - Class: 114
-      Script: {instanceID: 11720}
+      Script: {instanceID: 11712}
     - Class: 114
-      Script: {instanceID: 11774}
+      Script: {instanceID: 11722}
     - Class: 114
-      Script: {instanceID: 11820}
+      Script: {instanceID: 11776}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11822}
     - Class: 114
       Script: {instanceID: 11854}
     - Class: 114
-      Script: {instanceID: 11868}
+      Script: {instanceID: 11856}
+    - Class: 114
+      Script: {instanceID: 11870}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1307,6 +1310,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TeleType
+  - hash:
+      serializedVersion: 2
+      Hash: 75a6c202ca7ceadf3886503511ed7e1c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Diamond
   - hash:
       serializedVersion: 2
       Hash: a53651ee3996fbba20dfe0fce02f0b23
