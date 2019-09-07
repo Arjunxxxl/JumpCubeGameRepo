@@ -6,6 +6,8 @@ using UnityEngine.Playables;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Data")]
+    [SerializeField]
+    bool isMovementActivated;
     public float movementSpeed = 5f;
     public float upVelocity = 8f;
     public Vector3 velocity;
@@ -52,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     public TrailRenderer playerTrail;
     public bool isDead;
+    public bool isReviving;
 
     Rigidbody rb;
 
@@ -119,11 +122,19 @@ public class PlayerMovement : MonoBehaviour
         isGravityChanged = false;
 
         currentGround = GroundFloor;
+
+        isMovementActivated = true;
+        isReviving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!isMovementActivated)
+        {
+            return;
+        }
+
         isDead = playerDeath.isDead;
         if (!playerSpawner.isDisolveEffectDone || !mainMenu.isGameStart)
         {
@@ -199,6 +210,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isMovementActivated)
+        {
+            return;
+        }
+
         if (isDead || !playerSpawner.isDisolveEffectDone)
             return;
 
@@ -333,6 +349,11 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayLandEffect()
     {
+        if(isReviving)
+        {
+            return;
+        }
+
         if (groundEnter && (numberOfJumps > 0 || currentTime > checkTime))
         {
             spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
@@ -342,7 +363,18 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayLandHitEffect()
     {
+        if (isReviving)
+        {
+            return;
+        }
+
         spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
         spawnedLandEffect.GetComponent<ParticleSystem>().Play();
     }
+
+    public void SetMovementActivateState(bool state)
+    {
+        isMovementActivated = state;
+    }
+
 }

@@ -9,6 +9,9 @@ public class GameOverMenu : MonoBehaviour
     [Header("Menues")]
     public GameObject inGameMenu;
     public GameObject gameOverMenu;
+    public GameObject revivalMenu;
+    public GameObject countDownMenu;
+
 
     [Header("Screen Shot Data")]
     public RawImage screenShotImg;
@@ -20,13 +23,15 @@ public class GameOverMenu : MonoBehaviour
     public float screenShotDelay = 2.5f;
     public float screenshotDiaplayDelay = 1f;
 
-    bool checker;
+    public bool checker;
     bool isProcessing;
 
     Texture2D screenCapture;
 
     PlayerDeath playerDeath;
+    PlayerMovement playerMovement;
     LoadLevel loadLevel;
+    TimelinePlayer timelinePlayer;
 
     #region SingleTon
     public static GameOverMenu Instance;
@@ -48,6 +53,9 @@ public class GameOverMenu : MonoBehaviour
     {
         playerDeath = PlayerDeath.Instance;
         loadLevel = LoadLevel.Instance;
+        timelinePlayer = TimelinePlayer.Instance;
+        playerMovement = PlayerMovement.Instance;
+
 
         gameOverMenu.SetActive(false);
         currentTime = 0;
@@ -68,10 +76,11 @@ public class GameOverMenu : MonoBehaviour
 
             if (currentTime > gameOverMenuShowDelay)
             {
-                gameOverMenu.SetActive(true);
+                revivalMenu.SetActive(true);
                 checker = true;
             }
         }
+        
     }
 
     public void CaptureScreenShot()

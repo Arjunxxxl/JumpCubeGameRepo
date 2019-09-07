@@ -10,6 +10,12 @@ public class PlayerDeath : MonoBehaviour
 
     GameOverMenu gameOverMenu;
 
+    [Header("Revival Data")]
+    public GameObject hitEnemy;
+    public GameObject revialPointObj;
+    public RevivePoints revivalPoint;
+
+
     #region SingleTon
     public static PlayerDeath Instance;
     private void Awake()
@@ -52,6 +58,10 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            hitEnemy = other.gameObject;
+            revivalPoint = hitEnemy.GetComponent<RevivePoints>();
+            revialPointObj = revivalPoint.revitalPoint;
+
             deathParticleSystem.SetActive(true);
             deathParticleSystem.transform.position = transform.position;
             cube.SetActive(false);
