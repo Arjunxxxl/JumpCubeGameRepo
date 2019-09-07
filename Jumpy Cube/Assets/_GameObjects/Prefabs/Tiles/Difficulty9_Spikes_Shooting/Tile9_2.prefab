@@ -115,6 +115,36 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+--- !u!1 &516638411301302522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2261724984645230777}
+  m_Layer: 0
+  m_Name: Point1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2261724984645230777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516638411301302522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4498785318299231165}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482687219031733302
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +260,37 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+--- !u!1 &1921212345330471464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4498785318299231165}
+  m_Layer: 0
+  m_Name: RevivalPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4498785318299231165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921212345330471464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2261724984645230777}
+  m_Father: {fileID: 6341681079435015173}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2434783962054782294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2796,7 @@ Transform:
   m_Children:
   - {fileID: 6341681079222729914}
   - {fileID: 6341681080398995425}
+  - {fileID: 4498785318299231165}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7179,6 +7241,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 261794832262694503, guid: 3daf648e47ed41741b49528d566ab4de,
+        type: 3}
+      propertyPath: revitalPoint
+      value: 
+      objectReference: {fileID: 516638411301302522}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3daf648e47ed41741b49528d566ab4de, type: 3}
 --- !u!4 &4577061749612911873 stripped

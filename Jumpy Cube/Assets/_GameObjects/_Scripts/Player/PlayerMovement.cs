@@ -132,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isMovementActivated)
         {
+            rb.velocity = Vector3.zero;
             return;
         }
 

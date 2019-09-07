@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 7397070205786622150}
   - component: {fileID: 6742945359294534657}
   - component: {fileID: 4293505818986195406}
+  - component: {fileID: 4188609522808473439}
   m_Layer: 12
   m_Name: spikesType2_shooting
   m_TagString: Enemy
@@ -210,3 +211,16 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+--- !u!114 &4188609522808473439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123019772170845210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0b9bdd1551abf4c93c040d13f1c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revitalPoint: {fileID: 0}
