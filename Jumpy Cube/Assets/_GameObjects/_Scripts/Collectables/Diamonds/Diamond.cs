@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Diamond : MonoBehaviour
 {
+    public bool overrideShowDiamonds;
+
     [Header("Total diamonds in tile")]
     public GameObject[] diamonds;
     public int totalDiamonds;
@@ -17,8 +19,8 @@ public class Diamond : MonoBehaviour
     public bool showDiamonds;
     public int maxProb = 100;
     public int currentProb;
-    public int minChance = 35;
-    public int maxChance = 75;
+    int minChance = 20;
+    int maxChance = 80;
 
     [Header("Data")]
     public float[] initialPosY;
@@ -104,14 +106,21 @@ public class Diamond : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentProb = Random.Range(1, maxProb);
-        if(currentProb > minChance && currentProb < maxChance)
+        if (!overrideShowDiamonds || true)
         {
-            showDiamonds = true;
+            currentProb = Random.Range(1, maxProb);
+            if (currentProb > minChance && currentProb < maxChance)
+            {
+                showDiamonds = true;
+            }
+            else
+            {
+                showDiamonds = false;
+            }
         }
         else
         {
-            showDiamonds = false;
+            showDiamonds = overrideShowDiamonds;
         }
 
         if(showDiamonds)

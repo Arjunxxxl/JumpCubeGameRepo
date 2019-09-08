@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RevivePlayer : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class RevivePlayer : MonoBehaviour
     [Header("Revival Data")]
     public float afterRevivalTime = 0;
     public float afterReviveDelay = 2.95f;
+    public TMP_Text reviveTimer;
 
     public GameObject player;
     public GameObject revivalPoint;
@@ -25,7 +27,6 @@ public class RevivePlayer : MonoBehaviour
     PlayerSpawner playerSpawner;
     GameOverMenu gameOverMenu;
     TimelinePlayer timelinePlayer;
-    PauseMenu pauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,6 @@ public class RevivePlayer : MonoBehaviour
         playerMovement = PlayerMovement.Instance;
         playerSpawner = PlayerSpawner.Instance;
         timelinePlayer = TimelinePlayer.Instance;
-        pauseMenu = PauseMenu.Instance;
 
         isDead = playerDeath.isDead;
         
@@ -50,7 +50,7 @@ public class RevivePlayer : MonoBehaviour
         if (countDownMenu.activeSelf)
         {
             afterRevivalTime += Time.unscaledDeltaTime;
-            pauseMenu.afterResumeTxt.text = "" + (3 - (int)afterRevivalTime);
+            reviveTimer.text = "" + (3 - (int)afterRevivalTime);
         }
     }
 

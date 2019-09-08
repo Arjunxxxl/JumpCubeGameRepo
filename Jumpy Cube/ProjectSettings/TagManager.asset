@@ -12,6 +12,7 @@ TagManager:
   - ChangeGravityArea
   - Ground_Floor
   - Ground_Ceil
+  - Diamonds
   layers:
   - Default
   - TransparentFX
