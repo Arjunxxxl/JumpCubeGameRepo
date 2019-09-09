@@ -7686,7 +7686,7 @@ PrefabInstance:
     - target: {fileID: 3876728167076071333, guid: 70c4c3ce48071944b91cdc08dcab78d1,
         type: 3}
       propertyPath: overrideShowDiamonds
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3876728167076071333, guid: 70c4c3ce48071944b91cdc08dcab78d1,
         type: 3}
@@ -8036,7 +8036,7 @@ PrefabInstance:
     - target: {fileID: 3876728167076071333, guid: 70c4c3ce48071944b91cdc08dcab78d1,
         type: 3}
       propertyPath: overrideShowDiamonds
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3876728167076071333, guid: 70c4c3ce48071944b91cdc08dcab78d1,
         type: 3}

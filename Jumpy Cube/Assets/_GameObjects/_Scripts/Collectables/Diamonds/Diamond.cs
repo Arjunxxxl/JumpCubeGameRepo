@@ -19,8 +19,8 @@ public class Diamond : MonoBehaviour
     public bool showDiamonds;
     public int maxProb = 100;
     public int currentProb;
-    int minChance = 20;
-    int maxChance = 80;
+    int minChance = 35;
+    int maxChance = 70;
 
     [Header("Data")]
     public float[] initialPosY;
@@ -106,7 +106,7 @@ public class Diamond : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!overrideShowDiamonds || true)
+        if (!overrideShowDiamonds)
         {
             currentProb = Random.Range(1, maxProb);
             if (currentProb > minChance && currentProb < maxChance)

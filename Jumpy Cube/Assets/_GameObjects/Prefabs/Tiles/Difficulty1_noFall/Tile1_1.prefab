@@ -7464,6 +7464,11 @@ PrefabInstance:
       propertyPath: FinalPosY.Array.data[6]
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3876728167076071333, guid: 70c4c3ce48071944b91cdc08dcab78d1,
+        type: 3}
+      propertyPath: overrideShowDiamonds
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70c4c3ce48071944b91cdc08dcab78d1, type: 3}
 --- !u!4 &416702207900225009 stripped
