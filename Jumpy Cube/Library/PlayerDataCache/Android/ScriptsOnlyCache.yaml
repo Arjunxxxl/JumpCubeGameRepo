@@ -70,8 +70,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Timeline.AnimationTrack
     - UnityEngine.Timeline.MarkerTrack
     - UnityEngine.Timeline.TimelineAsset
-    UnityEditor.TestRunner.dll:
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
