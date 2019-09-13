@@ -20,6 +20,8 @@ public class SelectColorScheme : MonoBehaviour
     public Color spikesColor_1;
     [ColorUsage(true, true)]
     public Color gravityFieldColor_1;
+    public Color io_sphereColor_main_1;
+    public Color io_sphereColor_change_1;
     
     [Header("Color Scheme 2")]
     public Color col_scm_2_1;
@@ -30,6 +32,8 @@ public class SelectColorScheme : MonoBehaviour
     public Color spikesColor_2;
     [ColorUsage(true, true)]
     public Color gravityFieldColor_2;
+    public Color io_sphereColor_main_2;
+    public Color io_sphereColor_change_2;
 
     [Header("Material")]
     public Material playerMaterial;
@@ -40,6 +44,11 @@ public class SelectColorScheme : MonoBehaviour
 
     [Header("Particle System")]
     public ParticleSystem landParticleSystem;
+
+    [Header("Data for io sphere color changer script")]
+    public Shader ioSphereShader;
+    public Color ioSphereMainColor;
+    public Color ioSphereChangeColor;
 
     public Imphenzia.GradientSkyCamera gradientCamera;
     public Camera mainCamera;
@@ -77,6 +86,10 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = landParticleSystemColor_1;
             spikesMaterial.SetColor("_BaseColor", spikesColor_1);
+            
+            ioSphereMainColor = io_sphereColor_main_1;
+            ioSphereChangeColor = io_sphereColor_change_1;
+
             mainCamera.backgroundColor = camBGcolor_1;
 
             for (int i = 0; i<30; i++)
@@ -104,6 +117,10 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = landParticleSystemColor_2;
             spikesMaterial.SetColor("_BaseColor", spikesColor_2);
+            
+            ioSphereMainColor = io_sphereColor_main_2;
+            ioSphereChangeColor = io_sphereColor_change_2;
+
             mainCamera.backgroundColor = camBGcolor_2;
 
             for (int i = 0; i < 30; i++)

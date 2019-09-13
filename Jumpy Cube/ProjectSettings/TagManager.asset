@@ -13,6 +13,7 @@ TagManager:
   - Ground_Floor
   - Ground_Ceil
   - Diamonds
+  - iosphere
   layers:
   - Default
   - TransparentFX

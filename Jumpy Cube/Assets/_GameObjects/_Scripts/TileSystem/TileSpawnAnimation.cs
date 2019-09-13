@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TileSpawnAnimation : MonoBehaviour
 {
+    public bool finalPosReached;
+
     [Header("Data")]
     public float initialPosY;
     public float FinalPosY;
@@ -42,6 +44,11 @@ public class TileSpawnAnimation : MonoBehaviour
         if (Mathf.Abs(transform.position.x - player.position.x) < offSet)
         {
             transform.localPosition = finalPos;
+            finalPosReached = true;
+        }
+        else
+        {
+            finalPosReached = false;
         }
     }
 
@@ -63,6 +70,11 @@ public class TileSpawnAnimation : MonoBehaviour
         if (Mathf.Abs(transform.position.x - player.position.x) < offSet)
         {
             transform.localPosition = finalPos;
+            finalPosReached = true;
+        }
+        else
+        {
+            finalPosReached = false;
         }
 
     }
@@ -73,11 +85,20 @@ public class TileSpawnAnimation : MonoBehaviour
         its = transform.position.x;
         players = player.position.x;
         differnce = its - players;
+        
 
-        if (Mathf.Abs(its - players) < offSet)
+        if (!finalPosReached)
         {
-            playerSpeed = playerMovement.movementSpeed;
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, finalPos, Time.deltaTime * speed * playerSpeed);
+            if ((transform.localPosition - finalPos).magnitude == 0)
+            {
+                finalPosReached = true;
+            }
+
+            if (Mathf.Abs(its - players) < offSet)
+            {
+                playerSpeed = playerMovement.movementSpeed;
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, finalPos, Time.deltaTime * speed * playerSpeed);
+            }
         }
     }
 
