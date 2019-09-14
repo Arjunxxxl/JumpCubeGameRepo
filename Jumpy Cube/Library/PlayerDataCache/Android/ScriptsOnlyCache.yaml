@@ -13,6 +13,8 @@ ScriptsOnlyBuild:
     - GravityTile
     - Imphenzia.GradientSkyCamera
     - InGameMenu
+    - IoSphere
+    - IoSphereColorChanger
     - LoadLevel
     - MainMenu
     - ObjectPooler
@@ -132,45 +134,43 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9354}
+      Script: {instanceID: 9356}
     - Class: 114
-      Script: {instanceID: 9370}
+      Script: {instanceID: 9372}
     - Class: 114
-      Script: {instanceID: 9400}
+      Script: {instanceID: 9402}
     - Class: 114
-      Script: {instanceID: 9448}
+      Script: {instanceID: 9450}
     - Class: 114
-      Script: {instanceID: 9454}
+      Script: {instanceID: 9456}
     - Class: 114
-      Script: {instanceID: 9458}
+      Script: {instanceID: 9460}
     - Class: 114
-      Script: {instanceID: 9492}
+      Script: {instanceID: 9494}
     - Class: 114
-      Script: {instanceID: 9510}
+      Script: {instanceID: 9512}
     - Class: 114
-      Script: {instanceID: 9632}
-    - Class: 114
-      Script: {instanceID: 9652}
+      Script: {instanceID: 9634}
     - Class: 114
       Script: {instanceID: 9654}
     - Class: 114
-      Script: {instanceID: 9660}
+      Script: {instanceID: 9656}
     - Class: 114
-      Script: {instanceID: 9666}
+      Script: {instanceID: 9662}
     - Class: 114
-      Script: {instanceID: 9674}
+      Script: {instanceID: 9668}
     - Class: 114
       Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9682}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9696}
+      Script: {instanceID: 9684}
     - Class: 114
-      Script: {instanceID: 9700}
+      Script: {instanceID: 9698}
     - Class: 114
       Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9706}
+      Script: {instanceID: 9704}
     - Class: 114
       Script: {instanceID: 9708}
     - Class: 114
@@ -178,93 +178,99 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9712}
     - Class: 114
-      Script: {instanceID: 9728}
+      Script: {instanceID: 9714}
     - Class: 114
-      Script: {instanceID: 9912}
+      Script: {instanceID: 9730}
     - Class: 114
-      Script: {instanceID: 9950}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9992}
+      Script: {instanceID: 9916}
     - Class: 114
-      Script: {instanceID: 9994}
+      Script: {instanceID: 9954}
     - Class: 114
-      Script: {instanceID: 10092}
+      Script: {instanceID: 9996}
     - Class: 114
-      Script: {instanceID: 10134}
+      Script: {instanceID: 9998}
     - Class: 114
-      Script: {instanceID: 10206}
+      Script: {instanceID: 10096}
     - Class: 114
-      Script: {instanceID: 10338}
+      Script: {instanceID: 10138}
     - Class: 114
-      Script: {instanceID: 10352}
+      Script: {instanceID: 10210}
     - Class: 114
-      Script: {instanceID: 10396}
+      Script: {instanceID: 10342}
     - Class: 114
-      Script: {instanceID: 10490}
+      Script: {instanceID: 10356}
+    - Class: 114
+      Script: {instanceID: 10400}
     - Class: 114
       Script: {instanceID: 10494}
     - Class: 114
       Script: {instanceID: 10498}
     - Class: 114
-      Script: {instanceID: 10508}
+      Script: {instanceID: 10502}
     - Class: 114
       Script: {instanceID: 10512}
     - Class: 114
-      Script: {instanceID: 10514}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10542}
+      Script: {instanceID: 10518}
     - Class: 114
-      Script: {instanceID: 10580}
+      Script: {instanceID: 10546}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10584}
+    - Class: 114
+      Script: {instanceID: 10688}
     - Class: 114
       Script: {instanceID: 10704}
     - Class: 114
-      Script: {instanceID: 10728}
+      Script: {instanceID: 10710}
     - Class: 114
-      Script: {instanceID: 10742}
+      Script: {instanceID: 10734}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10748}
     - Class: 114
-      Script: {instanceID: 10812}
+      Script: {instanceID: 10758}
     - Class: 114
-      Script: {instanceID: 10848}
+      Script: {instanceID: 10818}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 10854}
     - Class: 114
-      Script: {instanceID: 10960}
+      Script: {instanceID: 10938}
     - Class: 114
-      Script: {instanceID: 11034}
+      Script: {instanceID: 10966}
     - Class: 114
-      Script: {instanceID: 11066}
+      Script: {instanceID: 11040}
     - Class: 114
-      Script: {instanceID: 11068}
+      Script: {instanceID: 11072}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 11074}
     - Class: 114
-      Script: {instanceID: 11200}
+      Script: {instanceID: 11138}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11436}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 11574}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11650}
+      Script: {instanceID: 11580}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11656}
     - Class: 114
-      Script: {instanceID: 11726}
+      Script: {instanceID: 11722}
     - Class: 114
-      Script: {instanceID: 11780}
+      Script: {instanceID: 11732}
     - Class: 114
-      Script: {instanceID: 11826}
+      Script: {instanceID: 11786}
     - Class: 114
-      Script: {instanceID: 11858}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11864}
     - Class: 114
-      Script: {instanceID: 11874}
+      Script: {instanceID: 11866}
+    - Class: 114
+      Script: {instanceID: 11880}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -586,7 +592,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: db6be3ddf7423e873c6fdb7bc17998e0
+      Hash: 8887bbe841341bfa35981d0b6ef29c68
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectColorScheme
@@ -596,6 +602,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: DepthOfField
+  - hash:
+      serializedVersion: 2
+      Hash: 7d7abbdd555ce988c3399285beb4b671
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IoSphereColorChanger
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -1174,7 +1186,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: d86f832d58b1811f4297786ff7836fb2
+      Hash: cc7ce953a57dbfd9b7abfa8e611862a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TileSpawnAnimation
@@ -1312,6 +1324,12 @@ ScriptsOnlyBuild:
     className: TMP_DigitValidator
   - hash:
       serializedVersion: 2
+      Hash: 5946c2232eb99607cc0b67f39358b955
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IoSphere
+  - hash:
+      serializedVersion: 2
       Hash: d6fc8d3165070298511ec776ea575626
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1324,7 +1342,7 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
-      Hash: a387072dadae2eb08e2a83cadb88d581
+      Hash: 2f6358f52c420dffc221f706d78b7ecd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Diamond
