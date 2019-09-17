@@ -8,6 +8,8 @@ public class DistanceScore : MonoBehaviour
     public Transform player;
     public float initialPosX;
     public float finalPosX;
+    public float distanceMultiplier = 0.8f;
+    public float dist;
     public int distance;
 
     public TMP_Text scoreTxt;
@@ -30,8 +32,9 @@ public class DistanceScore : MonoBehaviour
     void Update()
     {
         finalPosX = player.position.x;
-        distance = (int)(initialPosX - finalPosX);
-        distance /= 5;
+        dist = (initialPosX - finalPosX);
+        dist *= distanceMultiplier;
+        distance = (int)(dist);
         scoreTxt.text = distance + "";
     }
 }

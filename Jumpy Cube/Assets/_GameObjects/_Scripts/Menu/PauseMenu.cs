@@ -43,7 +43,6 @@ public class PauseMenu : MonoBehaviour
         timelinePlayer = TimelinePlayer.Instance;
         loadLevel = LoadLevel.Instance;
 
-        inGameMenu.SetActive(true);
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(false);
         Time.timeScale = 1f;

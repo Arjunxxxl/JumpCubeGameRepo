@@ -76,7 +76,7 @@ public class MainMenu : MonoBehaviour
     {
         isGameStart = true;
 
-        timelinePlayer.PlayMenuToInGameMenu();
+        timelinePlayer.MainmenuDiaable();
         StartCoroutine(DisableMainMenuWithDelay());
 
         playMenu.SetActive(true);

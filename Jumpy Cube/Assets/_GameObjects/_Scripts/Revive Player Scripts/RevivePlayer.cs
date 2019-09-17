@@ -105,6 +105,7 @@ public class RevivePlayer : MonoBehaviour
         inGameMenu.SetActive(true);
 
         timelinePlayer.StopResumeCountDown();
+        timelinePlayer.PlayIngameMenuActivated();
 
         gameOverMenu.checker = false;
         gameOverMenu.currentTime = 0;
