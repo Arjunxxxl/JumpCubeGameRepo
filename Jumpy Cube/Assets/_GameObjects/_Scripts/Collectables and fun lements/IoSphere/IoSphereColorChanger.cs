@@ -18,7 +18,6 @@ public class IoSphereColorChanger : MonoBehaviour
     Color finalColor;
 
     public Material ioSphereMat;
-    public MeshRenderer meshRenderer;
     Shader iosphereShader;
     
     SelectColorScheme selectColorScheme;
@@ -35,15 +34,15 @@ public class IoSphereColorChanger : MonoBehaviour
         currentColor = selectColorScheme.ioSphereMainColor;
         finalColor = selectColorScheme.ioSphereChangeColor;
 
-        if (!meshRenderer || !iosphereShader || !ioSphereMat)
+        if (!iosphereShader || !ioSphereMat)
         {
-            meshRenderer = GetComponent<MeshRenderer>();
             iosphereShader = selectColorScheme.ioSphereShader;
-            ioSphereMat = new Material(iosphereShader);
+            ioSphereMat = GetComponent<MeshRenderer>().material;
+            //ioSphereMat = new Material(iosphereShader);
         }
 
         ioSphereMat.SetColor("_BaseColor", currentColor);
-        meshRenderer.material = ioSphereMat;
+        GetComponent<MeshRenderer>().material = ioSphereMat;
 
         triggered = false;
 
@@ -59,15 +58,14 @@ public class IoSphereColorChanger : MonoBehaviour
         currentColor = selectColorScheme.ioSphereMainColor;
         finalColor = selectColorScheme.ioSphereChangeColor;
 
-        if (!meshRenderer || !iosphereShader || !ioSphereMat)
+        if (!iosphereShader || !ioSphereMat)
         {
-            meshRenderer = GetComponent<MeshRenderer>();
             iosphereShader = selectColorScheme.ioSphereShader;
             ioSphereMat = new Material(iosphereShader);
         }
 
         ioSphereMat.SetColor("_BaseColor", currentColor);
-        meshRenderer.material = ioSphereMat;
+        GetComponent<MeshRenderer>().material = ioSphereMat;
 
         triggered = false;
     }

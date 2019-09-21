@@ -14,11 +14,18 @@ public class CameraFollows : MonoBehaviour
     public float offSetChangeSpeed = 2f;
     public float offSetChangeSpeedWhenGravityChanges = 1f;
     public float offSetChangeSpeed_whenDied = 0.5f;
-    public Vector3 menuOffSet;
+    public Vector3 menuOffSet;      //2, 3, 5.5
     public Vector3 startingOffset;
     public Vector3 normalOffset;
     public Vector3 upGravityOffset;
     public Vector3 deathOffset;
+
+    [Header("rotation data")]
+    public float rotationChangeSpeed = 2;
+    public Vector3 menuRotaion;
+    public Vector3 finalRotaion;
+    Quaternion menuRot;
+    Quaternion finalRot;
 
 
     Vector3 refVelocity;
@@ -42,6 +49,11 @@ public class CameraFollows : MonoBehaviour
         isDead = playerDeath.isDead;
         isDownGravity = playerMovement.isDownGravity;
         isGravityChanged = playerMovement.isGravityChanged;
+
+        menuRot = Quaternion.Euler(menuRotaion);
+        finalRot = Quaternion.Euler(finalRotaion);
+
+        transform.rotation = menuRot;
 
         if(!target)
         {
@@ -88,6 +100,15 @@ public class CameraFollows : MonoBehaviour
         {
             offSet = Vector3.Lerp(offSet, startingOffset, Time.deltaTime * offSetChangeSpeed);
         }
+
+        if(mainMenu.isGameStart)
+        {
+            if (transform.rotation != finalRot)
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, finalRot, Time.deltaTime * rotationChangeSpeed);
+            }
+        }
+
     }
 
     void FixedUpdate()

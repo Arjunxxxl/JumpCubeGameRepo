@@ -80,7 +80,6 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(DisableMainMenuWithDelay());
 
         playMenu.SetActive(true);
-        homeMenu.SetActive(false);
         store.SetActive(false);
         levels.SetActive(false);
         stats.SetActive(false);
@@ -96,6 +95,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator DisableMainMenuWithDelay()
     {
         yield return new WaitForSeconds(mainMenuDisableDealy);
+        homeMenu.SetActive(false);
         mainMenu.SetActive(false);
     }
 
