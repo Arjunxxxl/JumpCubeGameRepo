@@ -14,6 +14,21 @@ public class DistanceScore : MonoBehaviour
 
     public TMP_Text scoreTxt;
 
+    #region SingleTon
+    public static DistanceScore Instance;
+    private void Awake()
+    {
+        if(!Instance)
+        {
+            Instance = this;
+        }
+        else if(Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {

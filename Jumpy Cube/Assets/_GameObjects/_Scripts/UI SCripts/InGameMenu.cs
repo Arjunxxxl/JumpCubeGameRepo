@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class InGameMenu : MonoBehaviour
 {
     [Header("UI Elements")]
-    public TMP_Text score;
-    public TMP_Text itemsCollected1_txt;
-    public Image items_img_1;
+    public TMP_Text diamondsCollected_txt;
     public GameObject inGameMenu;
 
     [Header("Data")]
     public bool isMenuActivated;
 
     [Header("Items Data")]
-    public int itemsCollected1_total;
+    public int diamondsCollected;
+    public int diamondsMultiplier;
+    public int diamondValue;
 
     PlayerSpawner playerSpawner;
     TimelinePlayer timelinePlayer;
@@ -45,6 +45,12 @@ public class InGameMenu : MonoBehaviour
         inGameMenu.SetActive(false);
 
         isMenuActivated = false;
+
+        diamondsMultiplier = 1;
+        diamondsCollected = 0;
+        diamondValue = 1;
+
+        diamondsCollected_txt.text = diamondsCollected + "";
     }
 
     // Update is called once per frame
@@ -60,5 +66,12 @@ public class InGameMenu : MonoBehaviour
                 timelinePlayer.PlayIngameMenuActivated();
             }
         }
+    }
+
+    public void DiamondCollected()
+    {
+        diamondsCollected = diamondsCollected + (diamondValue * diamondsMultiplier);
+
+        diamondsCollected_txt.text = diamondsCollected + "";
     }
 }

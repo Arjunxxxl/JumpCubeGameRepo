@@ -63,8 +63,10 @@ public class PlayerMovement : MonoBehaviour
     MainMenu mainMenu;
     ObjectPooler objectPooler;
     PauseMenu pauseMenu;
+    InGameMenu inGameMenu;
 
     GameObject spawnedLandEffect;
+    GameObject diamondCollectEffect;
 
     #region SingleTon
     public static PlayerMovement Instance;
@@ -102,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
         mainMenu = MainMenu.Instance;
         objectPooler = ObjectPooler.Instance;
         pauseMenu = PauseMenu.Instance;
+        inGameMenu = InGameMenu.Instance;
 
         rb = GetComponent<Rigidbody>();
         numberOfJumps = 0;
@@ -309,6 +312,15 @@ public class PlayerMovement : MonoBehaviour
 
             currentGround = GroundCeil;
         }
+
+        if(other.gameObject.CompareTag("Diamonds"))
+        {
+            diamondCollectEffect = objectPooler.SpawnFormPool("DiamondCollect", other.gameObject.transform.position, Quaternion.identity);
+            diamondCollectEffect.GetComponent<ParticleSystem>().Play();
+            other.gameObject.SetActive(false);
+
+            inGameMenu.DiamondCollected();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -327,6 +339,18 @@ public class PlayerMovement : MonoBehaviour
             if (currentGround != GroundCeil)
             {
                 currentGround = GroundCeil;
+            }
+        }
+
+        if (other.gameObject.CompareTag("Diamonds"))
+        {
+            if (other.gameObject.activeSelf)
+            {
+                diamondCollectEffect = objectPooler.SpawnFormPool("DiamondCollect", other.gameObject.transform.position, Quaternion.identity);
+                diamondCollectEffect.GetComponent<ParticleSystem>().Play();
+                other.gameObject.SetActive(false);
+
+                inGameMenu.DiamondCollected();
             }
         }
     }
