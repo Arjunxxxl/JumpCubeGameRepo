@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SelectColorScheme : MonoBehaviour
 {
+    public TileColorThemeBoughtManager tileColorThemeManager;
+
     [Header("Color Scheme Data")]
     public int totalColorSchemes;
     public int selectedColorScheme;
@@ -35,6 +37,18 @@ public class SelectColorScheme : MonoBehaviour
     public Color io_sphereColor_main_2;
     public Color io_sphereColor_change_2;
 
+    [Header("Color Scheme 3")]
+    public Color col_scm_3_1;
+    public Color col_scm_3_2;
+    public Gradient col_scm_3_grad;
+    public Color camBGcolor_3;
+    public Color landParticleSystemColor_3;
+    public Color spikesColor_3;
+    [ColorUsage(true, true)]
+    public Color gravityFieldColor_3;
+    public Color io_sphereColor_main_3;
+    public Color io_sphereColor_change_3;
+
     [Header("Material")]
     public Material playerMaterial;
     public Material[] floor;
@@ -53,6 +67,7 @@ public class SelectColorScheme : MonoBehaviour
     public Imphenzia.GradientSkyCamera gradientCamera;
     public Camera mainCamera;
 
+
     #region SingleTon
     public static SelectColorScheme Instance;
     private void Awake()
@@ -65,6 +80,8 @@ public class SelectColorScheme : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        colorSchemeIndex = tileColorThemeManager.GetColorSchemeUnlockState();
 
         tempColorScheme = SelectTempColor();
         //tempColorScheme = 2;
@@ -142,18 +159,48 @@ public class SelectColorScheme : MonoBehaviour
                 mat.SetColor("_EmissionColor", gravityFieldColor_2);
             }
         }
-        
+        else if (selectedColorScheme == 3)
+        {
+            gradientCamera.gradient = col_scm_3_grad;
+            var main = landParticleSystem.main;
+            main.startColor = landParticleSystemColor_3;
+            spikesMaterial.SetColor("_BaseColor", spikesColor_3);
+
+            ioSphereMainColor = io_sphereColor_main_3;
+            ioSphereChangeColor = io_sphereColor_change_3;
+
+            mainCamera.backgroundColor = camBGcolor_3;
+
+            for (int i = 0; i < 30; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    floor[i].SetColor("_BaseColor", col_scm_3_1);
+                    ceil[i].SetColor("_BaseColor", col_scm_3_2);
+                }
+                else
+                {
+                    floor[i].SetColor("_BaseColor", col_scm_3_2);
+                    ceil[i].SetColor("_BaseColor", col_scm_3_1);
+                }
+            }
+
+            foreach (Material mat in gravityFieldMat)
+            {
+                mat.SetColor("_EmissionColor", gravityFieldColor_3);
+            }
+        }
     }
 
     int SelectTempColor()
     {
         previousColorScheme = PlayerPrefs.GetInt("PreviousColorScheme", 0);
 
-        if (previousColorScheme == 0)
+        /*if (previousColorScheme == 0)
         {
             return 1;
         }
-        else
+        else*/
         {
             colorSchemeIndex.Remove(previousColorScheme);
             int i = Random.Range(0, colorSchemeIndex.Count);
