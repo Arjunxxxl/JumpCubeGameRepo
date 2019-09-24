@@ -109,7 +109,7 @@ public class SelectColorScheme : MonoBehaviour
 
             mainCamera.backgroundColor = camBGcolor_1;
 
-            for (int i = 0; i<30; i++)
+            for (int i = 0; i<floor.Length; i++)
             {
                 if(i%2 == 0)
                 {
@@ -140,7 +140,7 @@ public class SelectColorScheme : MonoBehaviour
 
             mainCamera.backgroundColor = camBGcolor_2;
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < floor.Length; i++)
             {
                 if (i % 2 == 0)
                 {
@@ -171,7 +171,7 @@ public class SelectColorScheme : MonoBehaviour
 
             mainCamera.backgroundColor = camBGcolor_3;
 
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < floor.Length; i++)
             {
                 if (i % 2 == 0)
                 {

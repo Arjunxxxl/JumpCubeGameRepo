@@ -19,7 +19,7 @@ GameObject:
   m_TagString: iosphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2996210912661208717
 Transform:
@@ -55,8 +55,8 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4df5732dee341e4693c9c67031f6e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorLerpSpeed: 2
+  triggered: 0
   currentColor: {r: 0, g: 0, b: 0, a: 0}
   finalColor: {r: 0, g: 0, b: 0, a: 0}
+  ioSphereMat: {fileID: 0}

@@ -81,7 +81,7 @@ public class TileColorThemeBoughtManager : MonoBehaviour
 
         color_scheme_Default1 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_DEFAULT1, 1);
         color_scheme_Default1 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_DEFAULT1, 1);
-        color_scheme_1 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_1, 1);
+        color_scheme_1 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_1, 0);
         color_scheme_2 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_2, 0);
         color_scheme_3 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_3, 0);
         color_scheme_4 = PlayerPrefs.GetInt(colorSchemeString.COLOR_SCHEME_4, 0);

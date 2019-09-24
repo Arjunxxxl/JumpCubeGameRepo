@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1022826445250873881
 Transform:
@@ -54,12 +54,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1767667db76f5314ba0d81725b9876e5, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -133,7 +134,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4686243367642873251
 Transform:
@@ -169,12 +170,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b770b7a93710914f8500612b794231f, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -278,7 +280,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2313741733733252115
 Transform:
@@ -315,12 +317,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c1e228cc12738d84383f871aa4bb21c9, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -365,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -394,7 +397,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2216853900738533140
 Transform:
@@ -430,12 +433,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c6508714eea239e41a2340bd8dc3bd37, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -480,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -509,7 +513,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &204550506944610082
 Transform:
@@ -545,12 +549,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddc855ad035ae9747b9aa441c7fce262, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -595,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -624,7 +629,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4600835320925835612
 Transform:
@@ -660,12 +665,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c72d7904b2f1323479b9ce8b0feca634, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -710,6 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -769,7 +775,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2013088229726059852
 Transform:
@@ -805,12 +811,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5731f3d306a4004f971ed11a721c2b9, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -855,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -884,7 +891,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4370040459556113302
 Transform:
@@ -921,12 +928,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b198e5261ce42434f9ced3314f969e56, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -971,6 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -1000,7 +1008,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &5742037296897291540
 Transform:
@@ -1036,12 +1044,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 565dcaf5b027d3241bcce7257ee435fb, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1086,6 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -1150,7 +1159,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2922296923509189434
 Transform:
@@ -1186,12 +1195,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69a59f6aaf86d9c42a8c495d3e488dc8, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1236,6 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -1295,7 +1305,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879405470842
 Transform:
@@ -1331,12 +1341,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6da9265caaee65c43adf1126f8cacb4b, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1381,6 +1391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -1410,7 +1421,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879419984392
 Transform:
@@ -1446,12 +1457,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c4fb780513dd874cbc81813331610ab, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1496,6 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -1525,7 +1537,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879426258181
 Transform:
@@ -1562,12 +1574,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c486f4870030714a902661420f6094b, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1612,6 +1624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -1641,7 +1654,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879465034896
 Transform:
@@ -1677,12 +1690,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65422d1613e6a32498b4c6254b1785cb, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1727,6 +1740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -1756,7 +1770,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879514159086
 Transform:
@@ -1792,12 +1806,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4b6b585a603cde046b903301d12be9bf, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1842,6 +1856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -1871,7 +1886,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879534149297
 Transform:
@@ -1907,8 +1922,8 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1957,6 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -1986,7 +2002,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879682817165
 Transform:
@@ -2022,12 +2038,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b18c49b965fdc174d9954791d2e27587, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2072,6 +2088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -2101,7 +2118,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879796449242
 Transform:
@@ -2137,12 +2154,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56f6a7dc3298805489a0fed098508458, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2187,6 +2204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -2216,7 +2234,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879879862772
 Transform:
@@ -2252,12 +2270,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5fa30bf13aca0e14e8e194bbdb26019e, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2302,6 +2320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -2391,7 +2410,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730879991396590
 Transform:
@@ -2427,12 +2446,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 718b26b4e795e3e49ace781f5dc5c15c, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2477,6 +2496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -2506,7 +2526,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880035727219
 Transform:
@@ -2542,12 +2562,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 39fe55ba5e997a649ad41329009d1ab2, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2592,6 +2612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -2621,7 +2642,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880171681076
 Transform:
@@ -2657,12 +2678,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c83fe69f82de5e244973f2852ac98b15, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2707,6 +2728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -2736,7 +2758,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880226802637
 Transform:
@@ -2773,12 +2795,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a0f0bf905074204a9944c785cb258c3, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2823,6 +2845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -2852,7 +2875,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880344431368
 Transform:
@@ -2888,12 +2911,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa8a3861578171f41903a40ff8f44c35, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2938,6 +2961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -2967,7 +2991,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880392672917
 Transform:
@@ -3003,12 +3027,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b62c235e2d9523f4f8d87ffecad9100b, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3053,6 +3077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -3082,7 +3107,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880457988218
 Transform:
@@ -3118,12 +3143,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82adf0f5d1876ec46a1840369d793a76, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3168,6 +3193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -3197,7 +3223,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880567131120
 Transform:
@@ -3233,12 +3259,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 70dd2b60b31ce5d4f91693fd5cc59bdf, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3283,6 +3309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3360,7 +3387,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880578132089
 Transform:
@@ -3396,12 +3423,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d08764c3b9dd02343b81a6e6b627b4da, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3446,6 +3473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -3475,7 +3503,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880690954999
 Transform:
@@ -3511,12 +3539,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a8ee085bbeaa62b45a14fd0041d75c5a, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3561,6 +3589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -3590,7 +3619,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880737660838
 Transform:
@@ -3626,12 +3655,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f8d9f88d13302b42857b8291a4856f7, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3676,6 +3705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -3705,7 +3735,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880741254008
 Transform:
@@ -3741,12 +3771,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0745591960ea1b347b3f1a2f5095969d, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3791,6 +3821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -3820,7 +3851,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880758524357
 Transform:
@@ -3856,8 +3887,8 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3906,6 +3937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -3995,7 +4027,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880809805117
 Transform:
@@ -4031,12 +4063,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0faa31a9e37103f47a68d424144b8b2f, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4081,6 +4113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -4110,7 +4143,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880815183595
 Transform:
@@ -4146,12 +4179,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b9cdfd481e7ec24e94ff5eec8212878, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4196,6 +4229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -4225,7 +4259,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880872377075
 Transform:
@@ -4261,12 +4295,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a3cae91425c96746a0d05e223feff53, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4311,6 +4345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -4340,7 +4375,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880892860835
 Transform:
@@ -4376,12 +4411,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d7dab65a085ab6e4e9480a946722707c, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4426,6 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -4455,7 +4491,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730880969988134
 Transform:
@@ -4491,12 +4527,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8fb07acd665c304f93926dccfa693e5, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4541,6 +4577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 8
   initialPos: {x: 0, y: 0, z: 0}
@@ -4570,7 +4607,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881076237173
 Transform:
@@ -4606,12 +4643,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad6c0bf68212fe9408bc4b58633587ff, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4656,6 +4693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -4685,7 +4723,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881100459566
 Transform:
@@ -4722,12 +4760,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 53ef57513635e414dabd10fa0043ecb8, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4772,6 +4810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -4801,7 +4840,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881102564753
 Transform:
@@ -4838,12 +4877,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 15fe93f916b7f7f4990fddc4b7733158, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4888,6 +4927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -4917,7 +4957,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881141719095
 Transform:
@@ -4953,12 +4993,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a6a75b55803efc42aedf2f991faa179, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5003,6 +5043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -5032,7 +5073,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881181670262
 Transform:
@@ -5068,12 +5109,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3318c2a56f4e294498841b5e5d3bab58, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5118,6 +5159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -5147,7 +5189,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881187764035
 Transform:
@@ -5183,12 +5225,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4600ef822556a3142a7ba16f1166a3e6, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5233,6 +5275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5262,7 +5305,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881230049859
 Transform:
@@ -5298,12 +5341,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa7acc81cb6ad1048a4ebe65caf4f2de, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5348,6 +5391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -12
   initialPos: {x: 0, y: 0, z: 0}
@@ -5377,7 +5421,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881294871495
 Transform:
@@ -5413,12 +5457,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b56b7101634b8e14dbef10e252fb527e, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5463,6 +5507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -5492,7 +5537,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881365060930
 Transform:
@@ -5529,12 +5574,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 70a110e5dc7f3a546a05e97d2714248b, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5579,6 +5624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5608,7 +5654,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881375392227
 Transform:
@@ -5644,12 +5690,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d4c15fa4814595499d43e54314a01b2, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5694,6 +5740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5723,7 +5770,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881384048962
 Transform:
@@ -5759,8 +5806,8 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5809,6 +5856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5838,7 +5886,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881386815839
 Transform:
@@ -5874,8 +5922,8 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5924,6 +5972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5953,7 +6002,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7110730881402504077
 Transform:
@@ -5990,12 +6039,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b96d5a806bd01d4f881bb82a3709d55, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6040,6 +6089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -6069,7 +6119,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7493559321685894750
 Transform:
@@ -6105,12 +6155,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b944ee998a65da8438939537981a9081, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6155,6 +6205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6214,7 +6265,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4771854265433871807
 Transform:
@@ -6250,12 +6301,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe72758747bacc248974bddafeaec69b, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6300,6 +6351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -6329,7 +6381,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &2687066602505566532
 Transform:
@@ -6366,12 +6418,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 200e75366c0ba6d42b21a9e0f103666d, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6416,6 +6468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -6445,7 +6498,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4912139096969270988
 Transform:
@@ -6481,12 +6534,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a71b032f1e1b57b4da306f561335434a, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6531,6 +6584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6560,7 +6614,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &3710852993574383692
 Transform:
@@ -6596,12 +6650,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0f10a327bc5d404082ee36cbbde95f3, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6646,6 +6700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -6675,7 +6730,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &8953151693729944453
 Transform:
@@ -6711,12 +6766,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84834fc99b31d0a4aa6565a1154b597c, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6761,6 +6816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -6820,7 +6876,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7574028122726971324
 Transform:
@@ -6856,12 +6912,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e74f4036de3956e42bcd30aef658587f, type: 2}
+  - {fileID: 2100000, guid: 51f3c833a03d6a74aa35f7bbfec545f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6906,6 +6962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -6935,7 +6992,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &6248317370254122257
 Transform:
@@ -6972,12 +7029,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32eccbe9d1be79c438fc4ab0a95d52db, type: 2}
+  - {fileID: 2100000, guid: b58f0b09469b1cd4f91392dda92b9949, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7022,6 +7079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -7051,7 +7109,7 @@ GameObject:
   m_TagString: Ground_Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &6437786582746301196
 Transform:
@@ -7087,12 +7145,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b2b6bb8605b712b4f8bfdc56057a028b, type: 2}
+  - {fileID: 2100000, guid: 686cc0408ec456747a9554df5c0655d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7137,6 +7195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -7166,7 +7225,7 @@ GameObject:
   m_TagString: Ground_Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &8798366662831814979
 Transform:
@@ -7202,12 +7261,12 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b1554cdd63164e4683fd39f00715dc2, type: 2}
+  - {fileID: 2100000, guid: a71bc6502858f794da45f5384e232f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7252,6 +7311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac78862f2fb024e90d671286eece4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalPosReached: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
