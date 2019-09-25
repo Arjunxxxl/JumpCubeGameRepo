@@ -58,11 +58,11 @@ public class ObjectPooler : MonoBehaviour
                 obj = Instantiate(pool.prefab);
 
                 obj.SetActive(false);
-                obj.transform.parent = transform;
+                obj.transform.SetParent(transform);
 
                 if(obj.GetComponent<RectTransform>())
                 {
-                    obj.transform.parent = storeBgEffectParent;
+                    obj.transform.SetParent(storeBgEffectParent);
                     storeBGEffectList.Add(obj.GetComponent<RectTransform>());
                 }
 

@@ -13,6 +13,8 @@ public class DistanceScore : MonoBehaviour
     public int distance;
 
     public TMP_Text scoreTxt;
+    
+    MissionManager missionManager;
 
     #region SingleTon
     public static DistanceScore Instance;
@@ -32,6 +34,8 @@ public class DistanceScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        missionManager = MissionManager.Instance;
+
         if(!player)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -51,5 +55,7 @@ public class DistanceScore : MonoBehaviour
         dist *= distanceMultiplier;
         distance = (int)(dist);
         scoreTxt.text = distance + "";
+
+        missionManager.CheckingForDiatanceScoreMission(distance);
     }
 }

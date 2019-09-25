@@ -17,6 +17,8 @@ ScriptsOnlyBuild:
     - IoSphereColorChanger
     - LoadLevel
     - MainMenu
+    - Mission
+    - MissionManager
     - ObjectPooler
     - OptimizedSavedData
     - Optimizer
@@ -62,8 +64,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.PostProcessing.PostProcessVolume
     - UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections
     - UnityEngine.Rendering.PostProcessing.Vignette
-    Unity.RenderPipelines.Lightweight.Editor.dll:
-    - UnityEditor.Rendering.LWRP.LightweightRenderPipelineAssetEditor
     Unity.RenderPipelines.Lightweight.Runtime.dll:
     - UnityEngine.Rendering.LWRP.ForwardRendererData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
@@ -276,6 +276,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11872}
     - Class: 114
       Script: {instanceID: 11886}
+    - Class: 114
+      Script: {instanceID: 232830}
+    - Class: 114
+      Script: {instanceID: 232856}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1545,7 +1549,7 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: 53a57d07b8bb0a3e3ee29ac6aeeb03a5
+      Hash: 6a6e78591893ac70953bccd3adb5ce10
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DistanceScore
@@ -1711,6 +1715,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: bea8ba44af9460acfba585ecb8d2bf5e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mission
+  - hash:
+      serializedVersion: 2
+      Hash: 7561006c2fbb6eebe4d6d8c8f9cb5b6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MissionManager
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

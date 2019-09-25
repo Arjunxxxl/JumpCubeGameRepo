@@ -41,7 +41,7 @@ public class CubeBoughtManager : MonoBehaviour
         if(selectedCubeType == CubeType.common)
         {
             selectedCube = ownedCubes_common[selectedCubeIndex];
-            selectedCube.transform.parent = player;
+            selectedCube.transform.SetParent(player);
             selectedCube.SetActive(true);
 
             cubeColorManager.SetCubeColor_CommonCube(selectedCubeIndex);

@@ -39,6 +39,9 @@ public class TilePool : MonoBehaviour
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     string tileTag;
 
+    int _index;
+    float temp;
+
     private void Start()
     {
         SetUpPool();
@@ -106,13 +109,25 @@ public class TilePool : MonoBehaviour
         {
             if (index == -1)
             {
-                tileTag = "tile" + tileType + "_" + Random.Range(0, 9);
+                // tileTag = "tile" + tileType + "_" + Random.Range(0, 9);
+                tileTag = "tile" + tileType + "_" + GetRandomTileIndex();
             }
             else
             {
                 tileTag = "tile" + tileType + "_" + index;
             }
         }
+    }
+
+    int GetRandomTileIndex()
+    {
+        _index = 0;
+
+        temp = Random.Range(0, 99);
+
+        _index = (int)(temp / 10);
+
+        return _index;
     }
 
 }
