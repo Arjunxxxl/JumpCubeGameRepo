@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: StoreSpriteAltas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 260268824fc22784692069b5c8faf100, type: 3}
+    - {fileID: 102900000, guid: a5e67d97796064940abd35c39d3be86d, type: 3}
+    - {fileID: 102900000, guid: a613cdb2f88cf8943a54a9266fb387bc, type: 3}
+    - {fileID: 2800000, guid: c1bc771a99bf21c4bbe47e85c8fe0405, type: 3}
+    totalSpriteSurfaceArea: 9942688
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 7b2cdd106dde52d4e82b3c25f2192305, type: 3}
+  - {fileID: 21300000, guid: 6b6e3a20cc97065479dc3847d4f25d0e, type: 3}
+  - {fileID: 21300000, guid: 5899e272437ff624d885e99cc4b7891e, type: 3}
+  - {fileID: 21300000, guid: deda8382b253f15459bb2505ea7a0b55, type: 3}
+  - {fileID: 21300000, guid: dcdb9363d62f5a9468b04e52b2ccb86b, type: 3}
+  - {fileID: 21300000, guid: eac0e69308803934e82dfc4516f292e6, type: 3}
+  - {fileID: 21300000, guid: 959093d3fec5df94fa0bfcf280690c74, type: 3}
+  - {fileID: 21300000, guid: 9616e014189359c4c8acd50d4aae953a, type: 3}
+  - {fileID: 21300000, guid: 81b6e1f46e7f3db459521336d5310653, type: 3}
+  - {fileID: 21300000, guid: d25c042506a62b6439f0a3384ae2ff66, type: 3}
+  - {fileID: 21300000, guid: c1f6b026b8179d04b95e0c505228c212, type: 3}
+  - {fileID: 21300000, guid: 3e91d4b69c2aa664bb38793fd90db16d, type: 3}
+  - {fileID: 21300000, guid: 68c029d6232f0e2488178150ece1ceeb, type: 3}
+  - {fileID: 21300000, guid: a23e53b762700184d984dea3c1e583f6, type: 3}
+  - {fileID: 21300000, guid: 2b27c318559bcfe4db0bf46949b440f7, type: 3}
+  - {fileID: 21300000, guid: 5300c03923585974b8d678944e29f8a1, type: 3}
+  - {fileID: 21300000, guid: 8467756912108b44f83fe958a4654127, type: 3}
+  - {fileID: 21300000, guid: c1bc771a99bf21c4bbe47e85c8fe0405, type: 3}
+  - {fileID: 21300000, guid: eff55b2b1c60d57438e570784125d009, type: 3}
+  - {fileID: 21300000, guid: 6d85187be4343b84e8b6ddbb56decdde, type: 3}
+  - {fileID: 21300000, guid: ebc07d1c3ac33e64ba2d7b69ed7a5276, type: 3}
+  - {fileID: 21300000, guid: 72deb22c678b9334fbb7062942f8094d, type: 3}
+  - {fileID: 21300000, guid: 6ca2587c2e1d27b43938c6e3b411cfa1, type: 3}
+  - {fileID: 21300000, guid: 8ba566fce5ec0014e862ba371232bd9b, type: 3}
+  - {fileID: 21300000, guid: c9e34dfc15694e147965c4195f3a85bc, type: 3}
+  - {fileID: 21300000, guid: 3d76ff9d7b42a04468b4ae80be08654f, type: 3}
+  - {fileID: 21300000, guid: e31ef71ee80217b49bf45248a3ecc691, type: 3}
+  - {fileID: 21300000, guid: ffa1f6be200a9f44e9418c1e08fb04d9, type: 3}
+  - {fileID: 21300000, guid: d60300ce959b1e9468487f9f2c3e1353, type: 3}
+  - {fileID: 21300000, guid: aba2811f2bf8f5d4191cbcc6010aae72, type: 3}
+  - {fileID: 21300000, guid: 43a3a23ff0f539942bf5190a075b876a, type: 3}
+  - {fileID: 21300000, guid: a02ecdff75f81a24591435a9eeda02ba, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - diamond4
+  - Skin2
+  - SkinBG_overlay
+  - PackInfoBg
+  - diamond1
+  - instagramIcon
+  - Panne2_buytokens
+  - buyButton
+  - PannelNameHolder
+  - diamond2
+  - removeAdsCross
+  - diamond3
+  - Skin9
+  - StoreFreeDiamondsReward
+  - Panne2_buytokensBase
+  - Skin3
+  - Sharing
+  - Panne1BG
+  - SkinBG
+  - SkinHolder
+  - buyButtonPannel2
+  - Skin8
+  - Skin4
+  - Skin7
+  - diamondPack1
+  - Skin5
+  - rate
+  - WatchAds
+  - youtubeButton
+  - StoreFreeDiamondsButton
+  - Skin1
+  - Skin6
+  m_Tag: StoreSpriteAltas
+  m_IsVariant: 0

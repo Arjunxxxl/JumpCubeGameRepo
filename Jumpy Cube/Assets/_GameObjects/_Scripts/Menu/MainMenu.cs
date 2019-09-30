@@ -23,6 +23,11 @@ public class MainMenu : MonoBehaviour
     [Header("Buttons")]
     public Button[] allbuttons;
 
+    [Header("Data for optimization")]
+    public GameObject player;
+    public GameObject tileSystem;
+    public GameObject playerChild;
+
     public float mainMenuDisableDealy = 2.1f;
 
     [Header("Play Button Data")]
@@ -64,6 +69,10 @@ public class MainMenu : MonoBehaviour
         {
             b.interactable = true;
         }
+
+        tileSystem.SetActive(true);
+        playerChild = player.transform.GetChild(1).gameObject;
+        playerChild.SetActive(true);
     }
 
     // Update is called once per frame
@@ -102,6 +111,9 @@ public class MainMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        tileSystem.SetActive(true);
+        playerChild.SetActive(true);
+
         homeMenu.SetActive(true);
         store.SetActive(false);
         levels.SetActive(false);
@@ -118,6 +130,9 @@ public class MainMenu : MonoBehaviour
         stats.SetActive(false);
         settings.SetActive(false);
         optimizationMenu.SetActive(false);
+
+        tileSystem.SetActive(false);
+        playerChild.SetActive(false);
     }
 
     public void LevelButton()
