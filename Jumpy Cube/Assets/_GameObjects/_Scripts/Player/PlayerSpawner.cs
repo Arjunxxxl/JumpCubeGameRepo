@@ -14,7 +14,7 @@ public class PlayerSpawner : MonoBehaviour
     public bool startDisolveEffect;
     public float disolveEffectDelay = 0.2f;
 
-    Material playerMaterial;
+    public Material playerMaterial;
 
     MainMenu mainmenu;
 
@@ -46,17 +46,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         mainmenu = MainMenu.Instance;
 
-        for(int i = 0; i<Player.transform.childCount; i++)
-        {
-            if(Player.transform.GetChild(i).CompareTag("Cube"))
-            {
-                playerMaterial = Player.transform.GetChild(i).GetComponent<Renderer>().material;
-            }
-        }
-        
-        disolveEffect = playerMaterial.GetFloat("Vector1_D57CEFD5");
-        disolveEffect = 0;
-        playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+        GetChildCubeMaterial();
 
         isDisolveEffectDone = false;
         startDisolveEffect = false;
@@ -80,6 +70,21 @@ public class PlayerSpawner : MonoBehaviour
         {
             isDisolveEffectDone = true;
         }
+        playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+    }
+
+    public void GetChildCubeMaterial()
+    {
+        /*for (int i = 0; i < Player.transform.childCount; i++)
+        {
+            if (Player.transform.GetChild(i).CompareTag("Cube"))
+            {
+                playerMaterial = Player.transform.GetChild(i).GetComponent<Renderer>().material;
+            }
+        }*/
+
+        disolveEffect = playerMaterial.GetFloat("Vector1_D57CEFD5");
+        disolveEffect = 0;
         playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
     }
 

@@ -17,6 +17,7 @@ public class InGameMenu : MonoBehaviour
     public int diamondsCollected;
     public int diamondsMultiplier;
     public int diamondValue;
+    
 
     PlayerSpawner playerSpawner;
     TimelinePlayer timelinePlayer;

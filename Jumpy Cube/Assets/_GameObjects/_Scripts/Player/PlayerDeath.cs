@@ -9,6 +9,8 @@ public class PlayerDeath : MonoBehaviour
     public GameObject cube;
 
     GameOverMenu gameOverMenu;
+    InGameMenu inGameMenu;
+    DiamondScore diamondScore;
 
     [Header("Revival Data")]
     public GameObject hitEnemy;
@@ -35,25 +37,16 @@ public class PlayerDeath : MonoBehaviour
     void Start()
     {
         gameOverMenu = GameOverMenu.Instance;
+        inGameMenu = InGameMenu.Instance;
+        diamondScore = DiamondScore.Instance;
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).CompareTag("Cube"))
-            {
-                cube = transform.GetChild(i).gameObject;
-            }
-        }
+        SetPlayerChildCube();
 
         deathParticleSystem.SetActive(false);
         isDead = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -67,8 +60,20 @@ public class PlayerDeath : MonoBehaviour
             cube.SetActive(false);
             isDead = true;
 
+            diamondScore.SaveDiamondsCollected(inGameMenu.diamondsCollected);
+
             gameOverMenu.CaptureScreenShot();
         }
     }
 
+    public void SetPlayerChildCube()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).CompareTag("Cube"))
+            {
+                cube = transform.GetChild(i).gameObject;
+            }
+        }
+    }
 }

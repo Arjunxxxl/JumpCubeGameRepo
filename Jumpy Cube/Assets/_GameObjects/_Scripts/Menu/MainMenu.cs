@@ -111,6 +111,8 @@ public class MainMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        playerChild = player.transform.GetChild(1).gameObject;
+
         tileSystem.SetActive(true);
         playerChild.SetActive(true);
 
@@ -124,6 +126,8 @@ public class MainMenu : MonoBehaviour
 
     public void StoreButton()
     {
+        playerChild = player.transform.GetChild(1).gameObject;
+
         homeMenu.SetActive(false);
         store.SetActive(true);
         levels.SetActive(false);
