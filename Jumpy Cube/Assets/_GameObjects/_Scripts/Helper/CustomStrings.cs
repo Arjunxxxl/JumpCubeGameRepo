@@ -36,6 +36,18 @@ public class CustomStrings : MonoBehaviour
     public string COMMON_CUBE8 = "Common Cube 9";
     #endregion
 
+    #region Rare cubes string
+    public string RARE_CUBE0 = "Rare Cube 1";
+    public string RARE_CUBE1 = "Rare Cube 2";
+    public string RARE_CUBE2 = "Rare Cube 3";
+    public string RARE_CUBE3 = "Rare Cube 4";
+    public string RARE_CUBE4 = "Rare Cube 5";
+    public string RARE_CUBE5 = "Rare Cube 6";
+    public string RARE_CUBE6 = "Rare Cube 7";
+    public string RARE_CUBE7 = "Rare Cube 8";
+    public string RARE_CUBE8 = "Rare Cube 9";
+    #endregion
+
     #region Store Strings
     public string CUBE_SELECTED = "SELECTED";
     public string CUBE_UNLOCKED = "SELECT";

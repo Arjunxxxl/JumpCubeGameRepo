@@ -66,8 +66,14 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
-    public void SetPlayerChildCube()
+    public void SetPlayerChildCube(GameObject overrideCube = null)
     {
+        if(overrideCube)
+        {
+            cube = overrideCube;
+            return;
+        }
+
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).CompareTag("Cube"))

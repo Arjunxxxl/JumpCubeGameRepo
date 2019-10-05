@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInFrames: 0
-  timeAreaShownRange: {x: -0.027210198, y: 0.74555945}
+  timeAreaShownRange: {x: -0.0013277829, y: 0.77447903}
   showAudioWaveform: 1
   trackHeight: 30
   trackScale: 1
   playRangeEnabled: 0
   timeAreaPlayRange: {x: 3.4028235e+38, y: 3.4028235e+38}
-  windowTime: 0.5
+  windowTime: 0
   verticalScroll: 0
   showMarkerHeader: 0
   m_Keys:
@@ -69,12 +69,12 @@ MonoBehaviour:
     showMarkers: 1
     showInlineCurves: 0
     inlineAnimationCurveHeight: 100
-    lastInlineCurveDataID: -1
+    lastInlineCurveDataID: 38292
     inlineCurvesState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 
+      m_ExpandedIDs: ffffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -94,22 +94,22 @@ MonoBehaviour:
       m_SearchString: 
     inlineCurvesShownAreaInsideMargins:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0
+      y: -150
+      width: 0.77137786
+      height: 134.99997
     m_MarkerTimeStampsKeys: 
     m_MarkerTimeStampsValues: 
   - collapsed: 0
     showMarkers: 1
     showInlineCurves: 0
     inlineAnimationCurveHeight: 100
-    lastInlineCurveDataID: -1
+    lastInlineCurveDataID: 38294
     inlineCurvesState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 
+      m_ExpandedIDs: ffffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -129,22 +129,22 @@ MonoBehaviour:
       m_SearchString: 
     inlineCurvesShownAreaInsideMargins:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0
+      y: -150
+      width: 0.77137786
+      height: 134.99997
     m_MarkerTimeStampsKeys: 
     m_MarkerTimeStampsValues: 
   - collapsed: 0
     showMarkers: 1
     showInlineCurves: 0
     inlineAnimationCurveHeight: 100
-    lastInlineCurveDataID: -1
+    lastInlineCurveDataID: 38296
     inlineCurvesState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 
+      m_ExpandedIDs: ffffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -164,10 +164,10 @@ MonoBehaviour:
       m_SearchString: 
     inlineCurvesShownAreaInsideMargins:
       serializedVersion: 2
-      x: 1
-      y: 1
-      width: 1
-      height: 1
+      x: 0
+      y: 12
+      width: 0.77137786
+      height: 118.00001
     m_MarkerTimeStampsKeys: 
     m_MarkerTimeStampsValues: 
   - collapsed: 0

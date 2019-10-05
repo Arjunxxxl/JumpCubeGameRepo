@@ -20,6 +20,12 @@ public class CubeBoughtManager : MonoBehaviour
     public List<int> ownedCubes_commonIndex;
     public List<GameObject> commonCubes;
 
+    [Header("Cube bought data - rare")]
+    public int totalRareCubes;
+    public Transform rareCubeParent;
+    public List<int> ownedCubes_rareIndex;
+    public List<GameObject> rareCubes;
+
     [Space]
     public CubeColorManager cubeColorManager;
     public Store store;
@@ -33,6 +39,7 @@ public class CubeBoughtManager : MonoBehaviour
         ownedCubes_commonIndex = new List<int>();
 
         GetOwnedCommonCubes();
+        GetOwnedRareCubes();
 
         GetSelectedCubeType();
 
@@ -46,13 +53,7 @@ public class CubeBoughtManager : MonoBehaviour
         playerDeath = PlayerDeath.Instance;
         playerSpawner = PlayerSpawner.Instance;
         
-        store.SetCommonCubeButton();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        store.SetStoreButton(true);
     }
 
     void SetCube()
@@ -67,6 +68,14 @@ public class CubeBoughtManager : MonoBehaviour
 
             cubeColorManager.SetCubeColor_CommonCube(selectedCubeIndex);
         }
+        else if(selectedCubeType == CubeType.rare)
+        {
+            selectedCube = rareCubes[selectedCubeIndex];
+            selectedCube.transform.SetParent(player);
+            selectedCube.SetActive(true);
+
+            cubeColorManager.SetCubeColor_RareCube(selectedCubeIndex);
+        }
     }
 
     public void SetCube_From_Store()
@@ -77,12 +86,6 @@ public class CubeBoughtManager : MonoBehaviour
 
         if (selectedCubeType == CubeType.common)
         {
-            if (player.GetChild(1))
-            {
-                player.GetChild(1).gameObject.SetActive(false);
-                player.GetChild(1).transform.SetParent(commonCubeParent);
-            }
-
             selectedCube = commonCubes[selectedCubeIndex];
             selectedCube.transform.SetParent(player);
             selectedCube.SetActive(true);
@@ -93,7 +96,41 @@ public class CubeBoughtManager : MonoBehaviour
             cubeColorManager.SetCubeColor_CommonCube(selectedCubeIndex);
 
             playerSpawner.GetChildCubeMaterial();
-            playerDeath.SetPlayerChildCube();
+            playerDeath.SetPlayerChildCube(selectedCube);
+        }
+        else if(selectedCubeType == CubeType.rare)
+        {
+            selectedCube = rareCubes[selectedCubeIndex];
+            selectedCube.transform.SetParent(player);
+            selectedCube.SetActive(true);
+
+            playerMovement.playerTrail = player.transform.GetComponentInChildren<TrailRenderer>();
+            playerMovement.playerTrail.enabled = false;
+
+            cubeColorManager.SetCubeColor_RareCube(selectedCubeIndex);
+
+            playerSpawner.GetChildCubeMaterial();
+            playerDeath.SetPlayerChildCube(selectedCube);
+        }
+    }
+
+    public void ResetExistingCube()
+    {
+        if(selectedCubeType == CubeType.common)
+        {
+            if (player.GetChild(1))
+            {
+                player.GetChild(1).gameObject.SetActive(false);
+                player.GetChild(1).transform.SetParent(commonCubeParent);
+            }
+        }
+        else if (selectedCubeType == CubeType.rare)
+        {
+            if (player.GetChild(1))
+            {
+                player.GetChild(1).gameObject.SetActive(false);
+                player.GetChild(1).transform.SetParent(rareCubeParent);
+            }
         }
     }
 
@@ -164,6 +201,73 @@ public class CubeBoughtManager : MonoBehaviour
         }
     }
 
+    public void GetOwnedRareCubes()
+    {
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE0, 1) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(0))
+            {
+                ownedCubes_rareIndex.Add(0);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE1, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(1))
+            {
+                ownedCubes_rareIndex.Add(1);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE2, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(2))
+            {
+                ownedCubes_rareIndex.Add(2);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE3, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(3))
+            {
+                ownedCubes_rareIndex.Add(3);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE4, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(4))
+            {
+                ownedCubes_rareIndex.Add(4);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE5, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(5))
+            {
+                ownedCubes_rareIndex.Add(5);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE6, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(6))
+            {
+                ownedCubes_rareIndex.Add(6);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE7, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(7))
+            {
+                ownedCubes_rareIndex.Add(7);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE8, 0) == 1)
+        {
+            if (!ownedCubes_rareIndex.Contains(8))
+            {
+                ownedCubes_rareIndex.Add(8);
+            }
+        }
+    }
+
     public void GetSelectedCubeType()
     {
         selectedCubeType_index = PlayerPrefs.GetInt(customStrings.SELECTED_CUBE_TYPE, 0);
@@ -191,7 +295,7 @@ public class CubeBoughtManager : MonoBehaviour
                 break;
         }
     }
-
+    
     public void SetSelectedCubeType(CubeType cubeType)
     {
         switch (cubeType)

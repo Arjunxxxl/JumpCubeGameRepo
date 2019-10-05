@@ -14,24 +14,48 @@ public class PlayerSpawner : MonoBehaviour
     public bool startDisolveEffect;
     public float disolveEffectDelay = 0.2f;
 
+    [Header("Selected Cube Data")]
+    public CubeBoughtManager cubeBoughtManager;
+
+    [Header("Common Cube mat")]
     public Material playerMaterial;
 
+    [System.Serializable]
+    public class RareCubeMat
+    {
+        public Material[] rareMat1;
+        public Material[] rareMat2;
+        public Material[] rareMat3;
+        public Material[] rareMat4;
+        public Material[] rareMat5;
+        public Material[] rareMat6;
+        public Material[] rareMat7;
+        public Material[] rareMat8;
+        public Material[] rareMat9;
+    }
+    [SerializeField]
+    [Space]
+    public RareCubeMat rareCubeMat;
+
     MainMenu mainmenu;
+
+    int i;
+    int totalMat;
 
     #region SingleTon
     public static PlayerSpawner Instance;
     private void Awake()
     {
-        if(!Instance)
+        if (!Instance)
         {
             Instance = this;
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
 
-        if(!Player)
+        if (!Player)
         {
             Player = GameObject.FindGameObjectWithTag("Player");
         }
@@ -56,36 +80,310 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!mainmenu.isGameStart)
+        if (!mainmenu.isGameStart)
         {
             return;
         }
 
-        if(disolveEffect < 1.2 && !isDisolveEffectDone)
+        if (disolveEffect < 1.2 && !isDisolveEffectDone)
         {
-            if(startDisolveEffect)
+            if (startDisolveEffect)
+            {
                 disolveEffect += Time.deltaTime * disloveSpeed;
+            }
+
+            UpdatePlayerMat();
         }
-        else if(!isDisolveEffectDone)
+        else if (!isDisolveEffectDone)
         {
             isDisolveEffectDone = true;
         }
-        playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+    }
+
+    void UpdatePlayerMat()
+    {
+        if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.common)
+        {
+            playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+        }
+        else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.rare)
+        {
+            switch (cubeBoughtManager.selectedCubeIndex)
+            {
+                case 0:
+                    totalMat = rareCubeMat.rareMat1.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+
+                case 1:
+                    totalMat = rareCubeMat.rareMat2.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 2:
+                    totalMat = rareCubeMat.rareMat3.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 3:
+                    totalMat = rareCubeMat.rareMat4.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 4:
+                    totalMat = rareCubeMat.rareMat5.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 5:
+                    totalMat = rareCubeMat.rareMat6.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 6:
+                    totalMat = rareCubeMat.rareMat7.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 7:
+                    totalMat = rareCubeMat.rareMat8.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 8:
+                    totalMat = rareCubeMat.rareMat9.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+            }
+        }
     }
 
     public void GetChildCubeMaterial()
     {
-        /*for (int i = 0; i < Player.transform.childCount; i++)
+        if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.common)
         {
-            if (Player.transform.GetChild(i).CompareTag("Cube"))
-            {
-                playerMaterial = Player.transform.GetChild(i).GetComponent<Renderer>().material;
-            }
-        }*/
+            disolveEffect = playerMaterial.GetFloat("Vector1_D57CEFD5");
+            disolveEffect = 0;
+            playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+        }
+        else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.rare)
+        {
+            disolveEffect = 0;
 
-        disolveEffect = playerMaterial.GetFloat("Vector1_D57CEFD5");
-        disolveEffect = 0;
-        playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+            switch (cubeBoughtManager.selectedCubeIndex)
+            {
+                case 0:
+                    totalMat = rareCubeMat.rareMat1.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+
+                case 1:
+                    totalMat = rareCubeMat.rareMat2.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 2:
+                    totalMat = rareCubeMat.rareMat3.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 3:
+                    totalMat = rareCubeMat.rareMat4.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 4:
+                    totalMat = rareCubeMat.rareMat5.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 5:
+                    totalMat = rareCubeMat.rareMat6.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 6:
+                    totalMat = rareCubeMat.rareMat7.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 7:
+                    totalMat = rareCubeMat.rareMat8.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 8:
+                    totalMat = rareCubeMat.rareMat9.Length;
+                    if (totalMat == 1)
+                    {
+                        rareCubeMat.rareMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            rareCubeMat.rareMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+            }
+        }
     }
 
     IEnumerator DisolveEffectDelay()

@@ -73,8 +73,10 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.Timeline.Editor.dll:
     - UnityEditor.Timeline.SequenceHierarchy
+    - UnityEditor.Timeline.TimelineAssetViewModel
     - UnityEditor.Timeline.TimelineWindow
     Unity.Timeline.dll:
+    - UnityEngine.Timeline.ActivationTrack
     - UnityEngine.Timeline.AnimationTrack
     - UnityEngine.Timeline.MarkerTrack
     - UnityEngine.Timeline.TimelineAsset
@@ -193,105 +195,105 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9762}
     - Class: 114
-      Script: {instanceID: 9924}
+      Script: {instanceID: 9780}
     - Class: 114
-      Script: {instanceID: 9962}
+      Script: {instanceID: 9926}
     - Class: 114
-      Script: {instanceID: 10004}
+      Script: {instanceID: 9964}
     - Class: 114
-      Script: {instanceID: 10006}
+      Script: {instanceID: 9992}
     - Class: 114
-      Script: {instanceID: 10104}
+      Script: {instanceID: 10008}
     - Class: 114
-      Script: {instanceID: 10146}
+      Script: {instanceID: 10010}
     - Class: 114
-      Script: {instanceID: 10218}
+      Script: {instanceID: 10108}
     - Class: 114
-      Script: {instanceID: 10342}
+      Script: {instanceID: 10150}
     - Class: 114
-      Script: {instanceID: 10352}
+      Script: {instanceID: 10222}
     - Class: 114
-      Script: {instanceID: 10358}
+      Script: {instanceID: 10346}
     - Class: 114
-      Script: {instanceID: 10368}
+      Script: {instanceID: 10356}
     - Class: 114
-      Script: {instanceID: 10412}
+      Script: {instanceID: 10362}
     - Class: 114
-      Script: {instanceID: 10506}
+      Script: {instanceID: 10372}
+    - Class: 114
+      Script: {instanceID: 10416}
     - Class: 114
       Script: {instanceID: 10510}
     - Class: 114
       Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 10524}
+      Script: {instanceID: 10518}
     - Class: 114
       Script: {instanceID: 10528}
     - Class: 114
-      Script: {instanceID: 10530}
+      Script: {instanceID: 10532}
     - Class: 114
-      Script: {instanceID: 10558}
+      Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10596}
+      Script: {instanceID: 10562}
     - Class: 114
-      Script: {instanceID: 10700}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10716}
+      Script: {instanceID: 10704}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10746}
+      Script: {instanceID: 10726}
     - Class: 114
-      Script: {instanceID: 10760}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10770}
+      Script: {instanceID: 10764}
     - Class: 114
-      Script: {instanceID: 10830}
+      Script: {instanceID: 10774}
     - Class: 114
-      Script: {instanceID: 10866}
+      Script: {instanceID: 10834}
     - Class: 114
-      Script: {instanceID: 10950}
+      Script: {instanceID: 10870}
     - Class: 114
-      Script: {instanceID: 10978}
+      Script: {instanceID: 10954}
     - Class: 114
-      Script: {instanceID: 11052}
+      Script: {instanceID: 10982}
     - Class: 114
-      Script: {instanceID: 11084}
+      Script: {instanceID: 11056}
     - Class: 114
-      Script: {instanceID: 11086}
+      Script: {instanceID: 11088}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11090}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 11248}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11252}
     - Class: 114
-      Script: {instanceID: 11556}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 11594}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11670}
+      Script: {instanceID: 11598}
     - Class: 114
-      Script: {instanceID: 11736}
+      Script: {instanceID: 11674}
     - Class: 114
-      Script: {instanceID: 11746}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 11800}
+      Script: {instanceID: 11750}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11804}
     - Class: 114
-      Script: {instanceID: 11878}
+      Script: {instanceID: 11850}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 167438}
+      Script: {instanceID: 11886}
     - Class: 114
-      Script: {instanceID: 183142}
-    - Class: 114
-      Script: {instanceID: 307050}
+      Script: {instanceID: 11900}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -633,6 +635,12 @@ ScriptsOnlyBuild:
     className: IoSphereColorChanger
   - hash:
       serializedVersion: 2
+      Hash: 62eb64046ea6abea3287bc518292eb2b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CustomStrings
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -859,6 +867,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnvMapAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 3ec573810261913782d007a0e96c44e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Store
   - hash:
       serializedVersion: 2
       Hash: f08a111e17bb701f9c9ec57bb78d9920
@@ -1695,6 +1709,12 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
+      Hash: 4ae6e375b606fce886dbb0b8b17d4a77
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DiamondScore
+  - hash:
+      serializedVersion: 2
       Hash: b7d80d2b513f1602b94f25a3fa9496ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1741,24 +1761,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
-  - hash:
-      serializedVersion: 2
-      Hash: 3ec573810261913782d007a0e96c44e3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Store
-  - hash:
-      serializedVersion: 2
-      Hash: 4ae6e375b606fce886dbb0b8b17d4a77
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DiamondScore
-  - hash:
-      serializedVersion: 2
-      Hash: 62eb64046ea6abea3287bc518292eb2b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CustomStrings
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity
