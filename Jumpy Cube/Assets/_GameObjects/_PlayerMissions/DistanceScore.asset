@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad62065cf9aa5840b236815d8efd966, type: 3}
+  m_Name: DistanceScore
+  m_EditorClassIdentifier: 
+  isActiveTire1: 0
+  isActiveTire2: 0
+  isActiveTire3: 0
+  missionGoalTire1:
+    tile: distanceScore
+    description: distanceScore
+    requiredCoins: 0
+    requiredDistance: 50
+    requiredPlayCount: 0
+    requiedDiamondsSpendInStore: 0
+    scoreShareCount: 0
+  missionGoalTire2:
+    tile: tire2
+    description: desc2
+    requiredCoins: 0
+    requiredDistance: 50
+    requiredPlayCount: 0
+    requiedDiamondsSpendInStore: 0
+    scoreShareCount: 0
+  missionGoalTire3:
+    tile: tire3
+    description: desc3
+    requiredCoins: 0
+    requiredDistance: 80
+    requiredPlayCount: 0
+    requiedDiamondsSpendInStore: 0
+    scoreShareCount: 0
+  missionType: 1

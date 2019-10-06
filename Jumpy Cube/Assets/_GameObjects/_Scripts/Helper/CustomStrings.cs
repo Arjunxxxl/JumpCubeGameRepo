@@ -60,10 +60,19 @@ public class CustomStrings : MonoBehaviour
     public string LEGENDARY_CUBE8 = "Legendary Cube 9";
     #endregion
 
+    #region Mission cubes string
+    public string MISSION_CUBE0 = "Mission Cube 1";         //coin tire1
+    public string MISSION_CUBE1 = "Mission Cube 2";         //distance tire1
+    public string MISSION_CUBE2 = "Mission Cube 3";         //times game played tire1
+    public string MISSION_CUBE3 = "Mission Cube 4";         //times score shared tire1
+    public string MISSION_CUBE4 = "Mission Cube 5";         //diamond spend tire1
+    #endregion
+
     #region Store Strings
     public string CUBE_SELECTED = "SELECTED";
     public string CUBE_UNLOCKED = "SELECT";
     public string CUBE_LOCKED = "UNLOCK NOW";
+    public string MISSION_NOTDONE = "SKIP";
     #endregion
 
     #region Color Sceheme Strings
@@ -78,5 +87,15 @@ public class CustomStrings : MonoBehaviour
     public string COLOR_SCHEME_7 = "cs_7";
     public string COLOR_SCHEME_8 = "cs_8";
     #endregion
+
+    #region Saved Data String
+    public string GAME_FIRST_RUN = "GAME FIRST RUN";
+    public string TIMES_GAME_PLAYED = "Times game played";
+    public string TIMES_PLAYER_DIED = "TIMES PLAYER DIED";
+    public string TIME_SPEND_INGAME = "TIME SPEND IN GAME";
+    public string TOTAL_DIAMONDS_SPEND = "TOTAL DIAMONDS SPEND";
+    public string TIMES_SCORE_SHARED = "TIMES SCORE SHARED";
+    #endregion
+
 
 }

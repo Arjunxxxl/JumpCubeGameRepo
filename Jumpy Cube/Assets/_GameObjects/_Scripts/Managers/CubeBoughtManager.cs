@@ -32,6 +32,12 @@ public class CubeBoughtManager : MonoBehaviour
     public List<int> ownedCubes_legendaryIndex;
     public List<GameObject> legendaryCubes;
 
+    [Header("Cube bought data - MISSION")]
+    public int totalMissionCubes;
+    public Transform missionCubeParent;
+    public List<int> ownedCubes_missionIndex;
+    public List<GameObject> missionCubes;
+
     [Space]
     public CubeColorManager cubeColorManager;
     public Store store;
@@ -47,6 +53,7 @@ public class CubeBoughtManager : MonoBehaviour
         GetOwnedCommonCubes();
         GetOwnedRareCubes();
         GetOwnedLegendaryCubes();
+        GetOwnedMissionCubes();
 
         GetSelectedCubeType();
 
@@ -90,6 +97,14 @@ public class CubeBoughtManager : MonoBehaviour
             selectedCube.SetActive(true);
 
             cubeColorManager.SetCubeColor_LegendaryCube(selectedCubeIndex);
+        }
+        else if (selectedCubeType == CubeType.mission_cube)
+        {
+            selectedCube = missionCubes[selectedCubeIndex];
+            selectedCube.transform.SetParent(player);
+            selectedCube.SetActive(true);
+
+            cubeColorManager.SetCubeColor_MissionCube(selectedCubeIndex);
         }
     }
 
@@ -141,6 +156,20 @@ public class CubeBoughtManager : MonoBehaviour
             playerSpawner.GetChildCubeMaterial();
             playerDeath.SetPlayerChildCube(selectedCube);
         }
+        else if (selectedCubeType == CubeType.mission_cube)
+        {
+            selectedCube = missionCubes[selectedCubeIndex];
+            selectedCube.transform.SetParent(player);
+            selectedCube.SetActive(true);
+
+            playerMovement.playerTrail = player.transform.GetComponentInChildren<TrailRenderer>();
+            playerMovement.playerTrail.enabled = false;
+
+            cubeColorManager.SetCubeColor_MissionCube(selectedCubeIndex);
+
+            playerSpawner.GetChildCubeMaterial();
+            playerDeath.SetPlayerChildCube(selectedCube);
+        }
     }
 
     public void ResetExistingCube()
@@ -167,6 +196,14 @@ public class CubeBoughtManager : MonoBehaviour
             {
                 player.GetChild(1).gameObject.SetActive(false);
                 player.GetChild(1).transform.SetParent(legendaryCubeParent);
+            }
+        }
+        else if (selectedCubeType == CubeType.mission_cube)
+        {
+            if (player.GetChild(1))
+            {
+                player.GetChild(1).gameObject.SetActive(false);
+                player.GetChild(1).transform.SetParent(missionCubeParent);
             }
         }
     }
@@ -368,6 +405,45 @@ public class CubeBoughtManager : MonoBehaviour
             if (!ownedCubes_legendaryIndex.Contains(8))
             {
                 ownedCubes_legendaryIndex.Add(8);
+            }
+        }
+    }
+
+    public void GetOwnedMissionCubes()
+    {
+        if (PlayerPrefs.GetInt(customStrings.MISSION_CUBE0, 0) == 1)
+        {
+            if (!ownedCubes_missionIndex.Contains(0))
+            {
+                ownedCubes_missionIndex.Add(0);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.MISSION_CUBE1, 0) == 1)
+        {
+            if (!ownedCubes_missionIndex.Contains(1))
+            {
+                ownedCubes_missionIndex.Add(1);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.MISSION_CUBE2, 0) == 1)
+        {
+            if (!ownedCubes_missionIndex.Contains(2))
+            {
+                ownedCubes_missionIndex.Add(2);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.MISSION_CUBE3, 0) == 1)
+        {
+            if (!ownedCubes_missionIndex.Contains(3))
+            {
+                ownedCubes_missionIndex.Add(3);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.MISSION_CUBE4, 0) == 1)
+        {
+            if (!ownedCubes_missionIndex.Contains(4))
+            {
+                ownedCubes_missionIndex.Add(4);
             }
         }
     }

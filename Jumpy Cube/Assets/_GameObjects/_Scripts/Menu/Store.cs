@@ -7,12 +7,14 @@ public class Store : MonoBehaviour
     [Header("Diamond data")]
     public TMP_Text ownedDiamondTxt;
     public int ownedDiamonds;
+    public int inGameCollectedDiamonds;
 
     [Header("Cubes and color scheme Cost")]
     int colorSchemeCost = 1;
     int commonCubeCost = 5;
     int rareCubeCost = 10;
     int legendaryCubeCost = 20;
+    int missionCubeCost = 30;
 
     [Header("Button color data")]
     public Color colorLocked;
@@ -50,25 +52,40 @@ public class Store : MonoBehaviour
     public TMP_Text[] legendaryCubeText;
     public GameObject[] legendaryCubeInfo;
 
+    [Header("Mission cubes data")]
+    public int totalMissionCubes;
+    public Image[] missionCubesButton;
+    public Image[] missionCubeShine;
+    public TMP_Text[] missionCubeText;
+    public GameObject[] missionCubeSkipInfo;
+    public GameObject[] missionCubeInfo;
+    public TMP_Text[] missionStatus;
+
     [Space]
     public CubeBoughtManager cubeBoughtManager;
     public DiamondScore diamondScore;
     public CustomStrings customStrings;
     public TileColorThemeBoughtManager tileColorThemeBoughtManager;
     public SelectColorScheme selectColorScheme;
+    public MissionManager missionManager;
+
+    int diamondsSpend;
 
     CubeBoughtManager.CubeType previousType;
+
 
 
     private void Awake()
     {
         ownedDiamonds = diamondScore.GetDiamonds();
+        inGameCollectedDiamonds = diamondScore.GetInGameCollectedDiamonds();
         ownedDiamondTxt.text = ownedDiamonds + "";
 
         totalCommonCubes = cubeBoughtManager.totalCommonCubes;
         totalRareCubes = cubeBoughtManager.totalRareCubes;
         totalLegendaryCubes = cubeBoughtManager.totalLegndaryCubes;
         totalColorScheme = tileColorThemeBoughtManager.totalColorScheme;
+        totalMissionCubes = cubeBoughtManager.totalMissionCubes;
     }
 
 
@@ -78,6 +95,8 @@ public class Store : MonoBehaviour
         SetRareCubeButton(_override);
         SetLegendaryCubeButton(_override);
         SetColorSchemeButton(_override);
+        SetMissionCubeButton(_override);
+        SetMissionDescription(_override);
     }
 
     public void SetColorSchemeButton(bool _override = false)
@@ -279,12 +298,114 @@ public class Store : MonoBehaviour
         }
     }
 
+    public void SetMissionCubeButton(bool _override = false)
+    {
+        if (!_override)
+        {
+            if (cubeBoughtManager.selectedCubeType != CubeBoughtManager.CubeType.mission_cube && previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                return;
+            }
+        }
+
+        for (int i = 0; i < totalMissionCubes; i++)
+        {
+            if (cubeBoughtManager.ownedCubes_missionIndex.Contains(i))
+            {
+                if (cubeBoughtManager.selectedCubeIndex == i)
+                {
+                    if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.mission_cube)
+                    {
+                        missionCubesButton[i].color = colorSelected;
+                        missionCubeShine[i].color = colorSelectedShine;
+
+                        missionCubeText[i].text = customStrings.CUBE_SELECTED;
+                    }
+                    else
+                    {
+                        missionCubesButton[i].color = colorUnlocked;
+                        missionCubeShine[i].color = colorUnlockedShine;
+
+                        missionCubeText[i].text = customStrings.CUBE_UNLOCKED;
+                    }
+                }
+                else
+                {
+                    missionCubesButton[i].color = colorUnlocked;
+                    missionCubeShine[i].color = colorUnlockedShine;
+
+                    missionCubeText[i].text = customStrings.CUBE_UNLOCKED;
+                }
+
+                missionCubeInfo[i].SetActive(false);
+                missionCubeSkipInfo[i].SetActive(false);
+            }
+            else
+            {
+                missionCubesButton[i].color = colorLocked;
+                missionCubeShine[i].color = colorLockedShine;
+
+                missionCubeText[i].text = customStrings.MISSION_NOTDONE;
+
+                missionCubeInfo[i].SetActive(true);
+                missionCubeSkipInfo[i].SetActive(true);
+            }
+        }
+    }
+
+    public void SetMissionDescription(bool _override = false)
+    {
+        if (!_override)
+        {
+            return;
+        }
+        
+        for (int i = 0; i < totalMissionCubes; i++)
+        {
+            if (!cubeBoughtManager.ownedCubes_missionIndex.Contains(i))
+            {
+                switch(i)
+                {
+                    case 0:
+                        missionStatus[i].text = "Collect " + inGameCollectedDiamonds + "/" + 200;
+                        break;
+
+                    case 1:
+                        missionStatus[i].text = "Reach 60 Points";
+                        break;
+
+                    case 2:
+                        missionStatus[i].text = "Play game " + PlayerPrefs.GetInt(customStrings.TIMES_GAME_PLAYED, 0) + "/" + 2; 
+                        break;
+
+                    case 3:
+                        missionStatus[i].text = "Share Score " + PlayerPrefs.GetInt(customStrings.TIMES_SCORE_SHARED, 0) + "/" + 1;
+                        break;
+
+                    case 4:
+                        missionStatus[i].text = "Spend " + PlayerPrefs.GetInt(customStrings.TOTAL_DIAMONDS_SPEND, 0) + "/" + 200;
+                        break;
+                }
+            }
+        }
+    }
+
     void SpendDiamondsToBuyCube(int amt)
     {
         diamondScore.CubeBought(amt);
 
         ownedDiamonds = diamondScore.GetDiamonds();
         ownedDiamondTxt.text = ownedDiamonds + "";
+
+        diamondsSpend = PlayerPrefs.GetInt(customStrings.TOTAL_DIAMONDS_SPEND, 0);
+        diamondsSpend += amt;
+
+        PlayerPrefs.SetInt(customStrings.TOTAL_DIAMONDS_SPEND, diamondsSpend);
+        //CODE TO UPDATE THE DIAMOND SPEND PLAYER PREF BEFORE THIS LINE
+        missionManager.CheckingForDiamondSpendMission(diamondsSpend);
+
+        cubeBoughtManager.GetOwnedMissionCubes();
+        SetMissionCubeButton(true);
     }
 
     ///*   FUNCTION FOR STORE BUTTON - COLOR SCHEME   *///
@@ -1799,6 +1920,53 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.legendary);
 
                 cubeBoughtManager.GetOwnedLegendaryCubes();
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+    }
+
+
+    ///** FUNCTIONS FOR STORE BUTTON - MISSION CUBES   *///
+    public void MissionCybeType0()
+    {
+        previousType = cubeBoughtManager.selectedCubeType;
+
+        if (cubeBoughtManager.ownedCubes_missionIndex.Contains(0))
+        {
+            if (cubeBoughtManager.selectedCubeIndex != 0 || previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                cubeBoughtManager.ResetExistingCube();
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 0);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+        else
+        {
+            if (ownedDiamonds > missionCubeCost)
+            {
+                SpendDiamondsToBuyCube(missionCubeCost);
+
+                cubeBoughtManager.ResetExistingCube();
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
+
+                PlayerPrefs.SetInt(customStrings.MISSION_CUBE0, 1);
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 0);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.GetOwnedMissionCubes();
 
                 cubeBoughtManager.SetCube_From_Store();
 

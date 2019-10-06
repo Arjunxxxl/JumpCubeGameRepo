@@ -60,7 +60,7 @@ public class PlayerDeath : MonoBehaviour
             cube.SetActive(false);
             isDead = true;
 
-            diamondScore.SaveDiamondsCollected(inGameMenu.realNumberOfDiamondsCollected);
+            diamondScore.SaveDiamondsCollected(inGameMenu.realNumberOfDiamondsCollected, false);
 
             inGameMenu.realNumberOfDiamondsCollected = 0;
 

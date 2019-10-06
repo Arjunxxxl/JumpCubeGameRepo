@@ -8,6 +8,7 @@ public class CubeColorManager : MonoBehaviour
     public Color[] common_color;
     public Color[] rare_color;
     public Color[] legendary_color;
+    public Color[] mission_color;
 
     [Header("Cube disolve effect color data")]
     [ColorUsage(true, true)]
@@ -16,6 +17,8 @@ public class CubeColorManager : MonoBehaviour
     public Color[] glow_rare_color;
     [ColorUsage(true, true)]
     public Color[] glow_legendary_color;
+    [ColorUsage(true, true)]
+    public Color[] glow_mission_color;
 
     [Header("Cube trail color data")]
     [ColorUsage(true, true)]
@@ -24,6 +27,8 @@ public class CubeColorManager : MonoBehaviour
     public Color[] trail_rare_cube;
     [ColorUsage(true, true)]
     public Color[] trail_legendary_cube;
+    [ColorUsage(true, true)]
+    public Color[] trail_mission_cube;
 
     [Header("Cube death trail color data")]
     [ColorUsage(true, true)]
@@ -32,6 +37,8 @@ public class CubeColorManager : MonoBehaviour
     public Color[] death_trail_rare_cube;
     [ColorUsage(true, true)]
     public Color[] death_trail_legendary_cube;
+    [ColorUsage(true, true)]
+    public Color[] death_trail_mission_cube;
 
     [Header("Cube material Data")]
     public Material commonCubeMat;
@@ -44,6 +51,9 @@ public class CubeColorManager : MonoBehaviour
     [Space]
     public Material legendaryCubeMat;
     public Material legendaryCubeTrailMat;
+    [Space]
+    public Material missionCubeMat;
+    public Material missionCubeTrailMat;
 
     #region SingleTon
     public static CubeColorManager Instance;
@@ -91,4 +101,13 @@ public class CubeColorManager : MonoBehaviour
         deathTrailMat.SetColor("_EmissionColor", death_trail_legendary_cube[selectedCubeIndex]);
     }
 
+    public void SetCubeColor_MissionCube(int selectedCubeIndex)
+    {
+        missionCubeMat.SetColor("Color_726517DF", mission_color[selectedCubeIndex]);
+        missionCubeMat.SetColor("Color_1E66CDFD", glow_mission_color[selectedCubeIndex]);
+
+        playerDeathParticleMat.SetColor("_BaseColor", mission_color[selectedCubeIndex]);
+        missionCubeTrailMat.SetColor("_EmissionColor", trail_mission_cube[selectedCubeIndex]);
+        deathTrailMat.SetColor("_EmissionColor", death_trail_mission_cube[selectedCubeIndex]);
+    }
 }

@@ -12,10 +12,6 @@ public class MissionGoal
     public int requiredCoins;
     public int requiredDistance;
     public int requiredPlayCount;
-    public int requiredDeath;
-    public int requiredJump;
-    public int requiredPlayTime;
     public int requiedDiamondsSpendInStore;
-    public int requiredColorChangedIOSphere;
     public int scoreShareCount;
 }

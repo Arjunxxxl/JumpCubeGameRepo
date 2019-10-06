@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class SavedData : MonoBehaviour
 {
-    public static string GAME_FIRST_RUN = "GAME FIRST RUN";
+    public CustomStrings customStrings;
+
     int GAME_FIRST_RUN_INT;
     public bool isRunningForFirstTime;
+
+    int timesGamePlayed;
+    int diamondsSpendInStore;
+    int timesScoreShared;
 
     #region SingleTon
     public static SavedData Instance;
@@ -25,30 +30,40 @@ public class SavedData : MonoBehaviour
 
     }
     #endregion;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     void GameRunningForFirstTime()
     {
-        GAME_FIRST_RUN_INT = PlayerPrefs.GetInt(GAME_FIRST_RUN, 0);
+        GAME_FIRST_RUN_INT = PlayerPrefs.GetInt(customStrings.GAME_FIRST_RUN, 0);
         if (GAME_FIRST_RUN_INT == 0)
         {
             isRunningForFirstTime = true;
-            PlayerPrefs.SetInt(GAME_FIRST_RUN, 1);
+            PlayerPrefs.SetInt(customStrings.GAME_FIRST_RUN, 1);
         }
         else
         {
             isRunningForFirstTime = false;
         }
+    }
+
+    public void UpdateTimesGamePlayed()
+    {
+        timesGamePlayed = PlayerPrefs.GetInt(customStrings.TIMES_GAME_PLAYED, 0);
+        timesGamePlayed++;
+        PlayerPrefs.SetInt(customStrings.TIMES_GAME_PLAYED, timesGamePlayed);
+    }
+
+    public void UpdateDiamondsSpendInStore(int amt)
+    {
+        diamondsSpendInStore = PlayerPrefs.GetInt(customStrings.TOTAL_DIAMONDS_SPEND, 0);
+        diamondsSpendInStore += amt;
+        PlayerPrefs.SetInt(customStrings.TOTAL_DIAMONDS_SPEND, diamondsSpendInStore);
+    }
+
+    public void UpdateTimesScoreShared()
+    {
+        timesScoreShared = PlayerPrefs.GetInt(customStrings.TIMES_SCORE_SHARED, 0);
+        timesScoreShared++;
+        PlayerPrefs.SetInt(customStrings.TIMES_SCORE_SHARED, timesScoreShared);
     }
 }

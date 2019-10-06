@@ -13,7 +13,8 @@ public class DistanceScore : MonoBehaviour
     public int distance;
 
     public TMP_Text scoreTxt;
-    
+
+    MainMenu mainMenu;
     MissionManager missionManager;
 
     #region SingleTon
@@ -35,6 +36,7 @@ public class DistanceScore : MonoBehaviour
     void Start()
     {
         missionManager = MissionManager.Instance;
+        mainMenu = MainMenu.Instance;
 
         if(!player)
         {
@@ -50,6 +52,11 @@ public class DistanceScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!mainMenu.isGameStart)
+        {
+            return;
+        }
+
         finalPosX = player.position.x;
         dist = (initialPosX - finalPosX);
         dist *= distanceMultiplier;

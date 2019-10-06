@@ -56,7 +56,26 @@ public class PlayerSpawner : MonoBehaviour
     [Space]
     public LegendaryCubeMat legendaryCubeMat;
 
+    [System.Serializable]
+    public class MissionCubeMat
+    {
+        public Material commonMat;
+        public Material[] missionMat1;
+        public Material[] missionMat2;
+        public Material[] missionMat3;
+        public Material[] missionMat4;
+        public Material[] missionMat5;
+        public Material[] missionMat6;
+        public Material[] missionMat7;
+        public Material[] missionMat8;
+        public Material[] missionMat9;
+    }
+    [SerializeField]
+    [Space]
+    public MissionCubeMat missionCubeMat;
+
     MainMenu mainmenu;
+    MissionManager missionManager;
 
     int i;
     int totalMat;
@@ -88,6 +107,7 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         mainmenu = MainMenu.Instance;
+        missionManager = MissionManager.Instance;
 
         GetChildCubeMaterial();
 
@@ -116,6 +136,7 @@ public class PlayerSpawner : MonoBehaviour
         else if (!isDisolveEffectDone)
         {
             isDisolveEffectDone = true;
+            missionManager.CheckingForTimesGamePlayedMission();
         }
     }
 
@@ -463,6 +484,177 @@ public class PlayerSpawner : MonoBehaviour
                         for (i = 0; i < totalMat; i++)
                         {
                             legendaryCubeMat.legendaryMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+            }
+        }
+        else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.mission_cube)
+        {
+            missionCubeMat.commonMat.SetFloat("Vector1_D57CEFD5", disolveEffect);
+
+            switch (cubeBoughtManager.selectedCubeIndex)
+            {
+                case 0:
+                    totalMat = missionCubeMat.missionMat1.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+
+                case 1:
+                    totalMat = missionCubeMat.missionMat2.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 2:
+                    totalMat = missionCubeMat.missionMat3.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 3:
+                    totalMat = missionCubeMat.missionMat4.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 4:
+                    totalMat = missionCubeMat.missionMat5.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 5:
+                    totalMat = missionCubeMat.missionMat6.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 6:
+                    totalMat = missionCubeMat.missionMat7.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 7:
+                    totalMat = missionCubeMat.missionMat8.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 8:
+                    totalMat = missionCubeMat.missionMat9.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
                         }
                     }
                     break;
@@ -820,6 +1012,179 @@ public class PlayerSpawner : MonoBehaviour
                         for (i = 0; i < totalMat; i++)
                         {
                             legendaryCubeMat.legendaryMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+            }
+        }
+        else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.mission_cube)
+        {
+            disolveEffect = 0;
+
+            missionCubeMat.commonMat.SetFloat("Vector1_D57CEFD5", disolveEffect);
+
+            switch (cubeBoughtManager.selectedCubeIndex)
+            {
+                case 0:
+                    totalMat = missionCubeMat.missionMat1.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+
+                case 1:
+                    totalMat = missionCubeMat.missionMat2.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 2:
+                    totalMat = missionCubeMat.missionMat3.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 3:
+                    totalMat = missionCubeMat.missionMat4.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 4:
+                    totalMat = missionCubeMat.missionMat5.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 5:
+                    totalMat = missionCubeMat.missionMat6.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 6:
+                    totalMat = missionCubeMat.missionMat7.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 7:
+                    totalMat = missionCubeMat.missionMat8.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        }
+                    }
+                    break;
+                case 8:
+                    totalMat = missionCubeMat.missionMat9.Length;
+                    if (totalMat == 0)
+                    {
+                        return;
+                    }
+                    else if (totalMat == 1)
+                    {
+                        missionCubeMat.missionMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                    }
+                    else
+                    {
+                        for (i = 0; i < totalMat; i++)
+                        {
+                            missionCubeMat.missionMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
                         }
                     }
                     break;

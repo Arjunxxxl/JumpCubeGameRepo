@@ -5,11 +5,16 @@ using UnityEngine;
 public class DiamondScore : MonoBehaviour
 {
     public string TOTAL_DIAMOND_STR = "TOTAL_DIAMOND_STR";
+    public string TOTAL_COLLECTED_STR = "TOTAL_COLLECTED_STR";
     public int totalDiamonds;
+    public int collectedDiamonds;
+    
+    public MissionManager missionManager;
 
     int temp;
     int temp2;
-
+    int temp3;
+    
     #region SingleTon
     public static DiamondScore Instance;
     private void Awake()
@@ -25,11 +30,28 @@ public class DiamondScore : MonoBehaviour
     }
     #endregion
 
-    public void SaveDiamondsCollected(int diamonds)
+    public void SaveDiamondsCollected(int diamonds, bool isDiamondsBought_OR_ADs)
     {
         totalDiamonds = GetDiamonds();
+        collectedDiamonds = GetInGameCollectedDiamonds();
+
         temp = totalDiamonds + diamonds;
+
         PlayerPrefs.SetInt(TOTAL_DIAMOND_STR, temp);
+
+        if(!isDiamondsBought_OR_ADs)
+        {
+            temp3 = collectedDiamonds + diamonds;
+            missionManager.CheckingForDiamondCollectMission(temp);
+
+            PlayerPrefs.SetInt(TOTAL_COLLECTED_STR, temp);
+        }
+    }
+
+    public int GetInGameCollectedDiamonds()
+    {
+        int d = PlayerPrefs.GetInt(TOTAL_COLLECTED_STR, 0);
+        return d;
     }
 
     public int GetDiamonds()
@@ -41,7 +63,7 @@ public class DiamondScore : MonoBehaviour
     public void CubeBought(int diamond_amt)
     {
         temp2 = -1 * diamond_amt;
-        SaveDiamondsCollected(temp2);
+        SaveDiamondsCollected(temp2, false);
     }
 
 }

@@ -32,6 +32,8 @@ public class GameOverMenu : MonoBehaviour
     PlayerMovement playerMovement;
     LoadLevel loadLevel;
     TimelinePlayer timelinePlayer;
+    MissionManager missionManager;
+    
 
     #region SingleTon
     public static GameOverMenu Instance;
@@ -55,6 +57,7 @@ public class GameOverMenu : MonoBehaviour
         loadLevel = LoadLevel.Instance;
         timelinePlayer = TimelinePlayer.Instance;
         playerMovement = PlayerMovement.Instance;
+        missionManager = MissionManager.Instance;
 
 
         gameOverMenu.SetActive(false);
@@ -123,6 +126,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void ShareScreenshotButtonPressed()
     {
+        missionManager.CheckingForShareScoreMission();
         StartCoroutine(ShareScreenshot());
     }
 
