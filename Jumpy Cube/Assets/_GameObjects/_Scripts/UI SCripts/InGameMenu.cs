@@ -17,6 +17,7 @@ public class InGameMenu : MonoBehaviour
     public int diamondsCollected;
     public int diamondsMultiplier;
     public int diamondValue;
+    public int realNumberOfDiamondsCollected;
     
 
     PlayerSpawner playerSpawner;
@@ -49,6 +50,7 @@ public class InGameMenu : MonoBehaviour
 
         diamondsMultiplier = 1;
         diamondsCollected = 0;
+        realNumberOfDiamondsCollected = 0;
         diamondValue = 1;
 
         diamondsCollected_txt.text = diamondsCollected + "";
@@ -72,6 +74,7 @@ public class InGameMenu : MonoBehaviour
     public void DiamondCollected()
     {
         diamondsCollected = diamondsCollected + (diamondValue * diamondsMultiplier);
+        realNumberOfDiamondsCollected = realNumberOfDiamondsCollected + (diamondValue * diamondsMultiplier);
 
         diamondsCollected_txt.text = diamondsCollected + "";
     }

@@ -26,6 +26,12 @@ public class CubeBoughtManager : MonoBehaviour
     public List<int> ownedCubes_rareIndex;
     public List<GameObject> rareCubes;
 
+    [Header("Cube bought data - legendary")]
+    public int totalLegndaryCubes;
+    public Transform legendaryCubeParent;
+    public List<int> ownedCubes_legendaryIndex;
+    public List<GameObject> legendaryCubes;
+
     [Space]
     public CubeColorManager cubeColorManager;
     public Store store;
@@ -40,6 +46,7 @@ public class CubeBoughtManager : MonoBehaviour
 
         GetOwnedCommonCubes();
         GetOwnedRareCubes();
+        GetOwnedLegendaryCubes();
 
         GetSelectedCubeType();
 
@@ -75,6 +82,14 @@ public class CubeBoughtManager : MonoBehaviour
             selectedCube.SetActive(true);
 
             cubeColorManager.SetCubeColor_RareCube(selectedCubeIndex);
+        }
+        else if (selectedCubeType == CubeType.legendary)
+        {
+            selectedCube = legendaryCubes[selectedCubeIndex];
+            selectedCube.transform.SetParent(player);
+            selectedCube.SetActive(true);
+
+            cubeColorManager.SetCubeColor_LegendaryCube(selectedCubeIndex);
         }
     }
 
@@ -112,6 +127,20 @@ public class CubeBoughtManager : MonoBehaviour
             playerSpawner.GetChildCubeMaterial();
             playerDeath.SetPlayerChildCube(selectedCube);
         }
+        else if (selectedCubeType == CubeType.legendary)
+        {
+            selectedCube = legendaryCubes[selectedCubeIndex];
+            selectedCube.transform.SetParent(player);
+            selectedCube.SetActive(true);
+
+            playerMovement.playerTrail = player.transform.GetComponentInChildren<TrailRenderer>();
+            playerMovement.playerTrail.enabled = false;
+
+            cubeColorManager.SetCubeColor_LegendaryCube(selectedCubeIndex);
+
+            playerSpawner.GetChildCubeMaterial();
+            playerDeath.SetPlayerChildCube(selectedCube);
+        }
     }
 
     public void ResetExistingCube()
@@ -130,6 +159,14 @@ public class CubeBoughtManager : MonoBehaviour
             {
                 player.GetChild(1).gameObject.SetActive(false);
                 player.GetChild(1).transform.SetParent(rareCubeParent);
+            }
+        }
+        else if (selectedCubeType == CubeType.legendary)
+        {
+            if (player.GetChild(1))
+            {
+                player.GetChild(1).gameObject.SetActive(false);
+                player.GetChild(1).transform.SetParent(legendaryCubeParent);
             }
         }
     }
@@ -203,7 +240,7 @@ public class CubeBoughtManager : MonoBehaviour
 
     public void GetOwnedRareCubes()
     {
-        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE0, 1) == 1)
+        if (PlayerPrefs.GetInt(customStrings.RARE_CUBE0, 0) == 1)
         {
             if (!ownedCubes_rareIndex.Contains(0))
             {
@@ -264,6 +301,73 @@ public class CubeBoughtManager : MonoBehaviour
             if (!ownedCubes_rareIndex.Contains(8))
             {
                 ownedCubes_rareIndex.Add(8);
+            }
+        }
+    }
+
+    public void GetOwnedLegendaryCubes()
+    {
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE0, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(0))
+            {
+                ownedCubes_legendaryIndex.Add(0);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE1, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(1))
+            {
+                ownedCubes_legendaryIndex.Add(1);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE2, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(2))
+            {
+                ownedCubes_legendaryIndex.Add(2);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE3, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(3))
+            {
+                ownedCubes_legendaryIndex.Add(3);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE4, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(4))
+            {
+                ownedCubes_legendaryIndex.Add(4);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE5, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(5))
+            {
+                ownedCubes_legendaryIndex.Add(5);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE6, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(6))
+            {
+                ownedCubes_legendaryIndex.Add(6);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE7, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(7))
+            {
+                ownedCubes_legendaryIndex.Add(7);
+            }
+        }
+        if (PlayerPrefs.GetInt(customStrings.LEGENDARY_CUBE8, 0) == 1)
+        {
+            if (!ownedCubes_legendaryIndex.Contains(8))
+            {
+                ownedCubes_legendaryIndex.Add(8);
             }
         }
     }

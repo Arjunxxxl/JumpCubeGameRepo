@@ -23,10 +23,10 @@ Material:
     m_Floats:
     - Vector1_9881585C: 10
     - Vector1_CAA53FAE: 0.02
-    - Vector1_D57CEFD5: 1.2079115
+    - Vector1_D57CEFD5: 0
     m_Colors:
-    - Color_1E66CDFD: {r: 11.984314, g: 0, b: 0.10550804, a: 0}
-    - Color_726517DF: {r: 0, g: 0.06666667, b: 0.77254903, a: 1}
+    - Color_1E66CDFD: {r: 11.984314, g: 0.107414626, b: 0, a: 1}
+    - Color_726517DF: {r: 0.77254903, g: 0, b: 0.5998178, a: 1}
 --- !u!114 &6431796208030798902
 MonoBehaviour:
   m_ObjectHideFlags: 11

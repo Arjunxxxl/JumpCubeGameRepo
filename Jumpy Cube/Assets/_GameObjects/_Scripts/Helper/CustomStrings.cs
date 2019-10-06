@@ -48,9 +48,35 @@ public class CustomStrings : MonoBehaviour
     public string RARE_CUBE8 = "Rare Cube 9";
     #endregion
 
+    #region Legendary cubes string
+    public string LEGENDARY_CUBE0 = "Legendary Cube 1";
+    public string LEGENDARY_CUBE1 = "Legendary Cube 2";
+    public string LEGENDARY_CUBE2 = "Legendary Cube 3";
+    public string LEGENDARY_CUBE3 = "Legendary Cube 4";
+    public string LEGENDARY_CUBE4 = "Legendary Cube 5";
+    public string LEGENDARY_CUBE5 = "Legendary Cube 6";
+    public string LEGENDARY_CUBE6 = "Legendary Cube 7";
+    public string LEGENDARY_CUBE7 = "Legendary Cube 8";
+    public string LEGENDARY_CUBE8 = "Legendary Cube 9";
+    #endregion
+
     #region Store Strings
     public string CUBE_SELECTED = "SELECTED";
     public string CUBE_UNLOCKED = "SELECT";
     public string CUBE_LOCKED = "UNLOCK NOW";
     #endregion
+
+    #region Color Sceheme Strings
+    public string SELECTED_COLOR_SCHEME = "SELECTED COLOR SCHEME";
+    public string COLOR_SCHEME_DEFAULT1 = "cs_d1";
+    public string COLOR_SCHEME_1 = "cs_1";
+    public string COLOR_SCHEME_2 = "cs_2";
+    public string COLOR_SCHEME_3 = "cs_3";
+    public string COLOR_SCHEME_4 = "cs_4";
+    public string COLOR_SCHEME_5 = "cs_5";
+    public string COLOR_SCHEME_6 = "cs_6";
+    public string COLOR_SCHEME_7 = "cs_7";
+    public string COLOR_SCHEME_8 = "cs_8";
+    #endregion
+
 }
