@@ -37,6 +37,9 @@ public class StoreScrolling : MonoBehaviour
     public float minDistForFullScrolling = 500f;
     public float anchorPosX;
 
+    [Header("Panels for optimization")]
+    public GameObject[] panels;
+
     public RectTransform contentHolder;
 
     // Start is called before the first frame update
@@ -55,7 +58,23 @@ public class StoreScrolling : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        for(int i = 0; i < panels.Length; i++)
+        {
+            if(i == 0 || i == 1)
+            {
+                if(!panels[i].activeSelf)
+                {
+                    panels[i].SetActive(true);
+                }
+            }
+            else
+            {
+                if(panels[i].activeSelf)
+                {
+                    panels[i].SetActive(false);
+                }
+            }
+        }
     }
 
     private void OnDisable()
@@ -77,6 +96,8 @@ public class StoreScrolling : MonoBehaviour
         if (isAutoScroll)
         {
             contentHolder.anchoredPosition = Vector3.Lerp(contentHolder.anchoredPosition, pannelsPositions[currentPannelIndex], Time.deltaTime * autoScrollSpeed);
+            
+            ActivateDeActivatePanels();
 
             if ((contentHolder.anchoredPosition - pannelsPositions[currentPannelIndex]).magnitude < disableAutoScrollDist)
             {
@@ -109,6 +130,8 @@ public class StoreScrolling : MonoBehaviour
         SetPannelName_Color(currentPannelIndex, false);
 
         isAutoScroll = true;
+
+        ActivateDeActivatePanels();
     }
 
     public void RightButton()
@@ -123,6 +146,8 @@ public class StoreScrolling : MonoBehaviour
         SetPannelName_Color(currentPannelIndex, false);
 
         isAutoScroll = true;
+
+        ActivateDeActivatePanels();
     }
 
     public void TouchScrolling()
@@ -220,6 +245,70 @@ public class StoreScrolling : MonoBehaviour
         }
         changeBGcolor = true;
         pannelNameText.text = pannelNameTextValue[pannelIndex];
+    }
+
+    void ActivateDeActivatePanels()
+    {
+        if(currentPannelIndex == 0)
+        {
+            for(int i = 0; i < panels.Length; i++)
+            {
+                if (i == currentPannelIndex || i == currentPannelIndex + 1)
+                {
+                    if (!panels[i].activeSelf)
+                    {
+                        panels[i].SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (panels[i].activeSelf)
+                    {
+                        panels[i].SetActive(false);
+                    }
+                }
+            }
+        }
+        else if(currentPannelIndex == panels.Length - 1)
+        {
+            for (int i = 0; i < panels.Length; i++)
+            {
+                if (i == currentPannelIndex || i == currentPannelIndex - 1)
+                {
+                    if (!panels[i].activeSelf)
+                    {
+                        panels[i].SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (panels[i].activeSelf)
+                    {
+                        panels[i].SetActive(false);
+                    }
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < panels.Length; i++)
+            {
+                if (i == currentPannelIndex || i == currentPannelIndex + 1 || i == currentPannelIndex - 1)
+                {
+                    if (!panels[i].activeSelf)
+                    {
+                        panels[i].SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (panels[i].activeSelf)
+                    {
+                        panels[i].SetActive(false);
+                    }
+                }
+            }
+        }
     }
 
 }

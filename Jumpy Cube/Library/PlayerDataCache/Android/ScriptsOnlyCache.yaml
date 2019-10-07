@@ -294,7 +294,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11902}
     - Class: 114
-      Script: {instanceID: 383138}
+      Script: {instanceID: 11904}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1698,7 +1698,7 @@ ScriptsOnlyBuild:
     className: TextMeshSpawner
   - hash:
       serializedVersion: 2
-      Hash: b092640073ff1012f80b655f91c60d31
+      Hash: e930e514b6ffe472bd4ce4e42055d1e9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StoreScrolling
@@ -1740,6 +1740,12 @@ ScriptsOnlyBuild:
     className: PlayerDeath
   - hash:
       serializedVersion: 2
+      Hash: 2836c1833d25b22e0517b5f6cd335a5d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LifetimeStats
+  - hash:
+      serializedVersion: 2
       Hash: f2a9a42c7b49b77b0405739e5c845f6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1762,12 +1768,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
-  - hash:
-      serializedVersion: 2
-      Hash: 2836c1833d25b22e0517b5f6cd335a5d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LifetimeStats
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity
