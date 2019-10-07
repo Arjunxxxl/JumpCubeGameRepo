@@ -66,6 +66,7 @@ public class CustomStrings : MonoBehaviour
     public string MISSION_CUBE2 = "Mission Cube 3";         //times game played tire1
     public string MISSION_CUBE3 = "Mission Cube 4";         //times score shared tire1
     public string MISSION_CUBE4 = "Mission Cube 5";         //diamond spend tire1
+    public string MISSION_CUBE5 = "Mission Cube 6";         //number of jumps tire1
     #endregion
 
     #region Store Strings
@@ -88,13 +89,27 @@ public class CustomStrings : MonoBehaviour
     public string COLOR_SCHEME_8 = "cs_8";
     #endregion
 
-    #region Saved Data String
+    #region Saved Data String for missions and game running for first time
     public string GAME_FIRST_RUN = "GAME FIRST RUN";
     public string TIMES_GAME_PLAYED = "Times game played";
     public string TIMES_PLAYER_DIED = "TIMES PLAYER DIED";
     public string TIME_SPEND_INGAME = "TIME SPEND IN GAME";
     public string TOTAL_DIAMONDS_SPEND = "TOTAL DIAMONDS SPEND";
     public string TIMES_SCORE_SHARED = "TIMES SCORE SHARED";
+    public string TIMES_PLAYER_JUMPED = "TIMES PLAYER JUMPED";
+    #endregion
+
+    #region Saved Data strings for stats
+    public string HIGHSCORE = "HIGHSCORE";
+    public string AVERAGE_SCORE_2 = "AVERAGE_SCORE_player";
+    public string DIAMONDS_COLLECTED_IN_ONE_RUN1 = "MAX DIAMONDS COLLECTED IN ONE RUN1";
+    public string MAX_DIAMONDS_OWNED = "MAX DIAMONDS OWNED";
+    public string TOTAL_CUBES_OWNED = "TOTAL CUBES OWNED";
+
+    public string COMMON_CUNES_OWNED = "COMMON CUBES OWNED";
+    public string RARE_CUNES_OWNED = "RARE CUBES OWNED";
+    public string LEGENDARY_CUNES_OWNED = "LEGENDARY CUBES OWNED";
+    public string MISSION_CUNES_OWNED = "MISSION CUBES OWNED";
     #endregion
 
 

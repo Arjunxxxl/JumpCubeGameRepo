@@ -77,5 +77,7 @@ public class InGameMenu : MonoBehaviour
         realNumberOfDiamondsCollected = realNumberOfDiamondsCollected + (diamondValue * diamondsMultiplier);
 
         diamondsCollected_txt.text = diamondsCollected + "";
+
+        timelinePlayer.PlayDiamondCollectUiEffect();
     }
 }

@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     ObjectPooler objectPooler;
     PauseMenu pauseMenu;
     InGameMenu inGameMenu;
+    MissionManager missionManager;
 
     GameObject spawnedLandEffect;
     GameObject diamondCollectEffect;
@@ -105,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
         objectPooler = ObjectPooler.Instance;
         pauseMenu = PauseMenu.Instance;
         inGameMenu = InGameMenu.Instance;
+        missionManager = MissionManager.Instance;
 
         rb = GetComponent<Rigidbody>();
         numberOfJumps = 0;
@@ -187,6 +189,8 @@ public class PlayerMovement : MonoBehaviour
                 numberOfJumps++;
                 rotateTheCube = true;
                 isGrounded = false;
+
+                missionManager.CheckingForJumpMission();
             }
             else
             {
@@ -195,6 +199,8 @@ public class PlayerMovement : MonoBehaviour
                 numberOfJumps += 2;
                 rotateTheCube = true;
                 isGrounded = false;
+
+                missionManager.CheckingForJumpMission();
             }
         }
 

@@ -385,6 +385,10 @@ public class Store : MonoBehaviour
                     case 4:
                         missionStatus[i].text = "Spend " + PlayerPrefs.GetInt(customStrings.TOTAL_DIAMONDS_SPEND, 0) + "/" + 200;
                         break;
+
+                    case 5:
+                        missionStatus[i].text = "Jump " + PlayerPrefs.GetInt(customStrings.TIMES_PLAYER_JUMPED, 0) + "/" + 10;
+                        break;
                 }
             }
         }
@@ -428,7 +432,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -470,7 +474,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -512,7 +516,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -554,7 +558,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -596,7 +600,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -638,7 +642,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -680,7 +684,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -722,7 +726,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -764,7 +768,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > colorSchemeCost)
+            if (ownedDiamonds >= colorSchemeCost)
             {
                 SpendDiamondsToBuyCube(colorSchemeCost);
 
@@ -810,7 +814,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 SpendDiamondsToBuyCube(commonCubeCost);
 
@@ -852,7 +856,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -894,7 +898,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -936,7 +940,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -978,7 +982,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -1020,7 +1024,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -1062,7 +1066,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -1104,7 +1108,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -1146,7 +1150,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > commonCubeCost)
+            if (ownedDiamonds >= commonCubeCost)
             {
                 cubeBoughtManager.ResetExistingCube();
 
@@ -1190,7 +1194,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1232,7 +1236,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1274,7 +1278,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1316,7 +1320,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1358,7 +1362,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1400,7 +1404,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1442,7 +1446,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1485,7 +1489,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1527,7 +1531,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > rareCubeCost)
+            if (ownedDiamonds >= rareCubeCost)
             {
                 SpendDiamondsToBuyCube(rareCubeCost);
 
@@ -1571,7 +1575,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1613,7 +1617,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1655,7 +1659,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1697,7 +1701,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1739,7 +1743,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1781,7 +1785,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1823,7 +1827,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1865,7 +1869,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1907,7 +1911,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > legendaryCubeCost)
+            if (ownedDiamonds >= legendaryCubeCost)
             {
                 SpendDiamondsToBuyCube(legendaryCubeCost);
 
@@ -1951,7 +1955,7 @@ public class Store : MonoBehaviour
         }
         else
         {
-            if (ownedDiamonds > missionCubeCost)
+            if (ownedDiamonds >= missionCubeCost)
             {
                 SpendDiamondsToBuyCube(missionCubeCost);
 
@@ -1963,6 +1967,231 @@ public class Store : MonoBehaviour
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE0, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 0);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.GetOwnedMissionCubes();
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+    }
+
+    public void MissionCybeType1()
+    {
+        previousType = cubeBoughtManager.selectedCubeType;
+
+        if (cubeBoughtManager.ownedCubes_missionIndex.Contains(1))
+        {
+            if (cubeBoughtManager.selectedCubeIndex != 1 || previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                cubeBoughtManager.ResetExistingCube();
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 1);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+        else
+        {
+            if (ownedDiamonds >= missionCubeCost)
+            {
+                SpendDiamondsToBuyCube(missionCubeCost);
+
+                cubeBoughtManager.ResetExistingCube();
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
+
+                PlayerPrefs.SetInt(customStrings.MISSION_CUBE1, 1);
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 1);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.GetOwnedMissionCubes();
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+    }
+
+    public void MissionCybeType2()
+    {
+        previousType = cubeBoughtManager.selectedCubeType;
+
+        if (cubeBoughtManager.ownedCubes_missionIndex.Contains(2))
+        {
+            if (cubeBoughtManager.selectedCubeIndex != 2 || previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                cubeBoughtManager.ResetExistingCube();
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 2);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+        else
+        {
+            if (ownedDiamonds >= missionCubeCost)
+            {
+                SpendDiamondsToBuyCube(missionCubeCost);
+
+                cubeBoughtManager.ResetExistingCube();
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
+
+                PlayerPrefs.SetInt(customStrings.MISSION_CUBE2, 1);
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 2);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.GetOwnedMissionCubes();
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+    }
+
+    public void MissionCybeType3()
+    {
+        previousType = cubeBoughtManager.selectedCubeType;
+
+        if (cubeBoughtManager.ownedCubes_missionIndex.Contains(3))
+        {
+            if (cubeBoughtManager.selectedCubeIndex != 3 || previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                cubeBoughtManager.ResetExistingCube();
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 3);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+        else
+        {
+            if (ownedDiamonds >= missionCubeCost)
+            {
+                SpendDiamondsToBuyCube(missionCubeCost);
+
+                cubeBoughtManager.ResetExistingCube();
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
+
+                PlayerPrefs.SetInt(customStrings.MISSION_CUBE3, 1);
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 3);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.GetOwnedMissionCubes();
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+    }
+
+    public void MissionCybeType4()
+    {
+        previousType = cubeBoughtManager.selectedCubeType;
+
+        if (cubeBoughtManager.ownedCubes_missionIndex.Contains(4))
+        {
+            if (cubeBoughtManager.selectedCubeIndex != 4 || previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                cubeBoughtManager.ResetExistingCube();
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 4);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+        else
+        {
+            if (ownedDiamonds >= missionCubeCost)
+            {
+                SpendDiamondsToBuyCube(missionCubeCost);
+
+                cubeBoughtManager.ResetExistingCube();
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
+
+                PlayerPrefs.SetInt(customStrings.MISSION_CUBE4, 1);
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 4);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.GetOwnedMissionCubes();
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+    }
+
+    public void MissionCybeType5()
+    {
+        previousType = cubeBoughtManager.selectedCubeType;
+
+        if (cubeBoughtManager.ownedCubes_missionIndex.Contains(5))
+        {
+            if (cubeBoughtManager.selectedCubeIndex != 5 || previousType != CubeBoughtManager.CubeType.mission_cube)
+            {
+                cubeBoughtManager.ResetExistingCube();
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 5);
+
+                cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
+
+                cubeBoughtManager.SetCube_From_Store();
+
+                SetStoreButton();
+            }
+        }
+        else
+        {
+            if (ownedDiamonds >= missionCubeCost)
+            {
+                SpendDiamondsToBuyCube(missionCubeCost);
+
+                cubeBoughtManager.ResetExistingCube();
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
+
+                PlayerPrefs.SetInt(customStrings.MISSION_CUBE5, 1);
+
+                PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 5);
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 

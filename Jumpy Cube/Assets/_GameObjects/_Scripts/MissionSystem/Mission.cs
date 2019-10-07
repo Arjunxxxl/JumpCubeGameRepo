@@ -22,6 +22,6 @@ public class Mission : ScriptableObject
     public enum MissionType
     {
         coins_collection, distance_score, times_gamePlayed,
-        diamonds_spend, times_score_shared
+        diamonds_spend, times_score_shared, jump_mission
     }
 }

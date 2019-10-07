@@ -5,6 +5,9 @@ using UnityEngine.Playables;
 
 public class TimelinePlayer : MonoBehaviour
 {
+    [Header("Diamond collect ui effect director")]
+    public PlayableDirector diamondCollectPlayable;
+
     [Header("Pause Playable Directors")]
     public PlayableDirector pausePlayable;
     public PlayableDirector pause_PlayButtonPlayable;
@@ -18,6 +21,9 @@ public class TimelinePlayer : MonoBehaviour
 
     [Header("Ingame menu playable")]
     public PlayableDirector inGamemenuActivatedDirector;
+
+    [Header("Mission Complete UI Animation")]
+    public PlayableDirector missionCompleteUiPlayable;
 
     #region SingleTon
     public static TimelinePlayer Instance;
@@ -80,5 +86,15 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayIngameMenuActivated()
     {
         inGamemenuActivatedDirector.Play();
+    }
+
+    public void PlayDiamondCollectUiEffect()
+    {
+        diamondCollectPlayable.Play();
+    }
+
+    public void PlayMisionCompleteAnimation()
+    {
+        missionCompleteUiPlayable.Play();
     }
 }

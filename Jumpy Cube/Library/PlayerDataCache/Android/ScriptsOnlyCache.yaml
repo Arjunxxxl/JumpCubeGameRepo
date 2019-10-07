@@ -17,6 +17,7 @@ ScriptsOnlyBuild:
     - InGameMenu
     - IoSphere
     - IoSphereColorChanger
+    - LifetimeStats
     - LoadLevel
     - MainMenu
     - Mission
@@ -292,6 +293,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11888}
     - Class: 114
       Script: {instanceID: 11902}
+    - Class: 114
+      Script: {instanceID: 383138}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -615,7 +618,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 40d36d8ae21e0a2ded4fc7f797e3d675
+      Hash: d2637de37c1b6925ff89934ebe5ad0b3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectColorScheme
@@ -633,7 +636,7 @@ ScriptsOnlyBuild:
     className: IoSphereColorChanger
   - hash:
       serializedVersion: 2
-      Hash: 7228fa647340fcf8fe34081e563b082a
+      Hash: c5a78c3fcf71f3cf3493314d87e5db34
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CustomStrings
@@ -867,7 +870,7 @@ ScriptsOnlyBuild:
     className: EnvMapAnimator
   - hash:
       serializedVersion: 2
-      Hash: b07b11aeef6b3ad984c39b09ed68d9ac
+      Hash: 6f8f58a56ca364c86c7d28ba0db0c592
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Store
@@ -879,7 +882,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 2548ffe1b177843b8292f39299824e1d
+      Hash: 4fc5b19d50b2f0db88e9bc652db40d31
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SavedData
@@ -939,7 +942,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: da4d190f3e1f988f6d7275d9bd08b6d3
+      Hash: ea6e008f1bfc4d34d0ed86e340cf27aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -1059,7 +1062,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 55e37f8de55527e3f1fe19570309646c
+      Hash: 8f410b49d60b49e3ca10defab64800c6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TileColorThemeBoughtManager
@@ -1077,13 +1080,13 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
-      Hash: 3a4e229ddf1e1bb97af2b8ae66b31b2a
+      Hash: dd6488bfbf3ea973a9ba2ad14a6171c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSpawner
   - hash:
       serializedVersion: 2
-      Hash: bea8ba44af9460acfba585ecb8d2bf5e
+      Hash: fa0dfb63e292f80a9f50581ab145b25e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Mission
@@ -1359,7 +1362,7 @@ ScriptsOnlyBuild:
     className: TMPro_TextContainerEditor
   - hash:
       serializedVersion: 2
-      Hash: 148a35c9e771605461ddfb518a524c66
+      Hash: 840193d4a878711244d990e4075ef573
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CubeBoughtManager
@@ -1467,7 +1470,7 @@ ScriptsOnlyBuild:
     className: SpikesShooting
   - hash:
       serializedVersion: 2
-      Hash: 17467fa731f47d4aaf7e4e9094b5eb03
+      Hash: 15fe7da21b3ba8b0b8dbf59d4e972ae2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CubeColorManager
@@ -1503,7 +1506,7 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
-      Hash: 7246702f5077693a37bfe93001d349b4
+      Hash: b43d50b0cc3e241af8e9ce1041296a4e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InGameMenu
@@ -1629,7 +1632,7 @@ ScriptsOnlyBuild:
     className: TextConsoleSimulator
   - hash:
       serializedVersion: 2
-      Hash: 7561006c2fbb6eebe4d6d8c8f9cb5b6b
+      Hash: 9bd9b66ca16245f622945ecacb9390a9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MissionManager
@@ -1707,7 +1710,7 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
-      Hash: 4ae6e375b606fce886dbb0b8b17d4a77
+      Hash: acd9cc83e5721d65a7563dfba9bb9f2a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DiamondScore
@@ -1759,6 +1762,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 2836c1833d25b22e0517b5f6cd335a5d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LifetimeStats
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

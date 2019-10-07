@@ -10,6 +10,7 @@ public class DiamondScore : MonoBehaviour
     public int collectedDiamonds;
     
     public MissionManager missionManager;
+    public SavedData savedData;
 
     int temp;
     int temp2;
@@ -38,6 +39,8 @@ public class DiamondScore : MonoBehaviour
         temp = totalDiamonds + diamonds;
 
         PlayerPrefs.SetInt(TOTAL_DIAMOND_STR, temp);
+
+        savedData.SaveMAxDiamondsOwned(temp);
 
         if(!isDiamondsBought_OR_ADs)
         {

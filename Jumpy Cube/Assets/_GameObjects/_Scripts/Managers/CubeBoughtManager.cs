@@ -45,6 +45,7 @@ public class CubeBoughtManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerSpawner playerSpawner;
     public PlayerDeath playerDeath;
+    public SavedData savedData;
 
     private void Awake()
     {
@@ -273,6 +274,8 @@ public class CubeBoughtManager : MonoBehaviour
                 ownedCubes_commonIndex.Add(8);
             }
         }
+
+        savedData.SaveMaxCubeOwned(ownedCubes_commonIndex.Count, 0, 0, 0);
     }
 
     public void GetOwnedRareCubes()
@@ -340,6 +343,8 @@ public class CubeBoughtManager : MonoBehaviour
                 ownedCubes_rareIndex.Add(8);
             }
         }
+
+        savedData.SaveMaxCubeOwned(0, ownedCubes_rareIndex.Count, 0, 0);
     }
 
     public void GetOwnedLegendaryCubes()
@@ -407,6 +412,8 @@ public class CubeBoughtManager : MonoBehaviour
                 ownedCubes_legendaryIndex.Add(8);
             }
         }
+
+        savedData.SaveMaxCubeOwned(0, 0, ownedCubes_legendaryIndex.Count, 0);
     }
 
     public void GetOwnedMissionCubes()
@@ -446,6 +453,15 @@ public class CubeBoughtManager : MonoBehaviour
                 ownedCubes_missionIndex.Add(4);
             }
         }
+        if (PlayerPrefs.GetInt(customStrings.MISSION_CUBE5, 0) == 1)
+        {
+            if (!ownedCubes_missionIndex.Contains(5))
+            {
+                ownedCubes_missionIndex.Add(5);
+            }
+        }
+
+        savedData.SaveMaxCubeOwned(0, 0, 0, ownedCubes_missionIndex.Count);
     }
 
     public void GetSelectedCubeType()

@@ -34,7 +34,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: a5e67d97796064940abd35c39d3be86d, type: 3}
     - {fileID: 102900000, guid: a613cdb2f88cf8943a54a9266fb387bc, type: 3}
     - {fileID: 2800000, guid: c1bc771a99bf21c4bbe47e85c8fe0405, type: 3}
-    totalSpriteSurfaceArea: 9942688
+    totalSpriteSurfaceArea: 10204832
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -55,6 +55,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2b27c318559bcfe4db0bf46949b440f7, type: 3}
   - {fileID: 21300000, guid: 5300c03923585974b8d678944e29f8a1, type: 3}
   - {fileID: 21300000, guid: 8467756912108b44f83fe958a4654127, type: 3}
+  - {fileID: 21300000, guid: 13c14679bccc2c04eb0037936a24cfed, type: 3}
   - {fileID: 21300000, guid: c1bc771a99bf21c4bbe47e85c8fe0405, type: 3}
   - {fileID: 21300000, guid: eff55b2b1c60d57438e570784125d009, type: 3}
   - {fileID: 21300000, guid: 6d85187be4343b84e8b6ddbb56decdde, type: 3}
@@ -88,6 +89,7 @@ SpriteAtlas:
   - Panne2_buytokensBase
   - Skin3
   - Sharing
+  - SkinBG_new
   - Panne1BG
   - SkinBG
   - SkinHolder

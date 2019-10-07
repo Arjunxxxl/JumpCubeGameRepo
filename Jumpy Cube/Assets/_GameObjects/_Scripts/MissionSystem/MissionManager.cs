@@ -12,12 +12,15 @@ public class MissionManager : MonoBehaviour
     List<Mission> timePlayerJumpedMissionsList;
     List<Mission> diamondsSpendMissionsList;
     List<Mission> scoreShareMissionsList;
+    List<Mission> jumpMissionsList;
 
     int timesGamePlayed;
     int diamondsSpend;
     int shareCount;
+    int jumps;
 
     public CustomStrings customStrings;
+    public TimelinePlayer timelinePlayer;
 
     #region SingleTon
     public static MissionManager Instance;
@@ -36,6 +39,11 @@ public class MissionManager : MonoBehaviour
         SetupMission();
     }
     #endregion
+
+    private void Start()
+    {
+        timelinePlayer = TimelinePlayer.Instance;
+    }
 
     public void GetMissionActiveStatus()
     {
@@ -62,6 +70,10 @@ public class MissionManager : MonoBehaviour
                 case Mission.MissionType.diamonds_spend:
                     mission.isActiveTire1 = PlayerPrefs.GetInt(customStrings.MISSION_CUBE4, 0) == 1 ? false : true;
                     break;
+
+                case Mission.MissionType.jump_mission:
+                    mission.isActiveTire1 = PlayerPrefs.GetInt(customStrings.MISSION_CUBE5, 0) == 1 ? false : true;
+                    break;
             }
         }
     }
@@ -73,6 +85,7 @@ public class MissionManager : MonoBehaviour
         timeGamePlayedMissionsList = new List<Mission>();
         diamondsSpendMissionsList = new List<Mission>();
         scoreShareMissionsList = new List<Mission>();
+        jumpMissionsList = new List<Mission>();
 
         foreach (Mission m in missionsList)
         {
@@ -83,6 +96,7 @@ public class MissionManager : MonoBehaviour
                 else if (m.missionType == Mission.MissionType.times_gamePlayed) { timeGamePlayedMissionsList.Add(m); }
                 else if (m.missionType == Mission.MissionType.diamonds_spend) { diamondsSpendMissionsList.Add(m); }
                 else if (m.missionType == Mission.MissionType.times_score_shared) { scoreShareMissionsList.Add(m); }
+                else if (m.missionType == Mission.MissionType.jump_mission) { jumpMissionsList.Add(m); }
             }
         }
     }
@@ -102,20 +116,26 @@ public class MissionManager : MonoBehaviour
                 {
                     coinCollectMissions.isActiveTire1 = false;
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE0, 1);
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (coinCollectMissions.isActiveTire2)
+            if (coinCollectMissions.isActiveTire2)
             {
                 if (diamonds >= coinCollectMissions.missionGoalTire2.requiredCoins)
                 {
                     coinCollectMissions.isActiveTire2 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (coinCollectMissions.isActiveTire3)
+            if (coinCollectMissions.isActiveTire3)
             {
                 if (diamonds >= coinCollectMissions.missionGoalTire3.requiredCoins)
                 {
                     coinCollectMissions.isActiveTire3 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
         }
@@ -137,20 +157,26 @@ public class MissionManager : MonoBehaviour
                 {
                     distanceScoreMissions.isActiveTire1 = false;
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE1, 1);
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (distanceScoreMissions.isActiveTire2)
+            if (distanceScoreMissions.isActiveTire2)
             {
                 if (distance >= distanceScoreMissions.missionGoalTire2.requiredDistance)
                 {
                     distanceScoreMissions.isActiveTire2 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (distanceScoreMissions.isActiveTire3)
+            if (distanceScoreMissions.isActiveTire3)
             {
                 if (distance >= distanceScoreMissions.missionGoalTire3.requiredDistance)
                 {
                     distanceScoreMissions.isActiveTire3 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
         }
@@ -170,24 +196,30 @@ public class MissionManager : MonoBehaviour
         {
             if (timesGameplayedMission.isActiveTire1)
             {
-                if (timesGamePlayed >= timesGameplayedMission.missionGoalTire1.requiredDistance)
+                if (timesGamePlayed >= timesGameplayedMission.missionGoalTire1.requiredPlayCount)
                 {
                     timesGameplayedMission.isActiveTire1 = false;
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE2, 1);
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (timesGameplayedMission.isActiveTire2)
+            if (timesGameplayedMission.isActiveTire2)
             {
-                if (timesGamePlayed >= timesGameplayedMission.missionGoalTire2.requiredDistance)
+                if (timesGamePlayed >= timesGameplayedMission.missionGoalTire2.requiredPlayCount)
                 {
                     timesGameplayedMission.isActiveTire2 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (timesGameplayedMission.isActiveTire3)
+            if (timesGameplayedMission.isActiveTire3)
             {
-                if (timesGamePlayed >= timesGameplayedMission.missionGoalTire3.requiredDistance)
+                if (timesGamePlayed >= timesGameplayedMission.missionGoalTire3.requiredPlayCount)
                 {
                     timesGameplayedMission.isActiveTire3 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
         }
@@ -207,24 +239,30 @@ public class MissionManager : MonoBehaviour
         {
             if (diamondsSpendMissions.isActiveTire1)
             {
-                if (diamondsSpend >= diamondsSpendMissions.missionGoalTire1.requiredDistance)
+                if (diamondsSpend >= diamondsSpendMissions.missionGoalTire1.requiedDiamondsSpendInStore)
                 {
                     diamondsSpendMissions.isActiveTire1 = false;
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE4, 1);
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (diamondsSpendMissions.isActiveTire2)
+            if (diamondsSpendMissions.isActiveTire2)
             {
-                if (diamondsSpend >= diamondsSpendMissions.missionGoalTire2.requiredDistance)
+                if (diamondsSpend >= diamondsSpendMissions.missionGoalTire2.requiedDiamondsSpendInStore)
                 {
                     diamondsSpendMissions.isActiveTire2 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (diamondsSpendMissions.isActiveTire3)
+            if (diamondsSpendMissions.isActiveTire3)
             {
-                if (diamondsSpend >= diamondsSpendMissions.missionGoalTire3.requiredDistance)
+                if (diamondsSpend >= diamondsSpendMissions.missionGoalTire3.requiedDiamondsSpendInStore)
                 {
                     diamondsSpendMissions.isActiveTire3 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
         }
@@ -246,24 +284,79 @@ public class MissionManager : MonoBehaviour
         {
             if (scoreShareMissions.isActiveTire1)
             {
-                if (shareCount >= scoreShareMissions.missionGoalTire1.requiredDistance)
+                if (shareCount >= scoreShareMissions.missionGoalTire1.scoreShareCount)
                 {
                     scoreShareMissions.isActiveTire1 = false;
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE3, 1);
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (scoreShareMissions.isActiveTire2)
+            if (scoreShareMissions.isActiveTire2)
             {
-                if (shareCount >= scoreShareMissions.missionGoalTire2.requiredDistance)
+                if (shareCount >= scoreShareMissions.missionGoalTire2.scoreShareCount)
                 {
                     scoreShareMissions.isActiveTire2 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
-            else if (scoreShareMissions.isActiveTire3)
+            if (scoreShareMissions.isActiveTire3)
             {
-                if (shareCount >= scoreShareMissions.missionGoalTire3.requiredDistance)
+                if (shareCount >= scoreShareMissions.missionGoalTire3.scoreShareCount)
                 {
                     scoreShareMissions.isActiveTire3 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
+                }
+            }
+        }
+
+    }
+
+    public void CheckingForJumpMission()
+    {
+        if (jumpMissionsList.Count == 0)
+        {
+            return;
+        }
+        
+        foreach (Mission jumpMissions in jumpMissionsList)
+        {
+            if(!jumpMissions.isActiveTire1 && !jumpMissions.isActiveTire2 && !jumpMissions.isActiveTire3)
+            {
+                return;
+            }
+
+            jumps = PlayerPrefs.GetInt(customStrings.TIMES_PLAYER_JUMPED, 0) + 1;
+            PlayerPrefs.SetInt(customStrings.TIMES_PLAYER_JUMPED, jumps);
+
+            if (jumpMissions.isActiveTire1)
+            {
+                if (jumps >= jumpMissions.missionGoalTire1.requiredJumps)
+                {
+                    jumpMissions.isActiveTire1 = false;
+                    PlayerPrefs.SetInt(customStrings.MISSION_CUBE5, 1);
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
+                }
+            }
+            if (jumpMissions.isActiveTire2)
+            {
+                if (jumps >= jumpMissions.missionGoalTire2.requiredJumps)
+                {
+                    jumpMissions.isActiveTire2 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
+                }
+            }
+            if (jumpMissions.isActiveTire3)
+            {
+                if (jumps >= jumpMissions.missionGoalTire3.requiredJumps)
+                {
+                    jumpMissions.isActiveTire3 = false;
+
+                    timelinePlayer.PlayMisionCompleteAnimation();
                 }
             }
         }

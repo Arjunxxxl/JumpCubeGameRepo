@@ -11,6 +11,8 @@ public class PlayerDeath : MonoBehaviour
     GameOverMenu gameOverMenu;
     InGameMenu inGameMenu;
     DiamondScore diamondScore;
+    DistanceScore distanceScore;
+    SavedData savedData;
 
     [Header("Revival Data")]
     public GameObject hitEnemy;
@@ -39,6 +41,8 @@ public class PlayerDeath : MonoBehaviour
         gameOverMenu = GameOverMenu.Instance;
         inGameMenu = InGameMenu.Instance;
         diamondScore = DiamondScore.Instance;
+        distanceScore = DistanceScore.Instance;
+        savedData = SavedData.Instance;
 
         SetPlayerChildCube();
 
@@ -46,7 +50,14 @@ public class PlayerDeath : MonoBehaviour
         isDead = false;
     }
 
-    
+    private void OnApplicationQuit()
+    {
+        if(!isDead)
+        {
+            savedData.SavePlayerAverageScore(distanceScore.distance);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -61,6 +72,10 @@ public class PlayerDeath : MonoBehaviour
             isDead = true;
 
             diamondScore.SaveDiamondsCollected(inGameMenu.realNumberOfDiamondsCollected, false);
+
+            savedData.SavePlayerHighScore(distanceScore.distance);
+            savedData.SavePlayerAverageScore(distanceScore.distance);
+            savedData.SaveDiamondsCollectedinOneRun(inGameMenu.diamondsCollected);
 
             inGameMenu.realNumberOfDiamondsCollected = 0;
 

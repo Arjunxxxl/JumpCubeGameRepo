@@ -14,4 +14,5 @@ public class MissionGoal
     public int requiredPlayCount;
     public int requiedDiamondsSpendInStore;
     public int scoreShareCount;
+    public int requiredJumps;
 }

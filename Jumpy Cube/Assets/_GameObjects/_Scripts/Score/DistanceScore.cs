@@ -65,4 +65,5 @@ public class DistanceScore : MonoBehaviour
 
         missionManager.CheckingForDiatanceScoreMission(distance);
     }
+
 }
