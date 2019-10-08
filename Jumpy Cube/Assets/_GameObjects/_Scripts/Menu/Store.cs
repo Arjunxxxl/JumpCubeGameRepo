@@ -1960,13 +1960,13 @@ public class Store : MonoBehaviour
                 SpendDiamondsToBuyCube(missionCubeCost);
 
                 cubeBoughtManager.ResetExistingCube();
-
-                missionManager.GetMissionActiveStatus();
-                missionManager.SetupMission();
-
+                
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE0, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 0);
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 
@@ -2006,12 +2006,12 @@ public class Store : MonoBehaviour
 
                 cubeBoughtManager.ResetExistingCube();
 
-                missionManager.GetMissionActiveStatus();
-                missionManager.SetupMission();
-
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE1, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 1);
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 
@@ -2051,12 +2051,12 @@ public class Store : MonoBehaviour
 
                 cubeBoughtManager.ResetExistingCube();
 
-                missionManager.GetMissionActiveStatus();
-                missionManager.SetupMission();
-
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE2, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 2);
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 
@@ -2096,12 +2096,12 @@ public class Store : MonoBehaviour
 
                 cubeBoughtManager.ResetExistingCube();
 
-                missionManager.GetMissionActiveStatus();
-                missionManager.SetupMission();
-
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE3, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 3);
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 
@@ -2141,12 +2141,12 @@ public class Store : MonoBehaviour
 
                 cubeBoughtManager.ResetExistingCube();
 
-                missionManager.GetMissionActiveStatus();
-                missionManager.SetupMission();
-
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE4, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 4);
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 
@@ -2186,12 +2186,12 @@ public class Store : MonoBehaviour
 
                 cubeBoughtManager.ResetExistingCube();
 
-                missionManager.GetMissionActiveStatus();
-                missionManager.SetupMission();
-
                 PlayerPrefs.SetInt(customStrings.MISSION_CUBE5, 1);
 
                 PlayerPrefs.SetInt(customStrings.SELECTED_CUBE_INDEX, 5);
+
+                missionManager.GetMissionActiveStatus();
+                missionManager.SetupMission();
 
                 cubeBoughtManager.SetSelectedCubeType(CubeBoughtManager.CubeType.mission_cube);
 

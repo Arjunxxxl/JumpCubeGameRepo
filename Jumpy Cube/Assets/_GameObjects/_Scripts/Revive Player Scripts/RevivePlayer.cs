@@ -16,6 +16,26 @@ public class RevivePlayer : MonoBehaviour
     public float afterReviveDelay = 2.95f;
     public TMP_Text reviveTimer;
 
+    [Header("Game Over Menu Text fields")]
+    public TMP_Text currentScoreTxt;
+    public TMP_Text currentDiamondsTxt;
+    public TMP_Text averageScoreTxt;
+
+    [Header("HighScore Data")]
+    public GameObject score_best;
+    public GameObject diamonds_best;
+    public GameObject average_best;
+    public int highScore;
+    public int diamondBest;
+    public int averageBest;
+    public float trophyShowingDelay = 1.5f;
+    public float trophyScowingOffset = 0.5f;
+
+    [Header("Score Data")]
+    public int currentScore;
+    public int currentDiamonds;
+    public float averageScore;
+
     public GameObject player;
     public GameObject revivalPoint;
     public bool isDead;
@@ -27,6 +47,9 @@ public class RevivePlayer : MonoBehaviour
     PlayerSpawner playerSpawner;
     GameOverMenu gameOverMenu;
     TimelinePlayer timelinePlayer;
+    DistanceScore distanceScore;
+    InGameMenu inGamemenu;
+    CustomStrings customStrings;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +59,20 @@ public class RevivePlayer : MonoBehaviour
         playerMovement = PlayerMovement.Instance;
         playerSpawner = PlayerSpawner.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        distanceScore = DistanceScore.Instance;
+        inGamemenu = InGameMenu.Instance;
+        customStrings = CustomStrings.Instance;
 
         isDead = playerDeath.isDead;
         
         afterRevivalTime = 0;
+
+        score_best.SetActive(false);
+        diamonds_best.SetActive(false);
+        average_best.SetActive(false);
+        highScore = PlayerPrefs.GetInt(customStrings.HIGHSCORE, 0);
+        diamondBest = PlayerPrefs.GetInt(customStrings.DIAMONDS_COLLECTED_IN_ONE_RUN1, 0);
+        averageBest = (int)PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
     }
 
     // Update is called once per frame
@@ -84,6 +117,16 @@ public class RevivePlayer : MonoBehaviour
     {
         revivalMenu.SetActive(false);
         gameOverMenuObj.SetActive(true);
+        
+        averageScore = PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
+        currentScore = distanceScore.distance;
+        currentDiamonds = inGamemenu.diamondsCollected;
+
+        currentScoreTxt.text = currentScore + "m";
+        currentDiamondsTxt.text = currentDiamonds + "";
+        averageScoreTxt.text = (int)averageScore + "";
+
+        CheckForHighScore();
     }
 
     public void PlayerIsRevived()
@@ -115,4 +158,42 @@ public class RevivePlayer : MonoBehaviour
         playerMovement.SetMovementActivateState(true);
     }
 
+    void CheckForHighScore()
+    {
+        if (currentScore > highScore)
+        {
+            StartCoroutine("ShowScoreBestTophy");
+        }
+        
+        if (currentDiamonds > diamondBest)
+        {
+            StartCoroutine("ShowDiamondBestTrophy");
+        }
+
+        if (averageScore > averageBest)
+        {
+            StartCoroutine("ShowAverageBestTrophy");
+        }
+    }
+
+    IEnumerator ShowScoreBestTophy()
+    {
+        yield return new WaitForSeconds(trophyShowingDelay);
+        score_best.SetActive(true);
+        timelinePlayer.PlayScoreBest();
+    }
+
+    IEnumerator ShowDiamondBestTrophy()
+    {
+        yield return new WaitForSeconds(trophyShowingDelay + trophyScowingOffset);
+        diamonds_best.SetActive(true);
+        timelinePlayer.PlayDiamondsBest();
+    }
+
+    IEnumerator ShowAverageBestTrophy()
+    {
+        yield return new WaitForSeconds(trophyShowingDelay + trophyScowingOffset + trophyScowingOffset);
+        average_best.SetActive(true);
+        timelinePlayer.PlayAverageBest();
+    }
 }

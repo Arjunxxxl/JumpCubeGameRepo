@@ -23,8 +23,6 @@ ScriptsOnlyBuild:
     - Mission
     - MissionManager
     - ObjectPooler
-    - OptimizedSavedData
-    - Optimizer
     - PPDebugScript
     - PauseMenu
     - PlayerDeath
@@ -37,8 +35,6 @@ ScriptsOnlyBuild:
     - SpikesAnimation
     - SpikesShooting
     - Store
-    - StoreBgEffect
-    - StoreBgEffectSpawner
     - StoreScrolling
     - TileColorThemeBoughtManager
     - TilePool
@@ -218,8 +214,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10364}
     - Class: 114
-      Script: {instanceID: 10374}
-    - Class: 114
       Script: {instanceID: 10418}
     - Class: 114
       Script: {instanceID: 10512}
@@ -252,8 +246,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10836}
     - Class: 114
-      Script: {instanceID: 10872}
-    - Class: 114
       Script: {instanceID: 10956}
     - Class: 114
       Script: {instanceID: 10984}
@@ -262,15 +254,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11090}
     - Class: 114
-      Script: {instanceID: 11092}
-    - Class: 114
       Script: {instanceID: 11156}
     - Class: 114
       Script: {instanceID: 11224}
     - Class: 114
       Script: {instanceID: 11254}
-    - Class: 114
-      Script: {instanceID: 11460}
     - Class: 114
       Script: {instanceID: 11562}
     - Class: 114
@@ -402,7 +390,7 @@ ScriptsOnlyBuild:
     className: MotionBlur
   - hash:
       serializedVersion: 2
-      Hash: 20e0157a33e402a5eaf1831effb9dfd0
+      Hash: f280d1026fb6dd4b97dd8eeda257f304
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RevivePlayer
@@ -942,7 +930,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: ea6e008f1bfc4d34d0ed86e340cf27aa
+      Hash: 6214325d97d130419de3ae28adf54e38
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -1090,12 +1078,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Mission
-  - hash:
-      serializedVersion: 2
-      Hash: 1f0eb54a4e7e12dbb6ece61baac7156f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: OptimizedSavedData
   - hash:
       serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
@@ -1438,12 +1420,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TileSpawner
-  - hash:
-      serializedVersion: 2
-      Hash: 45e80bf3a03eb16faeb030d48b18080b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Optimizer
   - hash:
       serializedVersion: 2
       Hash: bd3f0ca738703903e759f77536ed74fd

@@ -9,8 +9,7 @@ public class FPScounter : MonoBehaviour
 
     public float delay = 0.5f;
     public float t;
-
-    Optimizer optimizer;
+    
 
     public TMP_Text fpsTxt;
 
@@ -31,8 +30,6 @@ public class FPScounter : MonoBehaviour
 
     private void Start()
     {
-        optimizer = Optimizer.Instance;
-
         current = 0;
     }
 
@@ -46,11 +43,6 @@ public class FPScounter : MonoBehaviour
         }
 
         t = 0;
-
-        if(!optimizer.isOptimizing)
-        {
-            //return;
-        }
 
         current = 0;
         current = (1f / Time.unscaledDeltaTime);

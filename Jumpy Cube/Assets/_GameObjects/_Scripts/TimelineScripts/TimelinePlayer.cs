@@ -25,6 +25,11 @@ public class TimelinePlayer : MonoBehaviour
     [Header("Mission Complete UI Animation")]
     public PlayableDirector missionCompleteUiPlayable;
 
+    [Header("best score timelines")]
+    public PlayableDirector score_best;
+    public PlayableDirector diamonds_best;
+    public PlayableDirector average_best;
+
     #region SingleTon
     public static TimelinePlayer Instance;
     private void Awake()
@@ -96,5 +101,20 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayMisionCompleteAnimation()
     {
         missionCompleteUiPlayable.Play();
+    }
+
+    public void PlayScoreBest()
+    {
+        score_best.Play();
+    }
+
+    public void PlayDiamondsBest()
+    {
+        diamonds_best.Play();
+    }
+
+    public void PlayAverageBest()
+    {
+        average_best.Play();
     }
 }
