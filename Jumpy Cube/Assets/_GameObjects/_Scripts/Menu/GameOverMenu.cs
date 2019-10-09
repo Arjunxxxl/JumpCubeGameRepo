@@ -59,7 +59,6 @@ public class GameOverMenu : MonoBehaviour
         playerMovement = PlayerMovement.Instance;
         missionManager = MissionManager.Instance;
 
-
         gameOverMenu.SetActive(false);
         currentTime = 0;
         checker = false;
@@ -94,9 +93,7 @@ public class GameOverMenu : MonoBehaviour
     IEnumerator takeScreenShot()
     {
         yield return new WaitForSeconds(screenShotDelay);
-
-        path = "ScreenShot.png";
-
+        
         ScreenCapture.CaptureScreenshot("ScreenShot.png");
 
         StartCoroutine(DisplayScreenShotCoroutine());
@@ -127,7 +124,19 @@ public class GameOverMenu : MonoBehaviour
     public void ShareScreenshotButtonPressed()
     {
         missionManager.CheckingForShareScoreMission();
-        StartCoroutine(ShareScreenshot());
+
+#if UNITY_ANDROID
+        path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
+#endif
+#if UNITY_EDITOR
+        path = "ScreenShot.png";
+#endif
+
+        //new method
+        new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
+
+        //old meathod
+        //StartCoroutine(ShareScreenshot());
     }
 
     IEnumerator ShareScreenshot()

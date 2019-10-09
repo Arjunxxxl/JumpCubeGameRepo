@@ -41,6 +41,7 @@ ScriptsOnlyBuild:
     - TileSpawnAnimation
     - TileSpawner
     - TimelinePlayer
+    - Vibration1
     TextMeshPro-2017.3-Runtime.dll:
     - TMPro.TMP_ColorGradient
     - TMPro.TMP_FontAsset
@@ -214,75 +215,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10364}
     - Class: 114
-      Script: {instanceID: 10418}
+      Script: {instanceID: 10416}
     - Class: 114
-      Script: {instanceID: 10512}
+      Script: {instanceID: 10510}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 10520}
+      Script: {instanceID: 10518}
     - Class: 114
-      Script: {instanceID: 10530}
+      Script: {instanceID: 10528}
+    - Class: 114
+      Script: {instanceID: 10532}
     - Class: 114
       Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10536}
+      Script: {instanceID: 10562}
     - Class: 114
-      Script: {instanceID: 10564}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10602}
+      Script: {instanceID: 10704}
     - Class: 114
-      Script: {instanceID: 10706}
+      Script: {instanceID: 10720}
     - Class: 114
-      Script: {instanceID: 10722}
+      Script: {instanceID: 10726}
     - Class: 114
-      Script: {instanceID: 10728}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 10752}
+      Script: {instanceID: 10764}
     - Class: 114
-      Script: {instanceID: 10766}
+      Script: {instanceID: 10774}
     - Class: 114
-      Script: {instanceID: 10776}
+      Script: {instanceID: 10834}
     - Class: 114
-      Script: {instanceID: 10836}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 10956}
+      Script: {instanceID: 10980}
     - Class: 114
-      Script: {instanceID: 10984}
+      Script: {instanceID: 11054}
     - Class: 114
-      Script: {instanceID: 11058}
+      Script: {instanceID: 11086}
     - Class: 114
-      Script: {instanceID: 11090}
+      Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11156}
+      Script: {instanceID: 11220}
     - Class: 114
-      Script: {instanceID: 11224}
+      Script: {instanceID: 11250}
     - Class: 114
-      Script: {instanceID: 11254}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11596}
     - Class: 114
-      Script: {instanceID: 11600}
+      Script: {instanceID: 11672}
     - Class: 114
-      Script: {instanceID: 11676}
+      Script: {instanceID: 11738}
     - Class: 114
-      Script: {instanceID: 11742}
+      Script: {instanceID: 11748}
     - Class: 114
-      Script: {instanceID: 11752}
+      Script: {instanceID: 11802}
     - Class: 114
-      Script: {instanceID: 11806}
+      Script: {instanceID: 11848}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11850}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 11886}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11898}
     - Class: 114
-      Script: {instanceID: 11902}
+      Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 151450}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1744,6 +1747,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 8818e6a0a08fbacc8dc0ec9c67275350
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Vibration1
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

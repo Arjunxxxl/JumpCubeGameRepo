@@ -13,6 +13,7 @@ public class PlayerDeath : MonoBehaviour
     DiamondScore diamondScore;
     DistanceScore distanceScore;
     SavedData savedData;
+    Vibration1 vibration;
 
     [Header("Revival Data")]
     public GameObject hitEnemy;
@@ -43,6 +44,7 @@ public class PlayerDeath : MonoBehaviour
         diamondScore = DiamondScore.Instance;
         distanceScore = DistanceScore.Instance;
         savedData = SavedData.Instance;
+        vibration = Vibration1.Instance;
 
         SetPlayerChildCube();
 
@@ -65,6 +67,8 @@ public class PlayerDeath : MonoBehaviour
             hitEnemy = other.gameObject;
             revivalPoint = hitEnemy.GetComponent<RevivePoints>();
             revialPointObj = revivalPoint.revitalPoint;
+
+            vibration.Vibrate(vibration.deathVibrationAmt);
 
             deathParticleSystem.SetActive(true);
             deathParticleSystem.transform.position = transform.position;

@@ -65,9 +65,12 @@ public class PlayerMovement : MonoBehaviour
     PauseMenu pauseMenu;
     InGameMenu inGameMenu;
     MissionManager missionManager;
+    Vibration1 vibration;
 
     GameObject spawnedLandEffect;
     GameObject diamondCollectEffect;
+
+    bool checkerForVibration;
 
     #region SingleTon
     public static PlayerMovement Instance;
@@ -107,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         pauseMenu = PauseMenu.Instance;
         inGameMenu = InGameMenu.Instance;
         missionManager = MissionManager.Instance;
+        vibration = Vibration1.Instance;
 
         rb = GetComponent<Rigidbody>();
         numberOfJumps = 0;
@@ -130,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
 
         isMovementActivated = true;
         isReviving = false;
+        checkerForVibration = false;
     }
 
     // Update is called once per frame
@@ -244,6 +249,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(currentGround))
         {
+            if(!isGrounded && checkerForVibration)
+            {
+                vibration.Vibrate(vibration.landVibrationAmt);
+            }
+
+            if(!checkerForVibration)
+            {
+                checkerForVibration = true;
+            }
+
             rb.useGravity = true;
             rotateTheCube = false;
             isGrounded = true;
