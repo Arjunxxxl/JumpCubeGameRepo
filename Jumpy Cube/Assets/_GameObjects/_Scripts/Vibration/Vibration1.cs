@@ -11,7 +11,6 @@ public class Vibration1 : MonoBehaviour
     public static int defaultAmplitude;
 
     [Header("Vibration Data")]
-    public float landVibrationAmt;
     public float deathVibrationAmt;
     public static int sdkInt;
 

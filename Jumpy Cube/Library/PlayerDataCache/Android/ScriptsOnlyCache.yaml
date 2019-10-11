@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonClickEffect
     - CameraFollows
     - CameraShake
     - CubeBoughtManager
@@ -80,6 +81,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -139,153 +141,157 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9364}
+      Script: {instanceID: 9368}
     - Class: 114
-      Script: {instanceID: 9380}
+      Script: {instanceID: 9384}
     - Class: 114
-      Script: {instanceID: 9410}
-    - Class: 114
-      Script: {instanceID: 9458}
+      Script: {instanceID: 9416}
     - Class: 114
       Script: {instanceID: 9464}
     - Class: 114
-      Script: {instanceID: 9468}
+      Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9502}
+      Script: {instanceID: 9474}
     - Class: 114
-      Script: {instanceID: 9520}
+      Script: {instanceID: 9508}
     - Class: 114
-      Script: {instanceID: 9642}
+      Script: {instanceID: 9526}
     - Class: 114
-      Script: {instanceID: 9662}
+      Script: {instanceID: 9648}
     - Class: 114
-      Script: {instanceID: 9664}
+      Script: {instanceID: 9668}
     - Class: 114
       Script: {instanceID: 9670}
     - Class: 114
       Script: {instanceID: 9676}
     - Class: 114
-      Script: {instanceID: 9684}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9686}
+      Script: {instanceID: 9682}
+    - Class: 114
+      Script: {instanceID: 9690}
     - Class: 114
       Script: {instanceID: 9692}
     - Class: 114
-      Script: {instanceID: 9706}
-    - Class: 114
-      Script: {instanceID: 9708}
-    - Class: 114
-      Script: {instanceID: 9710}
+      Script: {instanceID: 9698}
     - Class: 114
       Script: {instanceID: 9712}
+    - Class: 114
+      Script: {instanceID: 9714}
     - Class: 114
       Script: {instanceID: 9716}
     - Class: 114
       Script: {instanceID: 9718}
     - Class: 114
-      Script: {instanceID: 9720}
-    - Class: 114
       Script: {instanceID: 9722}
     - Class: 114
-      Script: {instanceID: 9738}
+      Script: {instanceID: 9724}
     - Class: 114
-      Script: {instanceID: 9764}
+      Script: {instanceID: 9726}
     - Class: 114
-      Script: {instanceID: 9782}
+      Script: {instanceID: 9728}
     - Class: 114
-      Script: {instanceID: 9928}
+      Script: {instanceID: 9744}
     - Class: 114
-      Script: {instanceID: 9966}
+      Script: {instanceID: 9770}
     - Class: 114
-      Script: {instanceID: 9994}
+      Script: {instanceID: 9788}
     - Class: 114
-      Script: {instanceID: 10010}
+      Script: {instanceID: 9934}
     - Class: 114
-      Script: {instanceID: 10012}
+      Script: {instanceID: 9972}
     - Class: 114
-      Script: {instanceID: 10110}
+      Script: {instanceID: 10000}
     - Class: 114
-      Script: {instanceID: 10152}
+      Script: {instanceID: 10016}
     - Class: 114
-      Script: {instanceID: 10224}
+      Script: {instanceID: 10018}
     - Class: 114
-      Script: {instanceID: 10348}
+      Script: {instanceID: 10116}
     - Class: 114
-      Script: {instanceID: 10358}
+      Script: {instanceID: 10158}
+    - Class: 114
+      Script: {instanceID: 10230}
+    - Class: 114
+      Script: {instanceID: 10354}
     - Class: 114
       Script: {instanceID: 10364}
     - Class: 114
-      Script: {instanceID: 10416}
+      Script: {instanceID: 10370}
     - Class: 114
-      Script: {instanceID: 10510}
+      Script: {instanceID: 10422}
     - Class: 114
-      Script: {instanceID: 10514}
+      Script: {instanceID: 10516}
     - Class: 114
-      Script: {instanceID: 10518}
+      Script: {instanceID: 10520}
     - Class: 114
-      Script: {instanceID: 10528}
-    - Class: 114
-      Script: {instanceID: 10532}
+      Script: {instanceID: 10524}
     - Class: 114
       Script: {instanceID: 10534}
     - Class: 114
-      Script: {instanceID: 10562}
+      Script: {instanceID: 10538}
     - Class: 114
-      Script: {instanceID: 10600}
+      Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10704}
+      Script: {instanceID: 10568}
     - Class: 114
-      Script: {instanceID: 10720}
+      Script: {instanceID: 10608}
     - Class: 114
-      Script: {instanceID: 10726}
+      Script: {instanceID: 10712}
     - Class: 114
-      Script: {instanceID: 10750}
+      Script: {instanceID: 10728}
     - Class: 114
-      Script: {instanceID: 10764}
+      Script: {instanceID: 10734}
     - Class: 114
-      Script: {instanceID: 10774}
+      Script: {instanceID: 10758}
     - Class: 114
-      Script: {instanceID: 10834}
+      Script: {instanceID: 10772}
     - Class: 114
-      Script: {instanceID: 10952}
+      Script: {instanceID: 10782}
     - Class: 114
-      Script: {instanceID: 10980}
+      Script: {instanceID: 10842}
     - Class: 114
-      Script: {instanceID: 11054}
+      Script: {instanceID: 10960}
     - Class: 114
-      Script: {instanceID: 11086}
+      Script: {instanceID: 10988}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11220}
+      Script: {instanceID: 11096}
     - Class: 114
-      Script: {instanceID: 11250}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11558}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 11596}
+      Script: {instanceID: 11232}
     - Class: 114
-      Script: {instanceID: 11672}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11738}
+      Script: {instanceID: 11570}
     - Class: 114
-      Script: {instanceID: 11748}
+      Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11684}
     - Class: 114
-      Script: {instanceID: 11848}
+      Script: {instanceID: 11750}
     - Class: 114
-      Script: {instanceID: 11850}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 11882}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 11884}
+      Script: {instanceID: 11818}
+    - Class: 114
+      Script: {instanceID: 11862}
+    - Class: 114
+      Script: {instanceID: 11864}
     - Class: 114
       Script: {instanceID: 11898}
     - Class: 114
       Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 151450}
+      Script: {instanceID: 11914}
+    - Class: 114
+      Script: {instanceID: 11916}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1545,6 +1551,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 7d4945251a86685b159345810967871d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonClickEffect
+  - hash:
+      serializedVersion: 2
       Hash: dd7520b7d4e690e8c593273e7b9fbe80
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1683,6 +1695,12 @@ ScriptsOnlyBuild:
     className: StoreScrolling
   - hash:
       serializedVersion: 2
+      Hash: c52e056619f10fb4eb3231c5e1664e25
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Vibration1
+  - hash:
+      serializedVersion: 2
       Hash: 8a874a8207a7664bdf44e61f28717254
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1725,7 +1743,7 @@ ScriptsOnlyBuild:
     className: LifetimeStats
   - hash:
       serializedVersion: 2
-      Hash: f2a9a42c7b49b77b0405739e5c845f6e
+      Hash: 8b495914c43ceb46711a0317bbed0b06
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -1747,12 +1765,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
-  - hash:
-      serializedVersion: 2
-      Hash: 8818e6a0a08fbacc8dc0ec9c67275350
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Vibration1
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

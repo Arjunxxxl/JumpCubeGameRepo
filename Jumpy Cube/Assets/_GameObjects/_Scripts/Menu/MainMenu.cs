@@ -6,6 +6,8 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    public float commandExecuationDelay = 0.2f;
+
     [Header("Menus")]
     public GameObject mainMenu;
     public GameObject homeMenu;
@@ -111,6 +113,11 @@ public class MainMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        Invoke("HomeButtonFunction", commandExecuationDelay);
+    }
+
+    void HomeButtonFunction()
+    {
         playerChild = player.transform.GetChild(1).gameObject;
 
         tileSystem.SetActive(true);
@@ -122,9 +129,15 @@ public class MainMenu : MonoBehaviour
         stats.SetActive(false);
         settings.SetActive(false);
         optimizationMenu.SetActive(false);
+
     }
 
     public void StoreButton()
+    {
+        Invoke("StoreButtonFunction", commandExecuationDelay);
+    }
+
+    void StoreButtonFunction()
     {
         playerChild = player.transform.GetChild(1).gameObject;
 
@@ -141,6 +154,11 @@ public class MainMenu : MonoBehaviour
 
     public void LevelButton()
     {
+        Invoke("LevelButtonFunction", commandExecuationDelay);
+    }
+
+    void LevelButtonFunction()
+    {
         homeMenu.SetActive(false);
         store.SetActive(false);
         levels.SetActive(true);
@@ -151,6 +169,11 @@ public class MainMenu : MonoBehaviour
 
     public void StatsButton()
     {
+        Invoke("StatsButtonFunction", commandExecuationDelay);
+    }
+
+    void StatsButtonFunction()
+    {
         homeMenu.SetActive(false);
         store.SetActive(false);
         levels.SetActive(false);
@@ -160,6 +183,11 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SettingButton()
+    {
+        Invoke("SettingsButtonFunction", commandExecuationDelay);
+    }
+
+    void SettingsButtonFunction()
     {
         homeMenu.SetActive(false);
         store.SetActive(false);
