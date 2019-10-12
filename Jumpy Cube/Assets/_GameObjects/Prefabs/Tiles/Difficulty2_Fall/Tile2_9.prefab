@@ -116,6 +116,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &935342652020661740
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +234,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1510563177909443027
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +382,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044709025628
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +500,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044711468991
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +618,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044716617475
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +736,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044732175196
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +854,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044804461863
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +972,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044865072291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1090,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044907129251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1208,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044917679504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,6 +1326,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044953435863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1444,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044989182833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1562,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126044995465416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1680,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045022031253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1798,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045124904640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,6 +1916,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045198903107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,6 +2034,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045220434963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2152,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045281003531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,6 +2270,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045284023261
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,6 +2388,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045330865570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2566,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045354086720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,6 +2684,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045358079386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,6 +2802,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045408115735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,6 +2920,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045513844377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,6 +3038,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045521130778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,6 +3074,8 @@ Transform:
   - {fileID: 8399117084818947931}
   - {fileID: 8963966261830845855}
   - {fileID: 8397348903905163598}
+  - {fileID: 5251548750573000890}
+  - {fileID: 1975044016466688039}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3156,6 +3208,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045636904596
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3326,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045705349237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,6 +3444,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045749380586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,6 +3562,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045867025709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,6 +3680,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126045921098710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3736,6 +3798,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046061509011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,6 +3916,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046101382664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3968,6 +4034,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046167916283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4212,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046300770612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,6 +4330,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046413107821
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,6 +4448,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046558629969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,6 +4566,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046579931400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,6 +4684,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046632184434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,6 +4802,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046668913637
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,6 +4920,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046679348458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,6 +5038,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2558126046689405588
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,6 +5156,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2632771117267413907
 GameObject:
   m_ObjectHideFlags: 0
@@ -5188,6 +5274,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2877064927742420298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,6 +5392,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2903511571792081657
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,6 +5510,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &3199470910252214984
 GameObject:
   m_ObjectHideFlags: 0
@@ -5536,6 +5628,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &3256660218827799120
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,6 +5746,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &3312658707469134440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5768,6 +5864,38 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
+--- !u!1 &3460507404915327131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5035737418047165206}
+  m_Layer: 0
+  m_Name: Point1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5035737418047165206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460507404915327131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1975044016466688039}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3494922090600488923
 GameObject:
   m_ObjectHideFlags: 0
@@ -5914,6 +6042,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &4237047541326146647
 GameObject:
   m_ObjectHideFlags: 0
@@ -6030,6 +6160,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &4330194748752776231
 GameObject:
   m_ObjectHideFlags: 0
@@ -6146,6 +6278,40 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
+--- !u!1 &4373962211117591648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5251548750573000890}
+  m_Layer: 0
+  m_Name: DeathColliders (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5251548750573000890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373962211117591648}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7295353764936351885}
+  - {fileID: 6682747438983287878}
+  m_Father: {fileID: 2558126045521130782}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4442785264440065967
 GameObject:
   m_ObjectHideFlags: 0
@@ -6262,6 +6428,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &5067142251070340269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,6 +6692,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &5687840796027536621
 GameObject:
   m_ObjectHideFlags: 0
@@ -6640,6 +6810,40 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
+--- !u!1 &5716371241301310768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975044016466688039}
+  m_Layer: 0
+  m_Name: RevivalPoints (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1975044016466688039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5716371241301310768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8888227195744361478}
+  - {fileID: 5035737418047165206}
+  m_Father: {fileID: 2558126045521130782}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5972739809502351767
 GameObject:
   m_ObjectHideFlags: 0
@@ -6814,6 +7018,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &6505573215604829261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,6 +7136,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &6658365158261948873
 GameObject:
   m_ObjectHideFlags: 0
@@ -7046,6 +7254,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &6843982315781350898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7162,6 +7372,124 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
+--- !u!1 &7017672341150790128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7295353764936351885}
+  - component: {fileID: 4212275913191922671}
+  - component: {fileID: 754572075268992487}
+  m_Layer: 0
+  m_Name: Fall1
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7295353764936351885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017672341150790128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.01, y: -2.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5251548750573000890}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4212275913191922671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017672341150790128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &754572075268992487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017672341150790128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0b9bdd1551abf4c93c040d13f1c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revitalPoint: {fileID: 8355809177943954206}
+--- !u!1 &7287969611456388247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6682747438983287878}
+  - component: {fileID: 6749848113515835294}
+  - component: {fileID: 7378840918580539926}
+  m_Layer: 0
+  m_Name: Fall1 (1)
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6682747438983287878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287969611456388247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.99, y: -2.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5251548750573000890}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6749848113515835294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287969611456388247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7378840918580539926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287969611456388247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0b9bdd1551abf4c93c040d13f1c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revitalPoint: {fileID: 3460507404915327131}
 --- !u!1 &7993956075888115108
 GameObject:
   m_ObjectHideFlags: 0
@@ -7311,6 +7639,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8304248554006636013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7343,6 +7673,36 @@ Transform:
   - {fileID: 4619526124417046995}
   m_Father: {fileID: 2558126045521130782}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8355809177943954206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8888227195744361478}
+  m_Layer: 0
+  m_Name: Point1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8888227195744361478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8355809177943954206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.5, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1975044016466688039}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9032722253310666818
 GameObject:
@@ -7460,6 +7820,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1001 &70032940675174566
 PrefabInstance:
   m_ObjectHideFlags: 0

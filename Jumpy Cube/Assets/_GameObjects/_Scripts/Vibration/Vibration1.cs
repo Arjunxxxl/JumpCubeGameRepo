@@ -14,6 +14,9 @@ public class Vibration1 : MonoBehaviour
     public float deathVibrationAmt;
     public static int sdkInt;
 
+    public CustomStrings customStrings;
+    int isVibrationOn;
+
     #region SingleTon
     public static Vibration1 Instance;
     private void Awake()
@@ -42,6 +45,13 @@ public class Vibration1 : MonoBehaviour
      * Repeat: int: index of where to repeat, -1 for no repeat
      */
 
+    private void Start()
+    {
+        if(!customStrings)
+        {
+            customStrings = CustomStrings.Instance;
+        }
+    }
 
     void OnEnable()
     {
@@ -232,6 +242,12 @@ public class Vibration1 : MonoBehaviour
 
     public void Vibrate(float amt)
     {
+        isVibrationOn = PlayerPrefs.GetInt(customStrings.VIBRATION_STRING, 1);
+        if (isVibrationOn == 0)
+        {
+            return;
+        }
+
         CreateOneShot((long)amt);
     }
     

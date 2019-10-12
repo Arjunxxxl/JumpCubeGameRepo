@@ -116,6 +116,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1135306280189549068
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +234,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1496442671647348265
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +383,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1974369138699563692
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +501,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2110338636306128680
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +619,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2293629349560482579
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +737,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &3331591069546885390
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +885,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &4356250854259209891
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1004,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &5061005820029831722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,6 +1122,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &5592920962316024525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1275,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &6581151703745028981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1423,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879419984395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,6 +1541,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879426258180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,6 +1660,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879465034899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1778,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879514159081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1896,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879534149296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +2014,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879682817164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,6 +2132,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879796449237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,6 +2250,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879879862775
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2368,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730879924092954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2546,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880035727218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2664,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880171681079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2782,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880226802636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,6 +2901,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880344431371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,6 +3019,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880392672916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,6 +3137,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880457988213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,6 +3255,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880567131123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,6 +3373,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880577154043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,6 +3539,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880690954998
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,6 +3657,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880737660833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,6 +3775,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880741254011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,6 +3893,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880758524356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,6 +4011,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880764306243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,6 +4189,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880815183594
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,6 +4307,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880872377074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4425,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880892860834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,6 +4543,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730880969988129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4661,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881076237172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,6 +4779,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881100459561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4822,6 +4898,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881102564752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +5017,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881141719094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +5135,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881181670257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,6 +5253,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881187764034
 GameObject:
   m_ObjectHideFlags: 0
@@ -5287,6 +5371,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881230049858
 GameObject:
   m_ObjectHideFlags: 0
@@ -5403,6 +5489,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881294871494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5607,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881365061053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5636,6 +5726,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881375392226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5752,6 +5844,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881384049085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5868,6 +5962,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881386815838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5984,6 +6080,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7110730881402504076
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,6 +6199,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7324917308603004274
 GameObject:
   m_ObjectHideFlags: 0
@@ -6217,6 +6317,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7365642269346121890
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,6 +6465,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7594606631814605848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6480,6 +6584,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7791180267856979121
 GameObject:
   m_ObjectHideFlags: 0
@@ -6596,6 +6702,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7842670830512829577
 GameObject:
   m_ObjectHideFlags: 0
@@ -6712,6 +6820,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7874794418551845929
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,6 +6938,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8118865023482423067
 GameObject:
   m_ObjectHideFlags: 0
@@ -6974,6 +7086,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8927025410586866358
 GameObject:
   m_ObjectHideFlags: 0
@@ -7091,6 +7205,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8973949691390566734
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,6 +7323,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &9023488742852022982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,6 +7441,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1001 &159633910441892895
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameOverMenu : MonoBehaviour
 {
+    public float gameoverMenuCommandExecutionDelay;
+
     [Header("Menues")]
     public GameObject inGameMenu;
     public GameObject gameOverMenu;
     public GameObject revivalMenu;
     public GameObject countDownMenu;
 
+    [Header("Revival Screen Total Diamonds")]
+    public TMP_Text rivivalTotalDiamonds;
 
     [Header("Screen Shot Data")]
     public RawImage screenShotImg;
@@ -33,6 +38,8 @@ public class GameOverMenu : MonoBehaviour
     LoadLevel loadLevel;
     TimelinePlayer timelinePlayer;
     MissionManager missionManager;
+    ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
+    DiamondScore diamondScore;
     
 
     #region SingleTon
@@ -58,6 +65,10 @@ public class GameOverMenu : MonoBehaviour
         timelinePlayer = TimelinePlayer.Instance;
         playerMovement = PlayerMovement.Instance;
         missionManager = MissionManager.Instance;
+        diamondScore = DiamondScore.Instance;
+        buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+
+        gameoverMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.gameoverMenuCommandExecutionDelay;
 
         gameOverMenu.SetActive(false);
         currentTime = 0;
@@ -79,6 +90,7 @@ public class GameOverMenu : MonoBehaviour
             if (currentTime > gameOverMenuShowDelay)
             {
                 revivalMenu.SetActive(true);
+                rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
                 checker = true;
             }
         }
@@ -125,12 +137,17 @@ public class GameOverMenu : MonoBehaviour
     {
         missionManager.CheckingForShareScoreMission();
 
-#if UNITY_ANDROID
-        path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
-#endif
-#if UNITY_EDITOR
-        path = "ScreenShot.png";
-#endif
+        Invoke("ShareScreenShotFunction", gameoverMenuCommandExecutionDelay);
+    }
+
+    void ShareScreenShotFunction()
+    {
+        #if UNITY_ANDROID
+            path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
+        #endif
+        #if UNITY_EDITOR
+            path = "ScreenShot.png";
+        #endif
 
         //new method
         new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
@@ -182,6 +199,22 @@ public class GameOverMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        Invoke("HomeButtonFunction", gameoverMenuCommandExecutionDelay);
+    }
+
+    void HomeButtonFunction()
+    {
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+    }
+
+
+    public void WatchAdsForDoubleReward()
+    {
+        Invoke("WatchAdsForDoubleRewardFunction", gameoverMenuCommandExecutionDelay);
+    }
+
+    void WatchAdsForDoubleRewardFunction()
+    {
+
     }
 }

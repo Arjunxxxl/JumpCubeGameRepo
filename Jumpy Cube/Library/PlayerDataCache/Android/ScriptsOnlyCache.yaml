@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonClickCommandExecutionDelay
     - ButtonClickEffect
     - CameraFollows
     - CameraShake
@@ -27,12 +28,14 @@ ScriptsOnlyBuild:
     - PPDebugScript
     - PauseMenu
     - PlayerDeath
+    - PlayerKiller
     - PlayerMovement
     - PlayerSpawner
     - RevivePlayer
     - RevivePoints
     - SavedData
     - SelectColorScheme
+    - SettingsMenu
     - SpikesAnimation
     - SpikesShooting
     - Store
@@ -72,6 +75,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.Timeline.Editor.dll:
     - UnityEditor.Timeline.SequenceHierarchy
+    - UnityEditor.Timeline.TimelineAssetViewModel
     - UnityEditor.Timeline.TimelineWindow
     Unity.Timeline.dll:
     - UnityEngine.Timeline.AnimationTrack
@@ -292,6 +296,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11914}
     - Class: 114
       Script: {instanceID: 11916}
+    - Class: 114
+      Script: {instanceID: 632584}
+    - Class: 114
+      Script: {instanceID: 1171242}
+    - Class: 114
+      Script: {instanceID: 2456610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -312,6 +322,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
     - Class: 320
@@ -327,7 +343,7 @@ ScriptsOnlyBuild:
     className: PostProcessLayer
   - hash:
       serializedVersion: 2
-      Hash: 08b50ad2d83bac74b8f6b7e133e40cd5
+      Hash: 63d2972e35e8e77490c00e38154ab463
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseMenu
@@ -399,7 +415,7 @@ ScriptsOnlyBuild:
     className: MotionBlur
   - hash:
       serializedVersion: 2
-      Hash: f280d1026fb6dd4b97dd8eeda257f304
+      Hash: 3cef31bc317b00158329c9b0b49f7e14
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RevivePlayer
@@ -417,7 +433,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: ed00ab86e058bed0bf44913b54c364cf
+      Hash: b03ed813f452fe1ead3c37a83af17e11
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -633,7 +649,7 @@ ScriptsOnlyBuild:
     className: IoSphereColorChanger
   - hash:
       serializedVersion: 2
-      Hash: c5a78c3fcf71f3cf3493314d87e5db34
+      Hash: c3d32715c4f8ea755ad626065cf1a03f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CustomStrings
@@ -1227,7 +1243,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: cc7ce953a57dbfd9b7abfa8e611862a4
+      Hash: 2616b8a72603543e05cbb88b45c03df5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TileSpawnAnimation
@@ -1395,7 +1411,7 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
-      Hash: d6791f9c95528f971e78cf32f99a256e
+      Hash: 5d14c331825aba5302e5c23752274205
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameOverMenu
@@ -1551,7 +1567,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 7d4945251a86685b159345810967871d
+      Hash: d29679e72b9f9bacd07fa0e0e7ff0af4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ButtonClickEffect
@@ -1695,7 +1711,7 @@ ScriptsOnlyBuild:
     className: StoreScrolling
   - hash:
       serializedVersion: 2
-      Hash: c52e056619f10fb4eb3231c5e1664e25
+      Hash: dfa136516e1dd44862e2ec72c5b24966
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Vibration1
@@ -1765,6 +1781,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 924378d944f430ebd1106d0ce7cc47e6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonClickCommandExecutionDelay
+  - hash:
+      serializedVersion: 2
+      Hash: 0a351b783dd8ff2c9f95e4dac111932a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerKiller
+  - hash:
+      serializedVersion: 2
+      Hash: b46d33638b3c00760ba013d768d95ac8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsMenu
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

@@ -5,6 +5,33 @@ public class ButtonClickEffect : MonoBehaviour
     public Vector3 originalSize = new Vector3(1, 1, 1);
     public Vector3 pressedSize = new Vector3(0.85f, 0.85f, 1);
 
+    #region IN GAME MENU BUTTONS
+    [Header("In Game Menu Buttons")]
+    public Transform pauseButton;
+    #endregion
+
+    #region PAUSE GAME MENU
+    [Header("Pause Menu")]
+    public Transform playButton;
+    public Transform homeButton;
+    public Transform restartButton;
+    #endregion
+
+    #region REVIVAL MENU BUTTONS
+    [Header("Revial Menu Buttons")]
+    public Transform revival_WatchAdsButtons;
+    public Transform useDiamondsButton;
+    public Transform skipButton;
+    #endregion
+
+    #region GAMEOVER MENU BUTTONS
+    [Header("Gameover Menu Buttons")]
+    public Transform gameover_HomeButton;
+    public Transform gameover_ShareButton;
+    public Transform gameover_WatchAdsButton;
+    #endregion
+
+    #region HOME MENUS BUTTONS
     [Header("Menus button")]
     public Transform storeButton;
     public Transform statsButton;
@@ -13,16 +40,38 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform rateButton;
     public Transform shareButton;
     public Transform noAdsButton;
+    #endregion
 
+    #region BACK BUTTONS
     [Header("Back Button")]
     public Transform storeBack;
     public Transform statsBack;
     public Transform settingsBack1;
+    #endregion
 
+    #region SETTINGS MENU BUTTONS
+    [Header("Settings Buttons")]
+    public Transform soundButton;
+    public Transform vibrationButton;
+    public Transform highQualityButton;
+    public Transform privatePolicyButton;
+    public Transform restorePurchaseButton;
+    public Transform studioButton;
+    #endregion
+
+    #region STATS MENU BUTTONS
+    [Header("Stats Buttons")]
+    public Transform leaderBoardButton;
+    public Transform statsShareButton;
+    #endregion
+
+    #region STORE LEFT RIGHT ARROW
     [Header("Store Left Right Arrow")]
     public Transform store_left_arrow;
     public Transform store_right_arrow;
+    #endregion
 
+    #region STORE PANNEL 1
     [Header("Store Pannel 1")]
     public Transform watchAdsButton;
     public Transform rateStoreButton;
@@ -35,7 +84,9 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform packButton_1;
     public Transform packButton_2;
     public Transform packButton_3;
+    #endregion
 
+    #region STORE PANNEL 2
     [Header("Store Pannel 2")]
     public Transform pannel2_button1;
     public Transform pannel2_button2;
@@ -46,7 +97,9 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform pannel2_button7;
     public Transform pannel2_button8;
     public Transform pannel2_button9;
+    #endregion
 
+    #region STORE PANNEL 3
     [Header("Store Pannel 3")]
     public Transform pannel3_button1;
     public Transform pannel3_button2;
@@ -57,8 +110,10 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform pannel3_button7;
     public Transform pannel3_button8;
     public Transform pannel3_button9;
+    #endregion
 
-    [Header("Store Pannel 3")]
+    #region STORE PANNEL 4
+    [Header("Store Pannel 4")]
     public Transform pannel4_button1;
     public Transform pannel4_button2;
     public Transform pannel4_button3;
@@ -68,7 +123,9 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform pannel4_button7;
     public Transform pannel4_button8;
     public Transform pannel4_button9;
+    #endregion
 
+    #region STORE PANNEL 5
     [Header("Store Pannel 5")]
     public Transform pannel5_button1;
     public Transform pannel5_button2;
@@ -79,7 +136,9 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform pannel5_button7;
     public Transform pannel5_button8;
     public Transform pannel5_button9;
+    #endregion
 
+    #region STORE PANNEL 6
     [Header("Store Pannel 6")]
     public Transform pannel6_button1;
     public Transform pannel6_button2;
@@ -87,6 +146,119 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform pannel6_button4;
     public Transform pannel6_button5;
     public Transform pannel6_button6;
+    #endregion
+
+    /// <summary>
+    /// ***        AFTER THIS THERE ARE FUNCTIONS FOR BUTTONS        *** ///
+    /// </summary>
+
+    #region IN GAME BUTTONS
+    public void InGameMenu_PauseButtonPressed()
+    {
+        pauseButton.localScale = pressedSize;
+    }
+
+    public void InGameMenu_PauseButtonReleased()
+    {
+        pauseButton.localScale = originalSize;
+    }
+    #endregion
+
+    #region PAUSE BUTTONS
+    public void PauseMenu_PlayButtonPressed()
+    {
+        playButton.localScale = pressedSize;
+    }
+
+    public void PauseMenu_PlayButtonreleased()
+    {
+        playButton.localScale = originalSize;
+    }
+
+    public void PauseMenu_HomeButtonPressed()
+    {
+        homeButton.localScale = pressedSize;
+    }
+
+    public void PauseMenu_HomeButtonreleased()
+    {
+        homeButton.localScale = originalSize;
+    }
+
+    public void PauseMenu_RestartButtonPressed()
+    {
+        restartButton.localScale = pressedSize;
+    }
+
+    public void PauseMenu_RestartButtonreleased()
+    {
+        restartButton.localScale = originalSize;
+    }
+    #endregion
+
+    #region REVIVAL BUTTONS
+    public void RevivalMenu_WatchAdsButtonPressed()
+    {
+        revival_WatchAdsButtons.localScale = pressedSize;
+    }
+
+    public void RevivalMenu_WatchAdsButtonReleased()
+    {
+        revival_WatchAdsButtons.localScale = originalSize;
+    }
+
+    public void RevivalMenu_UseDiamondsButtonPressed()
+    {
+        useDiamondsButton.localScale = pressedSize;
+    }
+
+    public void RevivalMenu_UseDiamondsButtonReleased()
+    {
+        useDiamondsButton.localScale = originalSize;
+    }
+
+    public void RevivalMenu_SkipButtonPressed()
+    {
+        skipButton.localScale = pressedSize;
+    }
+
+    public void RevivalMenu_SkipButtonReleased()
+    {
+        skipButton.localScale = originalSize;
+    }
+    #endregion
+
+    #region GAMEOVER BUTTONS
+    public void GameoverMenu_WatchAdsButtonPressed()
+    {
+        gameover_WatchAdsButton.localScale = pressedSize;
+    }
+
+    public void GameoverMenu_WatchAdsButtonReleased()
+    {
+        gameover_WatchAdsButton.localScale = originalSize;
+    }
+
+    public void GameoverMenu_ShareButtonPressed()
+    {
+        gameover_ShareButton.localScale = pressedSize;
+    }
+
+    public void GameoverMenu_ShareButtonReleased()
+    {
+        gameover_ShareButton.localScale = originalSize;
+    }
+
+    public void GameoverMenu_HomeButtonPressed()
+    {
+        gameover_HomeButton.localScale = pressedSize;
+    }
+
+    public void GameoverMenu_HomeButtonReleased()
+    {
+        gameover_HomeButton.localScale = originalSize;
+    }
+    #endregion
 
     #region HOME BUTTONS
     public void StoreButtonPressed()
@@ -194,6 +366,90 @@ public class ButtonClickEffect : MonoBehaviour
     public void Back_Settings_Released1()
     {
         settingsBack1.localScale = originalSize;
+    }
+    #endregion
+
+    #region STATS BUTTONS
+    public void Stats_ShareButtonPressed()
+    {
+        statsShareButton.localScale = pressedSize;
+    }
+
+    public void Stats_ShareButtonReleased()
+    {
+        statsShareButton.localScale = originalSize;
+    }
+
+    public void Stats_LeaderboardButtonPressed()
+    {
+        leaderBoardButton.localScale = pressedSize;
+    }
+
+    public void Stats_LeaderboardButtonReleased()
+    {
+        leaderBoardButton.localScale = originalSize;
+    }
+    #endregion
+
+    #region SETTINGS BUTTONS
+    public void Settings_SoundButtonPressed()
+    {
+        soundButton.localScale = pressedSize;
+    }
+
+    public void Settings_SoundButtonReleased()
+    {
+        soundButton.localScale = originalSize;
+    }
+
+    public void Settings_VibrationButtonPressed()
+    {
+        vibrationButton.localScale = pressedSize;
+    }
+
+    public void Settings_VibrationButtonReleased()
+    {
+        vibrationButton.localScale = originalSize;
+    }
+
+    public void Settings_HQButtonPressed()
+    {
+        highQualityButton.localScale = pressedSize;
+    }
+
+    public void Settings_HQButtonReleased()
+    {
+        highQualityButton.localScale = originalSize;
+    }
+
+    public void Settings_RestoreButtonPressed()
+    {
+        restorePurchaseButton.localScale = pressedSize;
+    }
+
+    public void Settings_RestoreButtonReleased()
+    {
+        restorePurchaseButton.localScale = originalSize;
+    }
+
+    public void Settings_PrivateButtonPressed()
+    {
+        privatePolicyButton.localScale = pressedSize;
+    }
+
+    public void Settings_PrivateButtonReleased()
+    {
+        privatePolicyButton.localScale = originalSize;
+    }
+
+    public void Settings_StudioButtonPressed()
+    {
+        studioButton.localScale = pressedSize;
+    }
+
+    public void Settings_StudioButtonReleased()
+    {
+        studioButton.localScale = originalSize;
     }
     #endregion
 

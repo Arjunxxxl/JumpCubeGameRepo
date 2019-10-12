@@ -5,6 +5,9 @@ using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
+    public float commandExecutionDelay_inGame;
+    public float commandExecutionDelay_pauseMenu;
+
     [Header("Menues")]
     public GameObject inGameMenu;
     public GameObject pauseMenu;
@@ -19,6 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     TimelinePlayer timelinePlayer;
     LoadLevel loadLevel;
+    ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
 
     #region SingleTon
     public static PauseMenu Instance;
@@ -42,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     {
         timelinePlayer = TimelinePlayer.Instance;
         loadLevel = LoadLevel.Instance;
+        buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
 
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(false);
@@ -50,6 +55,10 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         afterResumeTxt.text = "3";
         afterResumeTime = 0;
+
+        commandExecutionDelay_inGame = buttonClickCommandExecutionDelay.ingameMenuCommandExecutionDelay;
+        commandExecutionDelay_pauseMenu = buttonClickCommandExecutionDelay.pauseMenuCommndExecutionDelay;
+
     }
 
     private void Update()
@@ -63,6 +72,11 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        Invoke("PauseGameFunction", commandExecutionDelay_inGame);
+    }
+
+    void PauseGameFunction()
+    {
         inGameMenu.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -74,6 +88,12 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        StartCoroutine(ResumeGameFunction());
+    }
+
+    IEnumerator ResumeGameFunction()
+    {
+        yield return new WaitForSecondsRealtime(commandExecutionDelay_pauseMenu);
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(true);
         afterResumeTime = 0;
@@ -98,6 +118,12 @@ public class PauseMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        StartCoroutine(HomeButtonFunction());
+    }
+
+    IEnumerator HomeButtonFunction()
+    {
+        yield return new WaitForSecondsRealtime(commandExecutionDelay_pauseMenu);
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
 }

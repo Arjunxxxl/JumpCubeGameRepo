@@ -5,9 +5,12 @@ using UnityEngine.Playables;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Camera mainCam;
+
     [Header("Movement Data")]
     [SerializeField]
     bool isMovementActivated;
+    public float speed_setThisToSetMovementSpeed = 5f;
     public float movementSpeed = 5f;
     public float upVelocity = 8f;
     public Vector3 velocity;
@@ -21,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 2.5f;
     public float editorRotationSpeed = 1f;
     public float androidRotationSpeed = 5f;
+
+    [Header("Valid touch area data")]
+    public float validTouchY = 0.84f;
+    public float touchPosY;
+    public Vector2 touchPos1;
 
     [Header("Camera Shake")]
     public float cameraShakeMagnitude = 0.01f;
@@ -42,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Gravity for player data")]
     public Vector3 downGravity = new Vector3(0, -25f, 0);
     public Vector3 upGravity = new Vector3(0, 25f, 0);
-    public Vector3 changingGravity = new Vector3(0, 50f, 0);
+    public Vector3 changingGravity = new Vector3(0, 40f, 0);
     public bool isDownGravity;
     public bool isGravityChanged;
 
@@ -50,13 +58,22 @@ public class PlayerMovement : MonoBehaviour
     public static string GroundFloor = "Ground_Floor";
     public static string GroundCeil = "Ground_Ceil";
     public string currentGround;
+    
+    [Header("Speed Increase Data")]
+    public float movementSpeedIncrease = 0.1f;
+    public int currentDistance;
+    public int speedIncreaseDistanceOffset = 200;
+    public int distanceAtSpeedIncreases;
+    public int timesSpeedIncreased;
+    public int maxNumberOfSpeedIncrease = 10;
 
-
+    [Space]
     public TrailRenderer playerTrail;
     public bool isDead;
     public bool isReviving;
 
     Rigidbody rb;
+    Touch touch1;
 
     PlayerDeath playerDeath;
     PlayerSpawner playerSpawner;
@@ -65,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
     PauseMenu pauseMenu;
     InGameMenu inGameMenu;
     MissionManager missionManager;
+    DistanceScore distanceScore;
 
     GameObject spawnedLandEffect;
     GameObject diamondCollectEffect;
@@ -107,6 +125,12 @@ public class PlayerMovement : MonoBehaviour
         pauseMenu = PauseMenu.Instance;
         inGameMenu = InGameMenu.Instance;
         missionManager = MissionManager.Instance;
+        distanceScore = DistanceScore.Instance;
+
+        if(!mainCam)
+        {
+            mainCam = Camera.main;
+        }
 
         rb = GetComponent<Rigidbody>();
         numberOfJumps = 0;
@@ -130,6 +154,11 @@ public class PlayerMovement : MonoBehaviour
 
         isMovementActivated = true;
         isReviving = false;
+
+        movementSpeed = speed_setThisToSetMovementSpeed;
+        timesSpeedIncreased = 1;
+        currentDistance = 0;
+        distanceAtSpeedIncreases = 200;
     }
 
     // Update is called once per frame
@@ -180,8 +209,53 @@ public class PlayerMovement : MonoBehaviour
             currentTime += Time.deltaTime;
         }
 
+#if UNITY_ANDROID
+        #region Android Controls
+        if (Input.touchCount > 0)
+        {
+            touch1 = Input.GetTouch(0);
+            if (touch1.phase == TouchPhase.Began && numberOfJumps < maxNumverOfJumps)
+            {
+                touchPos1 = mainCam.ScreenToViewportPoint(touch1.position);
+                if (!isValidTouchArea(touchPos1))
+                {
+                    return;
+                }
+
+                if (currentTime < checkTime && numberOfJumps < maxNumverOfJumps)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x, upVelocity, 0);
+                    //rb.AddForce(Vector3.up * upVelocity, ForceMode.VelocityChange);
+                    numberOfJumps++;
+                    rotateTheCube = true;
+                    isGrounded = false;
+
+                    missionManager.CheckingForJumpMission();
+                }
+                else
+                {
+                    rb.velocity = new Vector3(rb.velocity.x, upVelocity, 0);
+                    //rb.AddForce(Vector3.up * upVelocity, ForceMode.VelocityChange);
+                    numberOfJumps += 2;
+                    rotateTheCube = true;
+                    isGrounded = false;
+
+                    missionManager.CheckingForJumpMission();
+                }
+            }
+        }
+        #endregion
+#endif
+#if UNITY_EDITOR
+        #region Editor Controls
         if (Input.GetMouseButtonDown(0) && numberOfJumps < maxNumverOfJumps)
         {
+            touchPos1 = mainCam.ScreenToViewportPoint(Input.mousePosition);
+            if (!isValidTouchArea(touchPos1))
+            {
+                return;
+            }
+
             if (currentTime < checkTime && numberOfJumps < maxNumverOfJumps)
             {
                 rb.velocity = new Vector3(rb.velocity.x, upVelocity, 0);
@@ -203,7 +277,8 @@ public class PlayerMovement : MonoBehaviour
                 missionManager.CheckingForJumpMission();
             }
         }
-
+#endregion
+#endif
         if (rotateTheCube)
         {
             if (isDownGravity)
@@ -216,6 +291,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        PlayerSpeedIncreaseFunction();
     }
 
     private void FixedUpdate()
@@ -408,4 +484,27 @@ public class PlayerMovement : MonoBehaviour
         isMovementActivated = state;
     }
 
+    bool isValidTouchArea(Vector2 touchPos)
+    {
+        touchPosY = touchPos.y;
+        return touchPosY < validTouchY ? true : false;
+    }
+
+    void PlayerSpeedIncreaseFunction()
+    {
+        if(timesSpeedIncreased > maxNumberOfSpeedIncrease)
+        {
+            return;
+        }
+
+        currentDistance = distanceScore.distance;
+
+        if(currentDistance > distanceAtSpeedIncreases)
+        {
+            Debug.Log("Speed icreases");
+            movementSpeed += movementSpeedIncrease;
+            distanceAtSpeedIncreases = distanceAtSpeedIncreases + (speedIncreaseDistanceOffset * timesSpeedIncreased);
+            timesSpeedIncreased++;
+        }
+    }
 }

@@ -112,5 +112,9 @@ public class CustomStrings : MonoBehaviour
     public string MISSION_CUNES_OWNED = "MISSION CUBES OWNED";
     #endregion
 
-
+    #region SETTINGS STRINGS
+    public string GAME_SOUND_STRING = "GAME SOUND STRING";
+    public string VIBRATION_STRING = "VIBRATION STRING";
+    public string HIGH_QUALITY_STRING = "HIGH QUALITY STRING";
+    #endregion
 }

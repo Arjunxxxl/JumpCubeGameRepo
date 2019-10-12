@@ -5,6 +5,8 @@ using TMPro;
 
 public class RevivePlayer : MonoBehaviour
 {
+    public float reviveScreenCommandExecutionDelay;
+
     [Header("Menues")]
     public GameObject inGameMenu;
     public GameObject gameOverMenuObj;
@@ -28,7 +30,7 @@ public class RevivePlayer : MonoBehaviour
     public int highScore;
     public int diamondBest;
     public int averageBest;
-    public float trophyShowingDelay = 1.5f;
+    public float trophyShowingDelay = 1.25f;
     public float trophyScowingOffset = 0.5f;
 
     [Header("Score Data")]
@@ -50,6 +52,8 @@ public class RevivePlayer : MonoBehaviour
     DistanceScore distanceScore;
     InGameMenu inGamemenu;
     CustomStrings customStrings;
+    ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
+    PlayerKiller playerKiller;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +66,10 @@ public class RevivePlayer : MonoBehaviour
         distanceScore = DistanceScore.Instance;
         inGamemenu = InGameMenu.Instance;
         customStrings = CustomStrings.Instance;
+        buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+        playerKiller = PlayerKiller.Instance;
+
+        reviveScreenCommandExecutionDelay = buttonClickCommandExecutionDelay.revivalMenuCommandExecutionDelay;
 
         isDead = playerDeath.isDead;
         
@@ -89,7 +97,12 @@ public class RevivePlayer : MonoBehaviour
 
     public void ReviePlayerFunction()
     {
-        if(isDead)
+        Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
+    }
+
+    void RevivePlayer_Function()
+    {
+        if (isDead)
         {
             revivalPoint = playerDeath.revialPointObj;
             player.transform.position = revivalPoint.transform.position;
@@ -101,12 +114,19 @@ public class RevivePlayer : MonoBehaviour
             cube.SetActive(true);
             deathParticleSystem.SetActive(false);
 
+            if (playerKiller.killPlayer)
+            {
+                playerKiller.killPlayer = false;
+                playerKiller.currentTime = 0;
+            }
+
             PlayerIsRevived();
             playerDeath.isDead = false;
 
             playerMovement.SetMovementActivateState(false);
             playerMovement.isReviving = true;
             playerMovement.playerTrail.enabled = false;
+            playerMovement.movementSpeed = playerMovement.speed_setThisToSetMovementSpeed;
 
             playerSpawner.isDisolveEffectDone = false;
             playerSpawner.disolveEffect = 0;
@@ -115,9 +135,14 @@ public class RevivePlayer : MonoBehaviour
 
     public void SkipRevivalMenuButton()
     {
+        Invoke("SkipRevival_Function", reviveScreenCommandExecutionDelay);
+    }
+
+    void SkipRevival_Function()
+    {
         revivalMenu.SetActive(false);
         gameOverMenuObj.SetActive(true);
-        
+
         averageScore = PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
         currentScore = distanceScore.distance;
         currentDiamonds = inGamemenu.diamondsCollected;

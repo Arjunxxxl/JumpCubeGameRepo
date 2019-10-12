@@ -6,7 +6,7 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public float commandExecuationDelay = 0.2f;
+    public float commandExecuationDelay;
 
     [Header("Menus")]
     public GameObject mainMenu;
@@ -36,6 +36,7 @@ public class MainMenu : MonoBehaviour
     public bool isGameStart;
 
     TimelinePlayer timelinePlayer;
+    ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
 
     #region SingleTon
     public static MainMenu Instance;
@@ -56,6 +57,9 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         timelinePlayer = TimelinePlayer.Instance;
+        buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+
+        commandExecuationDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
 
         isGameStart = false;
         mainMenu.SetActive(true);

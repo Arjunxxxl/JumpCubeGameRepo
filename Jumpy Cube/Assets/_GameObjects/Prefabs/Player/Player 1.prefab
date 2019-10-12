@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 668537985323732537}
   - component: {fileID: 668537985323732542}
   - component: {fileID: 7768941400643287778}
+  - component: {fileID: 1809532164}
   m_Layer: 11
   m_Name: Player 1
   m_TagString: Player
@@ -76,6 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebec5e1b2b6f0d4f9d69d28b5c5a250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 0}
+  isMovementActivated: 0
+  speed_setThisToSetMovementSpeed: 5
   movementSpeed: 5
   upVelocity: 8
   velocity: {x: 0, y: 0, z: 0}
@@ -83,8 +87,12 @@ MonoBehaviour:
   maxNumverOfJumps: 2
   rotateTheCube: 0
   rotationSpeed: 5
-  editorRotationSpeed: 1.2
+  editorRotationSpeed: 1.25
   androidRotationSpeed: 5
+  validTouchY: 0.84
+  touchPosY: 0
+  touchPos1: {x: 0, y: 0}
+  touchPos2: {x: 0, y: 0}
   cameraShakeMagnitude: 0.01
   cameraShake: {fileID: 0}
   groundEnter: 0
@@ -94,8 +102,21 @@ MonoBehaviour:
   isGrounded: 0
   landEffectOffSet: {x: 0, y: -0.5, z: 0}
   landEffectRotation: {x: 270, y: 0, z: 0}
+  downGravity: {x: 0, y: -25, z: 0}
+  upGravity: {x: 0, y: 25, z: 0}
+  changingGravity: {x: 0, y: 40, z: 0}
+  isDownGravity: 0
+  isGravityChanged: 0
+  currentGround: 
+  movementSpeedIncrease: 0.1
+  currentDistance: 0
+  speedIncreaseDistanceOffset: 200
+  distanceAtSpeedIncreases: 0
+  timesSpeedIncreased: 0
+  maxNumberOfSpeedIncrease: 10
   playerTrail: {fileID: 0}
   isDead: 0
+  isReviving: 0
 --- !u!114 &7768941400643287778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +132,25 @@ MonoBehaviour:
   deathParticleSystem: {fileID: 2942139412242541582}
   isDead: 0
   cube: {fileID: 0}
+  hitEnemy: {fileID: 0}
+  revialPointObj: {fileID: 0}
+  revivalPoint: {fileID: 0}
+--- !u!114 &1809532164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668537985323732932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf197e569be93148b7f5dc0a840550e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killPlayer: 0
+  playerSpeed: 0
+  stationatyDelay: 5
+  currentTime: 0
 --- !u!1001 &668537984820037845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,6 +227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1761776509010703887, guid: e6fbf526f8fb6294abe021b18c82253e,
+        type: 3}
+      propertyPath: TrailModule.ratio
+      value: 0.33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6fbf526f8fb6294abe021b18c82253e, type: 3}

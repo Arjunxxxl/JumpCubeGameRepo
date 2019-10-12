@@ -79,7 +79,7 @@ public class TileSpawner : MonoBehaviour
             }
             else if(i == 2)
             {
-                SpawnTile(4, 1);
+                SpawnTile(4, 4);
             }
             else
             {

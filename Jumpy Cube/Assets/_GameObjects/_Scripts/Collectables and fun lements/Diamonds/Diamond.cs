@@ -20,8 +20,8 @@ public class Diamond : MonoBehaviour
     public bool showDiamonds;
     public int maxProb = 100;
     public int currentProb;
-    int minChance = 35;
-    int maxChance = 70;
+    int minChance = 25;
+    int maxChance = 86;
 
     [Header("Data")]
     public float[] initialPosY;

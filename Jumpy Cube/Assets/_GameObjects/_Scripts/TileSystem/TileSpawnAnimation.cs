@@ -15,10 +15,18 @@ public class TileSpawnAnimation : MonoBehaviour
     public float speed;
     public float playerSpeed;
 
+    [Header("Ground Tag")]
+    public static string GroundFloor = "Ground_Floor";
+    public static string GroundCeil = "Ground_Ceil";
+
+    [Space]
     public Transform player;
 
     public float its, players;
     public float differnce;
+
+    public bool killPlayer;
+    public Vector3 finalPosKillPlayer;
 
     PlayerMovement playerMovement;
 
@@ -28,7 +36,7 @@ public class TileSpawnAnimation : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        
+
 
         playerMovement = PlayerMovement.Instance;
         playerSpeed = playerMovement.movementSpeed;
@@ -50,12 +58,22 @@ public class TileSpawnAnimation : MonoBehaviour
         {
             finalPosReached = false;
         }
+
+        killPlayer = false;
+        if (gameObject.CompareTag(GroundFloor))
+        {
+            finalPosKillPlayer = new Vector3(transform.localPosition.x, -45f, transform.localPosition.z);
+        }
+        else if (gameObject.CompareTag(GroundCeil))
+        {
+            finalPosKillPlayer = new Vector3(transform.localPosition.x, 30f, transform.localPosition.z);
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        if(!player)
+        if (!player)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
@@ -85,7 +103,13 @@ public class TileSpawnAnimation : MonoBehaviour
         its = transform.position.x;
         players = player.position.x;
         differnce = its - players;
-        
+
+        if (killPlayer)
+        {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, finalPosKillPlayer, Time.deltaTime * 30);
+
+            return;
+        }
 
         if (!finalPosReached)
         {

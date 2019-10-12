@@ -87,6 +87,28 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
+    public void KillPlayer(GameObject revivalObj)
+    {
+        revialPointObj = revivalObj;
+
+        vibration.Vibrate(vibration.deathVibrationAmt);
+
+        deathParticleSystem.SetActive(true);
+        deathParticleSystem.transform.position = transform.position;
+        cube.SetActive(false);
+        isDead = true;
+
+        diamondScore.SaveDiamondsCollected(inGameMenu.realNumberOfDiamondsCollected, false);
+
+        savedData.SavePlayerHighScore(distanceScore.distance);
+        savedData.SavePlayerAverageScore(distanceScore.distance);
+        savedData.SaveDiamondsCollectedinOneRun(inGameMenu.diamondsCollected);
+
+        inGameMenu.realNumberOfDiamondsCollected = 0;
+
+        gameOverMenu.CaptureScreenShot();
+    }
+
     public void SetPlayerChildCube(GameObject overrideCube = null)
     {
         if(overrideCube)
