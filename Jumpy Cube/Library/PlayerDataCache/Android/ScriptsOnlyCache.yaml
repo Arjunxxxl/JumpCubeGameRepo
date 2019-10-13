@@ -75,7 +75,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.Timeline.Editor.dll:
     - UnityEditor.Timeline.SequenceHierarchy
-    - UnityEditor.Timeline.TimelineAssetViewModel
     - UnityEditor.Timeline.TimelineWindow
     Unity.Timeline.dll:
     - UnityEngine.Timeline.AnimationTrack
@@ -225,83 +224,83 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10422}
     - Class: 114
-      Script: {instanceID: 10516}
+      Script: {instanceID: 10434}
+    - Class: 114
+      Script: {instanceID: 10452}
     - Class: 114
       Script: {instanceID: 10520}
     - Class: 114
       Script: {instanceID: 10524}
     - Class: 114
-      Script: {instanceID: 10534}
+      Script: {instanceID: 10528}
     - Class: 114
       Script: {instanceID: 10538}
     - Class: 114
-      Script: {instanceID: 10540}
+      Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10568}
+      Script: {instanceID: 10544}
     - Class: 114
-      Script: {instanceID: 10608}
+      Script: {instanceID: 10572}
     - Class: 114
-      Script: {instanceID: 10712}
+      Script: {instanceID: 10612}
     - Class: 114
-      Script: {instanceID: 10728}
+      Script: {instanceID: 10716}
     - Class: 114
-      Script: {instanceID: 10734}
+      Script: {instanceID: 10732}
     - Class: 114
-      Script: {instanceID: 10758}
+      Script: {instanceID: 10738}
     - Class: 114
-      Script: {instanceID: 10772}
+      Script: {instanceID: 10762}
     - Class: 114
-      Script: {instanceID: 10782}
+      Script: {instanceID: 10776}
     - Class: 114
-      Script: {instanceID: 10842}
+      Script: {instanceID: 10786}
     - Class: 114
-      Script: {instanceID: 10960}
+      Script: {instanceID: 10846}
     - Class: 114
-      Script: {instanceID: 10988}
+      Script: {instanceID: 10964}
     - Class: 114
-      Script: {instanceID: 11064}
+      Script: {instanceID: 10992}
     - Class: 114
-      Script: {instanceID: 11096}
+      Script: {instanceID: 11068}
     - Class: 114
-      Script: {instanceID: 11162}
+      Script: {instanceID: 11100}
     - Class: 114
-      Script: {instanceID: 11164}
+      Script: {instanceID: 11166}
     - Class: 114
-      Script: {instanceID: 11232}
+      Script: {instanceID: 11168}
     - Class: 114
-      Script: {instanceID: 11262}
+      Script: {instanceID: 11200}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11608}
+      Script: {instanceID: 11268}
     - Class: 114
-      Script: {instanceID: 11684}
+      Script: {instanceID: 11576}
     - Class: 114
-      Script: {instanceID: 11750}
+      Script: {instanceID: 11614}
     - Class: 114
-      Script: {instanceID: 11760}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 11756}
     - Class: 114
-      Script: {instanceID: 11818}
+      Script: {instanceID: 11766}
     - Class: 114
-      Script: {instanceID: 11862}
+      Script: {instanceID: 11820}
     - Class: 114
-      Script: {instanceID: 11864}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 11898}
+      Script: {instanceID: 11868}
     - Class: 114
-      Script: {instanceID: 11900}
+      Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 11914}
+      Script: {instanceID: 11904}
     - Class: 114
-      Script: {instanceID: 11916}
+      Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 632584}
+      Script: {instanceID: 11920}
     - Class: 114
-      Script: {instanceID: 1171242}
-    - Class: 114
-      Script: {instanceID: 2456610}
+      Script: {instanceID: 11922}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1111,6 +1110,12 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
+      Hash: 0a351b783dd8ff2c9f95e4dac111932a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerKiller
+  - hash:
+      serializedVersion: 2
       Hash: 483f34337a1196a461e6a21bf261f9f0
     assemblyName: Unity.RenderPipelines.Lightweight.Runtime.dll
     namespaceName: UnityEngine.Rendering.LWRP
@@ -1121,6 +1126,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark03
+  - hash:
+      serializedVersion: 2
+      Hash: 924378d944f430ebd1106d0ce7cc47e6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonClickCommandExecutionDelay
   - hash:
       serializedVersion: 2
       Hash: a9de4b8754e8dba6d12145a753649731
@@ -1579,6 +1590,12 @@ ScriptsOnlyBuild:
     className: TMP_TextEventCheck
   - hash:
       serializedVersion: 2
+      Hash: b46d33638b3c00760ba013d768d95ac8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsMenu
+  - hash:
+      serializedVersion: 2
       Hash: f22b8fdbadfd4221ab8afd1e930f1458
     assemblyName: Unity.RenderPipelines.Lightweight.Runtime.dll
     namespaceName: UnityEngine.Rendering.LWRP
@@ -1781,24 +1798,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
-  - hash:
-      serializedVersion: 2
-      Hash: 924378d944f430ebd1106d0ce7cc47e6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ButtonClickCommandExecutionDelay
-  - hash:
-      serializedVersion: 2
-      Hash: 0a351b783dd8ff2c9f95e4dac111932a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerKiller
-  - hash:
-      serializedVersion: 2
-      Hash: b46d33638b3c00760ba013d768d95ac8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SettingsMenu
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

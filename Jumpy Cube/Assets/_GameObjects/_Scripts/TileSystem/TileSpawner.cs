@@ -7,7 +7,7 @@ public class TileSpawner : MonoBehaviour
     public Transform player;
 
     [Header("Tile Spawn Data")]
-    public int maxTilesOnScreen = 8;
+    public int maxTilesOnScreen = 4;
     public float spawnX;
     public float tileLength;
     public float safeZone;
@@ -27,9 +27,9 @@ public class TileSpawner : MonoBehaviour
     public bool tireCompleted3;
     public bool tireCompleted4;
     public int dist_tire1 = 120;
-    public int dist_tire2 = 180;
-    public int dist_tire3 = 240;
-    public int dist_tire4 = 300;
+    public int dist_tire2 = 240;
+    public int dist_tire3 = 360;
+    public int dist_tire4 = 600;
 
     List<GameObject> activeTiles;
     GameObject spawnedTile;
@@ -79,11 +79,11 @@ public class TileSpawner : MonoBehaviour
             }
             else if(i == 2)
             {
-                SpawnTile(4, 4);
+                SpawnTile(6, 5);
             }
             else
             {
-                SpawnTile(4, 2);
+                SpawnTile();
             }
         }
     }
@@ -200,7 +200,7 @@ public class TileSpawner : MonoBehaviour
 
     void AddInitialInitialLevelTiles()               //use this to introduce easy, medium and hard mode
     {
-        for (int i1 = 0; i1 < 4; i1++)
+        for (int i1 = 0; i1 < 3; i1++)
         {
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
@@ -214,7 +214,7 @@ public class TileSpawner : MonoBehaviour
 
     void AddTire1Tiles()
     {
-        for (int i1 = 4; i1 < 6; i1++)
+        for (int i1 = 3; i1 < 6; i1++)
         {
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
@@ -228,7 +228,7 @@ public class TileSpawner : MonoBehaviour
 
     void AddTire2Tiles()
     {
-        for (int i1 = 6; i1 < 8; i1++)
+        for (int i1 = 6; i1 < 10; i1++)
         {
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
@@ -242,7 +242,7 @@ public class TileSpawner : MonoBehaviour
 
     void AddTire3Tiles()
     {
-        for (int i1 = 8; i1 < 11; i1++)
+        for (int i1 = 10; i1 < 13; i1++)
         {
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
@@ -256,7 +256,7 @@ public class TileSpawner : MonoBehaviour
 
     void AddTire4Tiles()
     {
-        for (int i1 = 11; i1 < totalTilesTypes; i1++)
+        for (int i1 = 13; i1 < totalTilesTypes; i1++)
         {
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);

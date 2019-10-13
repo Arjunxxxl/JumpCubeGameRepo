@@ -5,6 +5,7 @@ using UnityEngine;
 public class TileSpawnAnimation : MonoBehaviour
 {
     public bool finalPosReached;
+    public bool disablePlayerKiller;
 
     [Header("Data")]
     public float initialPosY;
@@ -104,7 +105,7 @@ public class TileSpawnAnimation : MonoBehaviour
         players = player.position.x;
         differnce = its - players;
 
-        if (killPlayer)
+        if (killPlayer && !disablePlayerKiller)
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, finalPosKillPlayer, Time.deltaTime * 30);
 

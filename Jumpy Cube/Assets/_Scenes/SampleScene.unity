@@ -8523,6 +8523,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!21 &154947928
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom/VertexColorCamera
+  m_Shader: {fileID: 4800000, guid: 04ede0abc1e28a148a7a91cc95adf385, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &155848947
 GameObject:
   m_ObjectHideFlags: 0
@@ -18077,463 +18098,504 @@ MonoBehaviour:
   - tileTypeIndex: 2
     poolObject:
     - tag: tile2_0
-      prefab: {fileID: 8482288536356223361, guid: 8d9e118cf40799d439db6f14ecfb395a,
+      prefab: {fileID: 612284697868395302, guid: cb15715e9f21ddf4ab559c313ddca1aa,
         type: 3}
       size: 5
     - tag: tile2_1
-      prefab: {fileID: 7028770682244193767, guid: 8e524df1055a3074cae4e164def1b876,
+      prefab: {fileID: 1292441650595597181, guid: 560c61069ee7d4b4abcc7083d5426eee,
         type: 3}
       size: 5
     - tag: tile2_2
-      prefab: {fileID: 4483266358865958524, guid: 418916d587291f349b915d9f43cbdc1c,
+      prefab: {fileID: 6306731720380362259, guid: e77026f5be4005e4aaae40913051f3b4,
         type: 3}
       size: 5
     - tag: tile2_3
-      prefab: {fileID: 7402841119255333317, guid: 1879beab2c23817498e9e2a4aff40075,
+      prefab: {fileID: 3444985556613796855, guid: ee6ce8347f34fd24ab29cf9e4d988a44,
         type: 3}
       size: 5
     - tag: tile2_4
-      prefab: {fileID: 1477167075880030082, guid: 03f235b5528935246bc3a7f2fd26e985,
+      prefab: {fileID: 5082683474279340608, guid: 876ce783fc4b42144aef3993bf115083,
         type: 3}
       size: 5
     - tag: tile2_5
-      prefab: {fileID: 5848455917556719349, guid: 1664086be97f8f34288755c33556de9e,
+      prefab: {fileID: 6679582673036554419, guid: 977f604005956d448b0cf5520bbd7ae6,
         type: 3}
       size: 5
     - tag: tile2_6
-      prefab: {fileID: 8800485463774917803, guid: 63fee53c8204d6246b132b27c0163411,
+      prefab: {fileID: 3500280997707226017, guid: 2b6ceacccd763094dbad7bc87d6d229c,
         type: 3}
       size: 5
     - tag: tile2_7
-      prefab: {fileID: 4095501826507404990, guid: 3c2d2074e8d93524e82a3b27ac47d72a,
+      prefab: {fileID: 5252245933370183086, guid: 60ec8bd41c4fad64d896c2ba591f946d,
         type: 3}
       size: 5
     - tag: tile2_8
-      prefab: {fileID: 4936775409684103767, guid: 0d8a2101c3ff794479a2d79ea0007c45,
+      prefab: {fileID: 2558126045521130778, guid: 55a39a594deaf0d48bde13ace310ff09,
         type: 3}
       size: 5
     - tag: tile2_9
-      prefab: {fileID: 5889716586922216165, guid: 2ba7fa77f74693b4c9ab89dba9935f88,
+      prefab: {fileID: 1636322661691062138, guid: 2d3e4c9732be14542959cd4204e250b7,
         type: 3}
       size: 5
   - tileTypeIndex: 3
     poolObject:
     - tag: tile3_0
-      prefab: {fileID: 5398151045302472236, guid: 8771251f57827d34282cce4a15d352e2,
+      prefab: {fileID: 689867429216484106, guid: 778f663c5c208b344a453a9306a94bf3,
         type: 3}
       size: 5
     - tag: tile3_1
-      prefab: {fileID: 5158842622327433818, guid: c247c9ca606d4cc4a92010d204c2dfe0,
+      prefab: {fileID: 9183872887975314340, guid: f79f419cb41239d449db55135b8575fe,
         type: 3}
       size: 5
     - tag: tile3_2
-      prefab: {fileID: 1811068145856424677, guid: 62c606c57edde714fae20772a5de522a,
+      prefab: {fileID: 844212026417713494, guid: bebff68e0a3eb774f821fcbe78e8ca4a,
         type: 3}
       size: 5
     - tag: tile3_3
-      prefab: {fileID: 8554116451451841169, guid: 6c92c2b1086037045b490e218117ab6f,
+      prefab: {fileID: 4954225540902166245, guid: 1c605c420fb681a469409ddc43535bde,
         type: 3}
       size: 5
     - tag: tile3_4
-      prefab: {fileID: 2229746977390133617, guid: 836b00c7434d38d4cac7c87c613ac733,
+      prefab: {fileID: 4199961943568488321, guid: 69de90f5365ec634da54c9c551d328f5,
         type: 3}
       size: 5
     - tag: tile3_5
-      prefab: {fileID: 6477233202166392924, guid: deda5f5021a245f41b49075ed38fbea4,
+      prefab: {fileID: 3809272229585468872, guid: c13e4edd52795634591c9a7e0d62c78b,
         type: 3}
       size: 5
     - tag: tile3_6
-      prefab: {fileID: 2293908598124981286, guid: 64d661689108c114d9641fe99d41e5d5,
+      prefab: {fileID: 4228536718615315107, guid: f63444bc37731644b90a4a223273a1ff,
         type: 3}
       size: 5
     - tag: tile3_7
-      prefab: {fileID: 6843429836672627716, guid: 5848a0a2ab57e304688348df5a51701a,
+      prefab: {fileID: 8151751556833997778, guid: 5f5053d2e5f32444185130f68f66e27e,
         type: 3}
       size: 5
     - tag: tile3_8
-      prefab: {fileID: 8217903239186450112, guid: e6da2dc84b0e369418a5dd9b324e6bd8,
+      prefab: {fileID: 2591001202080825683, guid: 7d02db2eb60c1614293de656bac9d28b,
         type: 3}
       size: 5
     - tag: tile3_9
-      prefab: {fileID: 1011033527733292016, guid: 4212fd1346347b544885afefed81cf28,
+      prefab: {fileID: 1101696055972194629, guid: 55063571dd2f59d439c0789ebf10dc2f,
         type: 3}
       size: 5
   - tileTypeIndex: 4
     poolObject:
     - tag: tile4_0
-      prefab: {fileID: 612284697868395302, guid: cb15715e9f21ddf4ab559c313ddca1aa,
+      prefab: {fileID: 5864982188798492008, guid: 26e9cf25e9b99ed4e80a1175b731c2d9,
         type: 3}
       size: 5
     - tag: tile4_1
-      prefab: {fileID: 1292441650595597181, guid: 560c61069ee7d4b4abcc7083d5426eee,
+      prefab: {fileID: 4799532425924121286, guid: c16ba4e4f377e004c928026ef9f598b6,
         type: 3}
       size: 5
     - tag: tile4_2
-      prefab: {fileID: 6306731720380362259, guid: e77026f5be4005e4aaae40913051f3b4,
+      prefab: {fileID: 7624018410183801080, guid: f5321c9c56283cf4cbd76818e8415336,
         type: 3}
       size: 5
     - tag: tile4_3
-      prefab: {fileID: 3444985556613796855, guid: ee6ce8347f34fd24ab29cf9e4d988a44,
+      prefab: {fileID: 7569006113080467354, guid: bcb02214d9012924dbd7d9109e04ae65,
         type: 3}
       size: 5
     - tag: tile4_4
-      prefab: {fileID: 5082683474279340608, guid: 876ce783fc4b42144aef3993bf115083,
+      prefab: {fileID: 8048341705204418838, guid: 0b1ed2b19eef4b846ae23c3e4f65c263,
         type: 3}
       size: 5
     - tag: tile4_5
-      prefab: {fileID: 6679582673036554419, guid: 977f604005956d448b0cf5520bbd7ae6,
+      prefab: {fileID: 8512894475541091793, guid: f25cb0fd06495b14d9a64574cc1dd509,
         type: 3}
       size: 5
     - tag: tile4_6
-      prefab: {fileID: 3500280997707226017, guid: 2b6ceacccd763094dbad7bc87d6d229c,
+      prefab: {fileID: 7110730880577154043, guid: 8705b4e90f2393f45bf274770fae3166,
         type: 3}
       size: 5
     - tag: tile4_7
-      prefab: {fileID: 5252245933370183086, guid: 60ec8bd41c4fad64d896c2ba591f946d,
+      prefab: {fileID: 3404612760060271897, guid: daab547dbf92cec44896f2f1168d4c9f,
         type: 3}
       size: 5
     - tag: tile4_8
-      prefab: {fileID: 2558126045521130778, guid: 55a39a594deaf0d48bde13ace310ff09,
+      prefab: {fileID: 5572440337603575793, guid: 498a36271c789794291f98405cfb4830,
         type: 3}
       size: 5
     - tag: tile4_9
-      prefab: {fileID: 1636322661691062138, guid: 2d3e4c9732be14542959cd4204e250b7,
+      prefab: {fileID: 5965188010667488994, guid: c3229fffa9610a04da1456c8868c0b7d,
         type: 3}
       size: 5
   - tileTypeIndex: 5
     poolObject:
     - tag: tile5_0
-      prefab: {fileID: 689867429216484106, guid: 778f663c5c208b344a453a9306a94bf3,
+      prefab: {fileID: 6172621721655059724, guid: 84c9ea43fd34aab4fb58740f8a90bb2c,
         type: 3}
       size: 5
     - tag: tile5_1
-      prefab: {fileID: 9183872887975314340, guid: f79f419cb41239d449db55135b8575fe,
+      prefab: {fileID: 6530259293826931417, guid: 8f2ecc187836dc847a2dcc34d89166cd,
         type: 3}
       size: 5
     - tag: tile5_2
-      prefab: {fileID: 844212026417713494, guid: bebff68e0a3eb774f821fcbe78e8ca4a,
+      prefab: {fileID: 2450745898028415884, guid: 718a5ba17b3a65a4aae2b1a1c81835c7,
         type: 3}
       size: 5
     - tag: tile5_3
-      prefab: {fileID: 4954225540902166245, guid: 1c605c420fb681a469409ddc43535bde,
+      prefab: {fileID: 3600010609261275206, guid: 5e1f0404991941f4c981ceebad1867fa,
         type: 3}
       size: 5
     - tag: tile5_4
-      prefab: {fileID: 4199961943568488321, guid: 69de90f5365ec634da54c9c551d328f5,
+      prefab: {fileID: 1451884989102468248, guid: 3845a206d3370ac42948faf14f922677,
         type: 3}
       size: 5
     - tag: tile5_5
-      prefab: {fileID: 3809272229585468872, guid: c13e4edd52795634591c9a7e0d62c78b,
+      prefab: {fileID: 5351035376962118000, guid: a147d4c94f2d4a44d85b4b6b23e72e9b,
         type: 3}
       size: 5
     - tag: tile5_6
-      prefab: {fileID: 4228536718615315107, guid: f63444bc37731644b90a4a223273a1ff,
+      prefab: {fileID: 6651174951454266610, guid: 7f964e0537fc62a4889b0ddd6e1e08ad,
         type: 3}
       size: 5
     - tag: tile5_7
-      prefab: {fileID: 8151751556833997778, guid: 5f5053d2e5f32444185130f68f66e27e,
+      prefab: {fileID: 1836929653819859074, guid: f19d53cb7e676d94da9956657695c9aa,
         type: 3}
       size: 5
     - tag: tile5_8
-      prefab: {fileID: 2591001202080825683, guid: 7d02db2eb60c1614293de656bac9d28b,
+      prefab: {fileID: 3181833873633781118, guid: 4b628faeb01fe6642a347e40bfaca69a,
         type: 3}
       size: 5
     - tag: tile5_9
-      prefab: {fileID: 1101696055972194629, guid: 55063571dd2f59d439c0789ebf10dc2f,
+      prefab: {fileID: 294644766766136890, guid: f6f575f16e14da34fab65f86fbf99db2,
         type: 3}
       size: 5
   - tileTypeIndex: 6
     poolObject:
     - tag: tile6_0
-      prefab: {fileID: 5864982188798492008, guid: 26e9cf25e9b99ed4e80a1175b731c2d9,
+      prefab: {fileID: 329794082876566677, guid: d92cf1358b4a6e94991472825deb81c5,
         type: 3}
       size: 5
     - tag: tile6_1
-      prefab: {fileID: 4799532425924121286, guid: c16ba4e4f377e004c928026ef9f598b6,
+      prefab: {fileID: 8192078710866682533, guid: a73a86f52a48cd14b97fd2b254c7a823,
         type: 3}
       size: 5
     - tag: tile6_2
-      prefab: {fileID: 7624018410183801080, guid: f5321c9c56283cf4cbd76818e8415336,
+      prefab: {fileID: 8213395783816250182, guid: 53d3c8a91505faa48a26be728f458c1f,
         type: 3}
       size: 5
     - tag: tile6_3
-      prefab: {fileID: 7569006113080467354, guid: bcb02214d9012924dbd7d9109e04ae65,
+      prefab: {fileID: 7863370416257628371, guid: 40e9c3930ea5123429a0f304494c3289,
         type: 3}
       size: 5
     - tag: tile6_4
-      prefab: {fileID: 8048341705204418838, guid: 0b1ed2b19eef4b846ae23c3e4f65c263,
+      prefab: {fileID: 2973975893380124174, guid: eadbf2aa3907f6745aad44f8c273ae87,
         type: 3}
       size: 5
     - tag: tile6_5
-      prefab: {fileID: 8512894475541091793, guid: f25cb0fd06495b14d9a64574cc1dd509,
+      prefab: {fileID: 3849042052653209640, guid: d097706a927e092498e3909f65bce2a7,
         type: 3}
       size: 5
     - tag: tile6_6
-      prefab: {fileID: 7110730880577154043, guid: 8705b4e90f2393f45bf274770fae3166,
+      prefab: {fileID: 7454863838154786613, guid: 290553ec908bf3448a18514cc5feb7a0,
         type: 3}
       size: 5
     - tag: tile6_7
-      prefab: {fileID: 3404612760060271897, guid: daab547dbf92cec44896f2f1168d4c9f,
+      prefab: {fileID: 5070268136600329474, guid: 5d824a51c04930a41aa0c59057fc2e96,
         type: 3}
       size: 5
     - tag: tile6_8
-      prefab: {fileID: 5572440337603575793, guid: 498a36271c789794291f98405cfb4830,
+      prefab: {fileID: 1888798170898748760, guid: 56d1beaabd9cb6349a55a4cc5f8244fb,
         type: 3}
       size: 5
     - tag: tile6_9
-      prefab: {fileID: 5965188010667488994, guid: c3229fffa9610a04da1456c8868c0b7d,
+      prefab: {fileID: 7286502235415427813, guid: 26de4d4f49cbe2648a0268c7857be7dc,
         type: 3}
       size: 5
   - tileTypeIndex: 7
     poolObject:
     - tag: tile7_0
-      prefab: {fileID: 6172621721655059724, guid: 84c9ea43fd34aab4fb58740f8a90bb2c,
+      prefab: {fileID: 6574647512085768752, guid: ab5a7fd46cb295a4c924b2b157fecdf1,
         type: 3}
       size: 5
     - tag: tile7_1
-      prefab: {fileID: 6530259293826931417, guid: 8f2ecc187836dc847a2dcc34d89166cd,
+      prefab: {fileID: 2959298921675864146, guid: dbed2a2b308b7ba41839b50e9646d8f3,
         type: 3}
       size: 5
     - tag: tile7_2
-      prefab: {fileID: 2450745898028415884, guid: 718a5ba17b3a65a4aae2b1a1c81835c7,
+      prefab: {fileID: 8889653106683538397, guid: f5acd8802bd50a24d996b5b201f28aaa,
         type: 3}
       size: 5
     - tag: tile7_3
-      prefab: {fileID: 3600010609261275206, guid: 5e1f0404991941f4c981ceebad1867fa,
+      prefab: {fileID: 6893699944981238660, guid: 4c525036d53cf0a4382a18c857099274,
         type: 3}
       size: 5
     - tag: tile7_4
-      prefab: {fileID: 1451884989102468248, guid: 3845a206d3370ac42948faf14f922677,
+      prefab: {fileID: 7005645743975582626, guid: c0052d8e20f2dda4ca5b47cdb85bbf90,
         type: 3}
       size: 5
     - tag: tile7_5
-      prefab: {fileID: 5351035376962118000, guid: a147d4c94f2d4a44d85b4b6b23e72e9b,
+      prefab: {fileID: 910199037452031166, guid: 4008f170fd80e3f48a9b71d293325cfc,
         type: 3}
       size: 5
     - tag: tile7_6
-      prefab: {fileID: 6651174951454266610, guid: 7f964e0537fc62a4889b0ddd6e1e08ad,
+      prefab: {fileID: 3094348523397269135, guid: cfab4733a7b2fe94f83b04110f307147,
         type: 3}
       size: 5
     - tag: tile7_7
-      prefab: {fileID: 1836929653819859074, guid: f19d53cb7e676d94da9956657695c9aa,
+      prefab: {fileID: 5459758389725967957, guid: 70368e565919714418fc5ac65c144102,
         type: 3}
       size: 5
     - tag: tile7_8
-      prefab: {fileID: 3181833873633781118, guid: 4b628faeb01fe6642a347e40bfaca69a,
+      prefab: {fileID: 1941548763351336600, guid: d4ee3687af893534f874c39de9acc6d8,
         type: 3}
       size: 5
     - tag: tile7_9
-      prefab: {fileID: 294644766766136890, guid: f6f575f16e14da34fab65f86fbf99db2,
+      prefab: {fileID: 7579038157819146406, guid: 3e3d2dac440d4db4fb1e557a07cf65b1,
         type: 3}
       size: 5
   - tileTypeIndex: 8
     poolObject:
     - tag: tile8_0
-      prefab: {fileID: 329794082876566677, guid: d92cf1358b4a6e94991472825deb81c5,
+      prefab: {fileID: 3349521080532646266, guid: cd1a11278387a74438172c998a102360,
         type: 3}
       size: 5
     - tag: tile8_1
-      prefab: {fileID: 8192078710866682533, guid: a73a86f52a48cd14b97fd2b254c7a823,
+      prefab: {fileID: 8292574607324874258, guid: 4d26305b5bfa5f94391212cb3594cd3f,
         type: 3}
       size: 5
     - tag: tile8_2
-      prefab: {fileID: 8213395783816250182, guid: 53d3c8a91505faa48a26be728f458c1f,
+      prefab: {fileID: 1624122554984572862, guid: 7984b43c8dbaaa9499f9eb40e57c12a7,
         type: 3}
       size: 5
     - tag: tile8_3
-      prefab: {fileID: 7863370416257628371, guid: 40e9c3930ea5123429a0f304494c3289,
+      prefab: {fileID: 6386450677518864449, guid: 1a6196f5a5337804ca0563819ddd18af,
         type: 3}
       size: 5
     - tag: tile8_4
-      prefab: {fileID: 2973975893380124174, guid: eadbf2aa3907f6745aad44f8c273ae87,
+      prefab: {fileID: 6295119769769516951, guid: 8534892dbb6422145a6bc04e92d8f988,
         type: 3}
       size: 5
     - tag: tile8_5
-      prefab: {fileID: 3849042052653209640, guid: d097706a927e092498e3909f65bce2a7,
+      prefab: {fileID: 8665471252408206540, guid: 6e1ef9753c6af044ba0e54ef73f4d923,
         type: 3}
       size: 5
     - tag: tile8_6
-      prefab: {fileID: 7454863838154786613, guid: 290553ec908bf3448a18514cc5feb7a0,
+      prefab: {fileID: 3265327796437956147, guid: 62117fdddba146943b635ece6bb9b4ff,
         type: 3}
       size: 5
     - tag: tile8_7
-      prefab: {fileID: 5070268136600329474, guid: 5d824a51c04930a41aa0c59057fc2e96,
+      prefab: {fileID: 4152322662887199480, guid: 68593bc08ee6f1f43af4d3e38d6e4634,
         type: 3}
       size: 5
     - tag: tile8_8
-      prefab: {fileID: 1888798170898748760, guid: 56d1beaabd9cb6349a55a4cc5f8244fb,
+      prefab: {fileID: 5057267984880640764, guid: 4dc926c26de96a94bbdabaa83939da30,
         type: 3}
       size: 5
     - tag: tile8_9
-      prefab: {fileID: 7286502235415427813, guid: 26de4d4f49cbe2648a0268c7857be7dc,
+      prefab: {fileID: 7427137982424699388, guid: 3e09e8e1fb5c7a848827e1578e5f2b35,
         type: 3}
       size: 5
   - tileTypeIndex: 9
     poolObject:
     - tag: tile9_0
-      prefab: {fileID: 6574647512085768752, guid: ab5a7fd46cb295a4c924b2b157fecdf1,
+      prefab: {fileID: 8482288536356223361, guid: 8d9e118cf40799d439db6f14ecfb395a,
         type: 3}
       size: 5
     - tag: tile9_1
-      prefab: {fileID: 2959298921675864146, guid: dbed2a2b308b7ba41839b50e9646d8f3,
+      prefab: {fileID: 7028770682244193767, guid: 8e524df1055a3074cae4e164def1b876,
         type: 3}
       size: 5
     - tag: tile9_2
-      prefab: {fileID: 8889653106683538397, guid: f5acd8802bd50a24d996b5b201f28aaa,
+      prefab: {fileID: 4483266358865958524, guid: 418916d587291f349b915d9f43cbdc1c,
         type: 3}
       size: 5
     - tag: tile9_3
-      prefab: {fileID: 6893699944981238660, guid: 4c525036d53cf0a4382a18c857099274,
+      prefab: {fileID: 7402841119255333317, guid: 1879beab2c23817498e9e2a4aff40075,
         type: 3}
       size: 5
     - tag: tile9_4
-      prefab: {fileID: 7005645743975582626, guid: c0052d8e20f2dda4ca5b47cdb85bbf90,
+      prefab: {fileID: 1477167075880030082, guid: 03f235b5528935246bc3a7f2fd26e985,
         type: 3}
       size: 5
     - tag: tile9_5
-      prefab: {fileID: 910199037452031166, guid: 4008f170fd80e3f48a9b71d293325cfc,
+      prefab: {fileID: 5848455917556719349, guid: 1664086be97f8f34288755c33556de9e,
         type: 3}
       size: 5
     - tag: tile9_6
-      prefab: {fileID: 3094348523397269135, guid: cfab4733a7b2fe94f83b04110f307147,
+      prefab: {fileID: 8800485463774917803, guid: 63fee53c8204d6246b132b27c0163411,
         type: 3}
       size: 5
     - tag: tile9_7
-      prefab: {fileID: 5459758389725967957, guid: 70368e565919714418fc5ac65c144102,
+      prefab: {fileID: 4095501826507404990, guid: 3c2d2074e8d93524e82a3b27ac47d72a,
         type: 3}
       size: 5
     - tag: tile9_8
-      prefab: {fileID: 1941548763351336600, guid: d4ee3687af893534f874c39de9acc6d8,
+      prefab: {fileID: 4936775409684103767, guid: 0d8a2101c3ff794479a2d79ea0007c45,
         type: 3}
       size: 5
     - tag: tile9_9
-      prefab: {fileID: 7579038157819146406, guid: 3e3d2dac440d4db4fb1e557a07cf65b1,
+      prefab: {fileID: 5889716586922216165, guid: 2ba7fa77f74693b4c9ab89dba9935f88,
         type: 3}
       size: 5
   - tileTypeIndex: 10
     poolObject:
     - tag: tile10_0
-      prefab: {fileID: 3349521080532646266, guid: cd1a11278387a74438172c998a102360,
+      prefab: {fileID: 4794149427459585989, guid: 6cd183f6c5b9a854b9537b1153451174,
         type: 3}
       size: 5
     - tag: tile10_1
-      prefab: {fileID: 8292574607324874258, guid: 4d26305b5bfa5f94391212cb3594cd3f,
+      prefab: {fileID: 6341681079435015169, guid: 68ae6bee3f103c245a9cc0116b0d28c2,
         type: 3}
       size: 5
     - tag: tile10_2
-      prefab: {fileID: 1624122554984572862, guid: 7984b43c8dbaaa9499f9eb40e57c12a7,
+      prefab: {fileID: 6206429216184870384, guid: c46b026d0f29a434da0df1ed8ead3aaa,
         type: 3}
       size: 5
     - tag: tile10_3
-      prefab: {fileID: 6386450677518864449, guid: 1a6196f5a5337804ca0563819ddd18af,
+      prefab: {fileID: 6997658922846601639, guid: 1d0f8bb1fd3b3564883b6ed88e77c0e4,
         type: 3}
       size: 5
     - tag: tile10_4
-      prefab: {fileID: 6295119769769516951, guid: 8534892dbb6422145a6bc04e92d8f988,
+      prefab: {fileID: 2584576146338003655, guid: e089e98cf9adc8d4d968c643b0a4113a,
         type: 3}
       size: 5
     - tag: tile10_5
-      prefab: {fileID: 8665471252408206540, guid: 6e1ef9753c6af044ba0e54ef73f4d923,
+      prefab: {fileID: 610540969315789650, guid: cc775cbdc6e894149a517000725acf1a,
         type: 3}
       size: 5
     - tag: tile10_6
-      prefab: {fileID: 3265327796437956147, guid: 62117fdddba146943b635ece6bb9b4ff,
+      prefab: {fileID: 2153916526212451988, guid: e84d2b5516ad959499c42bb94fc8239d,
         type: 3}
       size: 5
     - tag: tile10_7
-      prefab: {fileID: 4152322662887199480, guid: 68593bc08ee6f1f43af4d3e38d6e4634,
+      prefab: {fileID: 7039823933918156133, guid: 80f344b0111071f4ba13c9973cc6411f,
         type: 3}
       size: 5
     - tag: tile10_8
-      prefab: {fileID: 5057267984880640764, guid: 4dc926c26de96a94bbdabaa83939da30,
+      prefab: {fileID: 3285872596508294563, guid: 5c775be55cb80794191174dc30d9506b,
         type: 3}
       size: 5
     - tag: tile10_9
-      prefab: {fileID: 7427137982424699388, guid: 3e09e8e1fb5c7a848827e1578e5f2b35,
+      prefab: {fileID: 7213748132350304103, guid: 86a3ce9730bbfe84aa0cf73aaeac3a1e,
         type: 3}
       size: 5
   - tileTypeIndex: 11
     poolObject:
     - tag: tile11_0
-      prefab: {fileID: 4794149427459585989, guid: 6cd183f6c5b9a854b9537b1153451174,
+      prefab: {fileID: 532614025467272972, guid: bbd9b5d399cb7384f8007676797043a8,
         type: 3}
       size: 5
     - tag: tile11_1
-      prefab: {fileID: 6341681079435015169, guid: 68ae6bee3f103c245a9cc0116b0d28c2,
+      prefab: {fileID: 4157170099804353251, guid: a3fcd527345e2854d8d37c0a3393e2d8,
         type: 3}
       size: 5
     - tag: tile11_2
-      prefab: {fileID: 6206429216184870384, guid: c46b026d0f29a434da0df1ed8ead3aaa,
+      prefab: {fileID: 6449815515506161777, guid: bdeeaa28b612532439f19529bf8fde45,
         type: 3}
       size: 5
     - tag: tile11_3
-      prefab: {fileID: 6997658922846601639, guid: 1d0f8bb1fd3b3564883b6ed88e77c0e4,
+      prefab: {fileID: 1652049783940481306, guid: 6af14b63f3b5fe04ab13553a39c6c5b1,
         type: 3}
       size: 5
     - tag: tile11_4
-      prefab: {fileID: 2584576146338003655, guid: e089e98cf9adc8d4d968c643b0a4113a,
+      prefab: {fileID: 3399844310072985391, guid: 8f77114605ffa574aaa27889d3ecb12d,
         type: 3}
       size: 5
     - tag: tile11_5
-      prefab: {fileID: 610540969315789650, guid: cc775cbdc6e894149a517000725acf1a,
+      prefab: {fileID: 1106752475748954946, guid: 97ab8828b6ac6184eb409c5060cdc482,
         type: 3}
       size: 5
     - tag: tile11_6
-      prefab: {fileID: 2153916526212451988, guid: e84d2b5516ad959499c42bb94fc8239d,
+      prefab: {fileID: 5150555663416158568, guid: 106fa9d707334f24e95d2bf166eca5cc,
         type: 3}
       size: 5
     - tag: tile11_7
-      prefab: {fileID: 7039823933918156133, guid: 80f344b0111071f4ba13c9973cc6411f,
+      prefab: {fileID: 3275254517207523170, guid: ae0e06f2c0c824948adb5e8d2a3f283a,
         type: 3}
       size: 5
     - tag: tile11_8
-      prefab: {fileID: 3285872596508294563, guid: 5c775be55cb80794191174dc30d9506b,
+      prefab: {fileID: 6901594558158566852, guid: 7cc081b29132ef1459cbe975412f9c1c,
         type: 3}
       size: 5
     - tag: tile11_9
-      prefab: {fileID: 7213748132350304103, guid: 86a3ce9730bbfe84aa0cf73aaeac3a1e,
+      prefab: {fileID: 19089863108381544, guid: ab3906558603d6e4796801284add2b25,
         type: 3}
       size: 5
   - tileTypeIndex: 12
     poolObject:
     - tag: tile12_0
-      prefab: {fileID: 532614025467272972, guid: bbd9b5d399cb7384f8007676797043a8,
+      prefab: {fileID: 5398151045302472236, guid: 8771251f57827d34282cce4a15d352e2,
         type: 3}
       size: 5
     - tag: tile12_1
-      prefab: {fileID: 4157170099804353251, guid: a3fcd527345e2854d8d37c0a3393e2d8,
+      prefab: {fileID: 5158842622327433818, guid: c247c9ca606d4cc4a92010d204c2dfe0,
         type: 3}
       size: 5
     - tag: tile12_2
-      prefab: {fileID: 6449815515506161777, guid: bdeeaa28b612532439f19529bf8fde45,
+      prefab: {fileID: 1811068145856424677, guid: 62c606c57edde714fae20772a5de522a,
         type: 3}
       size: 5
     - tag: tile12_3
-      prefab: {fileID: 1652049783940481306, guid: 6af14b63f3b5fe04ab13553a39c6c5b1,
+      prefab: {fileID: 8554116451451841169, guid: 6c92c2b1086037045b490e218117ab6f,
         type: 3}
       size: 5
     - tag: tile12_4
-      prefab: {fileID: 3399844310072985391, guid: 8f77114605ffa574aaa27889d3ecb12d,
+      prefab: {fileID: 2229746977390133617, guid: 836b00c7434d38d4cac7c87c613ac733,
         type: 3}
       size: 5
     - tag: tile12_5
-      prefab: {fileID: 1106752475748954946, guid: 97ab8828b6ac6184eb409c5060cdc482,
+      prefab: {fileID: 6477233202166392924, guid: deda5f5021a245f41b49075ed38fbea4,
         type: 3}
       size: 5
     - tag: tile12_6
-      prefab: {fileID: 5150555663416158568, guid: 106fa9d707334f24e95d2bf166eca5cc,
+      prefab: {fileID: 2293908598124981286, guid: 64d661689108c114d9641fe99d41e5d5,
         type: 3}
       size: 5
     - tag: tile12_7
-      prefab: {fileID: 3275254517207523170, guid: ae0e06f2c0c824948adb5e8d2a3f283a,
+      prefab: {fileID: 6843429836672627716, guid: 5848a0a2ab57e304688348df5a51701a,
         type: 3}
       size: 5
     - tag: tile12_8
-      prefab: {fileID: 6901594558158566852, guid: 7cc081b29132ef1459cbe975412f9c1c,
+      prefab: {fileID: 8217903239186450112, guid: e6da2dc84b0e369418a5dd9b324e6bd8,
         type: 3}
       size: 5
     - tag: tile12_9
-      prefab: {fileID: 19089863108381544, guid: ab3906558603d6e4796801284add2b25,
+      prefab: {fileID: 1011033527733292016, guid: 4212fd1346347b544885afefed81cf28,
+        type: 3}
+      size: 5
+  - tileTypeIndex: 13
+    poolObject:
+    - tag: tile13_0
+      prefab: {fileID: 6863261075109680106, guid: cf6fb64ad60dcc6478863a72ba46b2b9,
+        type: 3}
+      size: 5
+    - tag: tile13_1
+      prefab: {fileID: 923317230098589855, guid: f887936ce219acb49bd4feb51fbc082a,
+        type: 3}
+      size: 5
+    - tag: tile13_2
+      prefab: {fileID: 7533310897778607941, guid: 4496f48071a11dc4ab53326ac752aa72,
+        type: 3}
+      size: 5
+    - tag: tile13_3
+      prefab: {fileID: 5301142189210344137, guid: 5771552b95022d24a894e9e38953883a,
+        type: 3}
+      size: 5
+    - tag: tile13_4
+      prefab: {fileID: 6357265411336960932, guid: 25683af4b2691b14d853b1adadaa675e,
+        type: 3}
+      size: 5
+    - tag: tile13_5
+      prefab: {fileID: 1564442998167578545, guid: 908d542f401f85e4286a303d5ed97663,
+        type: 3}
+      size: 5
+    - tag: tile13_6
+      prefab: {fileID: 2299138028667882295, guid: f474c10be6e7b5b4c8163fcd69dc0193,
+        type: 3}
+      size: 5
+    - tag: tile13_7
+      prefab: {fileID: 7489607566296579517, guid: b55c3a81ea168fe409936727e1c99660,
+        type: 3}
+      size: 5
+    - tag: tile13_8
+      prefab: {fileID: 1282224540483417, guid: 3234b945e07f82f438bae94a4e813355, type: 3}
+      size: 5
+    - tag: tile13_9
+      prefab: {fileID: 7663756786028769319, guid: f5f33e768e41fe3499867910ed26aeea,
         type: 3}
       size: 5
 --- !u!4 &320492164
@@ -18567,7 +18629,7 @@ MonoBehaviour:
   spawnX: -5
   tileLength: 30
   safeZone: 35
-  totalTilesTypes: 13
+  totalTilesTypes: 14
   tileTypeSpawnPool: 
   tileTypeActivePool: 
   lastTileIndex: 0
@@ -18579,9 +18641,9 @@ MonoBehaviour:
   tireCompleted3: 0
   tireCompleted4: 0
   dist_tire1: 120
-  dist_tire2: 180
-  dist_tire3: 240
-  dist_tire4: 300
+  dist_tire2: 240
+  dist_tire3: 360
+  dist_tire4: 600
 --- !u!114 &320492166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27154,27 +27216,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498532299}
   m_CullTransparentMesh: 0
---- !u!21 &499401000
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Custom/VertexColorCamera
-  m_Shader: {fileID: 4800000, guid: 04ede0abc1e28a148a7a91cc95adf385, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Floats: []
-    m_Colors: []
 --- !u!1 &499751823
 GameObject:
   m_ObjectHideFlags: 0
@@ -42351,6 +42392,169 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810072569}
   m_CullTransparentMesh: 0
+--- !u!43 &810926781
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.5, y: 0.5, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000002000100020003000100020004000300040005000300040006000500060007000500000000000000000000000000
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 384
+    _typelessdata: 000000bf000000bf000000000000008000000080000080bfe2e0603de2e0e03cd2d0503d0000803f00000000000000000000003f000000bf000000000000008000000080000080bfe2e0603de2e0e03cd2d0503d0000803f0000803f00000000000000bfd0c84cbd000000000000008000000080000080bfbdbcbc3ea5a4243eeae8683e0000803f00000000e666e63e0000003fd0c84cbd000000000000008000000080000080bfbdbcbc3ea5a4243eeae8683e0000803f0000803fe666e63e000000bfd0c84c3d000000000000008000000080000080bfbdbcbc3ea5a4243ee9e8683e0000803f000000008dcc0c3f0000003fd0c84c3d000000000000008000000080000080bfbdbcbc3ea5a4243ee9e8683e0000803f0000803f8dcc0c3f000000bf0000003f000000000000008000000080000080bf9998183e9190903d8988083e0000803f000000000000803f0000003f0000003f000000000000008000000080000080bf9998183e9190903d8988083e0000803f0000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &811808677
 GameObject:
   m_ObjectHideFlags: 0
@@ -42499,7 +42703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812365369}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: 2.9947681, y: 3.1812503, z: 6.0000005}
+  m_LocalPosition: {x: 2.9947686, y: 3.1812499, z: 6.0000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -44208,83 +44412,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856704953}
   m_CullTransparentMesh: 0
---- !u!1 &858113547
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 858113548}
-  - component: {fileID: 858113550}
-  - component: {fileID: 858113549}
-  m_Layer: 0
-  m_Name: CameraFixedGradientSky
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &858113548
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858113547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.02}
-  m_LocalScale: {x: 0.040998355, y: 0.02309401, z: 0}
-  m_Children: []
-  m_Father: {fileID: 963194228}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &858113549
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858113547}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 499401000}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &858113550
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858113547}
-  m_Mesh: {fileID: 1870015968}
 --- !u!1 &858506404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3266952745729755029, guid: 1f055d06d3a47be4cb5850c0f2164024,
@@ -49707,7 +49834,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 858113548}
+  - {fileID: 2029487718}
   m_Father: {fileID: 812365371}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10, y: -165, z: 0}
@@ -49811,7 +49938,7 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   placeAtClippingPlane: 0
-  childObject: {fileID: 858113547}
+  childObject: {fileID: 2029487717}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99951,169 +100078,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869011227}
   m_CullTransparentMesh: 0
---- !u!43 &1870015968
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0.5, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000002000100020003000100020004000300040005000300040006000500060007000500000000000000000000000000
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 384
-    _typelessdata: 000000bf000000bf000000000000008000000080000080bfe2e0603de2e0e03cd2d0503d0000803f00000000000000000000003f000000bf000000000000008000000080000080bfe2e0603de2e0e03cd2d0503d0000803f0000803f00000000000000bfd0c84cbd000000000000008000000080000080bfbdbcbc3ea5a4243eeae8683e0000803f00000000e666e63e0000003fd0c84cbd000000000000008000000080000080bfbdbcbc3ea5a4243eeae8683e0000803f0000803fe666e63e000000bfd0c84c3d000000000000008000000080000080bfbdbcbc3ea5a4243ee9e8683e0000803f000000008dcc0c3f0000003fd0c84c3d000000000000008000000080000080bfbdbcbc3ea5a4243ee9e8683e0000803f0000803f8dcc0c3f000000bf0000003f000000000000008000000080000080bf9998183e9190903d8988083e0000803f000000000000803f0000003f0000003f000000000000008000000080000080bf9998183e9190903d8988083e0000803f0000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.5, y: 0.5, z: 0}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1874539378
 GameObject:
   m_ObjectHideFlags: 0
@@ -108099,6 +108063,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025786738}
   m_CullTransparentMesh: 0
+--- !u!1 &2029487717
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029487718}
+  - component: {fileID: 2029487720}
+  - component: {fileID: 2029487719}
+  m_Layer: 0
+  m_Name: CameraFixedGradientSky
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2029487718
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029487717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.02}
+  m_LocalScale: {x: 0.041063044, y: 0.02309401, z: 0}
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &2029487719
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029487717}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 154947928}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &2029487720
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029487717}
+  m_Mesh: {fileID: 810926781}
 --- !u!1 &2029687915
 GameObject:
   m_ObjectHideFlags: 0

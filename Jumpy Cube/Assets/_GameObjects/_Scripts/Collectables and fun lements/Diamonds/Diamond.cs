@@ -41,14 +41,21 @@ public class Diamond : MonoBehaviour
 
     void OnEnable()
     {
-        currentProb = Random.Range(1, maxProb);
-        if (currentProb > minChance && currentProb < maxChance)
+        if (!overrideShowDiamonds)
         {
-            showDiamonds = true;
+            currentProb = Random.Range(1, maxProb);
+            if (currentProb > minChance && currentProb < maxChance)
+            {
+                showDiamonds = true;
+            }
+            else
+            {
+                showDiamonds = false;
+            }
         }
         else
         {
-            showDiamonds = false;
+            showDiamonds = overrideShowDiamonds;
         }
 
         if (showDiamonds)
