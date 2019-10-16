@@ -23,6 +23,10 @@ public class PauseMenu : MonoBehaviour
     TimelinePlayer timelinePlayer;
     LoadLevel loadLevel;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
+    MainMenu mainMenu;
+    PlayerSpawner playerSpawner;
+    PlayerDeath playerDeath;
+    GameModeManager gameModeManager;
 
     #region SingleTon
     public static PauseMenu Instance;
@@ -47,6 +51,10 @@ public class PauseMenu : MonoBehaviour
         timelinePlayer = TimelinePlayer.Instance;
         loadLevel = LoadLevel.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+        mainMenu = MainMenu.Instance;
+        playerSpawner = PlayerSpawner.Instance;
+        playerDeath = PlayerDeath.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(false);
@@ -67,6 +75,22 @@ public class PauseMenu : MonoBehaviour
         {
             afterResumeTime += Time.unscaledDeltaTime;
             afterResumeTxt.text = "" + (3 - (int)afterResumeTime);
+        }
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if(pause && mainMenu.isGameStart && !playerDeath.isDead)
+        {
+            PauseGameFunction();
+        }
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if(!focus && mainMenu.isGameStart && !playerDeath.isDead)
+        {
+            PauseGameFunction();
         }
     }
 
@@ -108,7 +132,12 @@ public class PauseMenu : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(afterResumeDelay);
         resumeDelayCounter.SetActive(false);
-        inGameMenu.SetActive(true);
+
+        if (playerSpawner.isDisolveEffectDone && !playerDeath.isDead)
+        {
+            inGameMenu.SetActive(true);
+        }
+
         Time.timeScale = 1f;
 
         timelinePlayer.StopResumeCountDown();
@@ -124,6 +153,20 @@ public class PauseMenu : MonoBehaviour
     IEnumerator HomeButtonFunction()
     {
         yield return new WaitForSecondsRealtime(commandExecutionDelay_pauseMenu);
+        gameModeManager.gameMode = GameModeManager.GameMode.endless;
+        gameModeManager.isGameRestarted = false;
+        loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+    }
+
+    public void RestartGame()
+    {
+        StartCoroutine(RestartButtonFunction());
+    }
+
+    IEnumerator RestartButtonFunction()
+    {
+        yield return new WaitForSecondsRealtime(commandExecutionDelay_pauseMenu);
+        gameModeManager.isGameRestarted = true;
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
 }

@@ -16,11 +16,9 @@ public class MainMenu : MonoBehaviour
     public GameObject levels;
     public GameObject stats;
     public GameObject settings;
-    public GameObject optimizationMenu;
 
-    [Header("Optimization menues")]
-    public GameObject optimizationRunning;
-    public GameObject optimizationDone;
+    [Header("Data for continious level loading")]
+    public float gameStartDelay = 1.5f;
 
     [Header("Buttons")]
     public Button[] allbuttons;
@@ -37,6 +35,7 @@ public class MainMenu : MonoBehaviour
 
     TimelinePlayer timelinePlayer;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
+    GameModeManager gameModeManager;
 
     #region SingleTon
     public static MainMenu Instance;
@@ -58,34 +57,48 @@ public class MainMenu : MonoBehaviour
     {
         timelinePlayer = TimelinePlayer.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         commandExecuationDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
 
-        isGameStart = false;
-        mainMenu.SetActive(true);
-        homeMenu.SetActive(true);
-        playMenu.SetActive(false);
-        store.SetActive(false);
-        levels.SetActive(false);
-        stats.SetActive(false);
-        settings.SetActive(false);
-        optimizationMenu.SetActive(false);
-
-        foreach (Button b in allbuttons)
+        if (gameModeManager.gameMode == GameModeManager.GameMode.endless)
         {
-            b.interactable = true;
+            if (gameModeManager.isGameRestarted)
+            {
+                Play_GameResetted();
+                gameModeManager.isGameRestarted = false;
+            }
+            else
+            {
+                gameModeManager.isGameRestarted = false;
+
+                isGameStart = false;
+                mainMenu.SetActive(true);
+                homeMenu.SetActive(true);
+                playMenu.SetActive(false);
+                store.SetActive(false);
+                levels.SetActive(false);
+                stats.SetActive(false);
+                settings.SetActive(false);
+
+                foreach (Button b in allbuttons)
+                {
+                    b.interactable = true;
+                }
+            }
+        }
+        else if (gameModeManager.gameMode == GameModeManager.GameMode.level)
+        {
+            gameModeManager.isGameRestarted = false;
+
+            Play_CONTINIOUS();
         }
 
         tileSystem.SetActive(true);
         playerChild = player.transform.GetChild(1).gameObject;
         playerChild.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void Play()
     {
@@ -99,7 +112,6 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
-        optimizationMenu.SetActive(false);
 
         foreach (Button b in allbuttons)
         {
@@ -113,8 +125,7 @@ public class MainMenu : MonoBehaviour
         homeMenu.SetActive(false);
         mainMenu.SetActive(false);
     }
-
-
+    
     public void HomeButton()
     {
         Invoke("HomeButtonFunction", commandExecuationDelay);
@@ -132,7 +143,6 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
-        optimizationMenu.SetActive(false);
 
     }
 
@@ -150,7 +160,6 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
-        optimizationMenu.SetActive(false);
 
         tileSystem.SetActive(false);
         playerChild.SetActive(false);
@@ -168,7 +177,6 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(true);
         stats.SetActive(false);
         settings.SetActive(false);
-        optimizationMenu.SetActive(false);
     }
 
     public void StatsButton()
@@ -183,7 +191,6 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(true);
         settings.SetActive(false);
-        optimizationMenu.SetActive(false);
     }
 
     public void SettingButton()
@@ -198,26 +205,56 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(true);
-        optimizationMenu.SetActive(false);
     }
 
-    public void OptimizeTheGame()
+    ///FUNCTIONS FOR CONTINIOUS LEVEL CHANGE
+    ///
+
+    public void Play_GameResetted()
+    {
+        isGameStart = true;
+        
+        homeMenu.SetActive(false);
+        mainMenu.SetActive(false);
+
+        playMenu.SetActive(true);
+        store.SetActive(false);
+        levels.SetActive(false);
+        stats.SetActive(false);
+        settings.SetActive(false);
+
+        foreach (Button b in allbuttons)
+        {
+            b.interactable = false;
+        }
+    }
+
+    public void Play_CONTINIOUS()
     {
         homeMenu.SetActive(false);
+        mainMenu.SetActive(false);
+
+        playMenu.SetActive(true);
         store.SetActive(false);
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
-        optimizationMenu.SetActive(true);
+
+        StartCoroutine(StartGameWithDelay());
+
+        timelinePlayer.PlayShowLevelNumber();
+
+        foreach (Button b in allbuttons)
+        {
+            b.interactable = false;
+        }
     }
 
-    public void OptimizeTheGame_done_stop()
+    IEnumerator StartGameWithDelay()
     {
-        homeMenu.SetActive(true);
-        store.SetActive(false);
-        levels.SetActive(false);
-        stats.SetActive(false);
-        settings.SetActive(false);
-        optimizationMenu.SetActive(false);
+        yield return new WaitForSeconds(gameStartDelay);
+
+        isGameStart = true;
     }
+
 }

@@ -12,6 +12,9 @@ public class DiamondScore : MonoBehaviour
     public MissionManager missionManager;
     public SavedData savedData;
 
+    /*REMOVE IN FINAL BUILD*/
+    public Store store;
+
     int temp;
     int temp2;
     int temp3;
@@ -69,4 +72,13 @@ public class DiamondScore : MonoBehaviour
         SaveDiamondsCollected(temp2, false);
     }
 
+
+    /*REMOVE IN FINAL BUILD*/
+    public void HackDiamonds()
+    {
+        SaveDiamondsCollected(1000, true);
+
+        store.ownedDiamonds = store.diamondScore.GetDiamonds();
+        store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+    }
 }

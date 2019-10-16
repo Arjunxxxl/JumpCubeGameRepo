@@ -30,6 +30,9 @@ public class TimelinePlayer : MonoBehaviour
     public PlayableDirector diamonds_best;
     public PlayableDirector average_best;
 
+    [Header("Level number showing timeline")]
+    public PlayableDirector levelnumberShowingPlayable;
+
     #region SingleTon
     public static TimelinePlayer Instance;
     private void Awake()
@@ -116,5 +119,10 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayAverageBest()
     {
         average_best.Play();
+    }
+
+    public void PlayShowLevelNumber()
+    {
+        levelnumberShowingPlayable.Play();
     }
 }

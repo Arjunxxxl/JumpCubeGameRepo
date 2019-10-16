@@ -15,6 +15,10 @@ public class GameOverMenu : MonoBehaviour
     public GameObject revivalMenu;
     public GameObject countDownMenu;
 
+    [Header("Game Over Buttons")]
+    public GameObject endless_Buttons;
+    public GameObject levelButtons;
+
     [Header("Revival Screen Total Diamonds")]
     public TMP_Text rivivalTotalDiamonds;
 
@@ -40,6 +44,7 @@ public class GameOverMenu : MonoBehaviour
     MissionManager missionManager;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     DiamondScore diamondScore;
+    GameModeManager gameModeManager;
     
 
     #region SingleTon
@@ -67,12 +72,22 @@ public class GameOverMenu : MonoBehaviour
         missionManager = MissionManager.Instance;
         diamondScore = DiamondScore.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         gameoverMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.gameoverMenuCommandExecutionDelay;
 
         gameOverMenu.SetActive(false);
         currentTime = 0;
         checker = false;
+
+        if (!endless_Buttons.activeSelf)
+        {
+            endless_Buttons.SetActive(true);
+        }
+        if (levelButtons.activeSelf)
+        {
+            levelButtons.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -92,6 +107,29 @@ public class GameOverMenu : MonoBehaviour
                 revivalMenu.SetActive(true);
                 rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
                 checker = true;
+            }
+
+            if (gameModeManager.gameMode == GameModeManager.GameMode.endless)
+            {
+                if (!endless_Buttons.activeSelf)
+                {
+                    endless_Buttons.SetActive(true);
+                }
+                if (levelButtons.activeSelf)
+                {
+                    levelButtons.SetActive(false);
+                }
+            }
+            else if(gameModeManager.gameMode == GameModeManager.GameMode.level)
+            {
+                if (!levelButtons.activeSelf)
+                {
+                    levelButtons.SetActive(true);
+                }
+                if (endless_Buttons.activeSelf)
+                {
+                    endless_Buttons.SetActive(false);
+                }
             }
         }
         
@@ -204,6 +242,9 @@ public class GameOverMenu : MonoBehaviour
 
     void HomeButtonFunction()
     {
+        gameModeManager.gameMode = GameModeManager.GameMode.endless;
+        gameModeManager.isGameRestarted = false;
+
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
 

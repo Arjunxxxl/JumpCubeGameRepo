@@ -72,8 +72,7 @@ public class Store : MonoBehaviour
     int diamondsSpend;
 
     CubeBoughtManager.CubeType previousType;
-
-
+    
 
     private void Awake()
     {

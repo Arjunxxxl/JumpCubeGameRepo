@@ -35,6 +35,9 @@ public class TileSpawner : MonoBehaviour
     GameObject spawnedTile;
 
     int distance;
+    int randomTileIndex;
+    int randomIndex = 0;
+    int val;
 
     TilePool tilePool;
     DistanceScore distanceScore;
@@ -59,7 +62,9 @@ public class TileSpawner : MonoBehaviour
         tileTypeActivePool = new List<int>();
 
         distance = distanceScore.distance;
-
+        randomIndex = 0;
+        randomTileIndex = 0;
+        
         if (!initialTile)
         {
             AddInitialInitialLevelTiles();
@@ -136,8 +141,7 @@ public class TileSpawner : MonoBehaviour
 
     int RandonTileTypeIndex()
     {
-        int randomIndex = 0;
-        int val;
+        randomIndex = 0;
 
         randomIndex = Random.Range(0, tileTypeSpawnPool.Count - 1);
 
@@ -147,6 +151,27 @@ public class TileSpawner : MonoBehaviour
         tileTypeSpawnPool.RemoveAt(randomIndex);
 
         return val;
+    }
+
+    //not using
+    int GetRandomTileIndex()
+    {
+        randomTileIndex = Random.Range(0, 140);
+
+        if(randomTileIndex <= 5)
+        {
+            randomTileIndex = 0;
+        }
+        else if(randomTileIndex < 10 || randomTileIndex >= 130)
+        {
+            randomTileIndex = 13;
+        }
+        else
+        {
+            randomTileIndex = randomTileIndex / 10;
+        }
+
+        return randomTileIndex;
     }
 
     void RemoveTile()
@@ -202,13 +227,22 @@ public class TileSpawner : MonoBehaviour
     {
         for (int i1 = 0; i1 < 3; i1++)
         {
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
+            if (i1 == 0)
+            {
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+            }
+            else
+            {
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+                tileTypeSpawnPool.Add(i1);
+            }
         }
     }
 
@@ -216,8 +250,6 @@ public class TileSpawner : MonoBehaviour
     {
         for (int i1 = 3; i1 < 6; i1++)
         {
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
@@ -235,8 +267,6 @@ public class TileSpawner : MonoBehaviour
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
         }
     }
 
@@ -249,8 +279,6 @@ public class TileSpawner : MonoBehaviour
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
         }
     }
 
@@ -258,8 +286,6 @@ public class TileSpawner : MonoBehaviour
     {
         for (int i1 = 13; i1 < totalTilesTypes; i1++)
         {
-            tileTypeSpawnPool.Add(i1);
-            tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);
             tileTypeSpawnPool.Add(i1);

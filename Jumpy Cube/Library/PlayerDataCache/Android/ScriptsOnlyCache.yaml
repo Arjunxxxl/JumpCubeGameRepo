@@ -13,12 +13,14 @@ ScriptsOnlyBuild:
     - DistanceScore
     - FPScounter
     - FollowScript
+    - GameModeManager
     - GameOverMenu
     - GravityTile
     - Imphenzia.GradientSkyCamera
     - InGameMenu
     - IoSphere
     - IoSphereColorChanger
+    - LevelManager
     - LifetimeStats
     - LoadLevel
     - MainMenu
@@ -42,6 +44,7 @@ ScriptsOnlyBuild:
     - StoreScrolling
     - TileColorThemeBoughtManager
     - TilePool
+    - TileSequence
     - TileSpawnAnimation
     - TileSpawner
     - TimelinePlayer
@@ -290,17 +293,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 11868}
-    - Class: 114
       Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11872}
     - Class: 114
       Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11908}
     - Class: 114
       Script: {instanceID: 11922}
+    - Class: 114
+      Script: {instanceID: 11924}
+    - Class: 114
+      Script: {instanceID: 389618}
+    - Class: 114
+      Script: {instanceID: 765290}
+    - Class: 114
+      Script: {instanceID: 765298}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -432,7 +441,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: b03ed813f452fe1ead3c37a83af17e11
+      Hash: 3d2891c5b2498e258d9b1ae7aaef3e86
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -954,7 +963,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: 6214325d97d130419de3ae28adf54e38
+      Hash: e3349998e5643435ff948059ff4c1209
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -1254,7 +1263,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: 2616b8a72603543e05cbb88b45c03df5
+      Hash: 23b086d44346ebd9a962f0d6a4127208
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TileSpawnAnimation
@@ -1422,7 +1431,7 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
-      Hash: 5d14c331825aba5302e5c23752274205
+      Hash: 6da73dda9a3d039e38b594123bc17f27
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameOverMenu
@@ -1740,7 +1749,13 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
-      Hash: acd9cc83e5721d65a7563dfba9bb9f2a
+      Hash: d54eabb67bbfdb35865c5d926f1d3b3a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TutorialMessage
+  - hash:
+      serializedVersion: 2
+      Hash: d8979cc1ff672e6539cbcce8a9187b6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DiamondScore
@@ -1776,7 +1791,7 @@ ScriptsOnlyBuild:
     className: LifetimeStats
   - hash:
       serializedVersion: 2
-      Hash: 8b495914c43ceb46711a0317bbed0b06
+      Hash: bb7df521ed823aa87d68af857b2340ca
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -1798,6 +1813,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: dfd9c6d6bf3659072926882abfc8886d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameModeManager
+  - hash:
+      serializedVersion: 2
+      Hash: 04c27fe74abd78feb6a2ef55fac5025d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelManager
+  - hash:
+      serializedVersion: 2
+      Hash: 86bfba8c52cc659adabbd9ec8b0d3d27
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TileSequence
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

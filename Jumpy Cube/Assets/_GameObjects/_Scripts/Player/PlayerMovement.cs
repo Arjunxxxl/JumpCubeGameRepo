@@ -26,7 +26,9 @@ public class PlayerMovement : MonoBehaviour
     public float androidRotationSpeed = 5f;
 
     [Header("Valid touch area data")]
-    public float validTouchY = 0.84f;
+    public float validTouchX = 0.1f;
+    public float validTouchY = 0.89f;
+    public float touchPosX;
     public float touchPosY;
     public Vector2 touchPos1;
 
@@ -251,6 +253,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && numberOfJumps < maxNumverOfJumps)
         {
             touchPos1 = mainCam.ScreenToViewportPoint(Input.mousePosition);
+            Debug.Log(touchPos1);
             if (!isValidTouchArea(touchPos1))
             {
                 return;
@@ -486,8 +489,16 @@ public class PlayerMovement : MonoBehaviour
 
     bool isValidTouchArea(Vector2 touchPos)
     {
+        touchPosX = touchPos.x;
         touchPosY = touchPos.y;
-        return touchPosY < validTouchY ? true : false;
+        if (touchPosX <= validTouchX && touchPosY >= validTouchY)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     void PlayerSpeedIncreaseFunction()
