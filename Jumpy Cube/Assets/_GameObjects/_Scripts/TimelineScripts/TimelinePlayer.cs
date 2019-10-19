@@ -33,6 +33,11 @@ public class TimelinePlayer : MonoBehaviour
     [Header("Level number showing timeline")]
     public PlayableDirector levelnumberShowingPlayable;
 
+    [Header("Tutorial Show Hide timelines")]
+    public PlayableDirector tryAgainMessage;
+    public PlayableDirector[] showTutorialMessageTimeLines;
+    public PlayableDirector[] hideTutorialMessageTimeLines;
+
     #region SingleTon
     public static TimelinePlayer Instance;
     private void Awake()
@@ -125,4 +130,93 @@ public class TimelinePlayer : MonoBehaviour
     {
         levelnumberShowingPlayable.Play();
     }
+
+    #region TUTORIAL MESSAGE
+    public void PlayTryAgainMessage()
+    {
+        tryAgainMessage.Play();
+    }
+
+    public void ShowTutorialMsg1()
+    {
+        hideTutorialMessageTimeLines[0].Stop();
+        showTutorialMessageTimeLines[0].Play();
+    }
+    public void ShowTutorialMsg2()
+    {
+        hideTutorialMessageTimeLines[1].Stop();
+        showTutorialMessageTimeLines[1].Play();
+    }
+    public void ShowTutorialMsg3()
+    {
+        hideTutorialMessageTimeLines[2].Stop();
+        showTutorialMessageTimeLines[2].Play();
+    }
+    public void ShowTutorialMsg4()
+    {
+        hideTutorialMessageTimeLines[3].Stop();
+        showTutorialMessageTimeLines[3].Play();
+    }
+    public void ShowTutorialMsg5()
+    {
+        hideTutorialMessageTimeLines[4].Stop();
+        showTutorialMessageTimeLines[4].Play();
+    }
+    public void ShowTutorialMsg6()
+    {
+        hideTutorialMessageTimeLines[5].Stop();
+        showTutorialMessageTimeLines[5].Play();
+    }
+    public void ShowTutorialMsg7()
+    {
+        hideTutorialMessageTimeLines[6].Stop();
+        showTutorialMessageTimeLines[6].Play();
+    }
+    public void ShowTutorialMsg8()
+    {
+        hideTutorialMessageTimeLines[7].Stop();
+        showTutorialMessageTimeLines[7].Play();
+    }
+
+    public void HideTutorialMsg1()
+    {
+        showTutorialMessageTimeLines[0].Stop();
+        hideTutorialMessageTimeLines[0].Play();
+    }
+    public void HideTutorialMsg2()
+    {
+        showTutorialMessageTimeLines[1].Stop();
+        hideTutorialMessageTimeLines[1].Play();
+    }
+    public void HideTutorialMsg3()
+    {
+        showTutorialMessageTimeLines[2].Stop();
+        hideTutorialMessageTimeLines[2].Play();
+    }
+    public void HideTutorialMsg4()
+    {
+        showTutorialMessageTimeLines[3].Stop();
+        hideTutorialMessageTimeLines[3].Play();
+    }
+    public void HideTutorialMsg5()
+    {
+        showTutorialMessageTimeLines[4].Stop();
+        hideTutorialMessageTimeLines[4].Play();
+    }
+    public void HideTutorialMsg6()
+    {
+        showTutorialMessageTimeLines[5].Stop();
+        hideTutorialMessageTimeLines[5].Play();
+    }
+    public void HideTutorialMsg7()
+    {
+        showTutorialMessageTimeLines[6].Stop();
+        hideTutorialMessageTimeLines[6].Play();
+    }
+    public void HideTutorialMsg8()
+    {
+        showTutorialMessageTimeLines[7].Stop();
+        hideTutorialMessageTimeLines[7].Play();
+    }
+    #endregion
 }

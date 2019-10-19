@@ -45,6 +45,7 @@ public class GameOverMenu : MonoBehaviour
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     DiamondScore diamondScore;
     GameModeManager gameModeManager;
+    RevivePlayer revivePlayer;
     
 
     #region SingleTon
@@ -73,6 +74,11 @@ public class GameOverMenu : MonoBehaviour
         diamondScore = DiamondScore.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         gameModeManager = GameModeManager.Instance;
+
+        if(!revivePlayer)
+        {
+            revivePlayer = GetComponent<RevivePlayer>();
+        }
 
         gameoverMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.gameoverMenuCommandExecutionDelay;
 
@@ -104,8 +110,15 @@ public class GameOverMenu : MonoBehaviour
 
             if (currentTime > gameOverMenuShowDelay)
             {
-                revivalMenu.SetActive(true);
+                if (!gameModeManager.isTutorialActive)
+                { 
+                    revivalMenu.SetActive(true);
                 rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
+                }
+                else
+                {
+                    revivePlayer.ReviePlayerFunction();
+                }
                 checker = true;
             }
 

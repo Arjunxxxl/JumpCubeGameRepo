@@ -39,8 +39,16 @@ public class TileSpawner : MonoBehaviour
     int randomIndex = 0;
     int val;
 
+    Vector2 nextTile_type_index;
+    int tilesOnScreen;
+    bool isTutorialActive;
+
     TilePool tilePool;
     DistanceScore distanceScore;
+    GameModeManager gameModeManager;
+    TileSequence tileSequence;
+    MainMenu mainMenu;
+    CustomStrings customStrings;
 
     private void Awake()
     {
@@ -56,6 +64,10 @@ public class TileSpawner : MonoBehaviour
     {
         tilePool = TilePool.Instance;
         distanceScore = DistanceScore.Instance;
+        gameModeManager = GameModeManager.Instance;
+        tileSequence = TileSequence.Instance;
+        mainMenu = MainMenu.Instance;
+        customStrings = CustomStrings.Instance;
 
         activeTiles = new List<GameObject>();
         tileTypeSpawnPool = new List<int>();
@@ -64,7 +76,9 @@ public class TileSpawner : MonoBehaviour
         distance = distanceScore.distance;
         randomIndex = 0;
         randomTileIndex = 0;
-        
+
+        tilesOnScreen = 0;
+
         if (!initialTile)
         {
             AddInitialInitialLevelTiles();
@@ -76,19 +90,36 @@ public class TileSpawner : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        for(int i = 0; i<maxTilesOnScreen; i++)
+        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : false /*false*/;
+
+        //for(int i = 0; i<maxTilesOnScreen; i++)
+        for (int i = 0; i < maxTilesOnScreen; i++)
         {
-            if(i < 2)
+            if (!isTutorialActive)
             {
-                SpawnTile(0);
-            }
-            else if(i == 2)
-            {
-                SpawnTile(6, 5);
+                if (i < 2)
+                {
+                    SpawnTile(0);
+                }
             }
             else
             {
-                SpawnTile();
+                if(i == 0)
+                {
+                    SpawnTile(0);
+                }
+                else if(i == 1)
+                {
+                    nextTile_type_index = tileSequence.RequestNextTile();
+                    if (nextTile_type_index.x < 0)
+                    {
+                        SpawnTile();
+                    }
+                    else
+                    {
+                        SpawnTile((int)nextTile_type_index.x, (int)nextTile_type_index.y);
+                    }
+                }
             }
         }
     }
@@ -96,14 +127,59 @@ public class TileSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!mainMenu.isGameStart)
+        {
+            return;
+        }
+
         distance = distanceScore.distance;
 
         Check_if_TireCompleted();
 
         if (Mathf.Abs(player.transform.position.x) - safeZone > (spawnX - (maxTilesOnScreen * tileLength)))
         {
-            RemoveTile();
-            SpawnTile();
+            if (tilesOnScreen >= maxTilesOnScreen)
+            {
+                RemoveTile();
+                tilesOnScreen--;
+            }
+
+            SpawnNextTile();
+        }
+    }
+
+    void SpawnNextTile()
+    {
+        if (gameModeManager.gameMode == GameModeManager.GameMode.endless)
+        {
+            if (gameModeManager.isTutorialActive)
+            {
+                nextTile_type_index = tileSequence.RequestNextTile();
+                if (nextTile_type_index.x < 0)
+                {
+                    SpawnTile();
+                }
+                else
+                {
+                    SpawnTile((int)nextTile_type_index.x, (int)nextTile_type_index.y);
+                }
+            }
+            else
+            {
+                SpawnTile();
+            }
+        }
+        else if (gameModeManager.gameMode == GameModeManager.GameMode.level)
+        {
+            nextTile_type_index = tileSequence.RequestNextTile();
+            if (nextTile_type_index.x < 0)
+            {
+                return;
+            }
+            else
+            {
+                SpawnTile((int)nextTile_type_index.x, (int)nextTile_type_index.y);
+            }
         }
     }
 
@@ -134,9 +210,16 @@ public class TileSpawner : MonoBehaviour
             }
         }
 
+        if(!spawnedTile.activeSelf)
+        {
+            spawnedTile.SetActive(true);
+        }
+
         spawnX += tileLength;
         //spawnedTile.transform.parent = transform;
         activeTiles.Add(spawnedTile);
+
+        tilesOnScreen++;
     }
 
     int RandonTileTypeIndex()
@@ -158,11 +241,11 @@ public class TileSpawner : MonoBehaviour
     {
         randomTileIndex = Random.Range(0, 140);
 
-        if(randomTileIndex <= 5)
+        if (randomTileIndex <= 5)
         {
             randomTileIndex = 0;
         }
-        else if(randomTileIndex < 10 || randomTileIndex >= 130)
+        else if (randomTileIndex < 10 || randomTileIndex >= 130)
         {
             randomTileIndex = 13;
         }

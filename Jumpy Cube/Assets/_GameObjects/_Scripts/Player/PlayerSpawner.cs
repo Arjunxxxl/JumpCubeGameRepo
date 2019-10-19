@@ -75,8 +75,6 @@ public class PlayerSpawner : MonoBehaviour
     public MissionCubeMat missionCubeMat;
 
     MainMenu mainmenu;
-    MissionManager missionManager;
-    SavedData savedData;
 
     int i;
     int totalMat;
@@ -108,8 +106,6 @@ public class PlayerSpawner : MonoBehaviour
     void Start()
     {
         mainmenu = MainMenu.Instance;
-        missionManager = MissionManager.Instance;
-        savedData = SavedData.Instance;
 
         GetChildCubeMaterial();
 
@@ -138,8 +134,6 @@ public class PlayerSpawner : MonoBehaviour
         else if (!isDisolveEffectDone)
         {
             isDisolveEffectDone = true;
-            missionManager.CheckingForTimesGamePlayedMission();
-            savedData.UpdateTimesGamePlayed();
         }
     }
 

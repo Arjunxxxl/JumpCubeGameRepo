@@ -20,6 +20,7 @@ public class PlayerKiller : MonoBehaviour
     PlayerSpawner playerSpawner;
     PlayerMovement playerMovement;
     PlayerDeath playerDeath;
+    GameModeManager gameModeManager;
 
     #region SingleTon
     public static PlayerKiller Instance;
@@ -42,6 +43,7 @@ public class PlayerKiller : MonoBehaviour
         playerSpawner = PlayerSpawner.Instance;
         playerMovement = PlayerMovement.Instance;
         playerDeath = PlayerDeath.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         rb = GetComponent<Rigidbody>();
 
@@ -59,7 +61,7 @@ public class PlayerKiller : MonoBehaviour
 
         playerSpeed = rb.velocity.magnitude;
 
-        if (playerSpeed < 0.1f && !playerDeath.isDead)
+        if (playerSpeed < 0.1f && !playerDeath.isDead && !gameModeManager.isTutorialActive)
         {
             currentTime += Time.deltaTime;
             if (currentTime > stationatyDelay && !killPlayer)

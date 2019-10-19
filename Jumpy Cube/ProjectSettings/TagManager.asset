@@ -15,6 +15,7 @@ TagManager:
   - Diamonds
   - iosphere
   - TutorialMessage
+  - TutorialCompleted
   layers:
   - Default
   - TransparentFX

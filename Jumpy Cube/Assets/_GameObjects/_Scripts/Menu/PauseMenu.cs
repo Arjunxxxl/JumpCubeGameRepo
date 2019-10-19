@@ -80,7 +80,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        if(pause && mainMenu.isGameStart && !playerDeath.isDead)
+        if(pause && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive)
         {
             PauseGameFunction();
         }
@@ -88,7 +88,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-        if(!focus && mainMenu.isGameStart && !playerDeath.isDead)
+        if(!focus && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive)
         {
             PauseGameFunction();
         }

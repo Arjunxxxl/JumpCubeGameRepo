@@ -7,7 +7,8 @@ public class GameModeManager : MonoBehaviour
     public GameMode gameMode;
 
     public bool isGameRestarted;
-
+    public bool isTutorialActive;
+    
     #region SingleTon
     public static GameModeManager Instance;
     private void Awake()

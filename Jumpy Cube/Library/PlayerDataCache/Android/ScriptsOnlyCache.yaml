@@ -48,6 +48,8 @@ ScriptsOnlyBuild:
     - TileSpawnAnimation
     - TileSpawner
     - TimelinePlayer
+    - TutorialManager
+    - TutorialMessage
     - Vibration1
     TextMeshPro-2017.3-Runtime.dll:
     - TMPro.TMP_ColorGradient
@@ -245,71 +247,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10572}
     - Class: 114
-      Script: {instanceID: 10612}
+      Script: {instanceID: 10592}
     - Class: 114
-      Script: {instanceID: 10716}
+      Script: {instanceID: 10614}
     - Class: 114
-      Script: {instanceID: 10732}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10738}
+      Script: {instanceID: 10734}
     - Class: 114
-      Script: {instanceID: 10762}
+      Script: {instanceID: 10740}
     - Class: 114
-      Script: {instanceID: 10776}
+      Script: {instanceID: 10764}
     - Class: 114
-      Script: {instanceID: 10786}
+      Script: {instanceID: 10778}
     - Class: 114
-      Script: {instanceID: 10846}
+      Script: {instanceID: 10788}
     - Class: 114
-      Script: {instanceID: 10964}
+      Script: {instanceID: 10848}
     - Class: 114
-      Script: {instanceID: 10992}
+      Script: {instanceID: 10966}
     - Class: 114
-      Script: {instanceID: 11068}
+      Script: {instanceID: 10994}
     - Class: 114
-      Script: {instanceID: 11100}
+      Script: {instanceID: 11040}
     - Class: 114
-      Script: {instanceID: 11166}
+      Script: {instanceID: 11072}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11076}
     - Class: 114
-      Script: {instanceID: 11200}
+      Script: {instanceID: 11106}
     - Class: 114
-      Script: {instanceID: 11238}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11268}
+      Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11244}
     - Class: 114
-      Script: {instanceID: 11690}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11756}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11620}
     - Class: 114
-      Script: {instanceID: 11820}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 11824}
+      Script: {instanceID: 11734}
     - Class: 114
-      Script: {instanceID: 11870}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11774}
     - Class: 114
-      Script: {instanceID: 11906}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 11908}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 11922}
+      Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 11924}
+      Script: {instanceID: 11878}
     - Class: 114
-      Script: {instanceID: 389618}
+      Script: {instanceID: 11880}
     - Class: 114
-      Script: {instanceID: 765290}
+      Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 765298}
+      Script: {instanceID: 11916}
+    - Class: 114
+      Script: {instanceID: 11930}
+    - Class: 114
+      Script: {instanceID: 11932}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -657,7 +663,7 @@ ScriptsOnlyBuild:
     className: IoSphereColorChanger
   - hash:
       serializedVersion: 2
-      Hash: c3d32715c4f8ea755ad626065cf1a03f
+      Hash: ae80d2e434d3744559c47ac098d1ad62
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CustomStrings
@@ -963,7 +969,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: e3349998e5643435ff948059ff4c1209
+      Hash: 0b683870a4132eca298789bd1e24a1b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -1275,6 +1281,12 @@ ScriptsOnlyBuild:
     className: TextMeshProFloatingText
   - hash:
       serializedVersion: 2
+      Hash: 7199e2fdca3505dead35186714ca0e53
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelManager
+  - hash:
+      serializedVersion: 2
       Hash: 1821f70845a1510809b56e56ce8aa6ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1497,6 +1509,12 @@ ScriptsOnlyBuild:
     className: CubeColorManager
   - hash:
       serializedVersion: 2
+      Hash: ce199c0b512ef6474d31eece742b0830
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TutorialManager
+  - hash:
+      serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1507,6 +1525,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FPScounter
+  - hash:
+      serializedVersion: 2
+      Hash: 64429488c19524914800fdcfb516b0a9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameModeManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1617,7 +1641,7 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: 53a57d07b8bb0a3e3ee29ac6aeeb03a5
+      Hash: 7d2338499fc286e29c7346460fa2cee4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DistanceScore
@@ -1701,6 +1725,12 @@ ScriptsOnlyBuild:
     className: VertexColorCycler
   - hash:
       serializedVersion: 2
+      Hash: 935b4f4488150f606e50570e87534b6e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TileSequence
+  - hash:
+      serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1749,7 +1779,7 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
-      Hash: d54eabb67bbfdb35865c5d926f1d3b3a
+      Hash: 737d899fce9b06279a1958fc30bec276
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TutorialMessage
@@ -1791,7 +1821,7 @@ ScriptsOnlyBuild:
     className: LifetimeStats
   - hash:
       serializedVersion: 2
-      Hash: bb7df521ed823aa87d68af857b2340ca
+      Hash: 74e2d8f87db6914c5240e638ddd6d91e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -1813,24 +1843,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
-  - hash:
-      serializedVersion: 2
-      Hash: dfd9c6d6bf3659072926882abfc8886d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameModeManager
-  - hash:
-      serializedVersion: 2
-      Hash: 04c27fe74abd78feb6a2ef55fac5025d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LevelManager
-  - hash:
-      serializedVersion: 2
-      Hash: 86bfba8c52cc659adabbd9ec8b0d3d27
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TileSequence
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

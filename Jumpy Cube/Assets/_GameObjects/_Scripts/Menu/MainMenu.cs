@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public GameObject levels;
     public GameObject stats;
     public GameObject settings;
+    public GameObject quitGame;
 
     [Header("Data for continious level loading")]
     public float gameStartDelay = 1.5f;
@@ -33,9 +34,15 @@ public class MainMenu : MonoBehaviour
     [Header("Play Button Data")]
     public bool isGameStart;
 
+    [Header("Level number UI")]
+    public GameObject levelNumberUI;
+    public float levelNumberShowingDuration = 3f;
+
     TimelinePlayer timelinePlayer;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     GameModeManager gameModeManager;
+    MissionManager missionManager;
+    SavedData savedData;
 
     #region SingleTon
     public static MainMenu Instance;
@@ -58,8 +65,12 @@ public class MainMenu : MonoBehaviour
         timelinePlayer = TimelinePlayer.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         gameModeManager = GameModeManager.Instance;
+        missionManager = MissionManager.Instance;
+        savedData = SavedData.Instance;
 
         commandExecuationDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
+        
+        levelNumberUI.SetActive(false);
 
         if (gameModeManager.gameMode == GameModeManager.GameMode.endless)
         {
@@ -80,6 +91,7 @@ public class MainMenu : MonoBehaviour
                 levels.SetActive(false);
                 stats.SetActive(false);
                 settings.SetActive(false);
+                quitGame.SetActive(false);
 
                 foreach (Button b in allbuttons)
                 {
@@ -98,7 +110,28 @@ public class MainMenu : MonoBehaviour
         playerChild = player.transform.GetChild(1).gameObject;
         playerChild.SetActive(true);
     }
-    
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(mainMenu.activeSelf)
+            {
+                if (quitGame.activeSelf)
+                {
+                    quitGame.SetActive(false);
+                }
+                else if (homeMenu.activeSelf)
+                {
+                    quitGame.SetActive(true);
+                }
+                else
+                {
+                    HomeButtonFunction();
+                }
+            }
+        }
+    }
 
     public void Play()
     {
@@ -117,6 +150,9 @@ public class MainMenu : MonoBehaviour
         {
             b.interactable = false;
         }
+        
+        missionManager.CheckingForTimesGamePlayedMission();
+        savedData.UpdateTimesGamePlayed();
     }
 
     IEnumerator DisableMainMenuWithDelay()
@@ -207,6 +243,16 @@ public class MainMenu : MonoBehaviour
         settings.SetActive(true);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void NotQuitGame()
+    {
+        quitGame.SetActive(false);
+    }
+
     ///FUNCTIONS FOR CONTINIOUS LEVEL CHANGE
     ///
 
@@ -227,6 +273,9 @@ public class MainMenu : MonoBehaviour
         {
             b.interactable = false;
         }
+        
+        missionManager.CheckingForTimesGamePlayedMission();
+        savedData.UpdateTimesGamePlayed();
     }
 
     public void Play_CONTINIOUS()
@@ -241,13 +290,19 @@ public class MainMenu : MonoBehaviour
         settings.SetActive(false);
 
         StartCoroutine(StartGameWithDelay());
-
+        
+        levelNumberUI.SetActive(true);
         timelinePlayer.PlayShowLevelNumber();
+
+        StartCoroutine(DisableLevelNumberUI());
 
         foreach (Button b in allbuttons)
         {
             b.interactable = false;
         }
+        
+        missionManager.CheckingForTimesGamePlayedMission();
+        savedData.UpdateTimesGamePlayed();
     }
 
     IEnumerator StartGameWithDelay()
@@ -257,4 +312,10 @@ public class MainMenu : MonoBehaviour
         isGameStart = true;
     }
 
+    IEnumerator DisableLevelNumberUI()
+    {
+        yield return new WaitForSeconds(levelNumberShowingDuration);
+        
+        levelNumberUI.SetActive(false);
+    }
 }

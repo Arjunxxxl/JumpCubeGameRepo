@@ -13,6 +13,8 @@ public class DistanceScore : MonoBehaviour
     public int distance;
 
     public TMP_Text scoreTxt;
+    
+    public bool isTutorialActive;       // set from tutorial manager
 
     MainMenu mainMenu;
     MissionManager missionManager;
@@ -46,7 +48,7 @@ public class DistanceScore : MonoBehaviour
         initialPosX = player.position.x;
 
         distance = 0;
-        scoreTxt.text = distance + "";
+        scoreTxt.text = "";
     }
 
     // Update is called once per frame
@@ -54,6 +56,12 @@ public class DistanceScore : MonoBehaviour
     {
         if(!mainMenu.isGameStart)
         {
+            return;
+        }
+
+        if (isTutorialActive)
+        {
+            initialPosX = player.position.x;
             return;
         }
 

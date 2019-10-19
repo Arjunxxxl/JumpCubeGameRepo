@@ -117,4 +117,8 @@ public class CustomStrings : MonoBehaviour
     public string VIBRATION_STRING = "VIBRATION STRING";
     public string HIGH_QUALITY_STRING = "HIGH QUALITY STRING";
     #endregion
+
+    #region TUTORIAL STRINGS
+    public string TUTORIAL_COMPLETED = "TUTORIAL COMPLETED";
+    #endregion
 }
