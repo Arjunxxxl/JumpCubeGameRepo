@@ -9,19 +9,43 @@ public class InGameMenu : MonoBehaviour
     [Header("UI Elements")]
     public TMP_Text diamondsCollected_txt;
     public GameObject inGameMenu;
+    public GameObject levelEndMenu;
 
     [Header("Data")]
     public bool isMenuActivated;
+
+    [Header("Level complete data")]
+    public TMP_Text distanceTxt;
+    public TMP_Text diamondsTxt;
+    public TMP_Text averageScoreTxt;
+    int currentScore;
+    int currentDiamonds;
+    float averageScore;
+
+    [Header("Data")]
+    public float levelCompeleteMenuDelay = 2f;
 
     [Header("Items Data")]
     public int diamondsCollected;
     public int diamondsMultiplier;
     public int diamondValue;
     public int realNumberOfDiamondsCollected;
-    
+
+    [Header("HighScore Data")]
+    public GameObject score_best;
+    public GameObject diamonds_best;
+    public GameObject average_best;
+    public float trophyShowingDelay = 1.25f;
+    public float trophyScowingOffset = 0.5f;
+
+    int highScore;
+    int diamondBest;
+    int averageBest;
 
     PlayerSpawner playerSpawner;
     TimelinePlayer timelinePlayer;
+    CustomStrings customStrings;
+    DistanceScore distanceScore;
 
     #region SingleTon
     public static InGameMenu Instance;
@@ -43,8 +67,11 @@ public class InGameMenu : MonoBehaviour
     {
         playerSpawner = PlayerSpawner.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        customStrings = CustomStrings.Instance;
+        distanceScore = DistanceScore.Instance;
 
         inGameMenu.SetActive(false);
+        levelEndMenu.SetActive(false);
 
         isMenuActivated = false;
 
@@ -54,6 +81,13 @@ public class InGameMenu : MonoBehaviour
         diamondValue = 1;
 
         diamondsCollected_txt.text = diamondsCollected + "";
+
+        score_best.SetActive(false);
+        diamonds_best.SetActive(false);
+        average_best.SetActive(false);
+        highScore = PlayerPrefs.GetInt(customStrings.HIGHSCORE, 0);
+        diamondBest = PlayerPrefs.GetInt(customStrings.DIAMONDS_COLLECTED_IN_ONE_RUN1, 0);
+        averageBest = (int)PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
     }
 
     // Update is called once per frame
@@ -79,5 +113,64 @@ public class InGameMenu : MonoBehaviour
         diamondsCollected_txt.text = diamondsCollected + "";
 
         timelinePlayer.PlayDiamondCollectUiEffect();
+    }
+
+    public void ActivateLevelEndMenu()
+    {
+        inGameMenu.SetActive(false);
+        Invoke("ActivateLevelEndMenu_Function", levelCompeleteMenuDelay);
+
+        averageScore = PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
+        currentScore = distanceScore.distance;
+        currentDiamonds = diamondsCollected;
+
+        distanceTxt.text = currentScore + "m";
+        diamondsTxt.text = currentDiamonds + "";
+        averageScoreTxt.text = (int)averageScore + "";
+    }
+
+    void ActivateLevelEndMenu_Function()
+    {
+        levelEndMenu.SetActive(true);
+        CheckForHighScore();
+    }
+
+    void CheckForHighScore()
+    {
+        if (currentScore > highScore)
+        {
+            StartCoroutine("ShowScoreBestTophy");
+        }
+
+        if (currentDiamonds > diamondBest)
+        {
+            StartCoroutine("ShowDiamondBestTrophy");
+        }
+
+        if (averageScore > averageBest)
+        {
+            StartCoroutine("ShowAverageBestTrophy");
+        }
+    }
+
+    IEnumerator ShowScoreBestTophy()
+    {
+        yield return new WaitForSeconds(trophyShowingDelay);
+        score_best.SetActive(true);
+        timelinePlayer.PlayScoreBest_lc();
+    }
+
+    IEnumerator ShowDiamondBestTrophy()
+    {
+        yield return new WaitForSeconds(trophyShowingDelay + trophyScowingOffset);
+        diamonds_best.SetActive(true);
+        timelinePlayer.PlayDiamondsBest_lc();
+    }
+
+    IEnumerator ShowAverageBestTrophy()
+    {
+        yield return new WaitForSeconds(trophyShowingDelay + trophyScowingOffset + trophyScowingOffset);
+        average_best.SetActive(true);
+        timelinePlayer.PlayAverageBest_lc();
     }
 }

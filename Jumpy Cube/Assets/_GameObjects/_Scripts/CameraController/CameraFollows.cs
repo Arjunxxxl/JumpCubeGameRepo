@@ -34,6 +34,8 @@ public class CameraFollows : MonoBehaviour
     PlayerSpawner playerSpawner;
     PlayerMovement playerMovement;
     MainMenu mainMenu;
+    GameModeManager gameModeManager;
+
     public bool isDead;
     public bool isDownGravity;
     public bool isGravityChanged;
@@ -45,6 +47,7 @@ public class CameraFollows : MonoBehaviour
         playerSpawner = PlayerSpawner.Instance;
         mainMenu = MainMenu.Instance;
         playerMovement = PlayerMovement.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         isDead = playerDeath.isDead;
         isDownGravity = playerMovement.isDownGravity;
@@ -83,6 +86,15 @@ public class CameraFollows : MonoBehaviour
         }
         else if(playerSpawner.isDisolveEffectDone)
         {
+            if (gameModeManager.gameMode == GameModeManager.GameMode.level)
+            {
+                if(playerMovement.isLevelCompleted)
+                {
+                    offSet = Vector3.Lerp(offSet, deathOffset, Time.deltaTime * offSetChangeSpeed_whenDied);
+                    return;
+                }
+            }
+
             if (!isGravityChanged)
             {
                 offSet = Vector3.Lerp(offSet, normalOffset, Time.deltaTime * offSetChangeSpeed);

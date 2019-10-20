@@ -16,6 +16,8 @@ TagManager:
   - iosphere
   - TutorialMessage
   - TutorialCompleted
+  - levelend
+  - stopcube
   layers:
   - Default
   - TransparentFX

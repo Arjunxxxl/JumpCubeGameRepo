@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
     PlayerSpawner playerSpawner;
     PlayerDeath playerDeath;
     GameModeManager gameModeManager;
+    PlayerMovement playerMovement;
 
     #region SingleTon
     public static PauseMenu Instance;
@@ -55,6 +56,7 @@ public class PauseMenu : MonoBehaviour
         playerSpawner = PlayerSpawner.Instance;
         playerDeath = PlayerDeath.Instance;
         gameModeManager = GameModeManager.Instance;
+        playerMovement = PlayerMovement.Instance;
 
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(false);
@@ -80,7 +82,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        if(pause && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive)
+        if(pause && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
         {
             PauseGameFunction();
         }
@@ -88,7 +90,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-        if(!focus && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive)
+        if(!focus && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
         {
             PauseGameFunction();
         }

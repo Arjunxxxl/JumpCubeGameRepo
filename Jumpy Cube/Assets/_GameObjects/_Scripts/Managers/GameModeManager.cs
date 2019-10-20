@@ -8,6 +8,9 @@ public class GameModeManager : MonoBehaviour
 
     public bool isGameRestarted;
     public bool isTutorialActive;
+
+    public LevelNumbers currentLevel;
+    public LevelNumbers nextLevel;
     
     #region SingleTon
     public static GameModeManager Instance;
@@ -31,11 +34,9 @@ public class GameModeManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        currentLevel = LevelNumbers._1;
+        nextLevel = LevelNumbers._2;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

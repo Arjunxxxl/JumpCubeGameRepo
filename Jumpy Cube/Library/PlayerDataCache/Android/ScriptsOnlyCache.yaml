@@ -21,6 +21,8 @@ ScriptsOnlyBuild:
     - IoSphere
     - IoSphereColorChanger
     - LevelManager
+    - LevelMenu
+    - LevelScrolling
     - LifetimeStats
     - LoadLevel
     - MainMenu
@@ -80,6 +82,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.Timeline.Editor.dll:
     - UnityEditor.Timeline.SequenceHierarchy
+    - UnityEditor.Timeline.TimelineAssetViewModel
     - UnityEditor.Timeline.TimelineWindow
     Unity.Timeline.dll:
     - UnityEngine.Timeline.AnimationTrack
@@ -316,6 +319,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11930}
     - Class: 114
       Script: {instanceID: 11932}
+    - Class: 114
+      Script: {instanceID: 694046}
+    - Class: 114
+      Script: {instanceID: 1223752}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -447,7 +454,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 3d2891c5b2498e258d9b1ae7aaef3e86
+      Hash: d48ad41a108bb916626364c17f82c078
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -969,7 +976,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: 0b683870a4132eca298789bd1e24a1b8
+      Hash: 387c147383c5a71c80f272146bddf7d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -1527,7 +1534,7 @@ ScriptsOnlyBuild:
     className: FPScounter
   - hash:
       serializedVersion: 2
-      Hash: 64429488c19524914800fdcfb516b0a9
+      Hash: 102ba9c6bb9d37f13b09efd11b90d8f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameModeManager
@@ -1551,7 +1558,7 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
-      Hash: b43d50b0cc3e241af8e9ce1041296a4e
+      Hash: afd377e1409e6bfe24ddc01fc2bda3d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InGameMenu
@@ -1641,7 +1648,7 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: 7d2338499fc286e29c7346460fa2cee4
+      Hash: 43afa09a61d7edf6d832ab9845dc8510
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DistanceScore
@@ -1843,6 +1850,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: e930e514b6ffe472bd4ce4e42055d1e9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelScrolling
+  - hash:
+      serializedVersion: 2
+      Hash: 202a939dda251b223c2fc30d16382c18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelMenu
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SampleScene.unity

@@ -15,9 +15,11 @@ public class DistanceScore : MonoBehaviour
     public TMP_Text scoreTxt;
     
     public bool isTutorialActive;       // set from tutorial manager
+    public bool isLevelCompleted;
 
     MainMenu mainMenu;
     MissionManager missionManager;
+    GameModeManager gameModeManager;
 
     #region SingleTon
     public static DistanceScore Instance;
@@ -39,6 +41,7 @@ public class DistanceScore : MonoBehaviour
     {
         missionManager = MissionManager.Instance;
         mainMenu = MainMenu.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         if(!player)
         {
@@ -49,6 +52,8 @@ public class DistanceScore : MonoBehaviour
 
         distance = 0;
         scoreTxt.text = "";
+
+        isLevelCompleted = false;
     }
 
     // Update is called once per frame
@@ -65,6 +70,14 @@ public class DistanceScore : MonoBehaviour
             return;
         }
 
+        if(gameModeManager.gameMode == GameModeManager.GameMode.level)
+        {
+            if(isLevelCompleted)
+            {
+                return;
+            }
+        }
+
         finalPosX = player.position.x;
         dist = (initialPosX - finalPosX);
         dist *= distanceMultiplier;
@@ -74,4 +87,12 @@ public class DistanceScore : MonoBehaviour
         missionManager.CheckingForDiatanceScoreMission(distance);
     }
 
+
+    public bool IsLevelCompleted
+    {
+        set
+        {
+            isLevelCompleted = value;
+        }
+    }
 }

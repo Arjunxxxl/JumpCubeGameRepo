@@ -25,10 +25,15 @@ public class TimelinePlayer : MonoBehaviour
     [Header("Mission Complete UI Animation")]
     public PlayableDirector missionCompleteUiPlayable;
 
-    [Header("best score timelines")]
+    [Header("best score timelines - game over")]
     public PlayableDirector score_best;
     public PlayableDirector diamonds_best;
     public PlayableDirector average_best;
+
+    [Header("best score timelines - level complete")]
+    public PlayableDirector score_best_lc;
+    public PlayableDirector diamonds_best_lc;
+    public PlayableDirector average_best_lc;
 
     [Header("Level number showing timeline")]
     public PlayableDirector levelnumberShowingPlayable;
@@ -129,6 +134,21 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayShowLevelNumber()
     {
         levelnumberShowingPlayable.Play();
+    }
+
+    public void PlayScoreBest_lc()
+    {
+        score_best_lc.Play();
+    }
+
+    public void PlayDiamondsBest_lc()
+    {
+        diamonds_best_lc.Play();
+    }
+
+    public void PlayAverageBest_lc()
+    {
+        average_best_lc.Play();
     }
 
     #region TUTORIAL MESSAGE

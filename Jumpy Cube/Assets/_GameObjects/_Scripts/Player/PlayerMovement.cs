@@ -85,6 +85,10 @@ public class PlayerMovement : MonoBehaviour
     InGameMenu inGameMenu;
     MissionManager missionManager;
     DistanceScore distanceScore;
+    GameModeManager gameModeManager;
+    LevelMenu levelMenu;
+
+    public bool isLevelCompleted;
 
     GameObject spawnedLandEffect;
     GameObject diamondCollectEffect;
@@ -128,6 +132,8 @@ public class PlayerMovement : MonoBehaviour
         inGameMenu = InGameMenu.Instance;
         missionManager = MissionManager.Instance;
         distanceScore = DistanceScore.Instance;
+        gameModeManager = GameModeManager.Instance;
+        levelMenu = LevelMenu.Instance;
 
         if(!mainCam)
         {
@@ -161,6 +167,8 @@ public class PlayerMovement : MonoBehaviour
         timesSpeedIncreased = 1;
         currentDistance = 0;
         distanceAtSpeedIncreases = 200;
+
+        isLevelCompleted = false;
     }
 
     // Update is called once per frame
@@ -204,6 +212,14 @@ public class PlayerMovement : MonoBehaviour
         if (pauseMenu.isPaused)
         {
             return;
+        }
+
+        if(gameModeManager.gameMode == GameModeManager.GameMode.level)
+        {
+            if(isLevelCompleted)
+            {
+                return;
+            }
         }
 
         if (groundExit)
@@ -405,6 +421,25 @@ public class PlayerMovement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             inGameMenu.DiamondCollected();
+        }
+
+        if(other.gameObject.CompareTag("levelend"))
+        {
+            if (gameModeManager.gameMode == GameModeManager.GameMode.level)
+            {
+                isLevelCompleted = true;
+                distanceScore.IsLevelCompleted = true;
+                inGameMenu.ActivateLevelEndMenu();
+                levelMenu.CaptureScreenShot();
+            }
+        }
+
+        if (other.gameObject.CompareTag("stopcube"))
+        {
+            if (gameModeManager.gameMode == GameModeManager.GameMode.level)
+            {
+                isMovementActivated = false;
+            }
         }
     }
 

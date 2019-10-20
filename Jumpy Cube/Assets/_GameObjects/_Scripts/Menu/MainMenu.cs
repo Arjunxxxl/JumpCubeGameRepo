@@ -43,6 +43,7 @@ public class MainMenu : MonoBehaviour
     GameModeManager gameModeManager;
     MissionManager missionManager;
     SavedData savedData;
+    LevelMenu levelMenu;
 
     #region SingleTon
     public static MainMenu Instance;
@@ -67,6 +68,7 @@ public class MainMenu : MonoBehaviour
         gameModeManager = GameModeManager.Instance;
         missionManager = MissionManager.Instance;
         savedData = SavedData.Instance;
+        levelMenu = LevelMenu.Instance;
 
         commandExecuationDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
         
@@ -103,7 +105,7 @@ public class MainMenu : MonoBehaviour
         {
             gameModeManager.isGameRestarted = false;
 
-            Play_CONTINIOUS();
+            Play_Level();
         }
 
         tileSystem.SetActive(true);
@@ -278,7 +280,7 @@ public class MainMenu : MonoBehaviour
         savedData.UpdateTimesGamePlayed();
     }
 
-    public void Play_CONTINIOUS()
+    public void Play_Level()
     {
         homeMenu.SetActive(false);
         mainMenu.SetActive(false);
@@ -292,6 +294,7 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(StartGameWithDelay());
         
         levelNumberUI.SetActive(true);
+        levelMenu.SetCorrectLevelNumber();
         timelinePlayer.PlayShowLevelNumber();
 
         StartCoroutine(DisableLevelNumberUI());
