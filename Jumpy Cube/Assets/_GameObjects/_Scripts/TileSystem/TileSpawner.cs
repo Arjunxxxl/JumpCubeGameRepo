@@ -97,7 +97,7 @@ public class TileSpawner : MonoBehaviour
         {
             if (!isTutorialActive)
             {
-                if (i < 2)
+                if (i < 1)      // initially it was i < 2
                 {
                     SpawnTile(0);
                 }
@@ -110,6 +110,7 @@ public class TileSpawner : MonoBehaviour
                 }
                 else if(i == 1)
                 {
+                    /*
                     nextTile_type_index = tileSequence.RequestNextTile();
                     if (nextTile_type_index.x < 0)
                     {
@@ -119,6 +120,7 @@ public class TileSpawner : MonoBehaviour
                     {
                         SpawnTile((int)nextTile_type_index.x, (int)nextTile_type_index.y);
                     }
+                    */
                 }
             }
         }

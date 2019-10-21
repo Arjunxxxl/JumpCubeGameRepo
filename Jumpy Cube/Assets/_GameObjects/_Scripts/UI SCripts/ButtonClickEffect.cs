@@ -24,11 +24,94 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform skipButton;
     #endregion
 
+    #region LEVEL MENU
+    [System.Serializable]
+    public class LevelButtons
+    {
+        public Transform l1;
+        public Transform l2;
+        public Transform l3;
+        public Transform l4;
+        public Transform l5;
+        public Transform l6;
+        public Transform l7;
+        public Transform l8;
+        public Transform l9;
+        [Space]
+        public Transform l10;
+        public Transform l11;
+        public Transform l12;
+        public Transform l13;
+        public Transform l14;
+        public Transform l15;
+        public Transform l16;
+        public Transform l17;
+        public Transform l18;
+        [Space]
+        public Transform l19;
+        public Transform l20;
+        public Transform l21;
+        public Transform l22;
+        public Transform l23;
+        public Transform l24;
+        public Transform l25;
+        public Transform l26;
+        public Transform l27;
+        [Space]
+        public Transform l28;
+        public Transform l29;
+        public Transform l30;
+        public Transform l31;
+        public Transform l32;
+        public Transform l33;
+        public Transform l34;
+        public Transform l35;
+        public Transform l36;
+        [Space]
+        public Transform l37;
+        public Transform l38;
+        public Transform l39;
+        public Transform l40;
+        public Transform l41;
+        public Transform l42;
+        public Transform l43;
+        public Transform l44;
+        public Transform l45;
+        [Space]
+        public Transform l46;
+        public Transform l47;
+        public Transform l48;
+        public Transform l49;
+        public Transform l50;
+        public Transform l51;
+        public Transform l52;
+        public Transform l53;
+        public Transform l54;
+    }
+
+    [Header("LEVELS BUTTONS")]
+    [SerializeField]
+    public LevelButtons levelButtons;
+    #endregion
+
     #region GAMEOVER MENU BUTTONS
     [Header("Gameover Menu Buttons")]
     public Transform gameover_HomeButton;
     public Transform gameover_ShareButton;
     public Transform gameover_WatchAdsButton;
+    public Transform gameover_levelModeHomeButton;
+    public Transform gameover_levelModeReplayButton;
+    #endregion
+
+    #region LEVEL COMPLETE BUTTONS
+    [Header("Level complete buttons")]
+    public Transform levelCompleteShareButton;
+    public Transform levelCompleteWatchAdsButon;
+    public Transform levelCompleteReplayButton;
+    public Transform levelCompleteHomeButton;
+    public Transform levelCompleteNextLevelButton;
+    public Transform levelCompleteReplayLastLevelButton;
+    public Transform levelCompleteHomeLastLevelButton;
     #endregion
 
     #region HOME MENUS BUTTONS
@@ -47,6 +130,7 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform storeBack;
     public Transform statsBack;
     public Transform settingsBack1;
+    public Transform levelBack;
     #endregion
 
     #region SETTINGS MENU BUTTONS
@@ -228,6 +312,558 @@ public class ButtonClickEffect : MonoBehaviour
     }
     #endregion
 
+    #region LEVEL MENU BUTTONS
+    public void LevelButton_1_1_Pressed()
+    {
+        levelButtons.l1.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_1_Released()
+    {
+        levelButtons.l1.localScale = originalSize;
+    }
+
+    public void LevelButton_1_2_Pressed()
+    {
+        levelButtons.l2.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_2_Released()
+    {
+        levelButtons.l2.localScale = originalSize;
+    }
+
+    public void LevelButton_1_3_Pressed()
+    {
+        levelButtons.l3.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_3_Released()
+    {
+        levelButtons.l3.localScale = originalSize;
+    }
+
+    public void LevelButton_1_4_Pressed()
+    {
+        levelButtons.l4.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_4_Released()
+    {
+        levelButtons.l4.localScale = originalSize;
+    }
+
+    public void LevelButton_1_5_Pressed()
+    {
+        levelButtons.l5.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_5_Released()
+    {
+        levelButtons.l5.localScale = originalSize;
+    }
+
+    public void LevelButton_1_6_Pressed()
+    {
+        levelButtons.l6.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_6_Released()
+    {
+        levelButtons.l6.localScale = originalSize;
+    }
+
+    public void LevelButton_1_7_Pressed()
+    {
+        levelButtons.l7.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_7_Released()
+    {
+        levelButtons.l7.localScale = originalSize;
+    }
+
+    public void LevelButton_1_8_Pressed()
+    {
+        levelButtons.l8.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_8_Released()
+    {
+        levelButtons.l8.localScale = originalSize;
+    }
+
+    public void LevelButton_1_9_Pressed()
+    {
+        levelButtons.l9.localScale = pressedSize;
+    }
+
+    public void LevelButton_1_9_Released()
+    {
+        levelButtons.l9.localScale = originalSize;
+    }
+
+
+
+    public void LevelButton_2_1_Pressed()
+    {
+        levelButtons.l10.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_1_Released()
+    {
+        levelButtons.l10.localScale = originalSize;
+    }
+
+    public void LevelButton_2_2_Pressed()
+    {
+        levelButtons.l11.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_2_Released()
+    {
+        levelButtons.l11.localScale = originalSize;
+    }
+
+    public void LevelButton_2_3_Pressed()
+    {
+        levelButtons.l12.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_3_Released()
+    {
+        levelButtons.l12.localScale = originalSize;
+    }
+
+    public void LevelButton_2_4_Pressed()
+    {
+        levelButtons.l13.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_4_Released()
+    {
+        levelButtons.l13.localScale = originalSize;
+    }
+
+    public void LevelButton_2_5_Pressed()
+    {
+        levelButtons.l14.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_5_Released()
+    {
+        levelButtons.l14.localScale = originalSize;
+    }
+
+    public void LevelButton_2_6_Pressed()
+    {
+        levelButtons.l15.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_6_Released()
+    {
+        levelButtons.l15.localScale = originalSize;
+    }
+
+    public void LevelButton_2_7_Pressed()
+    {
+        levelButtons.l16.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_7_Released()
+    {
+        levelButtons.l16.localScale = originalSize;
+    }
+
+    public void LevelButton_2_8_Pressed()
+    {
+        levelButtons.l17.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_8_Released()
+    {
+        levelButtons.l17.localScale = originalSize;
+    }
+
+    public void LevelButton_2_9_Pressed()
+    {
+        levelButtons.l18.localScale = pressedSize;
+    }
+
+    public void LevelButton_2_9_Released()
+    {
+        levelButtons.l18.localScale = originalSize;
+    }
+
+
+
+    public void LevelButton_3_1_Pressed()
+    {
+        levelButtons.l19.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_1_Released()
+    {
+        levelButtons.l19.localScale = originalSize;
+    }
+
+    public void LevelButton_3_2_Pressed()
+    {
+        levelButtons.l20.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_2_Released()
+    {
+        levelButtons.l20.localScale = originalSize;
+    }
+
+    public void LevelButton_3_3_Pressed()
+    {
+        levelButtons.l21.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_3_Released()
+    {
+        levelButtons.l21.localScale = originalSize;
+    }
+
+    public void LevelButton_3_4_Pressed()
+    {
+        levelButtons.l22.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_4_Released()
+    {
+        levelButtons.l22.localScale = originalSize;
+    }
+
+    public void LevelButton_3_5_Pressed()
+    {
+        levelButtons.l23.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_5_Released()
+    {
+        levelButtons.l23.localScale = originalSize;
+    }
+
+    public void LevelButton_3_6_Pressed()
+    {
+        levelButtons.l24.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_6_Released()
+    {
+        levelButtons.l24.localScale = originalSize;
+    }
+
+    public void LevelButton_3_7_Pressed()
+    {
+        levelButtons.l25.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_7_Released()
+    {
+        levelButtons.l25.localScale = originalSize;
+    }
+
+    public void LevelButton_3_8_Pressed()
+    {
+        levelButtons.l26.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_8_Released()
+    {
+        levelButtons.l26.localScale = originalSize;
+    }
+
+    public void LevelButton_3_9_Pressed()
+    {
+        levelButtons.l27.localScale = pressedSize;
+    }
+
+    public void LevelButton_3_9_Released()
+    {
+        levelButtons.l27.localScale = originalSize;
+    }
+
+
+
+    public void LevelButton_4_1_Pressed()
+    {
+        levelButtons.l28.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_1_Released()
+    {
+        levelButtons.l28.localScale = originalSize;
+    }
+
+    public void LevelButton_4_2_Pressed()
+    {
+        levelButtons.l29.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_2_Released()
+    {
+        levelButtons.l29.localScale = originalSize;
+    }
+
+    public void LevelButton_4_3_Pressed()
+    {
+        levelButtons.l30.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_3_Released()
+    {
+        levelButtons.l30.localScale = originalSize;
+    }
+
+    public void LevelButton_4_4_Pressed()
+    {
+        levelButtons.l31.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_4_Released()
+    {
+        levelButtons.l31.localScale = originalSize;
+    }
+
+    public void LevelButton_4_5_Pressed()
+    {
+        levelButtons.l32.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_5_Released()
+    {
+        levelButtons.l32.localScale = originalSize;
+    }
+
+    public void LevelButton_4_6_Pressed()
+    {
+        levelButtons.l33.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_6_Released()
+    {
+        levelButtons.l33.localScale = originalSize;
+    }
+
+    public void LevelButton_4_7_Pressed()
+    {
+        levelButtons.l34.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_7_Released()
+    {
+        levelButtons.l34.localScale = originalSize;
+    }
+
+    public void LevelButton_4_8_Pressed()
+    {
+        levelButtons.l35.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_8_Released()
+    {
+        levelButtons.l35.localScale = originalSize;
+    }
+
+    public void LevelButton_4_9_Pressed()
+    {
+        levelButtons.l36.localScale = pressedSize;
+    }
+
+    public void LevelButton_4_9_Released()
+    {
+        levelButtons.l36.localScale = originalSize;
+    }
+
+
+
+    public void LevelButton_5_1_Pressed()
+    {
+        levelButtons.l37.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_1_Released()
+    {
+        levelButtons.l37.localScale = originalSize;
+    }
+
+    public void LevelButton_5_2_Pressed()
+    {
+        levelButtons.l38.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_2_Released()
+    {
+        levelButtons.l38.localScale = originalSize;
+    }
+
+    public void LevelButton_5_3_Pressed()
+    {
+        levelButtons.l39.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_3_Released()
+    {
+        levelButtons.l39.localScale = originalSize;
+    }
+
+    public void LevelButton_5_4_Pressed()
+    {
+        levelButtons.l40.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_4_Released()
+    {
+        levelButtons.l40.localScale = originalSize;
+    }
+
+    public void LevelButton_5_5_Pressed()
+    {
+        levelButtons.l41.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_5_Released()
+    {
+        levelButtons.l41.localScale = originalSize;
+    }
+
+    public void LevelButton_5_6_Pressed()
+    {
+        levelButtons.l42.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_6_Released()
+    {
+        levelButtons.l42.localScale = originalSize;
+    }
+
+    public void LevelButton_5_7_Pressed()
+    {
+        levelButtons.l43.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_7_Released()
+    {
+        levelButtons.l43.localScale = originalSize;
+    }
+
+    public void LevelButton_5_8_Pressed()
+    {
+        levelButtons.l44.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_8_Released()
+    {
+        levelButtons.l44.localScale = originalSize;
+    }
+
+    public void LevelButton_5_9_Pressed()
+    {
+        levelButtons.l45.localScale = pressedSize;
+    }
+
+    public void LevelButton_5_9_Released()
+    {
+        levelButtons.l45.localScale = originalSize;
+    }
+
+
+
+    public void LevelButton_6_1_Pressed()
+    {
+        levelButtons.l46.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_1_Released()
+    {
+        levelButtons.l46.localScale = originalSize;
+    }
+
+    public void LevelButton_6_2_Pressed()
+    {
+        levelButtons.l47.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_2_Released()
+    {
+        levelButtons.l47.localScale = originalSize;
+    }
+
+    public void LevelButton_6_3_Pressed()
+    {
+        levelButtons.l48.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_3_Released()
+    {
+        levelButtons.l48.localScale = originalSize;
+    }
+
+    public void LevelButton_6_4_Pressed()
+    {
+        levelButtons.l49.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_4_Released()
+    {
+        levelButtons.l49.localScale = originalSize;
+    }
+
+    public void LevelButton_6_5_Pressed()
+    {
+        levelButtons.l50.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_5_Released()
+    {
+        levelButtons.l50.localScale = originalSize;
+    }
+
+    public void LevelButton_6_6_Pressed()
+    {
+        levelButtons.l51.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_6Released()
+    {
+        levelButtons.l51.localScale = originalSize;
+    }
+
+    public void LevelButton_6_7_Pressed()
+    {
+        levelButtons.l52.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_7_Released()
+    {
+        levelButtons.l52.localScale = originalSize;
+    }
+
+    public void LevelButton_6_8_Pressed()
+    {
+        levelButtons.l53.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_8_Released()
+    {
+        levelButtons.l53.localScale = originalSize;
+    }
+
+    public void LevelButton_6_9_Pressed()
+    {
+        levelButtons.l54.localScale = pressedSize;
+    }
+
+    public void LevelButton_6_9_Released()
+    {
+        levelButtons.l54.localScale = originalSize;
+    }
+    #endregion
+
     #region GAMEOVER BUTTONS
     public void GameoverMenu_WatchAdsButtonPressed()
     {
@@ -257,6 +893,98 @@ public class ButtonClickEffect : MonoBehaviour
     public void GameoverMenu_HomeButtonReleased()
     {
         gameover_HomeButton.localScale = originalSize;
+    }
+
+    public void GameoverMenu_LevelModeHomeButtonPressed()
+    {
+        gameover_levelModeHomeButton.localScale = pressedSize;
+    }
+
+    public void GameoverMenu_LevelModeHomeButtonReleased()
+    {
+        gameover_levelModeHomeButton.localScale = originalSize;
+    }
+
+    public void GameoverMenu_LevelModeReplayButtonPressed()
+    {
+        gameover_levelModeReplayButton.localScale = pressedSize;
+    }
+
+    public void GameoverMenu_LevelModeReplayButtonReleased()
+    {
+        gameover_levelModeReplayButton.localScale = originalSize;
+    }
+    #endregion
+
+    #region LEVEL COMPLETE bUTTONS
+    public void LevelComplete_WatchAdsButtonPressed()
+    {
+        levelCompleteWatchAdsButon.localScale = pressedSize;
+    }
+
+    public void LevelComplete_WatchAdsButtonReleased()
+    {
+        levelCompleteWatchAdsButon.localScale = originalSize;
+    }
+
+    public void LevelComplete_ShareButtonPressed()
+    {
+        levelCompleteShareButton.localScale = pressedSize;
+    }
+
+    public void LevelComplete_ShareButtonReleased()
+    {
+        levelCompleteShareButton.localScale = originalSize;
+    }
+
+    public void LevelComplete_ReplayButtonPressed()
+    {
+        levelCompleteReplayButton.localScale = pressedSize;
+    }
+
+    public void LevelComplete_ReplayButtonReleased()
+    {
+        levelCompleteReplayButton.localScale = originalSize;
+    }
+
+    public void LevelComplete_HomeButtonPressed()
+    {
+        levelCompleteHomeButton.localScale = pressedSize;
+    }
+
+    public void LevelComplete_HomeButtonReleased()
+    {
+        levelCompleteHomeButton.localScale = originalSize;
+    }
+
+    public void LevelComplete_NextLevelButtonPressed()
+    {
+        levelCompleteNextLevelButton.localScale = pressedSize;
+    }
+
+    public void LevelComplete_NextLevelButtonReleased()
+    {
+        levelCompleteNextLevelButton.localScale = originalSize;
+    }
+
+    public void LevelComplete_ReplayLastButtonPressed()
+    {
+        levelCompleteReplayLastLevelButton.localScale = pressedSize;
+    }
+
+    public void LevelComplete_ReplayLastButtonReleased()
+    {
+        levelCompleteReplayLastLevelButton.localScale = originalSize;
+    }
+
+    public void LevelComplete_HomeLastButtonPressed()
+    {
+        levelCompleteHomeLastLevelButton.localScale = pressedSize;
+    }
+
+    public void LevelComplete_HomeLastButtonReleased()
+    {
+        levelCompleteHomeLastLevelButton.localScale = originalSize;
     }
     #endregion
 
@@ -366,6 +1094,16 @@ public class ButtonClickEffect : MonoBehaviour
     public void Back_Settings_Released1()
     {
         settingsBack1.localScale = originalSize;
+    }
+
+    public void Back_Level_Pressed()
+    {
+        levelBack.localScale = pressedSize;
+    }
+
+    public void Back_Level_Released()
+    {
+        levelBack.localScale = originalSize;
     }
     #endregion
 

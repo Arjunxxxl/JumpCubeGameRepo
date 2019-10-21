@@ -42,6 +42,9 @@ public class TimelinePlayer : MonoBehaviour
     public PlayableDirector tryAgainMessage;
     public PlayableDirector[] showTutorialMessageTimeLines;
     public PlayableDirector[] hideTutorialMessageTimeLines;
+    
+    bool s_m1, s_m2, s_m3, s_m4, s_m5, s_m6, s_m7, s_m8;
+    bool h_m1, h_m2, h_m3, h_m4, h_m5, h_m6, h_m7, h_m8;
 
     #region SingleTon
     public static TimelinePlayer Instance;
@@ -62,6 +65,9 @@ public class TimelinePlayer : MonoBehaviour
     {
         pausePlayable.Stop();
         optimizationAnimation.Stop();
+
+        s_m1 = s_m2 = s_m3 = s_m4 = s_m5 = s_m6 = s_m7 = s_m8 = false;
+        h_m1 = h_m2 = h_m3 = h_m4 = h_m5 = h_m6 = h_m7 = h_m8 = false;
     }
 
     public void PlayPausePlayable()
@@ -152,6 +158,7 @@ public class TimelinePlayer : MonoBehaviour
     }
 
     #region TUTORIAL MESSAGE
+    
     public void PlayTryAgainMessage()
     {
         tryAgainMessage.Play();
@@ -159,84 +166,149 @@ public class TimelinePlayer : MonoBehaviour
 
     public void ShowTutorialMsg1()
     {
-        hideTutorialMessageTimeLines[0].Stop();
-        showTutorialMessageTimeLines[0].Play();
+        if (!s_m1)
+        {
+            hideTutorialMessageTimeLines[0].Stop();
+            showTutorialMessageTimeLines[0].Play();
+
+            s_m1 = true;
+        }
     }
     public void ShowTutorialMsg2()
     {
-        hideTutorialMessageTimeLines[1].Stop();
-        showTutorialMessageTimeLines[1].Play();
+        if (!s_m2)
+        {
+            hideTutorialMessageTimeLines[1].Stop();
+            showTutorialMessageTimeLines[1].Play();
+            s_m2 = true;
+        }
     }
     public void ShowTutorialMsg3()
     {
-        hideTutorialMessageTimeLines[2].Stop();
-        showTutorialMessageTimeLines[2].Play();
+        if (!s_m3)
+        {
+            hideTutorialMessageTimeLines[2].Stop();
+            showTutorialMessageTimeLines[2].Play();
+            s_m3 = true;
+        }
     }
     public void ShowTutorialMsg4()
     {
-        hideTutorialMessageTimeLines[3].Stop();
-        showTutorialMessageTimeLines[3].Play();
+        if (!s_m4)
+        {
+            hideTutorialMessageTimeLines[3].Stop();
+            showTutorialMessageTimeLines[3].Play();
+            s_m4 = true;
+        }
     }
     public void ShowTutorialMsg5()
     {
-        hideTutorialMessageTimeLines[4].Stop();
-        showTutorialMessageTimeLines[4].Play();
+        if (!s_m5)
+        {
+            hideTutorialMessageTimeLines[4].Stop();
+            showTutorialMessageTimeLines[4].Play();
+            s_m5 = true;
+        }
     }
     public void ShowTutorialMsg6()
     {
-        hideTutorialMessageTimeLines[5].Stop();
-        showTutorialMessageTimeLines[5].Play();
+        if (!s_m6)
+        {
+            hideTutorialMessageTimeLines[5].Stop();
+            showTutorialMessageTimeLines[5].Play();
+            s_m6 = true;
+        }
     }
     public void ShowTutorialMsg7()
     {
-        hideTutorialMessageTimeLines[6].Stop();
-        showTutorialMessageTimeLines[6].Play();
+        if (!s_m7)
+        {
+            hideTutorialMessageTimeLines[6].Stop();
+            showTutorialMessageTimeLines[6].Play();
+            s_m7 = true;
+        }
     }
     public void ShowTutorialMsg8()
     {
-        hideTutorialMessageTimeLines[7].Stop();
-        showTutorialMessageTimeLines[7].Play();
+        if (!s_m8)
+        {
+            hideTutorialMessageTimeLines[7].Stop();
+            showTutorialMessageTimeLines[7].Play();
+            s_m8 = true;
+        }
     }
 
     public void HideTutorialMsg1()
     {
-        showTutorialMessageTimeLines[0].Stop();
-        hideTutorialMessageTimeLines[0].Play();
+        if (!h_m1)
+        {
+            showTutorialMessageTimeLines[0].Stop();
+            hideTutorialMessageTimeLines[0].Play();
+            h_m1 = true;
+        }
     }
     public void HideTutorialMsg2()
     {
-        showTutorialMessageTimeLines[1].Stop();
-        hideTutorialMessageTimeLines[1].Play();
+        if (!h_m2)
+        {
+            showTutorialMessageTimeLines[1].Stop();
+            hideTutorialMessageTimeLines[1].Play();
+            h_m2 = true;
+        }
     }
     public void HideTutorialMsg3()
     {
-        showTutorialMessageTimeLines[2].Stop();
-        hideTutorialMessageTimeLines[2].Play();
+        if (!h_m3)
+        {
+            showTutorialMessageTimeLines[2].Stop();
+            hideTutorialMessageTimeLines[2].Play();
+            h_m3 = true;
+        }
     }
     public void HideTutorialMsg4()
     {
-        showTutorialMessageTimeLines[3].Stop();
-        hideTutorialMessageTimeLines[3].Play();
+        if (!h_m4)
+        {
+            showTutorialMessageTimeLines[3].Stop();
+            hideTutorialMessageTimeLines[3].Play();
+            h_m4 = true;
+        }
     }
     public void HideTutorialMsg5()
     {
-        showTutorialMessageTimeLines[4].Stop();
-        hideTutorialMessageTimeLines[4].Play();
+        if (!h_m5)
+        {
+            showTutorialMessageTimeLines[4].Stop();
+            hideTutorialMessageTimeLines[4].Play();
+            h_m5 = true;
+        }
     }
     public void HideTutorialMsg6()
     {
-        showTutorialMessageTimeLines[5].Stop();
-        hideTutorialMessageTimeLines[5].Play();
+        if (!h_m6)
+        {
+            showTutorialMessageTimeLines[5].Stop();
+            hideTutorialMessageTimeLines[5].Play();
+            h_m6 = true;
+        }
     }
     public void HideTutorialMsg7()
     {
-        showTutorialMessageTimeLines[6].Stop();
-        hideTutorialMessageTimeLines[6].Play();
+        if (!h_m7)
+        {
+            showTutorialMessageTimeLines[6].Stop();
+            hideTutorialMessageTimeLines[6].Play();
+            h_m7 = true;
+        }
     }
     public void HideTutorialMsg8()
     {
-        showTutorialMessageTimeLines[7].Stop();
-        hideTutorialMessageTimeLines[7].Play();
+        if (!h_m8)
+        {
+            showTutorialMessageTimeLines[7].Stop();
+            hideTutorialMessageTimeLines[7].Play();
+            h_m8 = true;
+        }
     }
     #endregion
 }

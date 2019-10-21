@@ -7,6 +7,8 @@ public class ButtonClickCommandExecutionDelay : MonoBehaviour
     public float ingameMenuCommandExecutionDelay = 0.1f;
     public float revivalMenuCommandExecutionDelay = 0.25f;
     public float gameoverMenuCommandExecutionDelay = 0.25f;
+    public float levelMenuCommandExecutionDelay = 0.25f;            //used in level menu
+    public float levelOverMenuCommandExecutionDelay = 0.25f;        //used in level menu
 
     #region SingleTon
     public static ButtonClickCommandExecutionDelay Instance;

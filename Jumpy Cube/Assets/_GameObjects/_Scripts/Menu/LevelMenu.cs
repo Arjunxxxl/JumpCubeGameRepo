@@ -12,7 +12,7 @@ public class LevelMenu : MonoBehaviour
     [Header("Screen Shot Data")]
     public RawImage screenShotImg;
     public string path;
-    public float screenShotDelay = 1f;
+    public float screenShotDelay = 0.5f;
     public float screenshotDiaplayDelay = 0.5f;
 
     [Header("Level Mode Button parents")]
@@ -26,6 +26,9 @@ public class LevelMenu : MonoBehaviour
     LoadLevel loadLevel;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     MissionManager missionManager;
+
+    float levelMenuCommandExecutionDelay;
+    float levelOverMenuCommandExecutionDelay;
 
     int levelNo = 0;
     string levelname = "Level ";
@@ -59,6 +62,9 @@ public class LevelMenu : MonoBehaviour
 
         levelNo = 0;
         finnalName = levelname + levelNo;
+
+        levelMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.levelMenuCommandExecutionDelay;
+        levelOverMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.levelOverMenuCommandExecutionDelay;
 
         if (gameModeManager.currentLevel == LevelNumbers._54)
         {
@@ -126,7 +132,7 @@ public class LevelMenu : MonoBehaviour
 
     IEnumerator RestartButtonFunction()
     {
-        yield return new WaitForSecondsRealtime(buttonClickCommandExecutionDelay.pauseMenuCommndExecutionDelay);
+        yield return new WaitForSecondsRealtime(levelOverMenuCommandExecutionDelay);
         gameModeManager.gameMode = GameModeManager.GameMode.level;
         gameModeManager.isGameRestarted = true;
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
@@ -134,7 +140,7 @@ public class LevelMenu : MonoBehaviour
 
     IEnumerator NextLevelButtonFunction()
     {
-        yield return new WaitForSecondsRealtime(buttonClickCommandExecutionDelay.pauseMenuCommndExecutionDelay);
+        yield return new WaitForSecondsRealtime(levelOverMenuCommandExecutionDelay);
         gameModeManager.gameMode = GameModeManager.GameMode.level;
         gameModeManager.isGameRestarted = true;
 
@@ -146,7 +152,7 @@ public class LevelMenu : MonoBehaviour
 
     IEnumerator HomeButtonFunction()
     {
-        yield return new WaitForSecondsRealtime(buttonClickCommandExecutionDelay.pauseMenuCommndExecutionDelay);
+        yield return new WaitForSecondsRealtime(levelOverMenuCommandExecutionDelay);
         gameModeManager.gameMode = GameModeManager.GameMode.endless;
         gameModeManager.isGameRestarted = false;
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
@@ -156,7 +162,7 @@ public class LevelMenu : MonoBehaviour
     {
         missionManager.CheckingForShareScoreMission();
 
-        Invoke("ShareScreenShotFunction", buttonClickCommandExecutionDelay.gameoverMenuCommandExecutionDelay);
+        Invoke("ShareScreenShotFunction", levelOverMenuCommandExecutionDelay);
     }
 
     void ShareScreenShotFunction()
@@ -407,6 +413,11 @@ public class LevelMenu : MonoBehaviour
     ///* FUNCTION FOR LEVEL BUTTONS *///
     public void LoadLevel1()
     {
+        Invoke("LoadLevel1_function", levelMenuCommandExecutionDelay);
+    }
+    
+    void LoadLevel1_function()
+    {
         levelManager.selectedLevelNumber = LevelNumbers._1;
 
         gameModeManager.currentLevel = levelManager.selectedLevelNumber;
@@ -416,5 +427,4 @@ public class LevelMenu : MonoBehaviour
         tileSequence.LoadCurrentLevel();
         mainMenu.Play_Level();
     }
-    
 }

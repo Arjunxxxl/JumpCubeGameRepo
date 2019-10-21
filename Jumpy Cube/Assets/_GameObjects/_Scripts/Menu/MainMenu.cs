@@ -210,11 +210,16 @@ public class MainMenu : MonoBehaviour
 
     void LevelButtonFunction()
     {
+        playerChild = player.transform.GetChild(1).gameObject;
+
         homeMenu.SetActive(false);
         store.SetActive(false);
         levels.SetActive(true);
         stats.SetActive(false);
         settings.SetActive(false);
+
+        tileSystem.SetActive(false);
+        playerChild.SetActive(false);
     }
 
     public void StatsButton()
