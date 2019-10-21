@@ -22,6 +22,9 @@ public class TutorialManager : MonoBehaviour
     bool isTutorialActive;
     int i;
 
+    bool disableTouch;
+    float disableTouchDuration = 0.25f;
+
     List<TutorialMessage> messageList;
     TutorialMessage message;
 
@@ -46,9 +49,11 @@ public class TutorialManager : MonoBehaviour
         Time.timeScale = 1;
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
 
-        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : false /*false*/;
+        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : true /*false*/;
 
         distanceScore.isTutorialActive = isTutorialActive;
+
+        disableTouch = false;
 
         if (isTutorialActive)
         {
@@ -126,6 +131,11 @@ public class TutorialManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             slowTime = false;
+
+            if(disableTouch)
+            {
+                return;
+            }
 
             if (messageList.Count > 0)
             {
@@ -215,7 +225,9 @@ public class TutorialManager : MonoBehaviour
             message = other.GetComponent<TutorialMessage>();
             message.ShowMessage();
             messageList.Add(message);
-            
+
+            disableTouch = true;
+            StartCoroutine(EnableTouch());
         }
 
         if (other.CompareTag(TUTORIAL_COMPLETE))
@@ -243,6 +255,9 @@ public class TutorialManager : MonoBehaviour
             PlayerPrefs.SetInt(customStrings.TUTORIAL_COMPLETED, 1);
 
             distanceScore.isTutorialActive = false;
+
+            disableTouch = true;
+            StartCoroutine(EnableTouch());
         }
     }
 
@@ -254,5 +269,12 @@ public class TutorialManager : MonoBehaviour
         {
             tutorialMessageParent.SetActive(false);
         }
+    }
+
+    IEnumerator EnableTouch()
+    {
+        yield return new WaitForSecondsRealtime(disableTouchDuration);
+        
+        disableTouch = false;
     }
 }

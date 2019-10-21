@@ -47,9 +47,9 @@ public class LevelManager : MonoBehaviour
             customStrings = CustomStrings.Instance;
         }
 
-        gameModeManager.isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : false /*false*/;
+        gameModeManager.isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : true /*false*/;
 
-        if (gameModeManager.isTutorialActive)
+        if (gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.endless)
         {
             selectedLevelNumber = LevelNumbers._0;
             tileSequence.LoadCurrentLevel();

@@ -90,7 +90,7 @@ public class TileSpawner : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : false /*false*/;
+        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : true /*false*/;
 
         //for(int i = 0; i<maxTilesOnScreen; i++)
         for (int i = 0; i < maxTilesOnScreen; i++)
