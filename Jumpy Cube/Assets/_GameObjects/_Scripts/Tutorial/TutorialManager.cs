@@ -23,7 +23,7 @@ public class TutorialManager : MonoBehaviour
     int i;
 
     bool disableTouch;
-    float disableTouchDuration = 0.25f;
+    float disableTouchDuration = 0.5f;
 
     List<TutorialMessage> messageList;
     TutorialMessage message;
@@ -49,7 +49,7 @@ public class TutorialManager : MonoBehaviour
         Time.timeScale = 1;
         Time.fixedDeltaTime = Time.timeScale * 0.02f;
 
-        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : true /*false*/;
+        isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : false /*false*/;
 
         distanceScore.isTutorialActive = isTutorialActive;
 
@@ -121,7 +121,10 @@ public class TutorialManager : MonoBehaviour
                 }
             }
 
-            timelinePlayer.PlayTryAgainMessage();
+            if (gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.endless)
+            {
+                timelinePlayer.PlayTryAgainMessage();
+            }
 
             slowTime = false;
         }
@@ -163,6 +166,11 @@ public class TutorialManager : MonoBehaviour
             {
                 slowTime = false;
 
+                if (disableTouch)
+                {
+                    return;
+                }
+
                 if (messageList.Count > 0)
                 {
                     for (i = messageList.Count - 1; i >= 0; i--)
@@ -184,6 +192,11 @@ public class TutorialManager : MonoBehaviour
             if(touch.phase == TouchPhase.Began)
             {
                 slowTime = false;
+
+                if (disableTouch)
+                {
+                    return;
+                }
 
                 if (messageList.Count > 0)
                 {

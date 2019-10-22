@@ -18,6 +18,7 @@ TagManager:
   - TutorialCompleted
   - levelend
   - stopcube
+  - TileSystem
   layers:
   - Default
   - TransparentFX

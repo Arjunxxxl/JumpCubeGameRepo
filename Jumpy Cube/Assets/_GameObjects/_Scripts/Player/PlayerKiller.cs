@@ -61,7 +61,7 @@ public class PlayerKiller : MonoBehaviour
 
         playerSpeed = rb.velocity.magnitude;
 
-        if (playerSpeed < 0.1f && !playerDeath.isDead && !gameModeManager.isTutorialActive)
+        if (playerSpeed < 0.1f && !playerDeath.isDead && (!gameModeManager.isTutorialActive || gameModeManager.gameMode == GameModeManager.GameMode.level))
         {
             currentTime += Time.deltaTime;
             if (currentTime > stationatyDelay && !killPlayer)

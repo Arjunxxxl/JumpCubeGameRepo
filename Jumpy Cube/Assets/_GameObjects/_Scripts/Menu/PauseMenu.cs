@@ -82,7 +82,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationPause(bool pause)
     {
-        if(pause && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
+        if(pause && mainMenu.isGameStart && !playerDeath.isDead //&& (!gameModeManager.isTutorialActive || gameModeManager.gameMode == GameModeManager.GameMode.level)
+            && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
         {
             PauseGameFunction();
         }
@@ -90,7 +91,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-        if(!focus && mainMenu.isGameStart && !playerDeath.isDead && !gameModeManager.isTutorialActive && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
+        if(!focus && mainMenu.isGameStart && !playerDeath.isDead //&& (!gameModeManager.isTutorialActive || gameModeManager.gameMode == GameModeManager.GameMode.level)
+            && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
         {
             PauseGameFunction();
         }

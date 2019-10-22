@@ -21,6 +21,9 @@ public class DistanceScore : MonoBehaviour
     MissionManager missionManager;
     GameModeManager gameModeManager;
 
+    string empty_str = "";
+    string PLAYER_TAG = "Player";
+
     #region SingleTon
     public static DistanceScore Instance;
     private void Awake()
@@ -45,13 +48,13 @@ public class DistanceScore : MonoBehaviour
 
         if(!player)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindGameObjectWithTag(PLAYER_TAG).transform;
         }
 
         initialPosX = player.position.x;
 
         distance = 0;
-        scoreTxt.text = "";
+        scoreTxt.text = empty_str;
 
         isLevelCompleted = false;
     }

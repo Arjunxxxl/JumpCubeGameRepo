@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
             customStrings = CustomStrings.Instance;
         }
 
-        gameModeManager.isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : true /*false*/;
+        gameModeManager.isTutorialActive = PlayerPrefs.GetInt(customStrings.TUTORIAL_COMPLETED, 0) == 0 ? true : false /*false*/;
 
         if (gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.endless)
         {

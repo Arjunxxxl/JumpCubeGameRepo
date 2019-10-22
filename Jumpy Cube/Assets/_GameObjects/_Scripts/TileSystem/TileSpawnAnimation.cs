@@ -40,6 +40,12 @@ public class TileSpawnAnimation : MonoBehaviour
 
 
         playerMovement = PlayerMovement.Instance;
+
+        if(!playerMovement)
+        {
+            playerMovement = player.GetComponent<PlayerMovement>();
+        }
+
         playerSpeed = playerMovement.movementSpeed;
 
         initialPos = new Vector3(transform.localPosition.x, initialPosY, transform.localPosition.z);

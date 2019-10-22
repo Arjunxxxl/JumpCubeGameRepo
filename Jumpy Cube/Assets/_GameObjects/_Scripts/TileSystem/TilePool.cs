@@ -19,6 +19,15 @@ public class TilePool : MonoBehaviour
         public int tileTypeIndex;
         public List<Pool> poolObject;
     }
+    
+    public List<PoolType> pools;
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
+    string tileTag;
+
+    int _index;
+    float temp;
+
+    GameObject objToSpawn;
 
     #region SingleTon
     public static TilePool Instance;
@@ -32,15 +41,9 @@ public class TilePool : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
     #endregion
-
-    public List<PoolType> pools;
-    public Dictionary<string, Queue<GameObject>> poolDictionary;
-    string tileTag;
-
-    int _index;
-    float temp;
 
     private void Start()
     {
@@ -90,8 +93,11 @@ public class TilePool : MonoBehaviour
             return null;
         }
 
-        GameObject objToSpawn = poolDictionary[tileTag].Dequeue();
-        objToSpawn.SetActive(true);
+        objToSpawn = poolDictionary[tileTag].Dequeue();
+        if (!objToSpawn.activeSelf)
+        {
+            objToSpawn.SetActive(true);
+        }
         objToSpawn.transform.position = pos;
         objToSpawn.transform.localRotation = rot;
         poolDictionary[tileTag].Enqueue(objToSpawn);

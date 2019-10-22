@@ -23,7 +23,7 @@ public class InGameMenu : MonoBehaviour
     float averageScore;
 
     [Header("Data")]
-    public float levelCompeleteMenuDelay = 2f;
+    public float levelCompeleteMenuDelay = 3f;
 
     [Header("Items Data")]
     public int diamondsCollected;

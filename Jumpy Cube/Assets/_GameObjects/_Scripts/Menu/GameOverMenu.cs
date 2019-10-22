@@ -113,11 +113,16 @@ public class GameOverMenu : MonoBehaviour
                 if (!gameModeManager.isTutorialActive)
                 { 
                     revivalMenu.SetActive(true);
-                rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
+                    rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
                 }
-                else
+                else if (gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.endless)
                 {
                     revivePlayer.ReviePlayerFunction();
+                }
+                else if(gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.level)
+                {
+                    revivalMenu.SetActive(true);
+                    rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
                 }
                 checker = true;
             }

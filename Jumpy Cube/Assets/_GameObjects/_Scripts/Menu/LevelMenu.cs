@@ -13,7 +13,7 @@ public class LevelMenu : MonoBehaviour
     public RawImage screenShotImg;
     public string path;
     public float screenShotDelay = 0.5f;
-    public float screenshotDiaplayDelay = 0.5f;
+    public float screenshotDiaplayDelay = 2f;
 
     [Header("Level Mode Button parents")]
     public GameObject normalButtons;

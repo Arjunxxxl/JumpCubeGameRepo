@@ -41,6 +41,11 @@ namespace Imphenzia
         /// </summary>
         void OnEnable()
         {
+            if (!_camera)
+            {
+                _camera = GetComponent<Camera>();
+            }
+
             CreateOrGetChildObject();
         }
 
@@ -55,8 +60,11 @@ namespace Imphenzia
                 Debug.LogError("GameObject must have a camera component - aborting.");
                 return;
             }
-            
-            _camera = GetComponent<Camera>();
+
+            if (!_camera)
+            {
+                _camera = GetComponent<Camera>();
+            }
 
             // Unity 5.x renders the skybox so you need to change Camera Clear flag to something else, like SolidColor
             if (_camera.clearFlags == CameraClearFlags.Skybox)
@@ -91,7 +99,10 @@ namespace Imphenzia
         void CreateOrGetChildObject()
         {
             // Ensure that the camera component is set if this gets called before reset
-            _camera = GetComponent<Camera>();
+            if (!_camera)
+            {
+                _camera = GetComponent<Camera>();
+            }
 
             // If there is a child gameobject named CameraFixedGradientSky...
             if (transform.Find("CameraFixedGradientSky") != null)
@@ -146,6 +157,8 @@ namespace Imphenzia
         }
 
 
+        int _i;
+
         /// <summary>
         /// Check if the gradient values and cached gradient values are different - if they are, recreate the mesh to update the gradient.
         /// Checks if camera values and cached camera values are different - if they are, rescale the mesh to ensure it covers the entire screen.
@@ -176,7 +189,7 @@ namespace Imphenzia
             }
 
             // Iterate through the number of color keys...
-            for (int _i = 0; _i < gradient.colorKeys.Length; _i++)
+            for (_i = 0; _i < gradient.colorKeys.Length; _i++)
             {
                 // If any color key in the gradient doesn't match the value of the cache...
                 if (!IsColorKeyApproxEqual(gradient.colorKeys[_i], cacheGradient.colorKeys[_i]))
@@ -204,7 +217,10 @@ namespace Imphenzia
         void SetMeshLocalScale()
         {
             // Get a reference to the camera
-            Camera _camera = GetComponent<Camera>();
+            if (!_camera)
+            {
+                _camera = GetComponent<Camera>();
+            }
 
             // ResetAspect needs to be called to ensure that aspect ratio is updated when changing between aspect ratios and between edit/play
             _camera.ResetAspect();

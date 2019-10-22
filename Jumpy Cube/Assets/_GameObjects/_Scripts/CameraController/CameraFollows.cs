@@ -40,6 +40,8 @@ public class CameraFollows : MonoBehaviour
     public bool isDownGravity;
     public bool isGravityChanged;
 
+    string PLAYER_TAG = "Player";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +62,7 @@ public class CameraFollows : MonoBehaviour
 
         if(!target)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag(PLAYER_TAG).transform;
         }
 
         if(!mainMenu.isGameStart)

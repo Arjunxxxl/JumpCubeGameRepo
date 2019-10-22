@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
 
     [Header("Level number UI")]
     public GameObject levelNumberUI;
-    public float levelNumberShowingDuration = 3f;
+    public float levelNumberShowingDuration = 5f;
 
     TimelinePlayer timelinePlayer;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
@@ -260,7 +260,6 @@ public class MainMenu : MonoBehaviour
 
     public void Play_GameResetted()
     {
-        isGameStart = true;
         
         homeMenu.SetActive(false);
         mainMenu.SetActive(false);
@@ -270,6 +269,8 @@ public class MainMenu : MonoBehaviour
         levels.SetActive(false);
         stats.SetActive(false);
         settings.SetActive(false);
+
+        StartCoroutine(StartGameWithDelay());
 
         foreach (Button b in allbuttons)
         {
@@ -295,7 +296,6 @@ public class MainMenu : MonoBehaviour
         
         levelNumberUI.SetActive(true);
         levelMenu.SetCorrectLevelNumber();
-        timelinePlayer.PlayShowLevelNumber();
 
         StartCoroutine(DisableLevelNumberUI());
 
@@ -313,6 +313,11 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(gameStartDelay);
 
         isGameStart = true;
+
+        if (gameModeManager.gameMode == GameModeManager.GameMode.level)
+        {
+            timelinePlayer.PlayShowLevelNumber();
+        }
     }
 
     IEnumerator DisableLevelNumberUI()

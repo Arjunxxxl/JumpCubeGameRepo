@@ -19,7 +19,9 @@ public class IoSphereColorChanger : MonoBehaviour
 
     public Material ioSphereMat;
     Shader iosphereShader;
-    
+
+    static string TILE_SYSTEM_TAG = "TileSystem";
+
     SelectColorScheme selectColorScheme;
     
 
@@ -53,6 +55,11 @@ public class IoSphereColorChanger : MonoBehaviour
         if (!selectColorScheme)
         {
             selectColorScheme = SelectColorScheme.Instance;
+
+            if(!selectColorScheme)
+            {
+                selectColorScheme = GameObject.FindGameObjectWithTag(TILE_SYSTEM_TAG).GetComponent<SelectColorScheme>();
+            }
         }
 
         currentColor = selectColorScheme.ioSphereMainColor;
