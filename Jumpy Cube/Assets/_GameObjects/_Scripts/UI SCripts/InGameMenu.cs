@@ -23,7 +23,7 @@ public class InGameMenu : MonoBehaviour
     float averageScore;
 
     [Header("Data")]
-    public float levelCompeleteMenuDelay = 3f;
+    public float levelCompeleteMenuDelay = 3.5f;
 
     [Header("Items Data")]
     public int diamondsCollected;
@@ -46,6 +46,7 @@ public class InGameMenu : MonoBehaviour
     TimelinePlayer timelinePlayer;
     CustomStrings customStrings;
     DistanceScore distanceScore;
+    SavedData savedData;
 
     #region SingleTon
     public static InGameMenu Instance;
@@ -69,6 +70,7 @@ public class InGameMenu : MonoBehaviour
         timelinePlayer = TimelinePlayer.Instance;
         customStrings = CustomStrings.Instance;
         distanceScore = DistanceScore.Instance;
+        savedData = SavedData.Instance;
 
         inGameMenu.SetActive(false);
         levelEndMenu.SetActive(false);
@@ -127,6 +129,10 @@ public class InGameMenu : MonoBehaviour
         distanceTxt.text = currentScore + "m";
         diamondsTxt.text = currentDiamonds + "";
         averageScoreTxt.text = (int)averageScore + "";
+
+        savedData.SavePlayerHighScore(distanceScore.distance);
+        savedData.SavePlayerAverageScore(distanceScore.distance);
+        savedData.SaveDiamondsCollectedinOneRun(diamondsCollected);
     }
 
     void ActivateLevelEndMenu_Function()

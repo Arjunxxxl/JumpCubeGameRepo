@@ -31,6 +31,7 @@ ScriptsOnlyBuild:
     - ObjectPooler
     - PPDebugScript
     - PauseMenu
+    - PlayLevelEndParticleSystem
     - PlayerDeath
     - PlayerKiller
     - PlayerMovement
@@ -273,55 +274,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10996}
     - Class: 114
-      Script: {instanceID: 11042}
+      Script: {instanceID: 11038}
     - Class: 114
-      Script: {instanceID: 11074}
+      Script: {instanceID: 11044}
     - Class: 114
-      Script: {instanceID: 11078}
+      Script: {instanceID: 11076}
     - Class: 114
-      Script: {instanceID: 11108}
+      Script: {instanceID: 11080}
     - Class: 114
-      Script: {instanceID: 11174}
+      Script: {instanceID: 11110}
     - Class: 114
       Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11208}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11276}
+      Script: {instanceID: 11248}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11278}
     - Class: 114
-      Script: {instanceID: 11586}
+      Script: {instanceID: 11362}
     - Class: 114
-      Script: {instanceID: 11624}
+      Script: {instanceID: 11588}
     - Class: 114
-      Script: {instanceID: 11700}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 11738}
+      Script: {instanceID: 11702}
     - Class: 114
-      Script: {instanceID: 11768}
+      Script: {instanceID: 11740}
     - Class: 114
-      Script: {instanceID: 11778}
+      Script: {instanceID: 11770}
     - Class: 114
-      Script: {instanceID: 11832}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 11836}
+      Script: {instanceID: 11834}
     - Class: 114
-      Script: {instanceID: 11856}
+      Script: {instanceID: 11838}
     - Class: 114
-      Script: {instanceID: 11882}
+      Script: {instanceID: 11858}
     - Class: 114
       Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 11918}
+      Script: {instanceID: 11886}
     - Class: 114
       Script: {instanceID: 11920}
     - Class: 114
-      Script: {instanceID: 11934}
+      Script: {instanceID: 11922}
     - Class: 114
       Script: {instanceID: 11936}
+    - Class: 114
+      Script: {instanceID: 11938}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1113,7 +1116,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
-      Hash: dd6488bfbf3ea973a9ba2ad14a6171c9
+      Hash: 4ff87b817babe599db046b1e1c367d8b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSpawner
@@ -1519,6 +1522,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CubeColorManager
+  - hash:
+      serializedVersion: 2
+      Hash: dc84c1854590962040d6ced28c8a2ec8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayLevelEndParticleSystem
   - hash:
       serializedVersion: 2
       Hash: ce199c0b512ef6474d31eece742b0830

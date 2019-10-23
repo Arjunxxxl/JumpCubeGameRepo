@@ -74,6 +74,10 @@ public class PlayerSpawner : MonoBehaviour
     [Space]
     public MissionCubeMat missionCubeMat;
 
+    [Header("Spawning Platform")]
+    public GameObject spawningPlatform;
+    public float spawningPlatformDuation = 3f;
+    
     MainMenu mainmenu;
 
     int i;
@@ -112,6 +116,11 @@ public class PlayerSpawner : MonoBehaviour
         isDisolveEffectDone = false;
         startDisolveEffect = false;
         StartCoroutine(DisolveEffectDelay());
+
+        if(!spawningPlatform.activeSelf)
+        {
+            spawningPlatform.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -134,6 +143,8 @@ public class PlayerSpawner : MonoBehaviour
         else if (!isDisolveEffectDone)
         {
             isDisolveEffectDone = true;
+
+            StartCoroutine(DisableSpawningPlatform());
         }
     }
 
@@ -1193,5 +1204,15 @@ public class PlayerSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(disolveEffectDelay);
         startDisolveEffect = true;
+    }
+
+    IEnumerator DisableSpawningPlatform()
+    {
+        yield return new WaitForSeconds(spawningPlatformDuation);
+
+        if (spawningPlatform.activeSelf)
+        {
+            spawningPlatform.SetActive(false);
+        }
     }
 }

@@ -149,7 +149,7 @@ public class RevivePlayer : MonoBehaviour
 
         currentScoreTxt.text = currentScore + "m";
         currentDiamondsTxt.text = currentDiamonds + "";
-        averageScoreTxt.text = (int)averageScore + "";
+        averageScoreTxt.text = (int)averageScore + "m";
 
         CheckForHighScore();
     }

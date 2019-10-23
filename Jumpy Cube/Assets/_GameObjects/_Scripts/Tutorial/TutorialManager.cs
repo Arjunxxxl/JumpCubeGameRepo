@@ -102,7 +102,8 @@ public class TutorialManager : MonoBehaviour
             {
                 Time.timeScale = 1;
                 slowTimeLastTutorialTile = false;
-                DeactivateTutorial();
+                // DeactivateTutorial();
+                Invoke("DeactivateTutorial", 1f);
             }
         }
 
@@ -133,12 +134,12 @@ public class TutorialManager : MonoBehaviour
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
-            slowTime = false;
-
             if(disableTouch)
             {
                 return;
             }
+
+            slowTime = false;
 
             if (messageList.Count > 0)
             {
@@ -164,12 +165,12 @@ public class TutorialManager : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                slowTime = false;
-
                 if (disableTouch)
                 {
                     return;
                 }
+
+                slowTime = false;
 
                 if (messageList.Count > 0)
                 {
@@ -191,12 +192,12 @@ public class TutorialManager : MonoBehaviour
 
             if(touch.phase == TouchPhase.Began)
             {
-                slowTime = false;
-
                 if (disableTouch)
                 {
                     return;
                 }
+
+                slowTime = false;
 
                 if (messageList.Count > 0)
                 {

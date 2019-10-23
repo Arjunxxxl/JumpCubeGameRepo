@@ -20,6 +20,12 @@ public class DistanceScore : MonoBehaviour
     MainMenu mainMenu;
     MissionManager missionManager;
     GameModeManager gameModeManager;
+    ObjectPooler objectPooler;
+    CustomStrings customStrings;
+
+    int highScore;
+    bool isHighScoreMade;
+    Vector3 playerLeftPos, playerRightPos;
 
     string empty_str = "";
     string PLAYER_TAG = "Player";
@@ -45,6 +51,8 @@ public class DistanceScore : MonoBehaviour
         missionManager = MissionManager.Instance;
         mainMenu = MainMenu.Instance;
         gameModeManager = GameModeManager.Instance;
+        objectPooler = ObjectPooler.Instance;
+        customStrings = CustomStrings.Instance;
 
         if(!player)
         {
@@ -57,6 +65,12 @@ public class DistanceScore : MonoBehaviour
         scoreTxt.text = empty_str;
 
         isLevelCompleted = false;
+
+        highScore = PlayerPrefs.GetInt(customStrings.HIGHSCORE, 0);
+        isHighScoreMade = false;
+
+        playerLeftPos = new Vector3(-0.5f, 0, 1);
+        playerRightPos = new Vector3(-0.5f, 0, -1);
     }
 
     // Update is called once per frame
@@ -86,6 +100,20 @@ public class DistanceScore : MonoBehaviour
         dist *= distanceMultiplier;
         distance = (int)(dist);
         scoreTxt.text = distance + "";
+
+        if (!isHighScoreMade)
+        {
+            if (distance > highScore)
+            {
+                isHighScoreMade = true;
+
+                if (highScore != 0)
+                {
+                    objectPooler.SpawnFormPool("HighScoreEffect", player.transform.position + playerLeftPos, Quaternion.identity);
+                    objectPooler.SpawnFormPool("HighScoreEffect", player.transform.position + playerRightPos, Quaternion.identity);
+                }
+            }
+        }
 
         missionManager.CheckingForDiatanceScoreMission(distance);
     }
