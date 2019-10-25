@@ -672,7 +672,7 @@ ScriptsOnlyBuild:
     className: IoSphereColorChanger
   - hash:
       serializedVersion: 2
-      Hash: ae80d2e434d3744559c47ac098d1ad62
+      Hash: 3115f89a9c9d4ca9bf1da8363fc3cd3c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CustomStrings
@@ -1314,7 +1314,7 @@ ScriptsOnlyBuild:
     className: Benchmark02
   - hash:
       serializedVersion: 2
-      Hash: e930e514b6ffe472bd4ce4e42055d1e9
+      Hash: c56100bb999c010ff831f4a84d067add
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelScrolling
@@ -1686,7 +1686,7 @@ ScriptsOnlyBuild:
     className: ChatController
   - hash:
       serializedVersion: 2
-      Hash: 202a939dda251b223c2fc30d16382c18
+      Hash: 247524ca564d8f198bc9a546d561d909
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelMenu

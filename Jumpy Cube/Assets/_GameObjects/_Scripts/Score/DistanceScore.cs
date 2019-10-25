@@ -13,7 +13,9 @@ public class DistanceScore : MonoBehaviour
     public int distance;
 
     public TMP_Text scoreTxt;
-    
+    public GameObject highScoreUI;
+    public float highScoreUIDuaration = 3f;
+
     public bool isTutorialActive;       // set from tutorial manager
     public bool isLevelCompleted;
 
@@ -22,6 +24,7 @@ public class DistanceScore : MonoBehaviour
     GameModeManager gameModeManager;
     ObjectPooler objectPooler;
     CustomStrings customStrings;
+    TimelinePlayer timelinePlayer;
 
     int highScore;
     bool isHighScoreMade;
@@ -53,6 +56,7 @@ public class DistanceScore : MonoBehaviour
         gameModeManager = GameModeManager.Instance;
         objectPooler = ObjectPooler.Instance;
         customStrings = CustomStrings.Instance;
+        timelinePlayer = TimelinePlayer.Instance;
 
         if(!player)
         {
@@ -71,6 +75,11 @@ public class DistanceScore : MonoBehaviour
 
         playerLeftPos = new Vector3(-0.5f, 0, 1);
         playerRightPos = new Vector3(-0.5f, 0, -1);
+
+        if(highScoreUI.activeSelf)
+        {
+            highScoreUI.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -81,7 +90,7 @@ public class DistanceScore : MonoBehaviour
             return;
         }
 
-        if (isTutorialActive)
+        if (isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.endless)
         {
             initialPosX = player.position.x;
             return;
@@ -109,6 +118,13 @@ public class DistanceScore : MonoBehaviour
 
                 if (highScore != 0)
                 {
+                    if (!highScoreUI.activeSelf)
+                    {
+                        highScoreUI.SetActive(true);
+                        StartCoroutine(DisableHighScoreUI());
+                    }
+
+                    timelinePlayer.PlayHighScore();
                     objectPooler.SpawnFormPool("HighScoreEffect", player.transform.position + playerLeftPos, Quaternion.identity);
                     objectPooler.SpawnFormPool("HighScoreEffect", player.transform.position + playerRightPos, Quaternion.identity);
                 }
@@ -118,6 +134,15 @@ public class DistanceScore : MonoBehaviour
         missionManager.CheckingForDiatanceScoreMission(distance);
     }
 
+    IEnumerator DisableHighScoreUI()
+    {
+        yield return new WaitForSeconds(highScoreUIDuaration);
+
+        if (highScoreUI.activeSelf)
+        {
+            highScoreUI.SetActive(false);
+        }
+    }
 
     public bool IsLevelCompleted
     {

@@ -121,4 +121,66 @@ public class CustomStrings : MonoBehaviour
     #region TUTORIAL STRINGS
     public string TUTORIAL_COMPLETED = "TUTORIAL COMPLETED";
     #endregion
+
+    #region LEVEL COMPLETE STRINGS
+    public string LevelComplete1 = "LevelComplete1";
+    public string LevelComplete2 = "LevelComplete2";
+    public string LevelComplete3 = "LevelComplete3";
+    public string LevelComplete4 = "LevelComplete4";
+    public string LevelComplete5 = "LevelComplete5";
+    public string LevelComplete6 = "LevelComplete6";
+    public string LevelComplete7 = "LevelComplete7";
+    public string LevelComplete8 = "LevelComplete8";
+    public string LevelComplete9 = "LevelComplete9";
+    public string LevelComplete10 = "LevelComplete10";
+
+    public string LevelComplete11 = "LevelComplete11";
+    public string LevelComplete12 = "LevelComplete12";
+    public string LevelComplete13 = "LevelComplete13";
+    public string LevelComplete14 = "LevelComplete14";
+    public string LevelComplete15 = "LevelComplete15";
+    public string LevelComplete16 = "LevelComplete16";
+    public string LevelComplete17 = "LevelComplete17";
+    public string LevelComplete18 = "LevelComplete18";
+    public string LevelComplete19 = "LevelComplete19";
+    public string LevelComplete20 = "LevelComplete20";
+
+    public string LevelComplete21 = "LevelComplete21";
+    public string LevelComplete22 = "LevelComplete22";
+    public string LevelComplete23 = "LevelComplete23";
+    public string LevelComplete24 = "LevelComplete24";
+    public string LevelComplete25 = "LevelComplete25";
+    public string LevelComplete26 = "LevelComplete26";
+    public string LevelComplete27 = "LevelComplete27";
+    public string LevelComplete28 = "LevelComplete28";
+    public string LevelComplete29 = "LevelComplete29";
+    public string LevelComplete30 = "LevelComplete30";
+
+    public string LevelComplete31 = "LevelComplete31";
+    public string LevelComplete32 = "LevelComplete32";
+    public string LevelComplete33 = "LevelComplete33";
+    public string LevelComplete34 = "LevelComplete34";
+    public string LevelComplete35 = "LevelComplete35";
+    public string LevelComplete36 = "LevelComplete36";
+    public string LevelComplete37 = "LevelComplete37";
+    public string LevelComplete38 = "LevelComplete38";
+    public string LevelComplete39 = "LevelComplete39";
+    public string LevelComplete40 = "LevelComplete40";
+
+    public string LevelComplete41 = "LevelComplete41";
+    public string LevelComplete42 = "LevelComplete42";
+    public string LevelComplete43 = "LevelComplete43";
+    public string LevelComplete44 = "LevelComplete44";
+    public string LevelComplete45 = "LevelComplete45";
+    public string LevelComplete46 = "LevelComplete46";
+    public string LevelComplete47 = "LevelComplete47";
+    public string LevelComplete48 = "LevelComplete48";
+    public string LevelComplete49 = "LevelComplete49";
+    public string LevelComplete50 = "LevelComplete50";
+
+    public string LevelComplete51 = "LevelComplete51";
+    public string LevelComplete52 = "LevelComplete52";
+    public string LevelComplete53 = "LevelComplete53";
+    public string LevelComplete54 = "LevelComplete54";
+    #endregion
 }

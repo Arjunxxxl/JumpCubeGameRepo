@@ -42,7 +42,10 @@ public class TimelinePlayer : MonoBehaviour
     public PlayableDirector tryAgainMessage;
     public PlayableDirector[] showTutorialMessageTimeLines;
     public PlayableDirector[] hideTutorialMessageTimeLines;
-    
+
+    [Header("Average and Best Score timelines")]
+    public PlayableDirector bestScoreTimeline;
+
     bool s_m1, s_m2, s_m3, s_m4, s_m5, s_m6, s_m7, s_m8;
     bool h_m1, h_m2, h_m3, h_m4, h_m5, h_m6, h_m7, h_m8;
 
@@ -155,6 +158,11 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayAverageBest_lc()
     {
         average_best_lc.Play();
+    }
+
+    public void PlayHighScore()
+    {
+        bestScoreTimeline.Play();
     }
 
     #region TUTORIAL MESSAGE

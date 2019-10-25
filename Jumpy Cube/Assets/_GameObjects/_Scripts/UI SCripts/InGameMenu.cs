@@ -47,6 +47,8 @@ public class InGameMenu : MonoBehaviour
     CustomStrings customStrings;
     DistanceScore distanceScore;
     SavedData savedData;
+    LevelMenu levelMenu;
+    GameModeManager gameModeManager;
 
     #region SingleTon
     public static InGameMenu Instance;
@@ -71,6 +73,8 @@ public class InGameMenu : MonoBehaviour
         customStrings = CustomStrings.Instance;
         distanceScore = DistanceScore.Instance;
         savedData = SavedData.Instance;
+        levelMenu = LevelMenu.Instance;
+        gameModeManager = GameModeManager.Instance;
 
         inGameMenu.SetActive(false);
         levelEndMenu.SetActive(false);
@@ -133,6 +137,8 @@ public class InGameMenu : MonoBehaviour
         savedData.SavePlayerHighScore(distanceScore.distance);
         savedData.SavePlayerAverageScore(distanceScore.distance);
         savedData.SaveDiamondsCollectedinOneRun(diamondsCollected);
+
+        levelMenu.UpdateLevelCompleteStatus(gameModeManager.currentLevel);
     }
 
     void ActivateLevelEndMenu_Function()

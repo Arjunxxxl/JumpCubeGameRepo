@@ -42,9 +42,21 @@ public class LevelScrolling : MonoBehaviour
 
     public RectTransform contentHolder;
 
+    [Header("Locked Status")]
+    public int levelRequiredToUnlockNextTier = 5;
+    public GameObject[] lockedUI;
+    public GameObject[] pannelContent;
+    public int[] diff;
+
+    string LOCKED = "LOCKED";
+
+    LevelMenu levelMenu;
+
     // Start is called before the first frame update
     void Start()
     {
+        levelMenu = LevelMenu.Instance;
+
         currentPannelIndex = 0;
         contentHolder.anchoredPosition = pannelsPositions[currentPannelIndex];
         isAutoScroll = false;
@@ -54,22 +66,65 @@ public class LevelScrolling : MonoBehaviour
         changeBGcolor = false;
 
         SetPannelName_Color(currentPannelIndex, true);
+
+        diff = new int[6];
+        diff = levelMenu.diff;
+        
+        for (int i = 0; i < diff.Length - 1; i++)
+        {
+            if (diff[i] < levelRequiredToUnlockNextTier)
+            {
+                if (!lockedUI[i + 1].activeSelf)
+                {
+                    lockedUI[i + 1].SetActive(true);
+                }
+
+                if (pannelContent[i + 1].activeSelf)
+                {
+                    pannelContent[i + 1].SetActive(false);
+                }
+
+                pannelNameTextValue[i + 1] = LOCKED;
+            }
+            else
+            {
+                if (lockedUI[i + 1].activeSelf)
+                {
+                    lockedUI[i + 1].SetActive(false);
+                }
+
+                if (!pannelContent[i + 1].activeSelf)
+                {
+                    pannelContent[i + 1].SetActive(true);
+                }
+            }
+        }
+        
+        if (lockedUI[0].activeSelf)
+        {
+            lockedUI[0].SetActive(false);
+        }
+
+        if (!pannelContent[0].activeSelf)
+        {
+            pannelContent[0].SetActive(true);
+        }
     }
 
     private void OnEnable()
     {
-        for(int i = 0; i < panels.Length; i++)
+        for (int i = 0; i < panels.Length; i++)
         {
-            if(i == 0 || i == 1)
+            if (i == 0 || i == 1)
             {
-                if(!panels[i].activeSelf)
+                if (!panels[i].activeSelf)
                 {
                     panels[i].SetActive(true);
                 }
             }
             else
             {
-                if(panels[i].activeSelf)
+                if (panels[i].activeSelf)
                 {
                     panels[i].SetActive(false);
                 }
@@ -96,7 +151,7 @@ public class LevelScrolling : MonoBehaviour
         if (isAutoScroll)
         {
             contentHolder.anchoredPosition = Vector3.Lerp(contentHolder.anchoredPosition, pannelsPositions[currentPannelIndex], Time.deltaTime * autoScrollSpeed);
-            
+
             ActivateDeActivatePanels();
 
             if ((contentHolder.anchoredPosition - pannelsPositions[currentPannelIndex]).magnitude < disableAutoScrollDist)
@@ -105,11 +160,11 @@ public class LevelScrolling : MonoBehaviour
             }
         }
 
-        if(changeBGcolor)
+        if (changeBGcolor)
         {
             pannelBG.color = Color.Lerp(pannelBG.color, pannelNameBGcolor[currentPannelIndex], Time.deltaTime * colorLerpSpeed);
 
-            if(pannelBG.color == pannelNameBGcolor[currentPannelIndex])
+            if (pannelBG.color == pannelNameBGcolor[currentPannelIndex])
             {
                 changeBGcolor = false;
             }
@@ -237,7 +292,7 @@ public class LevelScrolling : MonoBehaviour
 
     void SetPannelName_Color(int pannelIndex, bool isGameObjectDisabled)
     {
-        if(isGameObjectDisabled)
+        if (isGameObjectDisabled)
         {
             pannelNameText.text = pannelNameTextValue[pannelIndex];
             pannelBG.color = pannelNameBGcolor[pannelIndex];
@@ -249,9 +304,9 @@ public class LevelScrolling : MonoBehaviour
 
     void ActivateDeActivatePanels()
     {
-        if(currentPannelIndex == 0)
+        if (currentPannelIndex == 0)
         {
-            for(int i = 0; i < panels.Length; i++)
+            for (int i = 0; i < panels.Length; i++)
             {
                 if (i == currentPannelIndex || i == currentPannelIndex + 1)
                 {
@@ -269,7 +324,7 @@ public class LevelScrolling : MonoBehaviour
                 }
             }
         }
-        else if(currentPannelIndex == panels.Length - 1)
+        else if (currentPannelIndex == panels.Length - 1)
         {
             for (int i = 0; i < panels.Length; i++)
             {

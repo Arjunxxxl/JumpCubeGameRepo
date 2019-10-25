@@ -205,6 +205,7 @@ public class MainMenu : MonoBehaviour
 
     public void LevelButton()
     {
+        levelMenu.SetLevelCompleteUI();
         Invoke("LevelButtonFunction", commandExecuationDelay);
     }
 

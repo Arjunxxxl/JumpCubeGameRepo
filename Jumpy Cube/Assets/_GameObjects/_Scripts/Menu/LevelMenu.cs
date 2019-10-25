@@ -9,6 +9,10 @@ public class LevelMenu : MonoBehaviour
 {
     public TMP_Text levelText;
 
+    [Header("Complete Status UI")]
+    public List<GameObject> completeStatusUI;
+    public int levelRequiredToUnlockNextTier = 5;
+
     [Header("Screen Shot Data")]
     public RawImage screenShotImg;
     public string path;
@@ -26,9 +30,14 @@ public class LevelMenu : MonoBehaviour
     LoadLevel loadLevel;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     MissionManager missionManager;
+    CustomStrings customStrings;
 
     float levelMenuCommandExecutionDelay;
     float levelOverMenuCommandExecutionDelay;
+
+    bool setLevelCompleteUIChecker;
+    int diff_1, diff_2, diff_3, diff_4, diff_5, diff_6;
+    public int[] diff;
 
     int levelNo = 0;
     string levelname = "Level ";
@@ -38,14 +47,20 @@ public class LevelMenu : MonoBehaviour
     public static LevelMenu Instance;
     private void Awake()
     {
-        if(!Instance)
+        if (!Instance)
         {
             Instance = this;
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
+
+
+        diff_1 = 0; diff_2 = 0; diff_3 = 0;
+        diff_4 = 0; diff_5 = 0; diff_6 = 0;
+
+        diff = new int[6];
     }
     #endregion
 
@@ -59,6 +74,7 @@ public class LevelMenu : MonoBehaviour
         loadLevel = LoadLevel.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         missionManager = MissionManager.Instance;
+        customStrings = CustomStrings.Instance;
 
         levelNo = 0;
         finnalName = levelname + levelNo;
@@ -66,16 +82,18 @@ public class LevelMenu : MonoBehaviour
         levelMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.levelMenuCommandExecutionDelay;
         levelOverMenuCommandExecutionDelay = buttonClickCommandExecutionDelay.levelOverMenuCommandExecutionDelay;
 
-        if (gameModeManager.currentLevel == LevelNumbers._54)
-        {
-            normalButtons.SetActive(false);
-            lastLevelButtons.SetActive(true);
-        }
-        else
-        {
-            normalButtons.SetActive(true);
-            lastLevelButtons.SetActive(false);
-        }
+        setLevelCompleteUIChecker = false;
+
+        GetLevelCompleteStatus();
+
+        diff[0] = diff_1;
+        diff[1] = diff_2;
+        diff[2] = diff_3;
+        diff[3] = diff_4;
+        diff[4] = diff_5;
+        diff[5] = diff_6;
+
+        SetCorrectLevelEndUIButtons();
     }
 
     public void CaptureScreenShot()
@@ -176,12 +194,12 @@ public class LevelMenu : MonoBehaviour
 
         //new method
         new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
-        
+
     }
 
     public void SetCorrectLevelNumber()
     {
-        if(!gameModeManager)
+        if (!gameModeManager)
         {
             gameModeManager = GameModeManager.Instance;
         }
@@ -401,22 +419,545 @@ public class LevelMenu : MonoBehaviour
                 break;
 
             case LevelNumbers._54:
-                levelNo = 55;
+                levelNo = 54;
                 break;
         }
-        
+
         finnalName = levelname + levelNo;
 
         levelText.text = finnalName;
     }
 
-    ///* FUNCTION FOR LEVEL BUTTONS *///
-    public void LoadLevel1()
+    ///
+    /// FUNCTION TO UPDATE LEVEL COMPLETE STATUS
+    ///
+    public void UpdateLevelCompleteStatus(LevelNumbers levelNumbers)
     {
-        Invoke("LoadLevel1_function", levelMenuCommandExecutionDelay);
+        switch (levelNumbers)
+        {
+            case LevelNumbers._1:
+                PlayerPrefs.SetInt(customStrings.LevelComplete1, 1);
+                break;
+
+            case LevelNumbers._2:
+                PlayerPrefs.SetInt(customStrings.LevelComplete2, 1);
+                break;
+
+            case LevelNumbers._3:
+                PlayerPrefs.SetInt(customStrings.LevelComplete3, 1);
+                break;
+
+            case LevelNumbers._4:
+                PlayerPrefs.SetInt(customStrings.LevelComplete4, 1);
+                break;
+
+            case LevelNumbers._5:
+                PlayerPrefs.SetInt(customStrings.LevelComplete5, 1);
+                break;
+
+            case LevelNumbers._6:
+                PlayerPrefs.SetInt(customStrings.LevelComplete6, 1);
+                break;
+
+            case LevelNumbers._7:
+                PlayerPrefs.SetInt(customStrings.LevelComplete7, 1);
+                break;
+
+            case LevelNumbers._8:
+                PlayerPrefs.SetInt(customStrings.LevelComplete8, 1);
+                break;
+
+            case LevelNumbers._9:
+                PlayerPrefs.SetInt(customStrings.LevelComplete9, 1);
+                break;
+
+            case LevelNumbers._10:
+                PlayerPrefs.SetInt(customStrings.LevelComplete10, 1);
+                break;
+
+            case LevelNumbers._11:
+                PlayerPrefs.SetInt(customStrings.LevelComplete11, 1);
+                break;
+
+            case LevelNumbers._12:
+                PlayerPrefs.SetInt(customStrings.LevelComplete12, 1);
+                break;
+
+            case LevelNumbers._13:
+                PlayerPrefs.SetInt(customStrings.LevelComplete13, 1);
+                break;
+
+            case LevelNumbers._14:
+                PlayerPrefs.SetInt(customStrings.LevelComplete14, 1);
+                break;
+
+            case LevelNumbers._15:
+                PlayerPrefs.SetInt(customStrings.LevelComplete15, 1);
+                break;
+
+            case LevelNumbers._16:
+                PlayerPrefs.SetInt(customStrings.LevelComplete16, 1);
+                break;
+
+            case LevelNumbers._17:
+                PlayerPrefs.SetInt(customStrings.LevelComplete17, 1);
+                break;
+
+            case LevelNumbers._18:
+                PlayerPrefs.SetInt(customStrings.LevelComplete18, 1);
+                break;
+
+            case LevelNumbers._19:
+                PlayerPrefs.SetInt(customStrings.LevelComplete19, 1);
+                break;
+
+            case LevelNumbers._20:
+                PlayerPrefs.SetInt(customStrings.LevelComplete20, 1);
+                break;
+
+            case LevelNumbers._21:
+                PlayerPrefs.SetInt(customStrings.LevelComplete21, 1);
+                break;
+
+            case LevelNumbers._22:
+                PlayerPrefs.SetInt(customStrings.LevelComplete22, 1);
+                break;
+
+            case LevelNumbers._23:
+                PlayerPrefs.SetInt(customStrings.LevelComplete23, 1);
+                break;
+
+            case LevelNumbers._24:
+                PlayerPrefs.SetInt(customStrings.LevelComplete24, 1);
+                break;
+
+            case LevelNumbers._25:
+                PlayerPrefs.SetInt(customStrings.LevelComplete25, 1);
+                break;
+
+            case LevelNumbers._26:
+                PlayerPrefs.SetInt(customStrings.LevelComplete26, 1);
+                break;
+
+            case LevelNumbers._27:
+                PlayerPrefs.SetInt(customStrings.LevelComplete27, 1);
+                break;
+
+            case LevelNumbers._28:
+                PlayerPrefs.SetInt(customStrings.LevelComplete28, 1);
+                break;
+
+            case LevelNumbers._29:
+                PlayerPrefs.SetInt(customStrings.LevelComplete29, 1);
+                break;
+
+            case LevelNumbers._30:
+                PlayerPrefs.SetInt(customStrings.LevelComplete30, 1);
+                break;
+
+            case LevelNumbers._31:
+                PlayerPrefs.SetInt(customStrings.LevelComplete31, 1);
+                break;
+
+            case LevelNumbers._32:
+                PlayerPrefs.SetInt(customStrings.LevelComplete32, 1);
+                break;
+
+            case LevelNumbers._33:
+                PlayerPrefs.SetInt(customStrings.LevelComplete33, 1);
+                break;
+
+            case LevelNumbers._34:
+                PlayerPrefs.SetInt(customStrings.LevelComplete34, 1);
+                break;
+
+            case LevelNumbers._35:
+                PlayerPrefs.SetInt(customStrings.LevelComplete35, 1);
+                break;
+
+            case LevelNumbers._36:
+                PlayerPrefs.SetInt(customStrings.LevelComplete36, 1);
+                break;
+
+            case LevelNumbers._37:
+                PlayerPrefs.SetInt(customStrings.LevelComplete37, 1);
+                break;
+
+            case LevelNumbers._38:
+                PlayerPrefs.SetInt(customStrings.LevelComplete38, 1);
+                break;
+
+            case LevelNumbers._39:
+                PlayerPrefs.SetInt(customStrings.LevelComplete39, 1);
+                break;
+
+            case LevelNumbers._40:
+                PlayerPrefs.SetInt(customStrings.LevelComplete40, 1);
+                break;
+
+            case LevelNumbers._41:
+                PlayerPrefs.SetInt(customStrings.LevelComplete41, 1);
+                break;
+
+            case LevelNumbers._42:
+                PlayerPrefs.SetInt(customStrings.LevelComplete42, 1);
+                break;
+
+            case LevelNumbers._43:
+                PlayerPrefs.SetInt(customStrings.LevelComplete43, 1);
+                break;
+
+            case LevelNumbers._44:
+                PlayerPrefs.SetInt(customStrings.LevelComplete44, 1);
+                break;
+
+            case LevelNumbers._45:
+                PlayerPrefs.SetInt(customStrings.LevelComplete45, 1);
+                break;
+
+            case LevelNumbers._46:
+                PlayerPrefs.SetInt(customStrings.LevelComplete46, 1);
+                break;
+
+            case LevelNumbers._47:
+                PlayerPrefs.SetInt(customStrings.LevelComplete47, 1);
+                break;
+
+            case LevelNumbers._48:
+                PlayerPrefs.SetInt(customStrings.LevelComplete48, 1);
+                break;
+
+            case LevelNumbers._49:
+                PlayerPrefs.SetInt(customStrings.LevelComplete49, 1);
+                break;
+
+            case LevelNumbers._50:
+                PlayerPrefs.SetInt(customStrings.LevelComplete50, 1);
+                break;
+
+            case LevelNumbers._51:
+                PlayerPrefs.SetInt(customStrings.LevelComplete51, 1);
+                break;
+
+            case LevelNumbers._52:
+                PlayerPrefs.SetInt(customStrings.LevelComplete52, 1);
+                break;
+
+            case LevelNumbers._53:
+                PlayerPrefs.SetInt(customStrings.LevelComplete53, 1);
+                break;
+
+            case LevelNumbers._54:
+                PlayerPrefs.SetInt(customStrings.LevelComplete54, 1);
+                break;
+        }
     }
-    
-    void LoadLevel1_function()
+
+    public int[] GetLevelCompleteStatus()
+    {
+        if (!customStrings)
+        {
+            customStrings = CustomStrings.Instance;
+        }
+
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete1, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete2, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete3, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete4, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete5, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete6, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete7, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete8, 0) == 0 ? 0 : 1;
+        diff_1 += PlayerPrefs.GetInt(customStrings.LevelComplete9, 0) == 0 ? 0 : 1;
+
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete10, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete11, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete12, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete13, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete14, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete15, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete16, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete17, 0) == 0 ? 0 : 1;
+        diff_2 += PlayerPrefs.GetInt(customStrings.LevelComplete18, 0) == 0 ? 0 : 1;
+
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete19, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete20, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete21, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete22, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete23, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete24, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete25, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete26, 0) == 0 ? 0 : 1;
+        diff_3 += PlayerPrefs.GetInt(customStrings.LevelComplete27, 0) == 0 ? 0 : 1;
+
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete28, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete29, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete30, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete31, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete32, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete33, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete34, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete35, 0) == 0 ? 0 : 1;
+        diff_4 += PlayerPrefs.GetInt(customStrings.LevelComplete36, 0) == 0 ? 0 : 1;
+
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete37, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete38, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete39, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete40, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete41, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete42, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete43, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete44, 0) == 0 ? 0 : 1;
+        diff_5 += PlayerPrefs.GetInt(customStrings.LevelComplete45, 0) == 0 ? 0 : 1;
+
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete46, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete47, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete48, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete49, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete50, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete51, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete52, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete53, 0) == 0 ? 0 : 1;
+        diff_6 += PlayerPrefs.GetInt(customStrings.LevelComplete54, 0) == 0 ? 0 : 1;
+
+        diff[0] = diff_1;
+        diff[1] = diff_2;
+        diff[2] = diff_3;
+        diff[3] = diff_4;
+        diff[4] = diff_5;
+        diff[5] = diff_6;
+
+        return diff;
+    }
+
+    public void SetLevelCompleteUI()
+    {
+        if (setLevelCompleteUIChecker)
+        {
+            return;
+        }
+
+        setLevelCompleteUIChecker = true;
+
+        completeStatusUI[0].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete1, 0) == 0 ? false : true);
+        completeStatusUI[1].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete2, 0) == 0 ? false : true);
+        completeStatusUI[2].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete3, 0) == 0 ? false : true);
+        completeStatusUI[3].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete4, 0) == 0 ? false : true);
+        completeStatusUI[4].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete5, 0) == 0 ? false : true);
+        completeStatusUI[5].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete6, 0) == 0 ? false : true);
+        completeStatusUI[6].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete7, 0) == 0 ? false : true);
+        completeStatusUI[7].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete8, 0) == 0 ? false : true);
+        completeStatusUI[8].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete9, 0) == 0 ? false : true);
+
+        completeStatusUI[9].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete10, 0) == 0 ? false : true);
+        completeStatusUI[10].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete11, 0) == 0 ? false : true);
+        completeStatusUI[11].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete12, 0) == 0 ? false : true);
+        completeStatusUI[12].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete13, 0) == 0 ? false : true);
+        completeStatusUI[13].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete14, 0) == 0 ? false : true);
+        completeStatusUI[14].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete15, 0) == 0 ? false : true);
+        completeStatusUI[15].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete16, 0) == 0 ? false : true);
+        completeStatusUI[16].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete17, 0) == 0 ? false : true);
+        completeStatusUI[17].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete18, 0) == 0 ? false : true);
+
+        completeStatusUI[18].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete19, 0) == 0 ? false : true);
+        completeStatusUI[19].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete20, 0) == 0 ? false : true);
+        completeStatusUI[20].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete21, 0) == 0 ? false : true);
+        completeStatusUI[21].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete22, 0) == 0 ? false : true);
+        completeStatusUI[22].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete23, 0) == 0 ? false : true);
+        completeStatusUI[23].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete24, 0) == 0 ? false : true);
+        completeStatusUI[24].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete25, 0) == 0 ? false : true);
+        completeStatusUI[25].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete26, 0) == 0 ? false : true);
+        completeStatusUI[26].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete27, 0) == 0 ? false : true);
+
+        completeStatusUI[27].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete28, 0) == 0 ? false : true);
+        completeStatusUI[28].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete29, 0) == 0 ? false : true);
+        completeStatusUI[29].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete30, 0) == 0 ? false : true);
+        completeStatusUI[30].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete31, 0) == 0 ? false : true);
+        completeStatusUI[31].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete32, 0) == 0 ? false : true);
+        completeStatusUI[32].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete33, 0) == 0 ? false : true);
+        completeStatusUI[33].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete34, 0) == 0 ? false : true);
+        completeStatusUI[34].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete35, 0) == 0 ? false : true);
+        completeStatusUI[35].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete36, 0) == 0 ? false : true);
+
+        completeStatusUI[36].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete37, 0) == 0 ? false : true);
+        completeStatusUI[37].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete38, 0) == 0 ? false : true);
+        completeStatusUI[38].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete39, 0) == 0 ? false : true);
+        completeStatusUI[39].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete40, 0) == 0 ? false : true);
+        completeStatusUI[40].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete41, 0) == 0 ? false : true);
+        completeStatusUI[41].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete42, 0) == 0 ? false : true);
+        completeStatusUI[42].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete43, 0) == 0 ? false : true);
+        completeStatusUI[43].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete44, 0) == 0 ? false : true);
+        completeStatusUI[44].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete45, 0) == 0 ? false : true);
+
+        completeStatusUI[45].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete46, 0) == 0 ? false : true);
+        completeStatusUI[46].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete47, 0) == 0 ? false : true);
+        completeStatusUI[47].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete48, 0) == 0 ? false : true);
+        completeStatusUI[48].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete49, 0) == 0 ? false : true);
+        completeStatusUI[49].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete50, 0) == 0 ? false : true);
+        completeStatusUI[50].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete51, 0) == 0 ? false : true);
+        completeStatusUI[51].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete52, 0) == 0 ? false : true);
+        completeStatusUI[52].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete53, 0) == 0 ? false : true);
+        completeStatusUI[53].SetActive(PlayerPrefs.GetInt(customStrings.LevelComplete54, 0) == 0 ? false : true);
+    }
+
+    void SetCorrectLevelEndUIButtons()
+    {
+        if (gameModeManager.currentLevel == LevelNumbers._9)
+        {
+            if (diff_1 < levelRequiredToUnlockNextTier)
+            {
+                if (normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(false);
+                }
+                if (!lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(true);
+                }
+                if (lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(false);
+                }
+            }
+        }
+        else if (gameModeManager.currentLevel == LevelNumbers._18)
+        {
+            if (diff_2 < levelRequiredToUnlockNextTier)
+            {
+                if (normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(false);
+                }
+                if (!lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(true);
+                }
+                if (lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(false);
+                }
+            }
+        }
+        else if (gameModeManager.currentLevel == LevelNumbers._27)
+        {
+            if (diff_3 < levelRequiredToUnlockNextTier)
+            {
+                if (normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(false);
+                }
+                if (!lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(true);
+                }
+                if (lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(false);
+                }
+            }
+        }
+        else if (gameModeManager.currentLevel == LevelNumbers._36)
+        {
+            if (diff_4 < levelRequiredToUnlockNextTier)
+            {
+                if (normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(false);
+                }
+                if (!lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(true);
+                }
+                if (lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(false);
+                }
+            }
+        }
+        else if (gameModeManager.currentLevel == LevelNumbers._45)
+        {
+            if (diff_5 < levelRequiredToUnlockNextTier)
+            {
+                if (normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(false);
+                }
+                if (!lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!normalButtons.activeSelf)
+                {
+                    normalButtons.SetActive(true);
+                }
+                if (lastLevelButtons.activeSelf)
+                {
+                    lastLevelButtons.SetActive(false);
+                }
+            }
+        }
+        else if (gameModeManager.currentLevel == LevelNumbers._54)
+        {
+            if (normalButtons.activeSelf)
+            {
+                normalButtons.SetActive(false);
+            }
+            if (!lastLevelButtons.activeSelf)
+            {
+                lastLevelButtons.SetActive(true);
+            }
+        }
+        else
+        {
+            if (!normalButtons.activeSelf)
+            {
+                normalButtons.SetActive(true);
+            }
+            if (lastLevelButtons.activeSelf)
+            {
+                lastLevelButtons.SetActive(false);
+            }
+        }
+    }
+
+    ///* FUNCTION FOR LEVEL BUTTONS TO LOAD LEVEL*///
+    public void LoadLevel1_1()
+    {
+        Invoke("LoadLevel1_1_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_1_function()
     {
         levelManager.selectedLevelNumber = LevelNumbers._1;
 
@@ -426,5 +967,1024 @@ public class LevelMenu : MonoBehaviour
         gameModeManager.gameMode = GameModeManager.GameMode.level;
         tileSequence.LoadCurrentLevel();
         mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_2()
+    {
+        Invoke("LoadLevel1_2_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_2_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._2;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_3()
+    {
+        Invoke("LoadLevel1_3_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_3_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._3;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_4()
+    {
+        Invoke("LoadLevel1_4_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_4_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._4;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_5()
+    {
+        Invoke("LoadLevel1_5_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_5_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._5;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_6()
+    {
+        Invoke("LoadLevel1_6_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_6_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._6;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_7()
+    {
+        Invoke("LoadLevel1_7_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_7_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._7;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_8()
+    {
+        Invoke("LoadLevel1_8_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_8_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._8;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel1_9()
+    {
+        Invoke("LoadLevel1_9_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel1_9_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._9;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+
+
+    public void LoadLevel2_1()
+    {
+        Invoke("LoadLevel2_1_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_1_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._10;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_2()
+    {
+        Invoke("LoadLevel2_2_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_2_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._11;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_3()
+    {
+        Invoke("LoadLevel2_3_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_3_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._12;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_4()
+    {
+        Invoke("LoadLevel2_4_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_4_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._13;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_5()
+    {
+        Invoke("LoadLevel2_5_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_5_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._14;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_6()
+    {
+        Invoke("LoadLevel2_6_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_6_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._15;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_7()
+    {
+        Invoke("LoadLevel2_7_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_7_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._16;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_8()
+    {
+        Invoke("LoadLevel2_8_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_8_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._17;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel2_9()
+    {
+        Invoke("LoadLevel2_9_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel2_9_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._18;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+
+
+    public void LoadLevel3_1()
+    {
+        Invoke("LoadLevel3_1_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_1_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._19;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_2()
+    {
+        Invoke("LoadLevel3_2_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_2_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._20;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_3()
+    {
+        Invoke("LoadLevel3_3_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_3_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._21;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_4()
+    {
+        Invoke("LoadLevel3_4_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_4_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._22;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_5()
+    {
+        Invoke("LoadLevel3_5_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_5_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._23;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_6()
+    {
+        Invoke("LoadLevel3_6_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_6_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._24;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_7()
+    {
+        Invoke("LoadLevel3_7_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_7_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._25;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_8()
+    {
+        Invoke("LoadLevel3_8_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_8_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._26;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel3_9()
+    {
+        Invoke("LoadLevel3_9_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel3_9_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._27;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+
+
+    public void LoadLevel4_1()
+    {
+        Invoke("LoadLevel4_1_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_1_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._28;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_2()
+    {
+        Invoke("LoadLevel4_2_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_2_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._29;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_3()
+    {
+        Invoke("LoadLevel4_3_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_3_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._30;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_4()
+    {
+        Invoke("LoadLevel4_4_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_4_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._31;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_5()
+    {
+        Invoke("LoadLevel4_5_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_5_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._32;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_6()
+    {
+        Invoke("LoadLevel4_6_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_6_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._33;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_7()
+    {
+        Invoke("LoadLevel4_7_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_7_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._34;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_8()
+    {
+        Invoke("LoadLevel4_8_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_8_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._35;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel4_9()
+    {
+        Invoke("LoadLevel4_9_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel4_9_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._36;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+
+
+    public void LoadLevel5_1()
+    {
+        Invoke("LoadLevel5_1_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_1_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._37;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_2()
+    {
+        Invoke("LoadLevel5_2_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_2_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._38;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_3()
+    {
+        Invoke("LoadLevel5_3_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_3_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._39;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_4()
+    {
+        Invoke("LoadLevel5_4_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_4_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._40;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_5()
+    {
+        Invoke("LoadLevel5_5_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_5_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._41;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_6()
+    {
+        Invoke("LoadLevel5_6_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_6_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._42;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_7()
+    {
+        Invoke("LoadLevel5_7_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_7_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._43;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_8()
+    {
+        Invoke("LoadLevel5_8_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_8_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._44;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel5_9()
+    {
+        Invoke("LoadLevel5_9_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel5_9_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._45;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+
+
+    public void LoadLevel6_1()
+    {
+        Invoke("LoadLevel6_1_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_1_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._46;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_2()
+    {
+        Invoke("LoadLevel6_2_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_2_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._47;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_3()
+    {
+        Invoke("LoadLevel6_3_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_3_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._48;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_4()
+    {
+        Invoke("LoadLevel6_4_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_4_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._49;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_5()
+    {
+        Invoke("LoadLevel6_5_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_5_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._50;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_6()
+    {
+        Invoke("LoadLevel6_6_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_6_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._51;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_7()
+    {
+        Invoke("LoadLevel6_7_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_7_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._52;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_8()
+    {
+        Invoke("LoadLevel6_8_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_8_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._53;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
+    }
+
+    public void LoadLevel6_9()
+    {
+        Invoke("LoadLevel6_9_function", levelMenuCommandExecutionDelay);
+    }
+
+    void LoadLevel6_9_function()
+    {
+        levelManager.selectedLevelNumber = LevelNumbers._54;
+
+        gameModeManager.currentLevel = levelManager.selectedLevelNumber;
+        gameModeManager.nextLevel = levelManager.NextLevel(levelManager.selectedLevelNumber);
+
+        gameModeManager.gameMode = GameModeManager.GameMode.level;
+        tileSequence.LoadCurrentLevel();
+        mainMenu.Play_Level();
+
+        SetCorrectLevelEndUIButtons();
     }
 }
