@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -31,15 +32,21 @@ public class SettingsMenu : MonoBehaviour
     public int isVibrationOn;
     public int isHighQalityOn;
 
+    [Header("Optimization data")]
+    public PostProcessLayer postProcessLayer;
+    public PostProcessVolume postProcessVol;
+
     string on = "ON";
     string off = "OFF";
 
     CustomStrings customStrings;
+    SavedData savedData;
 
     // Start is called before the first frame update
     void Start()
     {
         customStrings = CustomStrings.Instance;
+        savedData = SavedData.Instance;
 
         isSoundOn = PlayerPrefs.GetInt(customStrings.GAME_SOUND_STRING, 1);
         isVibrationOn = PlayerPrefs.GetInt(customStrings.VIBRATION_STRING, 1);
@@ -71,11 +78,22 @@ public class SettingsMenu : MonoBehaviour
         {
             highqualityText.text = on;
             highQualityBg.sprite = buttonON;
+
+            postProcessLayer.enabled = true;
+            postProcessVol.enabled = true;
         }
         else
         {
             highqualityText.text = off;
             highQualityBg.sprite = buttonOFF;
+
+            postProcessLayer.enabled = false;
+            postProcessVol.enabled = false;
+        }
+
+        if(savedData.isRunningForFirstTime)
+        {
+            SetGameQualityAuto();
         }
     }
     
@@ -130,15 +148,36 @@ public class SettingsMenu : MonoBehaviour
             highqualityText.text = off;
             highQualityBg.sprite = buttonOFF;
             isHighQalityOn = 0;
+
+            postProcessLayer.enabled = false;
+            postProcessVol.enabled = false;
         }
         else
         {
             highqualityText.text = on;
             highQualityBg.sprite = buttonON;
             isHighQalityOn = 1;
+
+            postProcessLayer.enabled = true;
+            postProcessVol.enabled = true;
         }
 
         PlayerPrefs.SetInt(customStrings.HIGH_QUALITY_STRING, isHighQalityOn);
     }
 
+    void SetGameQualityAuto()
+    {
+        if(SystemInfo.processorFrequency <= 1550 || SystemInfo.systemMemorySize < 1600)
+        {
+            postProcessLayer.enabled = false;
+            postProcessVol.enabled = false;
+
+            HighQualityButtonPressed();
+        }
+        else
+        {
+            postProcessLayer.enabled = true;
+            postProcessVol.enabled = true;
+        }
+    }
 }

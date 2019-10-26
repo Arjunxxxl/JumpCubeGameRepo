@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -286,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -525,6 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -643,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -761,6 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -879,6 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -997,6 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -1115,6 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -1291,6 +1299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -1409,6 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -1527,6 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -1645,6 +1656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -1795,6 +1807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -1834,7 +1847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826722966419105839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.925, y: 9.25, z: 0}
+  m_LocalPosition: {x: 7.925, y: 10.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3023005486910210868}
@@ -1971,6 +1984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -2010,7 +2024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5872342187702301817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.075, y: 9.25, z: 0}
+  m_LocalPosition: {x: -7.075, y: 10.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3023005486910210868}
@@ -2147,6 +2161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -2265,6 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -2383,6 +2399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -2501,6 +2518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -2679,6 +2697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -2797,6 +2816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -2915,6 +2935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -3033,6 +3054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3151,6 +3173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -3269,6 +3292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -3387,6 +3411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -3505,6 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -3623,6 +3649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -3741,6 +3768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -3859,6 +3887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -3977,6 +4006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -4095,6 +4125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -4213,6 +4244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -4331,6 +4363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -4449,6 +4482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -4567,6 +4601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -4685,6 +4720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -4803,6 +4839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -4921,6 +4958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -5039,6 +5077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -5157,6 +5196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5335,6 +5375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -5453,6 +5494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -5571,6 +5613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 5
   initialPos: {x: 0, y: 0, z: 0}
@@ -5742,6 +5785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -5860,6 +5904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5978,6 +6023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6096,6 +6142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -6214,6 +6261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -13
   initialPos: {x: 0, y: 0, z: 0}
@@ -6332,6 +6380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -6450,6 +6499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -6568,6 +6618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -6686,6 +6737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -6804,6 +6856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -6922,6 +6975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -7040,6 +7094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 19
   initialPos: {x: 0, y: 0, z: 0}
@@ -7158,6 +7213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -7276,6 +7332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -30
   initialPos: {x: 0, y: 0, z: 0}
@@ -7394,6 +7451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -15
   initialPos: {x: 0, y: 0, z: 0}
@@ -7523,7 +7581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7875109252223159109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 9.25, z: 0}
+  m_LocalPosition: {x: 0.4, y: 8.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3023005486910210868}
@@ -7660,6 +7718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 7
   initialPos: {x: 0, y: 0, z: 0}
@@ -7810,6 +7869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}

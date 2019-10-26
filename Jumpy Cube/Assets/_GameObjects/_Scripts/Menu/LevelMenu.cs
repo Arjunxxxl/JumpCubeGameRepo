@@ -23,6 +23,15 @@ public class LevelMenu : MonoBehaviour
     public GameObject normalButtons;
     public GameObject lastLevelButtons;
 
+    [Header("Level Complete Buttons")]
+    public Button watchAdsButton;
+    public Button shareButton;
+    public Button homeButton1;
+    public Button homeButton2;
+    public Button replayButton1;
+    public Button replayButton2;
+    public Button nextButton;
+
     LevelManager levelManager;
     TileSequence tileSequence;
     GameModeManager gameModeManager;
@@ -94,6 +103,8 @@ public class LevelMenu : MonoBehaviour
         diff[5] = diff_6;
 
         SetCorrectLevelEndUIButtons();
+
+        EnableAllButtons();
     }
 
     public void CaptureScreenShot()
@@ -426,6 +437,70 @@ public class LevelMenu : MonoBehaviour
         finnalName = levelname + levelNo;
 
         levelText.text = finnalName;
+    }
+
+    void DisableAllButtons()
+    {
+        if(shareButton.interactable)
+        {
+            shareButton.interactable = false;
+        }
+        if (watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = false;
+        }
+        if (homeButton1.interactable)
+        {
+            homeButton1.interactable = false;
+        }
+        if (homeButton2.interactable)
+        {
+            homeButton2.interactable = false;
+        }
+        if (replayButton1.interactable)
+        {
+            replayButton1.interactable = false;
+        }
+        if (replayButton2.interactable)
+        {
+            replayButton2.interactable = false;
+        }
+        if (nextButton.interactable)
+        {
+            nextButton.interactable = false;
+        }
+    }
+
+    void EnableAllButtons()
+    {
+        if (!shareButton.interactable)
+        {
+            shareButton.interactable = true;
+        }
+        if (!watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = true;
+        }
+        if (!homeButton1.interactable)
+        {
+            homeButton1.interactable = true;
+        }
+        if (!homeButton2.interactable)
+        {
+            homeButton2.interactable = true;
+        }
+        if (!replayButton1.interactable)
+        {
+            replayButton1.interactable = true;
+        }
+        if (!replayButton2.interactable)
+        {
+            replayButton2.interactable = true;
+        }
+        if (!nextButton.interactable)
+        {
+            nextButton.interactable = true;
+        }
     }
 
     ///

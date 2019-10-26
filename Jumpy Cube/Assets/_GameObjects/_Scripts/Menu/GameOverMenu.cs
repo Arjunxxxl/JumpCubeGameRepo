@@ -32,6 +32,13 @@ public class GameOverMenu : MonoBehaviour
     public float screenShotDelay = 2.5f;
     public float screenshotDiaplayDelay = 1f;
 
+    [Header("Game over buttons")]
+    public Button watchAdsButton;
+    public Button shareButton;
+    public Button homeButton1;
+    public Button homeButton2;
+    public Button replayButton1;
+
     public bool checker;
     bool isProcessing;
 
@@ -93,6 +100,27 @@ public class GameOverMenu : MonoBehaviour
         if (levelButtons.activeSelf)
         {
             levelButtons.SetActive(false);
+        }
+
+        if(!shareButton.interactable)
+        {
+            shareButton.interactable = true;
+        }
+        if (!watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = true;
+        }
+        if (!homeButton1.interactable)
+        {
+            homeButton1.interactable = true;
+        }
+        if (!homeButton2.interactable)
+        {
+            homeButton2.interactable = true;
+        }
+        if (!replayButton1.interactable)
+        {
+            replayButton1.interactable = true;
         }
     }
 
@@ -193,6 +221,8 @@ public class GameOverMenu : MonoBehaviour
     {
         missionManager.CheckingForShareScoreMission();
 
+        DisableAllButtons();
+
         Invoke("ShareScreenShotFunction", gameoverMenuCommandExecutionDelay);
     }
 
@@ -255,6 +285,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        DisableAllButtons();
         Invoke("HomeButtonFunction", gameoverMenuCommandExecutionDelay);
     }
 
@@ -265,15 +296,44 @@ public class GameOverMenu : MonoBehaviour
 
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
-
-
+    
     public void WatchAdsForDoubleReward()
     {
+        DisableAllButtons();
         Invoke("WatchAdsForDoubleRewardFunction", gameoverMenuCommandExecutionDelay);
     }
 
     void WatchAdsForDoubleRewardFunction()
     {
 
+    }
+
+    public void ReplayButton()
+    {
+        DisableAllButtons();
+    }
+
+    void DisableAllButtons()
+    {
+        if (shareButton.interactable)
+        {
+            shareButton.interactable = false;
+        }
+        if (watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = false;
+        }
+        if (homeButton1.interactable)
+        {
+            homeButton1.interactable = false;
+        }
+        if (homeButton2.interactable)
+        {
+            homeButton2.interactable = false;
+        }
+        if (replayButton1.interactable)
+        {
+            replayButton1.interactable = false;
+        }
     }
 }

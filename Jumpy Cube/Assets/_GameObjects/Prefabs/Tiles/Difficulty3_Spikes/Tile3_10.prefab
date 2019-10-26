@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -116,6 +117,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &86312931868849719
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -232,6 +236,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &142905289383716367
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -348,6 +355,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &324559101318852262
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -464,6 +474,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &595376534407886796
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -580,6 +593,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &803659310831745301
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -696,6 +712,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054638890347
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -813,6 +832,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054660525618
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -929,6 +951,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054723320649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -1045,6 +1070,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054784328356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -1221,6 +1249,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054933681867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -1337,6 +1368,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054937659322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -1453,6 +1487,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054948194485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -1569,6 +1606,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696054978565677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -1686,6 +1726,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055064456206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,6 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -1802,6 +1845,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055219190130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -1918,6 +1964,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055315077835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -2034,6 +2083,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055336819125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -2150,6 +2202,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055385060394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -2266,6 +2321,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055415039436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -2382,6 +2440,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055521704535
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -2498,6 +2559,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055567771529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,6 +2666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -2614,6 +2678,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055667976066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -2730,6 +2797,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055675450452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,6 +2904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -2846,6 +2916,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055714785356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,7 +2948,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5, y: -14, z: 0}
   m_LocalScale: {x: 1, y: 30, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5462707024719664801}
   m_Father: {fileID: 1101696055755612670}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2951,6 +3024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -2962,6 +3036,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055753010042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -3078,6 +3155,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055755612669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3254,6 +3334,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055887313692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,6 +3441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -3370,6 +3453,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055944345933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3486,6 +3572,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696055972194629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,6 +3727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3650,6 +3739,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056068169800
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,6 +3846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3766,6 +3858,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056117988639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +3965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -3882,6 +3977,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056118469061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3988,6 +4085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -3999,6 +4097,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056218850140
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,6 +4204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -4115,6 +4216,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056224280323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,6 +4323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -4231,6 +4335,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056243235587
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,6 +4442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -4347,6 +4454,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056244986848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,6 +4561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -4463,6 +4573,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056262770994
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,6 +4680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -4579,6 +4692,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056269433208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4684,6 +4799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -4695,6 +4811,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056482893614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4800,6 +4918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -4811,6 +4930,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056497597591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4916,6 +5037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -4927,6 +5049,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056518902408
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,6 +5156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5043,6 +5168,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056588718538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5073,7 +5200,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.5, y: -14, z: 0}
   m_LocalScale: {x: 1, y: 30, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8258186970537159282}
   m_Father: {fileID: 1101696055755612670}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5148,6 +5276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5159,6 +5288,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056624042236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5264,6 +5395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5275,6 +5407,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056699164156
 GameObject:
   m_ObjectHideFlags: 0
@@ -5380,6 +5514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5391,6 +5526,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1101696056709847503
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,6 +5633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5507,6 +5645,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1215331442808459384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,6 +5752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5623,6 +5764,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1255863301545911280
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,6 +5872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5740,6 +5884,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1587321945847902216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5845,6 +5991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -5856,6 +6003,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &1639105636004593721
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,6 +6110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -5972,6 +6122,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &2112396243505091445
 GameObject:
   m_ObjectHideFlags: 0
@@ -6107,6 +6259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6118,6 +6271,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &3159322746325321876
 GameObject:
   m_ObjectHideFlags: 0
@@ -6223,6 +6378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6234,6 +6390,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &4889712676680509810
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,6 +6497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6350,6 +6509,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &4904311635109464253
 GameObject:
   m_ObjectHideFlags: 0
@@ -6374,7 +6535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4904311635109464253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.5, y: 1, z: 0}
+  m_LocalPosition: {x: -9.5, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5884029640354827396}
@@ -6519,6 +6680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -6530,6 +6692,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &6617125763895138868
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,6 +6829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6676,6 +6841,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &7111697362207194388
 GameObject:
   m_ObjectHideFlags: 0
@@ -6781,6 +6948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -6792,6 +6960,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8119158317811981718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,6 +7067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: 9
   FinalPosY: 6
   initialPos: {x: 0, y: 0, z: 0}
@@ -6908,6 +7079,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8228354746489911725
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,6 +7186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -7024,6 +7198,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8438996243262711546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,6 +7305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -7140,6 +7317,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1 &8477760167086994293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,6 +7454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosReached: 0
+  disablePlayerKiller: 0
   initialPosY: -19
   FinalPosY: -14
   initialPos: {x: 0, y: 0, z: 0}
@@ -7286,6 +7466,8 @@ MonoBehaviour:
   its: 0
   players: 0
   differnce: 0
+  killPlayer: 0
+  finalPosKillPlayer: {x: 0, y: 0, z: 0}
 --- !u!1001 &1143577284643919421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7630,6 +7812,246 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4803817729059425994, guid: 15e12ebeaf4448f4391ef304fcb45fd0,
     type: 3}
   m_PrefabInstance: {fileID: 1391258588162781555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1932681902229184988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1101696056588718539}
+    m_Modifications:
+    - target: {fileID: 6779011867357804989, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_Name
+      value: spikesType1Parent (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49833345
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 32.000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3333361
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462114132543345863, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: revitalPoint
+      value: 
+      objectReference: {fileID: 4904311635109464253}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9749e93e6b6a8154f9d25b60f4ea5206, type: 3}
+--- !u!4 &8258186970537159282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+    type: 3}
+  m_PrefabInstance: {fileID: 1932681902229184988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2560249797124578575
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1101696055714785357}
+    m_Modifications:
+    - target: {fileID: 6779011867357804989, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_Name
+      value: spikesType1Parent (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49833342
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 32.000046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345984019280660741, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462114132543345863, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+        type: 3}
+      propertyPath: revitalPoint
+      value: 
+      objectReference: {fileID: 2112396243505091445}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9749e93e6b6a8154f9d25b60f4ea5206, type: 3}
+--- !u!4 &5462707024719664801 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7514461279945362350, guid: 9749e93e6b6a8154f9d25b60f4ea5206,
+    type: 3}
+  m_PrefabInstance: {fileID: 2560249797124578575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4287081168714420269
 PrefabInstance:

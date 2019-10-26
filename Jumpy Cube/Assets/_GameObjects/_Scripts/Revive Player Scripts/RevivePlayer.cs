@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class RevivePlayer : MonoBehaviour
 {
@@ -38,6 +39,11 @@ public class RevivePlayer : MonoBehaviour
     public int currentDiamonds;
     public float averageScore;
 
+    [Header("Revival Menu Buttons")]
+    public Button watchAdsButton;
+    public Button useCoinButton;
+    public Button skipButton;
+    [Space]
     public GameObject player;
     public GameObject revivalPoint;
     public bool isDead;
@@ -81,6 +87,19 @@ public class RevivePlayer : MonoBehaviour
         highScore = PlayerPrefs.GetInt(customStrings.HIGHSCORE, 0);
         diamondBest = PlayerPrefs.GetInt(customStrings.DIAMONDS_COLLECTED_IN_ONE_RUN1, 0);
         averageBest = (int)PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
+
+        if(!watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = true;
+        }
+        if (!useCoinButton.interactable)
+        {
+            useCoinButton.interactable = true;
+        }
+        if (!skipButton.interactable)
+        {
+            skipButton.interactable = true;
+        }
     }
 
     // Update is called once per frame
@@ -97,6 +116,7 @@ public class RevivePlayer : MonoBehaviour
 
     public void ReviePlayerFunction()
     {
+        DisableAllButtons();
         Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
     }
 
@@ -135,6 +155,7 @@ public class RevivePlayer : MonoBehaviour
 
     public void SkipRevivalMenuButton()
     {
+        DisableAllButtons();
         Invoke("SkipRevival_Function", reviveScreenCommandExecutionDelay);
     }
 
@@ -220,5 +241,21 @@ public class RevivePlayer : MonoBehaviour
         yield return new WaitForSeconds(trophyShowingDelay + trophyScowingOffset + trophyScowingOffset);
         average_best.SetActive(true);
         timelinePlayer.PlayAverageBest();
+    }
+
+    void DisableAllButtons()
+    {
+        if (watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = false;
+        }
+        if (useCoinButton.interactable)
+        {
+            useCoinButton.interactable = false;
+        }
+        if (skipButton.interactable)
+        {
+            skipButton.interactable = false;
+        }
     }
 }

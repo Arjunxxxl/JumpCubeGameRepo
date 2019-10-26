@@ -29,7 +29,6 @@ ScriptsOnlyBuild:
     - Mission
     - MissionManager
     - ObjectPooler
-    - PPDebugScript
     - PauseMenu
     - PlayLevelEndParticleSystem
     - PlayerDeath
@@ -98,7 +97,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.InputField
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.RectMask2D
@@ -106,7 +104,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
-    - UnityEngine.UI.Text
   sceneClasses:
     Assets/_Scenes/SampleScene.unity:
     - Class: 1
@@ -162,8 +159,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9470}
     - Class: 114
-      Script: {instanceID: 9474}
-    - Class: 114
       Script: {instanceID: 9508}
     - Class: 114
       Script: {instanceID: 9526}
@@ -182,8 +177,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9690}
     - Class: 114
-      Script: {instanceID: 9692}
-    - Class: 114
       Script: {instanceID: 9698}
     - Class: 114
       Script: {instanceID: 9712}
@@ -199,8 +192,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9724}
     - Class: 114
       Script: {instanceID: 9726}
-    - Class: 114
-      Script: {instanceID: 9728}
     - Class: 114
       Script: {instanceID: 9744}
     - Class: 114
@@ -327,8 +318,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11938}
     - Class: 115
       Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
     - Class: 134
       Script: {instanceID: 0}
     - Class: 157
@@ -418,12 +407,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GravityTile
-  - hash:
-      serializedVersion: 2
-      Hash: e80f5688efa60fa0433f8823e7fe3e92
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PPDebugScript
   - hash:
       serializedVersion: 2
       Hash: 71f7f12b8d0f4fd73590db8bcb6d453c
@@ -978,7 +961,7 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
-      Hash: 387c147383c5a71c80f272146bddf7d2
+      Hash: ab62736c0400b3fc35a2458fc668dca3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TimelinePlayer
@@ -1644,7 +1627,7 @@ ScriptsOnlyBuild:
     className: TMP_TextEventCheck
   - hash:
       serializedVersion: 2
-      Hash: b46d33638b3c00760ba013d768d95ac8
+      Hash: 73c3f1c8e677d1634e2501893f198473
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsMenu
@@ -1662,7 +1645,7 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: 43afa09a61d7edf6d832ab9845dc8510
+      Hash: d6f0d58d63dcc11db9b27130ab19a90d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DistanceScore
