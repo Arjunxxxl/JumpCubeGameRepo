@@ -19,6 +19,7 @@ TagManager:
   - levelend
   - stopcube
   - TileSystem
+  - landEffect
   layers:
   - Default
   - TransparentFX

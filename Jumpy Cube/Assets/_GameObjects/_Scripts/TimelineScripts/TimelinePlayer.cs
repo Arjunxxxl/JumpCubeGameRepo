@@ -46,6 +46,9 @@ public class TimelinePlayer : MonoBehaviour
     [Header("Average and Best Score timelines")]
     public PlayableDirector bestScoreTimeline;
 
+    [Header("Start Dark canvas and loadingscreen")]
+    public PlayableDirector loadingScreen;
+
     bool s_m1, s_m2, s_m3, s_m4, s_m5, s_m6, s_m7, s_m8;
     bool h_m1, h_m2, h_m3, h_m4, h_m5, h_m6, h_m7, h_m8;
 
@@ -68,6 +71,8 @@ public class TimelinePlayer : MonoBehaviour
     {
         pausePlayable.Stop();
         optimizationAnimation.Stop();
+        
+        loadingScreen.Stop();
 
         s_m1 = s_m2 = s_m3 = s_m4 = s_m5 = s_m6 = s_m7 = s_m8 = false;
         h_m1 = h_m2 = h_m3 = h_m4 = h_m5 = h_m6 = h_m7 = h_m8 = false;
@@ -163,6 +168,11 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayHighScore()
     {
         bestScoreTimeline.Play();
+    }
+
+    public void PlayLoadingScreen()
+    {
+        loadingScreen.Play();
     }
 
     #region TUTORIAL MESSAGE

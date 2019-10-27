@@ -424,7 +424,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -447,7 +447,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -466,7 +466,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
                 
                 SetColorSchemeButton(true);
             }
@@ -489,7 +489,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
                 
                 SetColorSchemeButton(true);
             }
@@ -508,7 +508,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -531,7 +531,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -550,7 +550,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -573,7 +573,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -592,7 +592,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -615,7 +615,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -634,7 +634,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -657,7 +657,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -676,7 +676,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -699,7 +699,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -718,7 +718,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -741,7 +741,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -760,7 +760,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }
@@ -783,7 +783,7 @@ public class Store : MonoBehaviour
 
                 selectColorScheme.GetCuttentColorSchme();
 
-                selectColorScheme.SetColor();
+                selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
             }

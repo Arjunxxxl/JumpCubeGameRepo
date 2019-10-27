@@ -38,6 +38,10 @@ public class MainMenu : MonoBehaviour
     public GameObject levelNumberUI;
     public float levelNumberShowingDuration = 5f;
 
+    [Header("Starting dark canvas")]
+    public GameObject startingDarkCanvas;
+    public float disableAfterTime = 1.2f;
+
     TimelinePlayer timelinePlayer;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     GameModeManager gameModeManager;
@@ -56,6 +60,12 @@ public class MainMenu : MonoBehaviour
         else if(Instance != this)
         {
             Destroy(gameObject);
+        }
+
+        if (!startingDarkCanvas.activeSelf)
+        {
+            startingDarkCanvas.SetActive(true);
+            StartCoroutine(DisableStartingDarkCanvas());
         }
     }
     #endregion
@@ -254,6 +264,12 @@ public class MainMenu : MonoBehaviour
     public void NotQuitGame()
     {
         quitGame.SetActive(false);
+    }
+
+    IEnumerator DisableStartingDarkCanvas()
+    {
+        yield return new WaitForSeconds(disableAfterTime);
+        startingDarkCanvas.SetActive(false);
     }
 
     ///FUNCTIONS FOR CONTINIOUS LEVEL CHANGE

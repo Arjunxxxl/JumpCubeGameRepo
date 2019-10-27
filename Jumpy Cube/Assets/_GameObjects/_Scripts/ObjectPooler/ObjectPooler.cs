@@ -16,11 +16,10 @@ public class ObjectPooler : MonoBehaviour
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     string tileTag;
 
-    [Header("Custom Parent Data")]
-    public Transform storeBgEffectParent;
+    [Header("LandEffect")]
+    public List<ParticleSystem> landEffect;
 
-    [Header("Custom Lists")]
-    public List<RectTransform> storeBGEffectList;
+    string LAND_EFFECT_TAG = "landEffect";
 
     #region SingleTon
     public static ObjectPooler Instance;
@@ -34,6 +33,8 @@ public class ObjectPooler : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        landEffect = new List<ParticleSystem>();
 
         SetUpPool();
     }
@@ -59,11 +60,10 @@ public class ObjectPooler : MonoBehaviour
 
                 obj.SetActive(false);
                 obj.transform.SetParent(transform);
-
-                if(obj.GetComponent<RectTransform>())
+                
+                if(obj.CompareTag(LAND_EFFECT_TAG))
                 {
-                    obj.transform.SetParent(storeBgEffectParent);
-                    storeBGEffectList.Add(obj.GetComponent<RectTransform>());
+                    landEffect.Add(obj.GetComponent<ParticleSystem>());
                 }
 
                 objectPool.Enqueue(obj);

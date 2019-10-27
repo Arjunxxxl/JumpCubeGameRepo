@@ -146,16 +146,19 @@ public class LevelMenu : MonoBehaviour
     ///* FUNCTIONS FOR LEVEN COMPLETE MENU *///
     public void HomeButtonPressed()
     {
+        DisableAllButtons();
         StartCoroutine(HomeButtonFunction());
     }
 
     public void ReplayButton()
     {
+        DisableAllButtons();
         StartCoroutine(RestartButtonFunction());
     }
 
     public void NextLevelButton()
     {
+        DisableAllButtons();
         StartCoroutine(NextLevelButtonFunction());
     }
 
@@ -164,6 +167,9 @@ public class LevelMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(levelOverMenuCommandExecutionDelay);
         gameModeManager.gameMode = GameModeManager.GameMode.level;
         gameModeManager.isGameRestarted = true;
+
+        EnableAllButtons();
+
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
 
@@ -175,6 +181,8 @@ public class LevelMenu : MonoBehaviour
 
         gameModeManager.currentLevel = gameModeManager.nextLevel;
         gameModeManager.nextLevel = levelManager.NextLevel(gameModeManager.currentLevel);
+        
+        EnableAllButtons();
 
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
@@ -184,6 +192,9 @@ public class LevelMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(levelOverMenuCommandExecutionDelay);
         gameModeManager.gameMode = GameModeManager.GameMode.endless;
         gameModeManager.isGameRestarted = false;
+
+        EnableAllButtons();
+
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
 

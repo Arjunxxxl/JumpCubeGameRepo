@@ -137,6 +137,7 @@ public class SelectColorScheme : MonoBehaviour
 
     [Header("Particle System")]
     public ParticleSystem landParticleSystem;
+    public List<ParticleSystem> landParticleSystems;
 
     [Header("Data for io sphere color changer script")]
     public Shader ioSphereShader;
@@ -147,6 +148,7 @@ public class SelectColorScheme : MonoBehaviour
     public Camera mainCamera;
     public CustomStrings customStrings;
     public TileColorThemeBoughtManager tileColorThemeBoughtManager;
+    ObjectPooler objectPooler;
 
 
     #region SingleTon
@@ -174,10 +176,14 @@ public class SelectColorScheme : MonoBehaviour
 
     private void Start()
     {
+        objectPooler = ObjectPooler.Instance;
+
         totalColorSchemes = tileColorThemeBoughtManager.totalColorScheme;
+
+        landParticleSystems = objectPooler.landEffect;
     }
 
-    public void SetColor()
+    public void SetColor(bool updateFromStore = false)
     {
         if(selectedColorScheme == 0)
         {
@@ -186,6 +192,15 @@ public class SelectColorScheme : MonoBehaviour
             main.startColor = colorScheme.landParticleSystemColor_1;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_1);
             
+            if(updateFromStore)
+            {
+                foreach(ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_1;
+                }
+            }
+
             ioSphereMainColor = colorScheme.io_sphereColor_main_1;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_1;
 
@@ -216,7 +231,16 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = colorScheme.landParticleSystemColor_2;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_2);
-            
+
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_2;
+                }
+            }
+
             ioSphereMainColor = colorScheme.io_sphereColor_main_2;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_2;
 
@@ -247,6 +271,15 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = colorScheme.landParticleSystemColor_3;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_3);
+
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_3;
+                }
+            }
 
             ioSphereMainColor = colorScheme.io_sphereColor_main_3;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_3;
@@ -279,6 +312,15 @@ public class SelectColorScheme : MonoBehaviour
             main.startColor = colorScheme.landParticleSystemColor_4;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_4);
 
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_4;
+                }
+            }
+
             ioSphereMainColor = colorScheme.io_sphereColor_main_4;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_4;
 
@@ -309,6 +351,15 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = colorScheme.landParticleSystemColor_5;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_5);
+
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_5;
+                }
+            }
 
             ioSphereMainColor = colorScheme.io_sphereColor_main_5;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_5;
@@ -341,6 +392,15 @@ public class SelectColorScheme : MonoBehaviour
             main.startColor = colorScheme.landParticleSystemColor_6;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_6);
 
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_6;
+                }
+            }
+
             ioSphereMainColor = colorScheme.io_sphereColor_main_6;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_6;
 
@@ -371,6 +431,15 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = colorScheme.landParticleSystemColor_7;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_7);
+
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_7;
+                }
+            }
 
             ioSphereMainColor = colorScheme.io_sphereColor_main_7;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_7;
@@ -403,6 +472,15 @@ public class SelectColorScheme : MonoBehaviour
             main.startColor = colorScheme.landParticleSystemColor_8;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_8);
 
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_8;
+                }
+            }
+
             ioSphereMainColor = colorScheme.io_sphereColor_main_8;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_8;
 
@@ -433,6 +511,15 @@ public class SelectColorScheme : MonoBehaviour
             var main = landParticleSystem.main;
             main.startColor = colorScheme.landParticleSystemColor_9;
             spikesMaterial.SetColor("_BaseColor", colorScheme.spikesColor_9);
+
+            if (updateFromStore)
+            {
+                foreach (ParticleSystem ps in landParticleSystems)
+                {
+                    var main2 = ps.main;
+                    main2.startColor = colorScheme.landParticleSystemColor_9;
+                }
+            }
 
             ioSphereMainColor = colorScheme.io_sphereColor_main_9;
             ioSphereChangeColor = colorScheme.io_sphereColor_change_9;

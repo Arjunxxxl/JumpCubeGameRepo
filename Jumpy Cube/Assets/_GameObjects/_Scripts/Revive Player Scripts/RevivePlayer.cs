@@ -173,6 +173,8 @@ public class RevivePlayer : MonoBehaviour
         averageScoreTxt.text = (int)averageScore + "m";
 
         CheckForHighScore();
+
+        EnableAllButtons();
     }
 
     public void PlayerIsRevived()
@@ -185,6 +187,8 @@ public class RevivePlayer : MonoBehaviour
         timelinePlayer.PlayResumeCountDown();
 
         StartCoroutine(AfterReviveDelayDalay());
+
+        EnableAllButtons();
     }
 
     IEnumerator AfterReviveDelayDalay()
@@ -256,6 +260,22 @@ public class RevivePlayer : MonoBehaviour
         if (skipButton.interactable)
         {
             skipButton.interactable = false;
+        }
+    }
+
+    void EnableAllButtons()
+    {
+        if (!watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = true;
+        }
+        if (!useCoinButton.interactable)
+        {
+            useCoinButton.interactable = true;
+        }
+        if (!skipButton.interactable)
+        {
+            skipButton.interactable = true;
         }
     }
 }

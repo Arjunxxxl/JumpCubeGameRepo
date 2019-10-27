@@ -93,35 +93,7 @@ public class GameOverMenu : MonoBehaviour
         currentTime = 0;
         checker = false;
 
-        if (!endless_Buttons.activeSelf)
-        {
-            endless_Buttons.SetActive(true);
-        }
-        if (levelButtons.activeSelf)
-        {
-            levelButtons.SetActive(false);
-        }
-
-        if(!shareButton.interactable)
-        {
-            shareButton.interactable = true;
-        }
-        if (!watchAdsButton.interactable)
-        {
-            watchAdsButton.interactable = true;
-        }
-        if (!homeButton1.interactable)
-        {
-            homeButton1.interactable = true;
-        }
-        if (!homeButton2.interactable)
-        {
-            homeButton2.interactable = true;
-        }
-        if (!replayButton1.interactable)
-        {
-            replayButton1.interactable = true;
-        }
+        ActivateAllButtons();
     }
 
     // Update is called once per frame
@@ -238,6 +210,8 @@ public class GameOverMenu : MonoBehaviour
         //new method
         new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
 
+
+        ActivateAllButtons();
         //old meathod
         //StartCoroutine(ShareScreenshot());
     }
@@ -293,6 +267,8 @@ public class GameOverMenu : MonoBehaviour
     {
         gameModeManager.gameMode = GameModeManager.GameMode.endless;
         gameModeManager.isGameRestarted = false;
+        
+        ActivateAllButtons();
 
         loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
     }
@@ -305,12 +281,18 @@ public class GameOverMenu : MonoBehaviour
 
     void WatchAdsForDoubleRewardFunction()
     {
-
+        ActivateAllButtons();
     }
 
     public void ReplayButton()
     {
+        Invoke("ReplayButtonFunction", gameoverMenuCommandExecutionDelay);
+    }
+
+    void ReplayButtonFunction()
+    {
         DisableAllButtons();
+        ActivateAllButtons();
     }
 
     void DisableAllButtons()
@@ -334,6 +316,39 @@ public class GameOverMenu : MonoBehaviour
         if (replayButton1.interactable)
         {
             replayButton1.interactable = false;
+        }
+    }
+
+    void ActivateAllButtons()
+    {
+        if (!endless_Buttons.activeSelf)
+        {
+            endless_Buttons.SetActive(true);
+        }
+        if (levelButtons.activeSelf)
+        {
+            levelButtons.SetActive(false);
+        }
+
+        if (!shareButton.interactable)
+        {
+            shareButton.interactable = true;
+        }
+        if (!watchAdsButton.interactable)
+        {
+            watchAdsButton.interactable = true;
+        }
+        if (!homeButton1.interactable)
+        {
+            homeButton1.interactable = true;
+        }
+        if (!homeButton2.interactable)
+        {
+            homeButton2.interactable = true;
+        }
+        if (!replayButton1.interactable)
+        {
+            replayButton1.interactable = true;
         }
     }
 }
