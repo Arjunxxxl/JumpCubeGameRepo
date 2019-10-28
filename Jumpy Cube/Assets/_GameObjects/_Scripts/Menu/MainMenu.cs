@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
 
     [Header("Starting dark canvas")]
     public GameObject startingDarkCanvas;
-    public float disableAfterTime = 1.2f;
+    public float disableAfterTime = 2f;
 
     TimelinePlayer timelinePlayer;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;

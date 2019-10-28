@@ -51,6 +51,9 @@ public class LevelMenu : MonoBehaviour
     int levelNo = 0;
     string levelname = "Level ";
     string finnalName;
+    
+    bool sharing;
+    bool sharingChecker;
 
     #region SingleTon
     public static LevelMenu Instance;
@@ -104,7 +107,30 @@ public class LevelMenu : MonoBehaviour
 
         SetCorrectLevelEndUIButtons();
 
+        sharing = false;
+        sharingChecker = false;
+
         EnableAllButtons();
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (sharing)
+        {
+            if (!pause)
+            {
+                if (sharingChecker)
+                {
+                    missionManager.CheckingForShareScoreMission();
+                }
+                sharing = false;
+                sharingChecker = false;
+            }
+            else
+            {
+                sharingChecker = true;
+            }
+        }
     }
 
     public void CaptureScreenShot()
@@ -200,7 +226,9 @@ public class LevelMenu : MonoBehaviour
 
     public void ShareScreenshotButtonPressed()
     {
-        missionManager.CheckingForShareScoreMission();
+        //missionManager.CheckingForShareScoreMission();
+
+        DisableAllButtons();
 
         Invoke("ShareScreenShotFunction", levelOverMenuCommandExecutionDelay);
     }
@@ -216,7 +244,10 @@ public class LevelMenu : MonoBehaviour
 
         //new method
         new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
+        
+        sharing = true;
 
+        EnableAllButtons();
     }
 
     public void SetCorrectLevelNumber()
@@ -448,6 +479,17 @@ public class LevelMenu : MonoBehaviour
         finnalName = levelname + levelNo;
 
         levelText.text = finnalName;
+    }
+
+    public void WatchAdsForDoubleReward()
+    {
+        DisableAllButtons();
+        Invoke("WatchAdsForDoubleRewardFunction", levelOverMenuCommandExecutionDelay);
+    }
+
+    void WatchAdsForDoubleRewardFunction()
+    {
+        EnableAllButtons();
     }
 
     void DisableAllButtons()

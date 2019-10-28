@@ -41,6 +41,9 @@ public class GameOverMenu : MonoBehaviour
 
     public bool checker;
     bool isProcessing;
+    
+    bool sharing;
+    bool sharingChecker;
 
     Texture2D screenCapture;
 
@@ -92,6 +95,9 @@ public class GameOverMenu : MonoBehaviour
         gameOverMenu.SetActive(false);
         currentTime = 0;
         checker = false;
+
+        sharing = false;
+        sharingChecker = false;
 
         ActivateAllButtons();
     }
@@ -153,6 +159,26 @@ public class GameOverMenu : MonoBehaviour
         
     }
 
+    private void OnApplicationPause(bool pause)
+    {
+        if (sharing)
+        {
+            if (!pause)
+            {
+                if (sharingChecker)
+                {
+                    missionManager.CheckingForShareScoreMission();
+                }
+                sharing = false;
+                sharingChecker = false;
+            }
+            else
+            {
+                sharingChecker = true;
+            }
+        }
+    }
+
     public void CaptureScreenShot()
     {
         StartCoroutine(takeScreenShot());
@@ -191,7 +217,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void ShareScreenshotButtonPressed()
     {
-        missionManager.CheckingForShareScoreMission();
+        //missionManager.CheckingForShareScoreMission();
 
         DisableAllButtons();
 
@@ -209,54 +235,12 @@ public class GameOverMenu : MonoBehaviour
 
         //new method
         new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
-
+        
+        sharing = true;
 
         ActivateAllButtons();
-        //old meathod
-        //StartCoroutine(ShareScreenshot());
     }
-
-    IEnumerator ShareScreenshot()
-    {
-        isProcessing = true;
-
-        if(path == "")
-        {
-#if UNITY_ANDROID
-            path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
-#endif
-#if UNITY_EDITOR
-            path = "ScreenShot.png";
-#endif
-        }
-
-        //yield return null;
-        yield return new WaitForSecondsRealtime(0.3f);
-
-        if (!Application.isEditor)
-        {
-            AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
-            AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
-            intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
-            AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
-            AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + path);
-            intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"),
-                uriObject);
-            intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"),
-                "Can you beat my score?");
-            intentObject.Call<AndroidJavaObject>("setType", "image/jpeg");
-            AndroidJavaClass unity = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-            AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject>("currentActivity");
-            AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser",
-                intentObject, "Share your new score");
-            currentActivity.Call("startActivity", chooser);
-
-            yield return new WaitForSecondsRealtime(1);
-        }
-
-        isProcessing = false;
-    }
-
+    
     public void HomeButton()
     {
         DisableAllButtons();

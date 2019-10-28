@@ -47,47 +47,47 @@ public class TileColorThemeBoughtManager : MonoBehaviour
 
     public void GetColorSchemeUnlockState()
     {
-        if (!colorSchemeUnlocked.Contains(1))
+        if (!colorSchemeUnlocked.Contains(0))
         {
             colorSchemeUnlocked.Add(0);
         }
 
-        if (color_scheme_1 == 1 && !colorSchemeUnlocked.Contains(2))
+        if (color_scheme_1 == 1 && !colorSchemeUnlocked.Contains(1))
         {
             colorSchemeUnlocked.Add(1);
         }
 
-        if (color_scheme_2 == 1 && !colorSchemeUnlocked.Contains(3))
+        if (color_scheme_2 == 1 && !colorSchemeUnlocked.Contains(2))
         {
             colorSchemeUnlocked.Add(2);
         }
 
-        if (color_scheme_3 == 1 && !colorSchemeUnlocked.Contains(4))
+        if (color_scheme_3 == 1 && !colorSchemeUnlocked.Contains(3))
         {
             colorSchemeUnlocked.Add(3);
         }
 
-        if (color_scheme_4 == 1 && !colorSchemeUnlocked.Contains(5))
+        if (color_scheme_4 == 1 && !colorSchemeUnlocked.Contains(4))
         {
             colorSchemeUnlocked.Add(4);
         }
 
-        if (color_scheme_5 == 1 && !colorSchemeUnlocked.Contains(6))
+        if (color_scheme_5 == 1 && !colorSchemeUnlocked.Contains(5))
         {
             colorSchemeUnlocked.Add(5);
         }
 
-        if (color_scheme_6 == 1 && !colorSchemeUnlocked.Contains(7))
+        if (color_scheme_6 == 1 && !colorSchemeUnlocked.Contains(6))
         {
             colorSchemeUnlocked.Add(6);
         }
 
-        if (color_scheme_7 == 1 && !colorSchemeUnlocked.Contains(8))
+        if (color_scheme_7 == 1 && !colorSchemeUnlocked.Contains(7))
         {
             colorSchemeUnlocked.Add(7);
         }
 
-        if (color_scheme_8 == 1 && !colorSchemeUnlocked.Contains(9))
+        if (color_scheme_8 == 1 && !colorSchemeUnlocked.Contains(8))
         {
             colorSchemeUnlocked.Add(8);
         }
