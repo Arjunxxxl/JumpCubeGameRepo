@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
     DistanceScore distanceScore;
     GameModeManager gameModeManager;
     LevelMenu levelMenu;
-
+    
     public bool isLevelCompleted;
 
     GameObject spawnedLandEffect;
@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
         gameModeManager = GameModeManager.Instance;
         levelMenu = LevelMenu.Instance;
 
-        if(!mainCam)
+        if (!mainCam)
         {
             mainCam = Camera.main;
         }

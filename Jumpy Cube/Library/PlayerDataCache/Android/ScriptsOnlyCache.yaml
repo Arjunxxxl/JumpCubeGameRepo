@@ -316,6 +316,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11930}
     - Class: 114
       Script: {instanceID: 11932}
+    - Class: 114
+      Script: {instanceID: 228034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
@@ -1135,7 +1137,7 @@ ScriptsOnlyBuild:
     className: Benchmark03
   - hash:
       serializedVersion: 2
-      Hash: d34082f8d5fed6dd1357c962688b6eb0
+      Hash: 2e0f60eeef224ebdc5eeaf7094b63035
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ButtonClickCommandExecutionDelay

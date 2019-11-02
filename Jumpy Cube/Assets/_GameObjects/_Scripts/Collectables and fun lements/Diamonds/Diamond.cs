@@ -38,7 +38,6 @@ public class Diamond : MonoBehaviour
 
     PlayerMovement playerMovement;
 
-
     void OnEnable()
     {
         if (!overrideShowDiamonds)
@@ -85,6 +84,7 @@ public class Diamond : MonoBehaviour
                 }
 
                 playerMovement = PlayerMovement.Instance;
+
                 playerSpeed = playerMovement.movementSpeed;
 
                 initialPos[i] = new Vector3(diamonds[i].transform.localPosition.x, initialPosY[i], diamonds[i].transform.localPosition.z);
@@ -165,6 +165,7 @@ public class Diamond : MonoBehaviour
                 }
 
                 playerMovement = PlayerMovement.Instance;
+
                 playerSpeed = playerMovement.movementSpeed;
 
                 initialPos[i] = new Vector3(diamonds[i].transform.localPosition.x, initialPosY[i], diamonds[i].transform.localPosition.z);
