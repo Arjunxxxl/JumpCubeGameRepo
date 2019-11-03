@@ -27,6 +27,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_1;
         public Color io_sphereColor_main_1;
         public Color io_sphereColor_change_1;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_1;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_1;
 
         [Header("Color Scheme 2")]
         public Color col_scm_2_1;
@@ -39,6 +43,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_2;
         public Color io_sphereColor_main_2;
         public Color io_sphereColor_change_2;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_2;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_2;
 
         [Header("Color Scheme 3")]
         public Color col_scm_3_1;
@@ -51,6 +59,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_3;
         public Color io_sphereColor_main_3;
         public Color io_sphereColor_change_3;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_3;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_3;
 
         [Header("Color Scheme 4")]
         public Color col_scm_4_1;
@@ -63,6 +75,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_4;
         public Color io_sphereColor_main_4;
         public Color io_sphereColor_change_4;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_4;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_4;
 
         [Header("Color Scheme 5")]
         public Color col_scm_5_1;
@@ -75,6 +91,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_5;
         public Color io_sphereColor_main_5;
         public Color io_sphereColor_change_5;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_5;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_5;
 
         [Header("Color Scheme 6")]
         public Color col_scm_6_1;
@@ -87,6 +107,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_6;
         public Color io_sphereColor_main_6;
         public Color io_sphereColor_change_6;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_6;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_6;
 
         [Header("Color Scheme 7")]
         public Color col_scm_7_1;
@@ -99,6 +123,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_7;
         public Color io_sphereColor_main_7;
         public Color io_sphereColor_change_7;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_7;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_7;
 
         [Header("Color Scheme 8")]
         public Color col_scm_8_1;
@@ -111,6 +139,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_8;
         public Color io_sphereColor_main_8;
         public Color io_sphereColor_change_8;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_8;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_8;
 
         [Header("Color Scheme 9")]
         public Color col_scm_9_1;
@@ -123,6 +155,10 @@ public class SelectColorScheme : MonoBehaviour
         public Color gravityFieldColor_9;
         public Color io_sphereColor_main_9;
         public Color io_sphereColor_change_9;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeTrailColor_9;
+        [ColorUsage(true, true)]
+        public Color shootingSpikeParticleColor_9;
     }
     [SerializeField]
     public ColorScheme colorScheme; 
@@ -134,11 +170,13 @@ public class SelectColorScheme : MonoBehaviour
     public Material[] ceil;
     public Material spikesMaterial;
     public Material[] gravityFieldMat;
+    public Material shootingSpikeTrailMat;
+    public Material shootingSpikeParticleMat;
 
     [Header("Particle System")]
     public ParticleSystem landParticleSystem;
     public List<ParticleSystem> landParticleSystems;
-
+    
     [Header("Data for io sphere color changer script")]
     public Shader ioSphereShader;
     public Color ioSphereMainColor;
@@ -224,6 +262,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_1);
             }
+            
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_1);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_1);
         }
         else if (selectedColorScheme == 1)
         {
@@ -264,6 +305,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_2);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_2);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_2);
         }
         else if (selectedColorScheme == 2)
         {
@@ -304,6 +348,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_3);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_3);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_3);
         }
         else if (selectedColorScheme == 3)
         {
@@ -344,6 +391,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_4);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_4);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_4);
         }
         else if (selectedColorScheme == 4)
         {
@@ -384,6 +434,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_5);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_5);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_5);
         }
         else if (selectedColorScheme == 5)
         {
@@ -424,6 +477,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_6);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_6);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_6);
         }
         else if (selectedColorScheme == 6)
         {
@@ -464,6 +520,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_7);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_7);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_7);
         }
         else if (selectedColorScheme == 7)
         {
@@ -504,6 +563,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_8);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_8);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_8);
         }
         else if (selectedColorScheme == 8)
         {
@@ -544,6 +606,9 @@ public class SelectColorScheme : MonoBehaviour
             {
                 mat.SetColor("_EmissionColor", colorScheme.gravityFieldColor_9);
             }
+
+            shootingSpikeTrailMat.SetColor("_EmissionColor", colorScheme.shootingSpikeTrailColor_9);
+            shootingSpikeParticleMat.SetColor("_EmissionColor", colorScheme.shootingSpikeParticleColor_9);
         }
     }
 
