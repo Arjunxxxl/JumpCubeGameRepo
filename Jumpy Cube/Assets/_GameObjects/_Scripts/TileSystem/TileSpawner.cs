@@ -43,6 +43,8 @@ public class TileSpawner : MonoBehaviour
     int tilesOnScreen;
     bool isTutorialActive;
 
+    float playerX;
+
     TilePool tilePool;
     DistanceScore distanceScore;
     GameModeManager gameModeManager;
@@ -138,7 +140,10 @@ public class TileSpawner : MonoBehaviour
 
         Check_if_TireCompleted();
 
-        if (Mathf.Abs(player.transform.position.x) - safeZone > (spawnX - (maxTilesOnScreen * tileLength)))
+        playerX = player.transform.position.x >= 0 ? player.transform.position.x : player.transform.position.x * -1;
+
+        //if (Mathf.Abs(player.transform.position.x) - safeZone > (spawnX - (maxTilesOnScreen * tileLength)))
+        if (playerX - safeZone > (spawnX - (maxTilesOnScreen * tileLength)))
         {
             if (tilesOnScreen >= maxTilesOnScreen)
             {

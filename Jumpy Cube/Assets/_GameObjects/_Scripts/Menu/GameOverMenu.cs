@@ -19,6 +19,12 @@ public class GameOverMenu : MonoBehaviour
     public GameObject endless_Buttons;
     public GameObject levelButtons;
 
+    [Header("watch ads and share button")]
+    public GameObject disableWatchAdsPannel_button;
+    public GameObject disableSharePannel_button;
+    public GameObject disableWatchAdsPannel;
+    public GameObject disableSharePannel;
+
     [Header("Revival Screen Total Diamonds")]
     public TMP_Text rivivalTotalDiamonds;
 
@@ -56,7 +62,7 @@ public class GameOverMenu : MonoBehaviour
     DiamondScore diamondScore;
     GameModeManager gameModeManager;
     RevivePlayer revivePlayer;
-    
+    CustomAdManager customAdManager;
 
     #region SingleTon
     public static GameOverMenu Instance;
@@ -84,6 +90,7 @@ public class GameOverMenu : MonoBehaviour
         diamondScore = DiamondScore.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         gameModeManager = GameModeManager.Instance;
+        customAdManager = CustomAdManager.Instance;
 
         if(!revivePlayer)
         {
@@ -98,6 +105,11 @@ public class GameOverMenu : MonoBehaviour
 
         sharing = false;
         sharingChecker = false;
+
+        disableWatchAdsPannel_button.SetActive(false);
+        disableSharePannel_button.SetActive(false);
+        disableWatchAdsPannel.SetActive(false);
+        disableSharePannel.SetActive(false);
 
         ActivateAllButtons();
     }
@@ -167,7 +179,8 @@ public class GameOverMenu : MonoBehaviour
             {
                 if (sharingChecker)
                 {
-                    missionManager.CheckingForShareScoreMission();
+                    //missionManager.CheckingForShareScoreMission();
+                    StartCoroutine("CheckForShareReward");
                 }
                 sharing = false;
                 sharingChecker = false;
@@ -250,11 +263,12 @@ public class GameOverMenu : MonoBehaviour
     void HomeButtonFunction()
     {
         gameModeManager.gameMode = GameModeManager.GameMode.endless;
-        gameModeManager.isGameRestarted = false;
-        
-        ActivateAllButtons();
+            gameModeManager.isGameRestarted = false;
 
-        loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+            ActivateAllButtons();
+
+            loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+        
     }
     
     public void WatchAdsForDoubleReward()
@@ -265,6 +279,7 @@ public class GameOverMenu : MonoBehaviour
 
     void WatchAdsForDoubleRewardFunction()
     {
+        customAdManager.ShowRewardingAds_DoubleReward();
         ActivateAllButtons();
     }
 
@@ -334,5 +349,11 @@ public class GameOverMenu : MonoBehaviour
         {
             replayButton1.interactable = true;
         }
+    }
+
+    IEnumerator CheckForShareReward()
+    {
+        yield return new WaitForEndOfFrame();
+        missionManager.CheckingForShareScoreMission();
     }
 }

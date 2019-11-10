@@ -48,6 +48,7 @@ public class MainMenu : MonoBehaviour
     MissionManager missionManager;
     SavedData savedData;
     LevelMenu levelMenu;
+    CustomAdManager customAdManager;
 
     #region SingleTon
     public static MainMenu Instance;
@@ -79,6 +80,7 @@ public class MainMenu : MonoBehaviour
         missionManager = MissionManager.Instance;
         savedData = SavedData.Instance;
         levelMenu = LevelMenu.Instance;
+        customAdManager = CustomAdManager.Instance;
 
         commandExecuationDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
         
@@ -165,6 +167,11 @@ public class MainMenu : MonoBehaviour
         
         missionManager.CheckingForTimesGamePlayedMission();
         savedData.UpdateTimesGamePlayed();
+
+        if (customAdManager != null)
+        {
+            customAdManager.UpdatePlayCount();
+        }
     }
 
     IEnumerator DisableMainMenuWithDelay()
@@ -296,6 +303,8 @@ public class MainMenu : MonoBehaviour
         
         missionManager.CheckingForTimesGamePlayedMission();
         savedData.UpdateTimesGamePlayed();
+
+        customAdManager.UpdatePlayCount();
     }
 
     public void Play_Level()
@@ -323,6 +332,8 @@ public class MainMenu : MonoBehaviour
         
         missionManager.CheckingForTimesGamePlayedMission();
         savedData.UpdateTimesGamePlayed();
+
+        customAdManager.UpdatePlayCount();
     }
 
     IEnumerator StartGameWithDelay()

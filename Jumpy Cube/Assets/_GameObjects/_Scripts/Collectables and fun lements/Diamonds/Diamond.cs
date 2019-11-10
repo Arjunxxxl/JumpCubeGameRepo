@@ -36,6 +36,10 @@ public class Diamond : MonoBehaviour
     
     Vector3 tempAngle;
 
+    int i;
+    int _i1;
+    float val;
+
     PlayerMovement playerMovement;
 
     void OnEnable()
@@ -68,15 +72,15 @@ public class Diamond : MonoBehaviour
 
             finalPosReached = new bool[totalDiamonds];
 
-            for (int i = 0; i < totalDiamonds; i++)
+            for (_i1 = 0; _i1 < totalDiamonds; _i1++)
             {
-                if (!diamonds[i].activeSelf)
+                if (!diamonds[_i1].activeSelf)
                 {
-                    diamonds[i].SetActive(true);
+                    diamonds[_i1].SetActive(true);
                 }
 
-                tempAngle.y = i * angleOffset;
-                diamonds[i].transform.localRotation = Quaternion.Euler(tempAngle);
+                tempAngle.y = _i1 * angleOffset;
+                diamonds[_i1].transform.localRotation = Quaternion.Euler(tempAngle);
 
                 if (!player)
                 {
@@ -87,19 +91,23 @@ public class Diamond : MonoBehaviour
 
                 playerSpeed = playerMovement.movementSpeed;
 
-                initialPos[i] = new Vector3(diamonds[i].transform.localPosition.x, initialPosY[i], diamonds[i].transform.localPosition.z);
-                finalPos[i] = new Vector3(diamonds[i].transform.localPosition.x, FinalPosY[i], diamonds[i].transform.localPosition.z);
-                diamonds[i].transform.localPosition = initialPos[i];
+                initialPos[_i1] = new Vector3(diamonds[_i1].transform.localPosition.x, initialPosY[_i1], diamonds[_i1].transform.localPosition.z);
+                finalPos[_i1] = new Vector3(diamonds[_i1].transform.localPosition.x, FinalPosY[_i1], diamonds[_i1].transform.localPosition.z);
+                diamonds[_i1].transform.localPosition = initialPos[_i1];
 
-                if (Mathf.Abs(diamonds[i].transform.position.x - player.position.x) < offSet)
+                val = (diamonds[_i1].transform.position.x - player.transform.position.x) > 0 ?
+                            (diamonds[_i1].transform.position.x - player.transform.position.x) :
+                            (player.transform.position.x - diamonds[_i1].transform.position.x);
+
+                if (val < offSet)
                 {
-                    diamonds[i].transform.localPosition = finalPos[i];
+                    diamonds[_i1].transform.localPosition = finalPos[_i1];
 
-                    finalPosReached[i] = true;
+                    finalPosReached[_i1] = true;
                 }
                 else
                 {
-                    finalPosReached[i] = false;
+                    finalPosReached[_i1] = false;
                 }
             }
 
@@ -108,11 +116,11 @@ public class Diamond : MonoBehaviour
         {
             totalDiamonds = diamonds.Length;
 
-            for (int i = 0; i < totalDiamonds; i++)
+            for (_i1 = 0; _i1 < totalDiamonds; _i1++)
             {
-                if (diamonds[i].activeSelf)
+                if (diamonds[_i1].activeSelf)
                 {
-                    diamonds[i].SetActive(false);
+                    diamonds[_i1].SetActive(false);
                 }
             }
         }
@@ -149,15 +157,15 @@ public class Diamond : MonoBehaviour
 
             finalPosReached = new bool[totalDiamonds];
 
-            for (int i = 0; i < totalDiamonds; i++)
+            for (_i1 = 0; _i1 < totalDiamonds; _i1++)
             {
-                if (!diamonds[i].activeSelf)
+                if (!diamonds[_i1].activeSelf)
                 {
-                    diamonds[i].SetActive(true);
+                    diamonds[_i1].SetActive(true);
                 }
 
-                tempAngle.y = i * angleOffset;
-                diamonds[i].transform.localRotation = Quaternion.Euler(tempAngle);
+                tempAngle.y = _i1 * angleOffset;
+                diamonds[_i1].transform.localRotation = Quaternion.Euler(tempAngle);
 
                 if (!player)
                 {
@@ -168,19 +176,23 @@ public class Diamond : MonoBehaviour
 
                 playerSpeed = playerMovement.movementSpeed;
 
-                initialPos[i] = new Vector3(diamonds[i].transform.localPosition.x, initialPosY[i], diamonds[i].transform.localPosition.z);
-                finalPos[i] = new Vector3(diamonds[i].transform.localPosition.x, FinalPosY[i], diamonds[i].transform.localPosition.z);
-                diamonds[i].transform.localPosition = initialPos[i];
+                initialPos[_i1] = new Vector3(diamonds[_i1].transform.localPosition.x, initialPosY[_i1], diamonds[_i1].transform.localPosition.z);
+                finalPos[_i1] = new Vector3(diamonds[_i1].transform.localPosition.x, FinalPosY[_i1], diamonds[_i1].transform.localPosition.z);
+                diamonds[_i1].transform.localPosition = initialPos[_i1];
 
-                if (Mathf.Abs(diamonds[i].transform.position.x - player.position.x) < offSet)
+                val = (diamonds[_i1].transform.position.x - player.transform.position.x) > 0 ?
+                            (diamonds[_i1].transform.position.x - player.transform.position.x) :
+                            (player.transform.position.x - diamonds[_i1].transform.position.x);
+
+                if (val < offSet)
                 {
-                    diamonds[i].transform.localPosition = finalPos[i];
+                    diamonds[_i1].transform.localPosition = finalPos[_i1];
 
-                    finalPosReached[i]= true;
+                    finalPosReached[_i1] = true;
                 }
                 else
                 {
-                    finalPosReached[i] = false;
+                    finalPosReached[_i1] = false;
                 }
             }
 
@@ -189,11 +201,11 @@ public class Diamond : MonoBehaviour
         {
             totalDiamonds = diamonds.Length;
 
-            for (int i = 0; i < totalDiamonds; i++)
+            for (_i1 = 0; _i1 < totalDiamonds; _i1++)
             {
-                if (diamonds[i].activeSelf)
+                if (diamonds[_i1].activeSelf)
                 {
-                    diamonds[i].SetActive(false);
+                    diamonds[_i1].SetActive(false);
                 }
             }
         }
@@ -204,7 +216,7 @@ public class Diamond : MonoBehaviour
     {
         if(showDiamonds)
         {
-            for (int i = 0; i < totalDiamonds; i++)
+            for (i = 0; i < totalDiamonds; i++)
             {
                 diamonds[i].transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
 
@@ -215,7 +227,11 @@ public class Diamond : MonoBehaviour
                         finalPosReached[i] = true;
                     }
 
-                    if (Mathf.Abs(diamonds[i].transform.position.x - player.transform.position.x) < offSet)
+                    val = (diamonds[i].transform.position.x - player.transform.position.x) > 0 ?
+                            (diamonds[i].transform.position.x - player.transform.position.x) :
+                            (player.transform.position.x - diamonds[i].transform.position.x);
+
+                    if (val < offSet)
                     {
                         playerSpeed = playerMovement.movementSpeed;
                         diamonds[i].transform.localPosition = Vector3.MoveTowards(diamonds[i].transform.localPosition, finalPos[i], Time.deltaTime * speed * playerSpeed);

@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
     PlayerDeath playerDeath;
     GameModeManager gameModeManager;
     PlayerMovement playerMovement;
+    CustomAdManager customAdManager;
 
     #region SingleTon
     public static PauseMenu Instance;
@@ -57,6 +58,7 @@ public class PauseMenu : MonoBehaviour
         playerDeath = PlayerDeath.Instance;
         gameModeManager = GameModeManager.Instance;
         playerMovement = PlayerMovement.Instance;
+        customAdManager = CustomAdManager.Instance;
 
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(false);
@@ -85,6 +87,11 @@ public class PauseMenu : MonoBehaviour
         if(pause && mainMenu.isGameStart && !playerDeath.isDead //&& (!gameModeManager.isTutorialActive || gameModeManager.gameMode == GameModeManager.GameMode.level)
             && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
         {
+            if (customAdManager)
+            {
+                customAdManager.RequestBannerAds_Instantly();
+            }
+
             PauseGameFunction();
         }
     }
@@ -94,6 +101,11 @@ public class PauseMenu : MonoBehaviour
         if(!focus && mainMenu.isGameStart && !playerDeath.isDead //&& (!gameModeManager.isTutorialActive || gameModeManager.gameMode == GameModeManager.GameMode.level)
             && !playerMovement.isLevelCompleted && !resumeDelayCounter.activeSelf)
         {
+            if (customAdManager)
+            {
+                customAdManager.RequestBannerAds_Instantly();
+            }
+
             PauseGameFunction();
         }
     }

@@ -72,10 +72,20 @@ public class Store : MonoBehaviour
     int diamondsSpend;
 
     CubeBoughtManager.CubeType previousType;
-    
 
+    #region SingleTon
+    public static Store Instance;
     private void Awake()
     {
+        if(!Instance)
+        {
+            Instance = this;
+        }
+        else if(Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
         ownedDiamonds = diamondScore.GetDiamonds();
         inGameCollectedDiamonds = diamondScore.GetInGameCollectedDiamonds();
         ownedDiamondTxt.text = ownedDiamonds + "";
@@ -86,7 +96,7 @@ public class Store : MonoBehaviour
         totalColorScheme = tileColorThemeBoughtManager.totalColorScheme;
         totalMissionCubes = cubeBoughtManager.totalMissionCubes;
     }
-
+    #endregion
 
     public void SetStoreButton(bool _override = false)
     {

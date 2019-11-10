@@ -83,6 +83,8 @@ public class PlayerSpawner : MonoBehaviour
     int i;
     int totalMat;
 
+    string cubeMatColorStr = "Vector1_D57CEFD5";
+
     #region SingleTon
     public static PlayerSpawner Instance;
     private void Awake()
@@ -152,11 +154,11 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.common)
         {
-            playerMaterial.SetFloat("Vector1_D57CEFD5", disolveEffect);
+            playerMaterial.SetFloat(cubeMatColorStr, disolveEffect);
         }
         else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.rare)
         {
-            rareCubeMat.commonMat.SetFloat("Vector1_D57CEFD5", disolveEffect);
+            rareCubeMat.commonMat.SetFloat(cubeMatColorStr, disolveEffect);
 
             switch (cubeBoughtManager.selectedCubeIndex)
             {
@@ -169,13 +171,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat1[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat1[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -188,13 +190,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat2[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat2[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -206,13 +208,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat3[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat3[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -224,13 +226,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat4[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat4[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -242,13 +244,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat5[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat5[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -260,13 +262,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat6[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat6[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -278,13 +280,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat7[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat7[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -296,13 +298,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat8[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat8[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -314,13 +316,13 @@ public class PlayerSpawner : MonoBehaviour
                     else totalMat = rareCubeMat.rareMat9.Length;
                     if (totalMat == 1)
                     {
-                        rareCubeMat.rareMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        rareCubeMat.rareMat9[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            rareCubeMat.rareMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            rareCubeMat.rareMat9[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -328,7 +330,7 @@ public class PlayerSpawner : MonoBehaviour
         }
         else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.legendary)
         {
-            legendaryCubeMat.commonMat.SetFloat("Vector1_D57CEFD5", disolveEffect);
+            legendaryCubeMat.commonMat.SetFloat(cubeMatColorStr, disolveEffect);
 
             switch (cubeBoughtManager.selectedCubeIndex)
             {
@@ -340,13 +342,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat1[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat1[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -359,13 +361,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat2[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat2[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -377,13 +379,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat3[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat3[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -395,13 +397,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat4[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat4[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -413,13 +415,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat5[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat5[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -431,13 +433,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat6[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat6[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -449,13 +451,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat7[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat7[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -467,13 +469,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat8[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat8[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -485,13 +487,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        legendaryCubeMat.legendaryMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        legendaryCubeMat.legendaryMat9[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            legendaryCubeMat.legendaryMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            legendaryCubeMat.legendaryMat9[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -499,7 +501,7 @@ public class PlayerSpawner : MonoBehaviour
         }
         else if (cubeBoughtManager.selectedCubeType == CubeBoughtManager.CubeType.mission_cube)
         {
-            missionCubeMat.commonMat.SetFloat("Vector1_D57CEFD5", disolveEffect);
+            missionCubeMat.commonMat.SetFloat(cubeMatColorStr, disolveEffect);
 
             switch (cubeBoughtManager.selectedCubeIndex)
             {
@@ -511,13 +513,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat1[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat1[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat1[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat1[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -530,13 +532,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat2[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat2[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat2[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat2[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -548,13 +550,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat3[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat3[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat3[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat3[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -566,13 +568,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat4[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat4[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat4[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat4[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -584,13 +586,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat5[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat5[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat5[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat5[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -602,13 +604,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat6[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat6[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat6[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat6[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -620,13 +622,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat7[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat7[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat7[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat7[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -638,13 +640,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat8[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat8[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat8[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat8[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;
@@ -656,13 +658,13 @@ public class PlayerSpawner : MonoBehaviour
                     }
                     else if (totalMat == 1)
                     {
-                        missionCubeMat.missionMat9[0].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                        missionCubeMat.missionMat9[0].SetFloat(cubeMatColorStr, disolveEffect);
                     }
                     else
                     {
                         for (i = 0; i < totalMat; i++)
                         {
-                            missionCubeMat.missionMat9[i].SetFloat("Vector1_D57CEFD5", disolveEffect);
+                            missionCubeMat.missionMat9[i].SetFloat(cubeMatColorStr, disolveEffect);
                         }
                     }
                     break;

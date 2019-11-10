@@ -60,6 +60,22 @@ public class RevivePlayer : MonoBehaviour
     CustomStrings customStrings;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     PlayerKiller playerKiller;
+    CustomAdManager customAdManager;
+
+    #region SingleTon
+    public static RevivePlayer Instance;
+    private void Awake()
+    {
+        if(!Instance)
+        {
+            Instance = this;
+        }
+        else if(Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +90,7 @@ public class RevivePlayer : MonoBehaviour
         customStrings = CustomStrings.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         playerKiller = PlayerKiller.Instance;
+        customAdManager = CustomAdManager.Instance;
 
         reviveScreenCommandExecutionDelay = buttonClickCommandExecutionDelay.revivalMenuCommandExecutionDelay;
 
@@ -117,7 +134,21 @@ public class RevivePlayer : MonoBehaviour
     public void ReviePlayerFunction()
     {
         DisableAllButtons();
+
         Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
+    }
+
+    public void ReviePlayerFunction_Ads()
+    {
+        DisableAllButtons();
+
+        Invoke("WatchAds_Function", reviveScreenCommandExecutionDelay);
+    }
+
+    void WatchAds_Function()
+    {
+        customAdManager.ShowRewardingAds_ExtraLife();
+        EnableAllButtons();
     }
 
     void RevivePlayer_Function()
@@ -151,6 +182,8 @@ public class RevivePlayer : MonoBehaviour
             playerSpawner.isDisolveEffectDone = false;
             playerSpawner.disolveEffect = 0;
         }
+        
+        EnableAllButtons();
     }
 
     public void SkipRevivalMenuButton()

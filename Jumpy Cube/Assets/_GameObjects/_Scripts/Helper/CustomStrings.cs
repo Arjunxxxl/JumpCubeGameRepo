@@ -183,4 +183,16 @@ public class CustomStrings : MonoBehaviour
     public string LevelComplete53 = "LevelComplete53";
     public string LevelComplete54 = "LevelComplete54";
     #endregion
+
+    #region LOADING ADS STRINGS
+    public string play_count_for_interstialAds = "PLAY COUNT FOR INTERSTIAL ADS";
+    #endregion
+
+    #region SOCAL MEDIA STRINGS
+    public string FACEBOOK_REWARD = "FACEBOOK REWARD";
+    public string RATE_REWARD = "RATE REWARD";
+    public string INSTAGRAM_REWARD = "INSTAGRAM REWARD";
+    public string YOUTUBE_REWARD = "YOUTUBE REWARD";
+    public string SHARE_REWARD = "SHARE REWARD";
+    #endregion
 }

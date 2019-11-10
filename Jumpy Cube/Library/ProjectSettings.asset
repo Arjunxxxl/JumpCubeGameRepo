@@ -806,10 +806,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 270d6ae5-a11a-4db5-ad54-13b6428bcd75
   framebufferDepthMemorylessMode: 0
-  projectName: EffectsExamples
-  organizationId: 
+  projectName: JumpCubeGame
+  organizationId: greenleafgames02
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
