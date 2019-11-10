@@ -19,8 +19,14 @@ public class InGameMenu : MonoBehaviour
     public TMP_Text diamondsTxt;
     public TMP_Text averageScoreTxt;
     int currentScore;
-    int currentDiamonds;
+    public int currentDiamonds;
     float averageScore;
+
+    [Header("watch ads and share button - level end menu")]
+    public GameObject levelEnd_disableWatchAdsPannel_button;
+    public GameObject levelEnd_disableWatchAdsPannel;
+    public GameObject levelEnd_disableSharePannel_button;
+    public GameObject levelEnd_disableSharePannel;
 
     [Header("Data")]
     public float levelCompeleteMenuDelay = 3.5f;
@@ -94,6 +100,11 @@ public class InGameMenu : MonoBehaviour
         highScore = PlayerPrefs.GetInt(customStrings.HIGHSCORE, 0);
         diamondBest = PlayerPrefs.GetInt(customStrings.DIAMONDS_COLLECTED_IN_ONE_RUN1, 0);
         averageBest = (int)PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
+
+        levelEnd_disableSharePannel_button.SetActive(false);
+        levelEnd_disableSharePannel.SetActive(false);
+        levelEnd_disableWatchAdsPannel_button.SetActive(false);
+        levelEnd_disableWatchAdsPannel.SetActive(false);
     }
 
     // Update is called once per frame

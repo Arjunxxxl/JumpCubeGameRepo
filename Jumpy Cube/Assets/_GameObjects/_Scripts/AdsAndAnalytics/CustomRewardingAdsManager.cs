@@ -13,6 +13,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
     bool isStoreAdShowing;
     bool isExtraLifeAdShowing;
     bool isDoubleRewardAdShowing;
+    bool isDoubleRewardAdShowing_levelEnd;
 
     string adUnitId;
 
@@ -20,6 +21,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
     Store store;
     RevivePlayer revivePlayer;
     GameOverMenu gameOverMenu;
+    InGameMenu inGameMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
         store = Store.Instance;
         revivePlayer = RevivePlayer.Instance;
         gameOverMenu = GameOverMenu.Instance;
+        inGameMenu = InGameMenu.Instance;
 
         adUnitId = "ca-app-pub-3940256099942544/5224354917";
 
@@ -38,6 +41,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
         isStoreAdShowing = false;
         isExtraLifeAdShowing = false;
         isDoubleRewardAdShowing = false;
+        isDoubleRewardAdShowing_levelEnd = false;
     }
 
     private RewardedAd RequestRewardingAds(string adUnitId)
@@ -96,6 +100,15 @@ public class CustomRewardingAdsManager : MonoBehaviour
         }
     }
 
+    public void ShowRewardingAds_DoubleReward_LevelEnd()
+    {
+        if (this.rewardedAd_doubleReward.IsLoaded())
+        {
+            isDoubleRewardAdShowing_levelEnd = true;
+            this.rewardedAd_doubleReward.Show();
+        }
+    }
+
     #region RewardingAds Events
 
     public void HandleRewardedAdLoaded(object sender, EventArgs args)
@@ -145,6 +158,13 @@ public class CustomRewardingAdsManager : MonoBehaviour
             rewardedAd_doubleReward = RequestRewardingAds(adUnitId);
             
             isDoubleRewardAdShowing = false;
+        }
+
+        if (isDoubleRewardAdShowing_levelEnd)
+        {
+            rewardedAd_doubleReward = RequestRewardingAds(adUnitId);
+
+            isDoubleRewardAdShowing_levelEnd = false;
         }
     }
 
@@ -196,6 +216,22 @@ public class CustomRewardingAdsManager : MonoBehaviour
             
             revivePlayer.currentDiamondsTxt.text = revivePlayer.currentDiamonds * 2 + " ";
             
+        }
+
+        if (isDoubleRewardAdShowing_levelEnd)
+        {
+            if (!inGameMenu)
+            {
+                inGameMenu = InGameMenu.Instance;
+            }
+
+            inGameMenu.levelEnd_disableWatchAdsPannel_button.SetActive(true);
+            inGameMenu.levelEnd_disableWatchAdsPannel.SetActive(true);
+
+            diamondScore.SaveDiamondsCollected(inGameMenu.currentDiamonds, true);
+
+            inGameMenu.diamondsTxt.text = inGameMenu.currentDiamonds * 2 + " ";
+
         }
     }
     #endregion

@@ -18,6 +18,7 @@ public class LevelMenu : MonoBehaviour
     public string path;
     public float screenShotDelay = 1f;
     public float screenshotDiaplayDelay = 2.5f;
+    int shareDiamondReward = 50;
 
     [Header("Level Mode Button parents")]
     public GameObject normalButtons;
@@ -40,6 +41,9 @@ public class LevelMenu : MonoBehaviour
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     MissionManager missionManager;
     CustomStrings customStrings;
+    DiamondScore diamondScore;
+    InGameMenu inGameMenu;
+    CustomAdManager customAdManager;
 
     float levelMenuCommandExecutionDelay;
     float levelOverMenuCommandExecutionDelay;
@@ -87,6 +91,9 @@ public class LevelMenu : MonoBehaviour
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         missionManager = MissionManager.Instance;
         customStrings = CustomStrings.Instance;
+        diamondScore = DiamondScore.Instance;
+        inGameMenu = InGameMenu.Instance;
+        customAdManager = CustomAdManager.Instance;
 
         levelNo = 0;
         finnalName = levelname + levelNo;
@@ -121,7 +128,8 @@ public class LevelMenu : MonoBehaviour
             {
                 if (sharingChecker)
                 {
-                    missionManager.CheckingForShareScoreMission();
+                    //missionManager.CheckingForShareScoreMission();
+                    StartCoroutine("CheckForShareReward");
                 }
                 sharing = false;
                 sharingChecker = false;
@@ -489,6 +497,7 @@ public class LevelMenu : MonoBehaviour
 
     void WatchAdsForDoubleRewardFunction()
     {
+        customAdManager.ShowRewardingAds_DoubleReward_LevelEndMenu();
         EnableAllButtons();
     }
 
@@ -554,6 +563,19 @@ public class LevelMenu : MonoBehaviour
         {
             nextButton.interactable = true;
         }
+    }
+
+    IEnumerator CheckForShareReward()
+    {
+        yield return new WaitForEndOfFrame();
+        missionManager.CheckingForShareScoreMission();
+
+        diamondScore.SaveDiamondsCollected(shareDiamondReward, true);
+
+        inGameMenu.diamondsTxt.text = inGameMenu.currentDiamonds + shareDiamondReward + " ";
+
+        inGameMenu.levelEnd_disableSharePannel_button.SetActive(true);
+        inGameMenu.levelEnd_disableSharePannel.SetActive(true);
     }
 
     ///

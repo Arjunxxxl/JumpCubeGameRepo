@@ -8,7 +8,8 @@ public class CustomAdManager : MonoBehaviour
     float inGameMenuDelay;
     float revivalMenuDelay;
     float gameoverMenuDelay;
-    
+
+    float delayToShowBannerAds_LevelEnd = 1.5f;
 
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     CustomBannerAdsManager customBannerAds;
@@ -116,6 +117,11 @@ public class CustomAdManager : MonoBehaviour
     {
         customBannerAds.DestroyTopBanner();
     }
+
+    public void ShowBannerAds_Top_LevelEnd()
+    {
+        Invoke("RequestTopBanners_Gameover_Function", delayToShowBannerAds_LevelEnd);
+    }
     #endregion
 
     #region INTERSTIAL ADS
@@ -167,6 +173,11 @@ public class CustomAdManager : MonoBehaviour
     public void ShowRewardingAds_DoubleReward()
     {
         customRewardingAdsManager.ShowRewardingAds_DoubleReward();
+    }
+
+    public void ShowRewardingAds_DoubleReward_LevelEndMenu()
+    {
+        customRewardingAdsManager.ShowRewardingAds_DoubleReward_LevelEnd(); 
     }
     #endregion
 }

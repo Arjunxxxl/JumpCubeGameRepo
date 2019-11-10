@@ -24,6 +24,7 @@ public class GameOverMenu : MonoBehaviour
     public GameObject disableSharePannel_button;
     public GameObject disableWatchAdsPannel;
     public GameObject disableSharePannel;
+    int shareDiamondReward = 50;
 
     [Header("Revival Screen Total Diamonds")]
     public TMP_Text rivivalTotalDiamonds;
@@ -355,5 +356,12 @@ public class GameOverMenu : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         missionManager.CheckingForShareScoreMission();
+
+        diamondScore.SaveDiamondsCollected(shareDiamondReward, true);
+
+        revivePlayer.currentDiamondsTxt.text = revivePlayer.currentDiamonds + shareDiamondReward + " ";
+
+        disableSharePannel_button.SetActive(true);
+        disableSharePannel.SetActive(true);
     }
 }

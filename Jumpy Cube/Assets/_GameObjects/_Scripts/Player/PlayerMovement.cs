@@ -87,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     DistanceScore distanceScore;
     GameModeManager gameModeManager;
     LevelMenu levelMenu;
+    CustomAdManager customAdManager;
     
     public bool isLevelCompleted;
 
@@ -134,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
         distanceScore = DistanceScore.Instance;
         gameModeManager = GameModeManager.Instance;
         levelMenu = LevelMenu.Instance;
+        customAdManager = CustomAdManager.Instance;
 
         if (!mainCam)
         {
@@ -431,6 +433,8 @@ public class PlayerMovement : MonoBehaviour
                 distanceScore.IsLevelCompleted = true;
                 inGameMenu.ActivateLevelEndMenu();
                 levelMenu.CaptureScreenShot();
+
+                customAdManager.ShowBannerAds_Top_LevelEnd();
             }
         }
 
