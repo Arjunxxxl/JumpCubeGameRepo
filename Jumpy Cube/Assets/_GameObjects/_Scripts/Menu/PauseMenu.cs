@@ -20,6 +20,9 @@ public class PauseMenu : MonoBehaviour
 
     public bool isPaused;
 
+    [SerializeField]
+    bool checkToShowAds;
+
     TimelinePlayer timelinePlayer;
     LoadLevel loadLevel;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
@@ -71,6 +74,7 @@ public class PauseMenu : MonoBehaviour
         commandExecutionDelay_inGame = buttonClickCommandExecutionDelay.ingameMenuCommandExecutionDelay;
         commandExecutionDelay_pauseMenu = buttonClickCommandExecutionDelay.pauseMenuCommndExecutionDelay;
 
+        checkToShowAds = false;
     }
 
     private void Update()
@@ -112,6 +116,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        checkToShowAds = customAdManager.Check_To_ShowAds();
         Invoke("PauseGameFunction", commandExecutionDelay_inGame);
     }
 
@@ -163,6 +168,15 @@ public class PauseMenu : MonoBehaviour
 
     public void HomeButton()
     {
+        if (!checkToShowAds)
+        {
+            Debug.Log("Pause Home");
+            StartCoroutine(HomeButtonFunction());
+        }
+    }
+
+    public void HomeButton_InterstitialAdClosed()
+    {
         StartCoroutine(HomeButtonFunction());
     }
 
@@ -175,6 +189,14 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void RestartGame()
+    {
+        if (!checkToShowAds)
+        {
+            StartCoroutine(RestartButtonFunction());
+        }
+    }
+
+    public void RestartGame_InterstitialAdClosed()
     {
         StartCoroutine(RestartButtonFunction());
     }

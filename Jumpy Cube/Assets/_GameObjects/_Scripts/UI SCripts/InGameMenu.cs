@@ -111,10 +111,13 @@ public class InGameMenu : MonoBehaviour
     void Update()
     {
         if (!isMenuActivated)
-        {
+        { 
             if (playerSpawner.isDisolveEffectDone)
             {
-                inGameMenu.SetActive(true);
+                if (!inGameMenu.activeSelf)
+                {
+                    inGameMenu.SetActive(true);
+                }
                 isMenuActivated = true;
 
                 timelinePlayer.PlayIngameMenuActivated();

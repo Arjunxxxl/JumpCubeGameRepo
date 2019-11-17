@@ -11,6 +11,8 @@ public class GameModeManager : MonoBehaviour
 
     public LevelNumbers currentLevel;
     public LevelNumbers nextLevel;
+
+    public int showStartingCanvas;
     
     #region SingleTon
     public static GameModeManager Instance;
@@ -27,6 +29,8 @@ public class GameModeManager : MonoBehaviour
         
         gameMode = GameMode.endless;
         isGameRestarted = false;
+
+        showStartingCanvas = 0;
     }
     #endregion
 

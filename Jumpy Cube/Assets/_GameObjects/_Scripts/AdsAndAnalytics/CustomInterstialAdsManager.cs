@@ -11,20 +11,49 @@ public class CustomInterstialAdsManager : MonoBehaviour
     [SerializeField]
     int currentPlayCount;
 
+    [SerializeField]
+    bool restartBool;
+    [SerializeField]
+    bool homeBool;
+    [SerializeField]
+    bool gamOver_home_Bool;
+    [SerializeField]
+    bool gamOver_replay_Bool;
+    [SerializeField]
+    bool levelComplete_home_Bool;
+    [SerializeField]
+    bool levelComplete_replay_Bool;
+    [SerializeField]
+    bool levelComplete_next_Bool;
+
     private InterstitialAd interstitial;
 
     CustomStrings customStrings;
+    GameOverMenu gameOverMenu;
+    LevelMenu levelMenu;
+    PauseMenu pauseMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         customStrings = CustomStrings.Instance;
+        gameOverMenu = GameOverMenu.Instance;
+        levelMenu = LevelMenu.Instance;
+        pauseMenu = PauseMenu.Instance;
 
         CurrentPlayCount = PlayerPrefs.GetInt(customStrings.play_count_for_interstialAds, 0);
 
         this.RequestInterstitial();
 
         _isInterstitialAdShowing = false;
+
+        _restartBool = false;
+        _homeBool = false;
+        _gamOver_home_Bool = false;
+        _gamOver_replay_Bool = false;
+        _levelComplete_home_Bool = false;
+        _levelComplete_replay_Bool = false;
+        _levelComplete_next_Bool = false;
     }
 
     public void UpdateCurrentPlayCount()
@@ -51,7 +80,7 @@ public class CustomInterstialAdsManager : MonoBehaviour
         }
         else
         {
-            LoadNewInterstitialAd();
+            //LoadNewInterstitialAd();
         }
     }
 
@@ -97,6 +126,10 @@ public class CustomInterstialAdsManager : MonoBehaviour
 
             PlayerPrefs.SetInt(customStrings.play_count_for_interstialAds, CurrentPlayCount);
         }
+        else
+        {
+            SetCorrectBehaviour();
+        }
     }
 
     public bool _isInterstitialAdShowing { get; set; }
@@ -108,6 +141,74 @@ public class CustomInterstialAdsManager : MonoBehaviour
         get
         {
             return playCountForInterstialAds;
+        }
+    }
+
+    public bool _restartBool { get; set; }
+    public bool _homeBool { get; set; }
+    public bool _gamOver_home_Bool { get; set; }
+    public bool _gamOver_replay_Bool { get; set; }
+    public bool _levelComplete_home_Bool { get; set; }
+    public bool _levelComplete_replay_Bool { get; set; }
+    public bool _levelComplete_next_Bool { get; set; }
+
+    void SetCorrectBehaviour()
+    {
+        if(_gamOver_home_Bool)
+        {
+            if (!gameOverMenu)
+            {
+                gameOverMenu = GameOverMenu.Instance;
+            }
+            gameOverMenu.HomeButton_InterstitialAdsClosed();
+        }
+        else if (_gamOver_replay_Bool)
+        {
+            if (!levelMenu)
+            {
+                levelMenu = LevelMenu.Instance;
+            }
+            levelMenu.ReplayButton_InterstitialAdClosed();
+        }
+        else if (_levelComplete_home_Bool)
+        {
+            if (!levelMenu)
+            {
+                levelMenu = LevelMenu.Instance;
+            }
+            levelMenu.HomeButton_InterstitialAdsClosed();
+        }
+        else if (_levelComplete_replay_Bool)
+        {
+            if (!levelMenu)
+            {
+                levelMenu = LevelMenu.Instance;
+            }
+            levelMenu.ReplayButton_InterstitialAdClosed();
+        }
+        else if (_levelComplete_next_Bool)
+        {
+            if (!levelMenu)
+            {
+                levelMenu = LevelMenu.Instance;
+            }
+            levelMenu.NextLevel_InterstitialAdClosed();
+        }
+        else if (_restartBool)
+        {
+            if (!pauseMenu)
+            {
+                pauseMenu = PauseMenu.Instance;
+            }
+            pauseMenu.RestartGame_InterstitialAdClosed();
+        }
+        else if (_homeBool)
+        {
+            if (!pauseMenu)
+            {
+                pauseMenu = PauseMenu.Instance;
+            }
+            pauseMenu.HomeButton_InterstitialAdClosed();
         }
     }
 
@@ -145,6 +246,10 @@ public class CustomInterstialAdsManager : MonoBehaviour
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdClosed event received");
+
+        interstitial.Destroy();
+
+        SetCorrectBehaviour();
     }
 
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)

@@ -149,6 +149,12 @@ public class ButtonClickEffect : MonoBehaviour
     public Transform statsShareButton;
     #endregion
 
+    #region GAME EXIT MENU
+    [Header("GAME EXIT MENU Buttons")]
+    public Transform yesdButton;
+    public Transform noButton;
+    #endregion
+
     #region STORE LEFT RIGHT ARROW
     [Header("Store Left Right Arrow")]
     public Transform store_left_arrow;
@@ -1126,6 +1132,28 @@ public class ButtonClickEffect : MonoBehaviour
     public void Stats_LeaderboardButtonReleased()
     {
         leaderBoardButton.localScale = originalSize;
+    }
+    #endregion
+
+    #region GAME EXIT BUTTONS
+    public void Exit_Yes_Pressed()
+    {
+        yesdButton.localScale = pressedSize;
+    }
+
+    public void Exit_Yes_Released()
+    {
+        yesdButton.localScale = originalSize;
+    }
+
+    public void Exit_No_Pressed()
+    {
+        noButton.localScale = pressedSize;
+    }
+
+    public void Exit_No_Released()
+    {
+        noButton.localScale = originalSize;
     }
     #endregion
 

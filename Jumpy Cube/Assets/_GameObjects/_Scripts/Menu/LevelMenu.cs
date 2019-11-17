@@ -44,6 +44,7 @@ public class LevelMenu : MonoBehaviour
     DiamondScore diamondScore;
     InGameMenu inGameMenu;
     CustomAdManager customAdManager;
+    TimelinePlayer timelinePlayer;
 
     float levelMenuCommandExecutionDelay;
     float levelOverMenuCommandExecutionDelay;
@@ -58,6 +59,10 @@ public class LevelMenu : MonoBehaviour
     
     bool sharing;
     bool sharingChecker;
+
+    string screenshotfilename = "ScreenShot.png";
+    byte[] bytes;
+    Texture2D texture;
 
     #region SingleTon
     public static LevelMenu Instance;
@@ -94,6 +99,7 @@ public class LevelMenu : MonoBehaviour
         diamondScore = DiamondScore.Instance;
         inGameMenu = InGameMenu.Instance;
         customAdManager = CustomAdManager.Instance;
+        timelinePlayer = TimelinePlayer.Instance;
 
         levelNo = 0;
         finnalName = levelname + levelNo;
@@ -150,7 +156,7 @@ public class LevelMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(screenShotDelay);
 
-        ScreenCapture.CaptureScreenshot("ScreenShot.png");
+        ScreenCapture.CaptureScreenshot(screenshotfilename);
 
         StartCoroutine(DisplayScreenShotCoroutine());
     }
@@ -164,15 +170,15 @@ public class LevelMenu : MonoBehaviour
     void DisplayScreenShot()
     {
 #if UNITY_ANDROID
-        path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
+        path = Path.Combine(Application.persistentDataPath, screenshotfilename);
 #endif
 #if UNITY_EDITOR
-        path = "ScreenShot.png";
+        path = screenshotfilename;
 #endif
 
 
-        var bytes = File.ReadAllBytes(path);
-        Texture2D texture = new Texture2D(73, 73);
+        bytes = File.ReadAllBytes(path);
+        texture = new Texture2D(73, 73);
         texture.LoadImage(bytes);
         screenShotImg.texture = texture;
     }
@@ -181,18 +187,42 @@ public class LevelMenu : MonoBehaviour
     public void HomeButtonPressed()
     {
         DisableAllButtons();
+        if (!customAdManager.Check_To_ShowAds())
+        {
+            StartCoroutine(HomeButtonFunction());
+        }
+    }
+
+    public void HomeButton_InterstitialAdsClosed()
+    {
         StartCoroutine(HomeButtonFunction());
     }
 
     public void ReplayButton()
     {
         DisableAllButtons();
+        if (!customAdManager.Check_To_ShowAds())
+        {
+            StartCoroutine(RestartButtonFunction());
+        }
+    }
+
+    public void ReplayButton_InterstitialAdClosed()
+    {
         StartCoroutine(RestartButtonFunction());
     }
 
     public void NextLevelButton()
     {
         DisableAllButtons();
+        if (!customAdManager.Check_To_ShowAds())
+        {
+            StartCoroutine(NextLevelButtonFunction());
+        }
+    }
+
+    public void NextLevel_InterstitialAdClosed()
+    {
         StartCoroutine(NextLevelButtonFunction());
     }
 
@@ -244,10 +274,10 @@ public class LevelMenu : MonoBehaviour
     void ShareScreenShotFunction()
     {
 #if UNITY_ANDROID
-        path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
+        path = Path.Combine(Application.persistentDataPath, screenshotfilename);
 #endif
 #if UNITY_EDITOR
-        path = "ScreenShot.png";
+        path = screenshotfilename;
 #endif
 
         //new method
@@ -576,6 +606,8 @@ public class LevelMenu : MonoBehaviour
 
         inGameMenu.levelEnd_disableSharePannel_button.SetActive(true);
         inGameMenu.levelEnd_disableSharePannel.SetActive(true);
+
+        timelinePlayer.PlayDiamondReward();
     }
 
     ///
@@ -1099,6 +1131,8 @@ public class LevelMenu : MonoBehaviour
                 lastLevelButtons.SetActive(false);
             }
         }
+
+        customAdManager.DestoyBannerAds();
     }
 
     ///* FUNCTION FOR LEVEL BUTTONS TO LOAD LEVEL*///

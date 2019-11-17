@@ -52,7 +52,9 @@ public class GameOverMenu : MonoBehaviour
     bool sharing;
     bool sharingChecker;
 
-    Texture2D screenCapture;
+    string screenshotfilename = "ScreenShot.png";
+    byte[] bytes;
+    Texture2D texture;
 
     PlayerDeath playerDeath;
     PlayerMovement playerMovement;
@@ -202,7 +204,7 @@ public class GameOverMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(screenShotDelay);
         
-        ScreenCapture.CaptureScreenshot("ScreenShot.png");
+        ScreenCapture.CaptureScreenshot(screenshotfilename);
 
         StartCoroutine(DisplayScreenShotCoroutine());
     }
@@ -216,15 +218,15 @@ public class GameOverMenu : MonoBehaviour
     void DisplayScreenShot()
     {
 #if UNITY_ANDROID
-        path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
+        path = Path.Combine(Application.persistentDataPath, screenshotfilename);
 #endif
 #if UNITY_EDITOR
-        path = "ScreenShot.png";
+        path = screenshotfilename;
 #endif
 
 
-        var bytes = File.ReadAllBytes(path);
-        Texture2D texture = new Texture2D(73, 73);
+        bytes = File.ReadAllBytes(path);
+        texture = new Texture2D(73, 73);
         texture.LoadImage(bytes);
         screenShotImg.texture = texture;
     }
@@ -241,10 +243,10 @@ public class GameOverMenu : MonoBehaviour
     void ShareScreenShotFunction()
     {
         #if UNITY_ANDROID
-            path = Path.Combine(Application.persistentDataPath, "ScreenShot.png");
+            path = Path.Combine(Application.persistentDataPath, screenshotfilename);
         #endif
         #if UNITY_EDITOR
-            path = "ScreenShot.png";
+            path = screenshotfilename;
         #endif
 
         //new method
@@ -258,6 +260,14 @@ public class GameOverMenu : MonoBehaviour
     public void HomeButton()
     {
         DisableAllButtons();
+        if (!customAdManager.Check_To_ShowAds())
+        {
+            Invoke("HomeButtonFunction", gameoverMenuCommandExecutionDelay);
+        }
+    }
+
+    public void HomeButton_InterstitialAdsClosed()
+    {
         Invoke("HomeButtonFunction", gameoverMenuCommandExecutionDelay);
     }
 
@@ -286,12 +296,12 @@ public class GameOverMenu : MonoBehaviour
 
     public void ReplayButton()
     {
+        DisableAllButtons();
         Invoke("ReplayButtonFunction", gameoverMenuCommandExecutionDelay);
     }
 
     void ReplayButtonFunction()
     {
-        DisableAllButtons();
         ActivateAllButtons();
     }
 
@@ -321,13 +331,15 @@ public class GameOverMenu : MonoBehaviour
 
     void ActivateAllButtons()
     {
-        if (!endless_Buttons.activeSelf)
+        if (!endless_Buttons.activeSelf && gameModeManager.gameMode == GameModeManager.GameMode.endless)
         {
             endless_Buttons.SetActive(true);
-        }
-        if (levelButtons.activeSelf)
-        {
             levelButtons.SetActive(false);
+        }
+        if (!levelButtons.activeSelf && gameModeManager.gameMode == GameModeManager.GameMode.level)
+        {
+            levelButtons.SetActive(true);
+            endless_Buttons.SetActive(false);
         }
 
         if (!shareButton.interactable)
@@ -363,5 +375,7 @@ public class GameOverMenu : MonoBehaviour
 
         disableSharePannel_button.SetActive(true);
         disableSharePannel.SetActive(true);
+
+        timelinePlayer.PlayDiamondReward();
     }
 }

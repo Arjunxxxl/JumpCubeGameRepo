@@ -7,13 +7,13 @@ using System;
 public class CustomRewardingAdsManager : MonoBehaviour
 {
     private RewardedAd rewardedAd_store;
-    private RewardedAd rewardedAd_extraLife;
-    private RewardedAd rewardedAd_doubleReward;
+    //private RewardedAd rewardedAd_extraLife;
+    //private RewardedAd rewardedAd_doubleReward;
 
-    bool isStoreAdShowing;
-    bool isExtraLifeAdShowing;
-    bool isDoubleRewardAdShowing;
-    bool isDoubleRewardAdShowing_levelEnd;
+    public bool isStoreAdShowing;
+    public bool isExtraLifeAdShowing;
+    public bool isDoubleRewardAdShowing;
+    public bool isDoubleRewardAdShowing_levelEnd;
 
     string adUnitId;
 
@@ -22,6 +22,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
     RevivePlayer revivePlayer;
     GameOverMenu gameOverMenu;
     InGameMenu inGameMenu;
+    TimelinePlayer timelinePlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,13 @@ public class CustomRewardingAdsManager : MonoBehaviour
         revivePlayer = RevivePlayer.Instance;
         gameOverMenu = GameOverMenu.Instance;
         inGameMenu = InGameMenu.Instance;
+        timelinePlayer = TimelinePlayer.Instance;
 
         adUnitId = "ca-app-pub-3940256099942544/5224354917";
 
         rewardedAd_store = RequestRewardingAds(adUnitId);
-        rewardedAd_extraLife = RequestRewardingAds(adUnitId);
-        rewardedAd_doubleReward = RequestRewardingAds(adUnitId);
+        //rewardedAd_extraLife = RequestRewardingAds(adUnitId);
+        //rewardedAd_doubleReward = RequestRewardingAds(adUnitId);
 
         isStoreAdShowing = false;
         isExtraLifeAdShowing = false;
@@ -77,36 +79,36 @@ public class CustomRewardingAdsManager : MonoBehaviour
     {
         if (this.rewardedAd_store.IsLoaded())
         {
-            isStoreAdShowing = true;
+            //isStoreAdShowing = true;
             this.rewardedAd_store.Show();
         }
     }
 
     public void ShowRewardingAds_ExtraLife()
     {
-        if (this.rewardedAd_extraLife.IsLoaded())
+        /*if (this.rewardedAd_extraLife.IsLoaded())
         {
             isExtraLifeAdShowing = true;
             this.rewardedAd_extraLife.Show();
-        }
+        }*/
     }
 
     public void ShowRewardingAds_DoubleReward()
     {
-        if (this.rewardedAd_doubleReward.IsLoaded())
+        /*if (this.rewardedAd_doubleReward.IsLoaded())
         {
             isDoubleRewardAdShowing = true;
             this.rewardedAd_doubleReward.Show();
-        }
+        }*/
     }
 
     public void ShowRewardingAds_DoubleReward_LevelEnd()
     {
-        if (this.rewardedAd_doubleReward.IsLoaded())
+        /*if (this.rewardedAd_doubleReward.IsLoaded())
         {
             isDoubleRewardAdShowing_levelEnd = true;
             this.rewardedAd_doubleReward.Show();
-        }
+        }*/
     }
 
     #region RewardingAds Events
@@ -148,21 +150,21 @@ public class CustomRewardingAdsManager : MonoBehaviour
 
         if (isExtraLifeAdShowing)
         {
-            rewardedAd_extraLife = RequestRewardingAds(adUnitId);
+            rewardedAd_store = RequestRewardingAds(adUnitId);
             
             isExtraLifeAdShowing = false;
         }
 
         if(isDoubleRewardAdShowing)
         {
-            rewardedAd_doubleReward = RequestRewardingAds(adUnitId);
+            //rewardedAd_store = RequestRewardingAds(adUnitId);
             
             isDoubleRewardAdShowing = false;
         }
 
         if (isDoubleRewardAdShowing_levelEnd)
         {
-            rewardedAd_doubleReward = RequestRewardingAds(adUnitId);
+            //rewardedAd_store = RequestRewardingAds(adUnitId);
 
             isDoubleRewardAdShowing_levelEnd = false;
         }
@@ -188,7 +190,14 @@ public class CustomRewardingAdsManager : MonoBehaviour
                 store = Store.Instance;
             }
 
+            if(!timelinePlayer)
+            {
+                timelinePlayer = TimelinePlayer.Instance;
+            }
+
             diamondScore.SaveDiamondsCollected(100, true);
+
+            timelinePlayer.PlayDiamondReward();
 
             store.ownedDiamonds = diamondScore.GetDiamonds();
             store.ownedDiamondTxt.text = store.ownedDiamonds + ""; 
@@ -208,12 +217,15 @@ public class CustomRewardingAdsManager : MonoBehaviour
         {
             if (!revivePlayer) { revivePlayer = RevivePlayer.Instance; }
             if (!gameOverMenu) { gameOverMenu = GameOverMenu.Instance; }
+            if (!timelinePlayer) { timelinePlayer = TimelinePlayer.Instance; }
 
             gameOverMenu.disableWatchAdsPannel_button.SetActive(true);
             gameOverMenu.disableWatchAdsPannel.SetActive(true);
 
             diamondScore.SaveDiamondsCollected(revivePlayer.currentDiamonds, true);
-            
+
+            timelinePlayer.PlayDiamondReward();
+
             revivePlayer.currentDiamondsTxt.text = revivePlayer.currentDiamonds * 2 + " ";
             
         }

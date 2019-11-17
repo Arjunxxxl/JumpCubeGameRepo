@@ -60,6 +60,7 @@ public class CustomSocialMediaScript : MonoBehaviour
     Store store;
     DiamondScore diamondScore;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
+    TimelinePlayer timelinePlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,7 @@ public class CustomSocialMediaScript : MonoBehaviour
         store = Store.Instance;
         diamondScore = DiamondScore.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+        timelinePlayer = TimelinePlayer.Instance;
 
         buttomClickDelay = buttonClickCommandExecutionDelay.storeMenuCommandExecutionDelay;
 
@@ -310,6 +312,8 @@ public class CustomSocialMediaScript : MonoBehaviour
             if (facebookRewardGiven == 0) { facebookRewardUI.SetActive(true); } else { facebookRewardUI.SetActive(false); }
 
             activateFacebookReward = false;
+            
+            timelinePlayer.PlayDiamondReward();
         }
         else if (activateRateReward)
         {
@@ -319,6 +323,8 @@ public class CustomSocialMediaScript : MonoBehaviour
             if (rateRewardGiven == 0) { rateRewardUI.SetActive(true); } else { rateRewardUI.SetActive(false); }
 
             activateRateReward = false;
+
+            timelinePlayer.PlayDiamondReward();
         }
         else if (activateYoutubeReward)
         {
@@ -328,6 +334,8 @@ public class CustomSocialMediaScript : MonoBehaviour
             if (youtubeRewardGiven == 0) { youtubeRewardUI.SetActive(true); } else { youtubeRewardUI.SetActive(false); }
 
             activateYoutubeReward = false;
+
+            timelinePlayer.PlayDiamondReward();
         }
         else if (activateInstagramReward)
         {
@@ -337,6 +345,8 @@ public class CustomSocialMediaScript : MonoBehaviour
             if (instagramRewardGiven == 0) { instagramRewardUI.SetActive(true); } else { instagramRewardUI.SetActive(false); }
 
             activateInstagramReward = false;
+
+            timelinePlayer.PlayDiamondReward();
         }
     }
 
@@ -354,6 +364,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
         if (shareRewardGiven == 0) { shareRewardUI.SetActive(true); } else { shareRewardUI.SetActive(false); }
         
+        timelinePlayer.PlayDiamondReward();
     }
 
     public void Open_GooglePlay_Home()

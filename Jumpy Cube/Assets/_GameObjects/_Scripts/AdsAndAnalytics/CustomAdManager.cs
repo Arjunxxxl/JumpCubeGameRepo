@@ -36,7 +36,7 @@ public class CustomAdManager : MonoBehaviour
         customInterstialAdsManager = GetComponent<CustomInterstialAdsManager>();
         customRewardingAdsManager = GetComponent<CustomRewardingAdsManager>();
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     #endregion
 
@@ -130,10 +130,66 @@ public class CustomAdManager : MonoBehaviour
         customInterstialAdsManager.UpdateCurrentPlayCount();
     }
 
-    public void ShowInterstitialAds()
+    public void ShowInterstitialAds_gameOver_home()
     {
         if (Check_To_ShowAds()) 
         {
+            customInterstialAdsManager._gamOver_home_Bool = true;
+            customInterstialAdsManager.ShowInterstitialAds();
+        }
+    }
+
+    public void ShowInterstitialAds_gameOver_replay()
+    {
+        if (Check_To_ShowAds())
+        {
+            customInterstialAdsManager._gamOver_replay_Bool = true;
+            customInterstialAdsManager.ShowInterstitialAds();
+            Debug.Log("game over replay " + customInterstialAdsManager._gamOver_replay_Bool);
+        }
+    }
+
+    public void ShowInterstitialAds_levelComplete_replay()
+    {
+        if (Check_To_ShowAds())
+        {
+            customInterstialAdsManager._levelComplete_replay_Bool = true;
+            customInterstialAdsManager.ShowInterstitialAds();
+        }
+    }
+
+    public void ShowInterstitialAds_levelComplete_home()
+    {
+        if (Check_To_ShowAds())
+        {
+            customInterstialAdsManager._levelComplete_home_Bool = true;
+            customInterstialAdsManager.ShowInterstitialAds();
+        }
+    }
+
+    public void ShowInterstitialAds_levelComplete_next()
+    {
+        if (Check_To_ShowAds())
+        {
+            customInterstialAdsManager._levelComplete_next_Bool = true;
+            customInterstialAdsManager.ShowInterstitialAds();
+        }
+    }
+
+    public void ShowInterstitialAds_home()
+    {
+        if (Check_To_ShowAds())
+        {
+            customInterstialAdsManager._homeBool = true;
+            customInterstialAdsManager.ShowInterstitialAds();
+        }
+    }
+
+    public void ShowInterstitialAds_restart()
+    {
+        if (Check_To_ShowAds())
+        {
+            customInterstialAdsManager._restartBool = true;
             customInterstialAdsManager.ShowInterstitialAds();
         }
     }
@@ -162,22 +218,26 @@ public class CustomAdManager : MonoBehaviour
     #region REWARDING ADS
     public void ShowRewardingAds_Store()
     {
+        customRewardingAdsManager.isStoreAdShowing = true;
         customRewardingAdsManager.ShowRewardingAds_Store();
     }
 
     public void ShowRewardingAds_ExtraLife()
     {
-        customRewardingAdsManager.ShowRewardingAds_ExtraLife();
+        customRewardingAdsManager.isExtraLifeAdShowing = true;
+        customRewardingAdsManager.ShowRewardingAds_Store();
     }
 
     public void ShowRewardingAds_DoubleReward()
     {
-        customRewardingAdsManager.ShowRewardingAds_DoubleReward();
+        customRewardingAdsManager.isDoubleRewardAdShowing = true;
+        customRewardingAdsManager.ShowRewardingAds_Store();
     }
 
     public void ShowRewardingAds_DoubleReward_LevelEndMenu()
     {
-        customRewardingAdsManager.ShowRewardingAds_DoubleReward_LevelEnd(); 
+        customRewardingAdsManager.isDoubleRewardAdShowing_levelEnd = true;
+        customRewardingAdsManager.ShowRewardingAds_Store(); 
     }
     #endregion
 }

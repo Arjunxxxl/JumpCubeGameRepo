@@ -70,8 +70,8 @@ public class CustomBannerAdsManager : MonoBehaviour
 
         if (bannerView != null)
         {
-            //bannerView.Destroy();
             bannerView.Hide();
+            //bannerView.Destroy();
         }
     }
 
@@ -104,10 +104,10 @@ public class CustomBannerAdsManager : MonoBehaviour
         else
         {
             // Create an empty ad request.
-            AdRequest request = new AdRequest.Builder().Build();
+            //AdRequest request = new AdRequest.Builder().Build();
 
             // Load the banner with the request.
-            this.bannerView_top.LoadAd(request);
+            //this.bannerView_top.LoadAd(request);
         }
 
         bannerView_top.Show();
@@ -120,6 +120,13 @@ public class CustomBannerAdsManager : MonoBehaviour
         if (bannerView_top != null)
         {
             bannerView_top.Hide();
+            bannerView_top.Destroy();
+        }
+
+        if (bannerView != null)
+        {
+            bannerView.Hide();
+            bannerView.Destroy();
         }
     }
 

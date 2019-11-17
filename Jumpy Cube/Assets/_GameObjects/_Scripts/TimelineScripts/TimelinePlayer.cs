@@ -48,6 +48,12 @@ public class TimelinePlayer : MonoBehaviour
 
     [Header("Start Dark canvas and loadingscreen")]
     public PlayableDirector loadingScreen;
+    public PlayableDirector startingDarkCanvasPlayable;
+
+    [Header("Diamond reward timeline")]
+    public GameObject diamondRewardParent;
+    public PlayableDirector diamondRewardPlayable;
+    public float disablediamondRewardAfter = 3f;
 
     bool s_m1, s_m2, s_m3, s_m4, s_m5, s_m6, s_m7, s_m8;
     bool h_m1, h_m2, h_m3, h_m4, h_m5, h_m6, h_m7, h_m8;
@@ -73,6 +79,8 @@ public class TimelinePlayer : MonoBehaviour
         optimizationAnimation.Stop();
         
         loadingScreen.Stop();
+
+        diamondRewardParent.SetActive(false);
 
         s_m1 = s_m2 = s_m3 = s_m4 = s_m5 = s_m6 = s_m7 = s_m8 = false;
         h_m1 = h_m2 = h_m3 = h_m4 = h_m5 = h_m6 = h_m7 = h_m8 = false;
@@ -173,6 +181,25 @@ public class TimelinePlayer : MonoBehaviour
     public void PlayLoadingScreen()
     {
         loadingScreen.Play();
+    }
+
+    public void PlayStartingDarkCanvas()
+    {
+        startingDarkCanvasPlayable.Play();
+    }
+
+    public void PlayDiamondReward()
+    {
+        diamondRewardParent.SetActive(true);
+        diamondRewardPlayable.Play();
+
+        Invoke("DisableDiamondReward", disablediamondRewardAfter);
+    }
+
+    void DisableDiamondReward()
+    {
+        diamondRewardParent.SetActive(false);
+        diamondRewardPlayable.Stop();
     }
 
     #region TUTORIAL MESSAGE

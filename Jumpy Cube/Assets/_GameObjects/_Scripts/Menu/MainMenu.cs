@@ -40,7 +40,8 @@ public class MainMenu : MonoBehaviour
 
     [Header("Starting dark canvas")]
     public GameObject startingDarkCanvas;
-    public float disableAfterTime = 2f;
+    public float disableAfterTime = 1.5f;
+    public int showingStartingCanvas;
 
     TimelinePlayer timelinePlayer;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
@@ -63,11 +64,8 @@ public class MainMenu : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (!startingDarkCanvas.activeSelf)
-        {
-            startingDarkCanvas.SetActive(true);
-            StartCoroutine(DisableStartingDarkCanvas());
-        }
+
+        startingDarkCanvas.SetActive(false);
     }
     #endregion
 
@@ -123,6 +121,26 @@ public class MainMenu : MonoBehaviour
         tileSystem.SetActive(true);
         playerChild = player.transform.GetChild(1).gameObject;
         playerChild.SetActive(true);
+
+        showingStartingCanvas = gameModeManager.showStartingCanvas;
+        if(showingStartingCanvas != 0)
+        {
+            if (!startingDarkCanvas.activeSelf)
+            {
+                startingDarkCanvas.SetActive(true);
+            }
+            timelinePlayer.PlayStartingDarkCanvas();
+            Invoke("DisableStartingDarkCanvas", disableAfterTime);
+            Debug.Log("1");
+        }
+        else
+        {
+            if (startingDarkCanvas.activeSelf)
+            {
+                startingDarkCanvas.SetActive(false);
+                Debug.Log("2");
+            }
+        }
     }
 
     private void Update()
@@ -149,6 +167,11 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+        if(startingDarkCanvas.activeSelf || quitGame.activeSelf)
+        {
+            return;
+        }
+
         isGameStart = true;
 
         timelinePlayer.MainmenuDiaable();
@@ -172,6 +195,8 @@ public class MainMenu : MonoBehaviour
         {
             customAdManager.UpdatePlayCount();
         }
+
+        gameModeManager.showStartingCanvas++;
     }
 
     IEnumerator DisableMainMenuWithDelay()
@@ -265,18 +290,28 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        Invoke("QuitGame_Function", commandExecuationDelay);
+    }
+
+    void QuitGame_Function()
+    {
         Application.Quit();
     }
 
     public void NotQuitGame()
     {
+        Invoke("NotQuitGame_Function", commandExecuationDelay);
+    }
+
+    public void NotQuitGame_Function()
+    {
         quitGame.SetActive(false);
     }
 
-    IEnumerator DisableStartingDarkCanvas()
+    void DisableStartingDarkCanvas()
     {
-        yield return new WaitForSeconds(disableAfterTime);
         startingDarkCanvas.SetActive(false);
+        Debug.Log("3");
     }
 
     ///FUNCTIONS FOR CONTINIOUS LEVEL CHANGE
@@ -305,6 +340,8 @@ public class MainMenu : MonoBehaviour
         savedData.UpdateTimesGamePlayed();
 
         customAdManager.UpdatePlayCount();
+
+        gameModeManager.showStartingCanvas++;
     }
 
     public void Play_Level()
@@ -334,6 +371,8 @@ public class MainMenu : MonoBehaviour
         savedData.UpdateTimesGamePlayed();
 
         customAdManager.UpdatePlayCount();
+
+        gameModeManager.showStartingCanvas++;
     }
 
     IEnumerator StartGameWithDelay()
