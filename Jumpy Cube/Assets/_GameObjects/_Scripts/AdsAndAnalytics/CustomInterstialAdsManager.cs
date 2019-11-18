@@ -7,9 +7,8 @@ using System;
 public class CustomInterstialAdsManager : MonoBehaviour
 {
     int playCountForInterstialAds = 2;
-
-    [SerializeField]
-    int currentPlayCount;
+    
+    public int currentPlayCount;
 
     [SerializeField]
     bool restartBool;
@@ -40,9 +39,7 @@ public class CustomInterstialAdsManager : MonoBehaviour
         gameOverMenu = GameOverMenu.Instance;
         levelMenu = LevelMenu.Instance;
         pauseMenu = PauseMenu.Instance;
-
-        CurrentPlayCount = PlayerPrefs.GetInt(customStrings.play_count_for_interstialAds, 0);
-
+        
         this.RequestInterstitial();
 
         _isInterstitialAdShowing = false;
@@ -61,14 +58,17 @@ public class CustomInterstialAdsManager : MonoBehaviour
         if (!customStrings)
         {
             customStrings = CustomStrings.Instance;
-
-            CurrentPlayCount = PlayerPrefs.GetInt(customStrings.play_count_for_interstialAds, 0);
         }
 
-        ///
-        CurrentPlayCount++;
+        currentPlayCount = PlayerPrefs.GetInt(customStrings.play_count_for_interstialAds, 0);
 
-        if(currentPlayCount < PlayCountForInterstialAds)
+        ///
+        currentPlayCount++;
+        
+
+        Debug.Log("here 4 - " + currentPlayCount);
+
+        if (currentPlayCount < PlayCountForInterstialAds)
         {
             PlayerPrefs.SetInt(customStrings.play_count_for_interstialAds, currentPlayCount);
         }
@@ -114,9 +114,9 @@ public class CustomInterstialAdsManager : MonoBehaviour
 
             _isInterstitialAdShowing = true;
 
-            if (CurrentPlayCount >= playCountForInterstialAds)
+            if (currentPlayCount >= playCountForInterstialAds)
             {
-                CurrentPlayCount = 0;
+                currentPlayCount = 0;
             }
 
             if (!customStrings)
@@ -124,7 +124,7 @@ public class CustomInterstialAdsManager : MonoBehaviour
                 customStrings = CustomStrings.Instance;
             }
 
-            PlayerPrefs.SetInt(customStrings.play_count_for_interstialAds, CurrentPlayCount);
+            PlayerPrefs.SetInt(customStrings.play_count_for_interstialAds, currentPlayCount);
         }
         else
         {
@@ -133,9 +133,7 @@ public class CustomInterstialAdsManager : MonoBehaviour
     }
 
     public bool _isInterstitialAdShowing { get; set; }
-
-    public int CurrentPlayCount { get { return currentPlayCount; } set { currentPlayCount = value; } }
-
+    
     public int PlayCountForInterstialAds
     {
         get

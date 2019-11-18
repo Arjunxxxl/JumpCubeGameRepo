@@ -195,6 +195,14 @@ public class MainMenu : MonoBehaviour
         {
             customAdManager.UpdatePlayCount();
         }
+        else
+        {
+            if (!customAdManager)
+            {
+                customAdManager = CustomAdManager.Instance;
+            }
+            customAdManager.UpdatePlayCount();
+        }
 
         gameModeManager.showStartingCanvas++;
     }
@@ -339,6 +347,10 @@ public class MainMenu : MonoBehaviour
         missionManager.CheckingForTimesGamePlayedMission();
         savedData.UpdateTimesGamePlayed();
 
+        if (!customAdManager)
+        {
+            customAdManager = CustomAdManager.Instance;
+        }
         customAdManager.UpdatePlayCount();
 
         gameModeManager.showStartingCanvas++;
@@ -370,6 +382,10 @@ public class MainMenu : MonoBehaviour
         missionManager.CheckingForTimesGamePlayedMission();
         savedData.UpdateTimesGamePlayed();
 
+        if (!customAdManager)
+        {
+            customAdManager = CustomAdManager.Instance;
+        }
         customAdManager.UpdatePlayCount();
 
         gameModeManager.showStartingCanvas++;

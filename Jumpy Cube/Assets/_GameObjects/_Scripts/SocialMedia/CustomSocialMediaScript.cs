@@ -39,7 +39,7 @@ public class CustomSocialMediaScript : MonoBehaviour
     */
 
     float rewardGivingDelay = 1.5f;
-    int rewardValue = 50;
+    int rewardValue = 100;
 
     bool rateOpen, rateOpenChecker, activateRateReward;
     bool facebookOpen, facebookOpenChecker, activateFacebookReward;

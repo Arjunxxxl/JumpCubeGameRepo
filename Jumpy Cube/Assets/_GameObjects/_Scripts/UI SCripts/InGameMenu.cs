@@ -55,6 +55,7 @@ public class InGameMenu : MonoBehaviour
     SavedData savedData;
     LevelMenu levelMenu;
     GameModeManager gameModeManager;
+    NetworkManager networkManager;
 
     #region SingleTon
     public static InGameMenu Instance;
@@ -81,6 +82,7 @@ public class InGameMenu : MonoBehaviour
         savedData = SavedData.Instance;
         levelMenu = LevelMenu.Instance;
         gameModeManager = GameModeManager.Instance;
+        networkManager = NetworkManager.Instance;
 
         inGameMenu.SetActive(false);
         levelEndMenu.SetActive(false);
@@ -101,10 +103,10 @@ public class InGameMenu : MonoBehaviour
         diamondBest = PlayerPrefs.GetInt(customStrings.DIAMONDS_COLLECTED_IN_ONE_RUN1, 0);
         averageBest = (int)PlayerPrefs.GetFloat(customStrings.AVERAGE_SCORE_2, 0);
 
-        levelEnd_disableSharePannel_button.SetActive(false);
-        levelEnd_disableSharePannel.SetActive(false);
-        levelEnd_disableWatchAdsPannel_button.SetActive(false);
-        levelEnd_disableWatchAdsPannel.SetActive(false);
+        if (levelEnd_disableSharePannel_button.activeSelf) { levelEnd_disableSharePannel_button.SetActive(false); }
+        if (levelEnd_disableSharePannel.activeSelf) { levelEnd_disableSharePannel.SetActive(false); }
+        if (levelEnd_disableWatchAdsPannel_button.activeSelf) {  levelEnd_disableWatchAdsPannel_button.SetActive(false); }
+        if (levelEnd_disableWatchAdsPannel.activeSelf) { levelEnd_disableWatchAdsPannel.SetActive(false);}
     }
 
     // Update is called once per frame
@@ -153,6 +155,12 @@ public class InGameMenu : MonoBehaviour
         savedData.SaveDiamondsCollectedinOneRun(diamondsCollected);
 
         levelMenu.UpdateLevelCompleteStatus(gameModeManager.currentLevel);
+
+        if(!networkManager.CheckForInternet())
+        {
+            if (!levelEnd_disableWatchAdsPannel_button.activeSelf) { levelEnd_disableWatchAdsPannel_button.SetActive(true); }
+            if (!levelEnd_disableWatchAdsPannel.activeSelf) { levelEnd_disableWatchAdsPannel.SetActive(true); }
+        }
     }
 
     void ActivateLevelEndMenu_Function()

@@ -65,7 +65,7 @@ public class LoadLevel : MonoBehaviour
             progress = asyncOperation.progress;
             progress = Mathf.Clamp01(progress / 0.9f);
 
-            Debug.Log(progress);
+            //Debug.Log(progress);
 
             loadingBar.value = progress;
 

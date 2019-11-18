@@ -24,7 +24,13 @@ public class GameOverMenu : MonoBehaviour
     public GameObject disableSharePannel_button;
     public GameObject disableWatchAdsPannel;
     public GameObject disableSharePannel;
+    [Space]
+    public GameObject revivalAdsPannel_disable;
+    public GameObject revivalAdsButton_disable;
+    public GameObject revivalPannel_disable;
+    public GameObject revivalButton_disable;
     int shareDiamondReward = 50;
+    int reviveDiamonds = 100;
 
     [Header("Revival Screen Total Diamonds")]
     public TMP_Text rivivalTotalDiamonds;
@@ -46,6 +52,9 @@ public class GameOverMenu : MonoBehaviour
     public Button homeButton2;
     public Button replayButton1;
 
+    public bool isNetworlAvailable;
+    bool isDiamondsAvailable;
+
     public bool checker;
     bool isProcessing;
     
@@ -66,6 +75,7 @@ public class GameOverMenu : MonoBehaviour
     GameModeManager gameModeManager;
     RevivePlayer revivePlayer;
     CustomAdManager customAdManager;
+    NetworkManager networkManager;
 
     #region SingleTon
     public static GameOverMenu Instance;
@@ -94,6 +104,7 @@ public class GameOverMenu : MonoBehaviour
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         gameModeManager = GameModeManager.Instance;
         customAdManager = CustomAdManager.Instance;
+        networkManager = NetworkManager.Instance;
 
         if(!revivePlayer)
         {
@@ -109,10 +120,18 @@ public class GameOverMenu : MonoBehaviour
         sharing = false;
         sharingChecker = false;
 
-        disableWatchAdsPannel_button.SetActive(false);
-        disableSharePannel_button.SetActive(false);
-        disableWatchAdsPannel.SetActive(false);
-        disableSharePannel.SetActive(false);
+        if (disableWatchAdsPannel_button.activeSelf){ disableWatchAdsPannel_button.SetActive(false); }
+        if (disableSharePannel_button.activeSelf) { disableSharePannel_button.SetActive(false); }
+        if (disableWatchAdsPannel.activeSelf) { disableWatchAdsPannel.SetActive(false); }
+        if (disableSharePannel.activeSelf) { disableSharePannel.SetActive(false); }
+
+        if (revivalAdsPannel_disable.activeSelf) { revivalAdsPannel_disable.SetActive(false); }
+        if (revivalAdsButton_disable.activeSelf) { revivalAdsButton_disable.SetActive(false); }
+        if (revivalPannel_disable.activeSelf) { revivalPannel_disable.SetActive(false); }
+        if (revivalButton_disable.activeSelf) { revivalButton_disable.SetActive(false); }
+
+        isNetworlAvailable = true;
+        isDiamondsAvailable = true;
 
         ActivateAllButtons();
     }
@@ -127,23 +146,42 @@ public class GameOverMenu : MonoBehaviour
                 inGameMenu.SetActive(false);
             }
 
+            Activate_Deactivate_RevivalButton();
+            DisableWatchAdsButtonIfNoInternet();
+
             currentTime += Time.deltaTime;
 
             if (currentTime > gameOverMenuShowDelay)
             {
                 if (!gameModeManager.isTutorialActive)
-                { 
-                    revivalMenu.SetActive(true);
-                    rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
+                {
+                    if (isNetworlAvailable || isDiamondsAvailable)
+                    {
+                        revivalMenu.SetActive(true);
+                        rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
+                    }
+                    else
+                    {
+                        revivePlayer.SkipRevivalMenuButton();
+                        customAdManager.RequestTopBanners_Gameover();
+                    }
                 }
                 else if (gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.endless)
                 {
-                    revivePlayer.ReviePlayerFunction();
+                    revivePlayer.RevivePlayer_Tutorial();
                 }
                 else if(gameModeManager.isTutorialActive && gameModeManager.gameMode == GameModeManager.GameMode.level)
                 {
-                    revivalMenu.SetActive(true);
-                    rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
+                    if (isNetworlAvailable || isDiamondsAvailable)
+                    {
+                        revivalMenu.SetActive(true);
+                        rivivalTotalDiamonds.text = diamondScore.GetDiamonds() + "";
+                    }
+                    else
+                    {
+                        revivePlayer.SkipRevivalMenuButton();
+                        customAdManager.RequestTopBanners_Gameover();
+                    }
                 }
                 checker = true;
             }
@@ -192,6 +230,42 @@ public class GameOverMenu : MonoBehaviour
             {
                 sharingChecker = true;
             }
+        }
+    }
+
+    void DisableWatchAdsButtonIfNoInternet()
+    {
+        if(!networkManager.CheckForInternet())
+        {
+            disableWatchAdsPannel_button.SetActive(true);
+            disableWatchAdsPannel.SetActive(true);
+            
+            revivalAdsPannel_disable.SetActive(true);
+            revivalAdsButton_disable.SetActive(true);
+
+            isNetworlAvailable = false;
+        }
+        else
+        {
+            isNetworlAvailable = true;
+        }
+    }
+
+    void Activate_Deactivate_RevivalButton()
+    {
+        if (diamondScore.GetDiamonds() >= reviveDiamonds)
+        {
+            if (revivalPannel_disable.activeSelf) { revivalPannel_disable.SetActive(false); }
+            if (revivalButton_disable.activeSelf) { revivalButton_disable.SetActive(false); }
+
+            isDiamondsAvailable = true;
+        }
+        else
+        {
+            if (!revivalPannel_disable.activeSelf) { revivalPannel_disable.SetActive(true); }
+            if (!revivalButton_disable.activeSelf) { revivalButton_disable.SetActive(true); }
+
+            isDiamondsAvailable = false;
         }
     }
 
@@ -269,16 +343,17 @@ public class GameOverMenu : MonoBehaviour
     public void HomeButton_InterstitialAdsClosed()
     {
         Invoke("HomeButtonFunction", gameoverMenuCommandExecutionDelay);
+        ActivateAllButtons();
     }
 
     void HomeButtonFunction()
     {
         gameModeManager.gameMode = GameModeManager.GameMode.endless;
-            gameModeManager.isGameRestarted = false;
+        gameModeManager.isGameRestarted = false;
 
-            ActivateAllButtons();
+        ActivateAllButtons();
 
-            loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
+        loadLevel.Load(loadLevel.SAMPLE_SCENE_NAME);
         
     }
     

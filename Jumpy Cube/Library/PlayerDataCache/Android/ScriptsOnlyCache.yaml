@@ -36,6 +36,7 @@ ScriptsOnlyBuild:
     - MainMenu
     - Mission
     - MissionManager
+    - NetworkManager
     - ObjectPooler
     - PauseMenu
     - PlayLevelEndParticleSystem
@@ -326,6 +327,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12362}
     - Class: 114
       Script: {instanceID: 12364}
+    - Class: 114
+      Script: {instanceID: 184798}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 134
@@ -1548,7 +1551,7 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
-      Hash: 52f2deec293bf56c897e91100e6829e1
+      Hash: 8071cadfb12ad633c4830741cf3ba9e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameOverMenu
@@ -1978,6 +1981,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 4b8a73d6257839ccdafefca30a5cba90
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkManager
   platform: 13
   scenePathNames:
   - Assets/_Scenes/SplashScreen.unity

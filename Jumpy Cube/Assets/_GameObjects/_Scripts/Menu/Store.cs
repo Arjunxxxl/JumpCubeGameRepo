@@ -10,11 +10,11 @@ public class Store : MonoBehaviour
     public int inGameCollectedDiamonds;
 
     [Header("Cubes and color scheme Cost")]
-    int colorSchemeCost = 1;
-    int commonCubeCost = 5;
-    int rareCubeCost = 10;
-    int legendaryCubeCost = 20;
-    int missionCubeCost = 30;
+    int colorSchemeCost = 500;
+    int commonCubeCost = 400;
+    int rareCubeCost = 650;
+    int legendaryCubeCost = 950;
+    int missionCubeCost = 1200;
 
     [Header("Button color data")]
     public Color colorLocked;

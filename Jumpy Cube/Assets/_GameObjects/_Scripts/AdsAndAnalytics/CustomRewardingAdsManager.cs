@@ -210,7 +210,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
                 revivePlayer = RevivePlayer.Instance;
             }
 
-            revivePlayer.ReviePlayerFunction();
+            revivePlayer.ReviePlayerFunction_AdReward();
         }
 
         if(isDoubleRewardAdShowing)

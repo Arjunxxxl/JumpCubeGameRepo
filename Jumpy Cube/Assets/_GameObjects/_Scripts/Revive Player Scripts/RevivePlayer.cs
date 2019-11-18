@@ -61,6 +61,7 @@ public class RevivePlayer : MonoBehaviour
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     PlayerKiller playerKiller;
     CustomAdManager customAdManager;
+    DiamondScore diamondScore;
 
     #region SingleTon
     public static RevivePlayer Instance;
@@ -91,6 +92,7 @@ public class RevivePlayer : MonoBehaviour
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         playerKiller = PlayerKiller.Instance;
         customAdManager = CustomAdManager.Instance;
+        diamondScore = DiamondScore.Instance;
 
         reviveScreenCommandExecutionDelay = buttonClickCommandExecutionDelay.revivalMenuCommandExecutionDelay;
 
@@ -135,6 +137,18 @@ public class RevivePlayer : MonoBehaviour
     {
         DisableAllButtons();
 
+        diamondScore.CubeBought(100);
+
+        Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
+    }
+
+    public void RevivePlayer_Tutorial()
+    {
+        Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
+    }
+
+    public void ReviePlayerFunction_AdReward()
+    {
         Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
     }
 

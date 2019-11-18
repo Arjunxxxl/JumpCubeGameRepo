@@ -196,7 +196,7 @@ public class CustomAdManager : MonoBehaviour
 
     public bool Check_To_ShowAds()
     {
-        if(customInterstialAdsManager.CurrentPlayCount >= customInterstialAdsManager.PlayCountForInterstialAds)
+        if(customInterstialAdsManager.currentPlayCount >= customInterstialAdsManager.PlayCountForInterstialAds)
         {
             return true;
         }
