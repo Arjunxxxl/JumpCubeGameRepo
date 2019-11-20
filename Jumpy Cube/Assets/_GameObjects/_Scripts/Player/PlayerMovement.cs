@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
     GameModeManager gameModeManager;
     LevelMenu levelMenu;
     CustomAdManager customAdManager;
+    AudioManager audioManager;
     
     public bool isLevelCompleted;
 
@@ -136,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
         gameModeManager = GameModeManager.Instance;
         levelMenu = LevelMenu.Instance;
         customAdManager = CustomAdManager.Instance;
+        audioManager = AudioManager.Instance;
 
         if (!mainCam)
         {
@@ -251,6 +253,8 @@ public class PlayerMovement : MonoBehaviour
                     isGrounded = false;
 
                     missionManager.CheckingForJumpMission();
+
+                    audioManager.PlayJumpAudio();
                 }
                 else
                 {
@@ -261,6 +265,8 @@ public class PlayerMovement : MonoBehaviour
                     isGrounded = false;
 
                     missionManager.CheckingForJumpMission();
+
+                    audioManager.PlayJumpAudio();
                 }
             }
         }
@@ -286,6 +292,8 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = false;
 
                 missionManager.CheckingForJumpMission();
+
+                audioManager.PlayJumpAudio();
             }
             else
             {
@@ -296,6 +304,8 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = false;
 
                 missionManager.CheckingForJumpMission();
+
+                audioManager.PlayJumpAudio();
             }
         }
 #endregion
@@ -404,6 +414,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("ChangeGravityArea"))
         {
+            if(isDownGravity)
+            {
+                audioManager.PlayGravitySwitch();
+            }
+
+            CancelInvoke("PlaySoundWhenGravityExit");
+
             Physics.gravity = changingGravity;
             isDownGravity = false;
             isGravityChanged = true;
@@ -492,7 +509,17 @@ public class PlayerMovement : MonoBehaviour
                 upVelocity *= -1;
             }
 
+            Invoke("PlaySoundWhenGravityExit", 0.05f);
+
             currentGround = GroundFloor;
+        }
+    }
+
+    void PlaySoundWhenGravityExit()
+    {
+        if (isDownGravity)
+        {
+            audioManager.PlayGravitySwitch();
         }
     }
 
@@ -507,6 +534,8 @@ public class PlayerMovement : MonoBehaviour
         {
             spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
             spawnedLandEffect.GetComponent<ParticleSystem>().Play();
+
+            audioManager.PlayLandAudio();
         }
     }
 
@@ -519,6 +548,8 @@ public class PlayerMovement : MonoBehaviour
 
         spawnedLandEffect = objectPooler.SpawnFormPool("land_particle", transform.position + landEffectOffSet, Quaternion.Euler(landEffectRotation));
         spawnedLandEffect.GetComponent<ParticleSystem>().Play();
+
+        audioManager.PlayLandAudio();
     }
 
     public void SetMovementActivateState(bool state)

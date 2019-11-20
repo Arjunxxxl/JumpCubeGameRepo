@@ -93,6 +93,11 @@ public class CustomAdManager : MonoBehaviour
         DestoyBannerAds_Function();
     }
 
+    public void DestroyBannerAds_PauseMenu_ButtonFunction()
+    {
+        DestoyBannerAds_Function();
+    }
+
     void DestoyBannerAds_Function()
     {
         customBannerAds.DestroyBanner();

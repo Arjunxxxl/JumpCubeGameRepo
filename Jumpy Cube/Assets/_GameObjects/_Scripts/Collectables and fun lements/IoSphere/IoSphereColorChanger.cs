@@ -21,9 +21,13 @@ public class IoSphereColorChanger : MonoBehaviour
     Shader iosphereShader;
 
     static string TILE_SYSTEM_TAG = "TileSystem";
+    public static string SOUND_TAG = "IO_SphereHitSound";
+
+    float currentTime = 0;
+    float soundDelay = 0.5f;
 
     SelectColorScheme selectColorScheme;
-    
+    ObjectPooler objectPooler;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,11 @@ public class IoSphereColorChanger : MonoBehaviour
         if (!selectColorScheme)
         {
             selectColorScheme = SelectColorScheme.Instance;
+        }
+
+        if (!objectPooler)
+        {
+            objectPooler = ObjectPooler.Instance;
         }
 
         currentColor = selectColorScheme.ioSphereMainColor;
@@ -47,7 +56,7 @@ public class IoSphereColorChanger : MonoBehaviour
         GetComponent<MeshRenderer>().material = ioSphereMat;
 
         triggered = false;
-
+        currentTime = 0;
     }
 
     private void OnEnable()
@@ -60,6 +69,11 @@ public class IoSphereColorChanger : MonoBehaviour
             {
                 selectColorScheme = GameObject.FindGameObjectWithTag(TILE_SYSTEM_TAG).GetComponent<SelectColorScheme>();
             }
+        }
+
+        if (!objectPooler)
+        {
+            objectPooler = ObjectPooler.Instance;
         }
 
         currentColor = selectColorScheme.ioSphereMainColor;
@@ -75,6 +89,7 @@ public class IoSphereColorChanger : MonoBehaviour
         GetComponent<MeshRenderer>().material = ioSphereMat;
 
         triggered = false;
+        currentTime = 0;
     }
 
     // Update is called once per frame
@@ -89,6 +104,8 @@ public class IoSphereColorChanger : MonoBehaviour
 
                 ioSphereMat.SetColor("_BaseColor", currentColor);
             }
+
+            currentTime += Time.deltaTime;
         }
     }
 
@@ -99,6 +116,18 @@ public class IoSphereColorChanger : MonoBehaviour
             if(!triggered)
             {
                 triggered = true;
+
+                var obj = objectPooler.SpawnFormPool(SOUND_TAG, transform.position, Quaternion.identity);
+                obj.GetComponent<AudioSource>().Play();
+            }
+
+            if (currentTime > soundDelay)
+            {
+                var obj1 = objectPooler.SpawnFormPool(SOUND_TAG, transform.position, Quaternion.identity);
+                obj1.GetComponent<AudioSource>().Play();
+
+                soundDelay += 0.1f;
+                currentTime = 0;
             }
         }
     }

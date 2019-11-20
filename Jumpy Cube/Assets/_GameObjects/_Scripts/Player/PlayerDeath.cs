@@ -14,6 +14,7 @@ public class PlayerDeath : MonoBehaviour
     DistanceScore distanceScore;
     SavedData savedData;
     Vibration1 vibration;
+    AudioManager audioManager;
 
     [Header("Revival Data")]
     public GameObject hitEnemy;
@@ -45,6 +46,7 @@ public class PlayerDeath : MonoBehaviour
         distanceScore = DistanceScore.Instance;
         savedData = SavedData.Instance;
         vibration = Vibration1.Instance;
+        audioManager = AudioManager.Instance;
 
         SetPlayerChildCube();
 
@@ -70,6 +72,8 @@ public class PlayerDeath : MonoBehaviour
 
             vibration.Vibrate(vibration.deathVibrationAmt);
 
+            audioManager.PlayDeathAudio();
+
             deathParticleSystem.SetActive(true);
             deathParticleSystem.transform.position = transform.position;
             cube.SetActive(false);
@@ -92,6 +96,9 @@ public class PlayerDeath : MonoBehaviour
         revialPointObj = revivalObj;
 
         vibration.Vibrate(vibration.deathVibrationAmt);
+
+        audioManager.PlayDeathAudio();
+
 
         deathParticleSystem.SetActive(true);
         deathParticleSystem.transform.position = transform.position;
