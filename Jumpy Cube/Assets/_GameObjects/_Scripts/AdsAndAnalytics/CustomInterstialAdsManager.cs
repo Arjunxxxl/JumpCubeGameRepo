@@ -31,6 +31,8 @@ public class CustomInterstialAdsManager : MonoBehaviour
     GameOverMenu gameOverMenu;
     LevelMenu levelMenu;
     PauseMenu pauseMenu;
+    CustomAnalytics customAnalytics;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,8 @@ public class CustomInterstialAdsManager : MonoBehaviour
         gameOverMenu = GameOverMenu.Instance;
         levelMenu = LevelMenu.Instance;
         pauseMenu = PauseMenu.Instance;
+        customAnalytics = CustomAnalytics.Instance;
+        audioManager = AudioManager.Instance;
         
         this.RequestInterstitial();
 
@@ -108,8 +112,21 @@ public class CustomInterstialAdsManager : MonoBehaviour
 
     public void ShowInterstitialAds()
     {
+        if (!customAnalytics)
+        {
+            customAnalytics = CustomAnalytics.Instance;
+        }
+        
+        customAnalytics.IntestitialRequested();
+
         if (interstitial.IsLoaded())
         {
+            if (!audioManager)
+            {
+                audioManager = AudioManager.Instance;
+            }
+            audioManager.Set_AdsOpen();
+
             interstitial.Show();
 
             _isInterstitialAdShowing = true;
@@ -125,6 +142,8 @@ public class CustomInterstialAdsManager : MonoBehaviour
             }
 
             PlayerPrefs.SetInt(customStrings.play_count_for_interstialAds, currentPlayCount);
+
+            customAnalytics.InterstitialAdsShown();
         }
         else
         {
@@ -152,7 +171,13 @@ public class CustomInterstialAdsManager : MonoBehaviour
 
     void SetCorrectBehaviour()
     {
-        if(_gamOver_home_Bool)
+        if (!audioManager)
+        {
+            audioManager = AudioManager.Instance;
+        }
+        audioManager.Set_GameStart();
+
+        if (_gamOver_home_Bool)
         {
             if (!gameOverMenu)
             {
@@ -239,15 +264,22 @@ public class CustomInterstialAdsManager : MonoBehaviour
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdOpened event received");
+
+        if (!customAnalytics)
+        {
+            customAnalytics = CustomAnalytics.Instance;
+        }
+
+        customAnalytics.InterstitialAdsOpen();
     }
 
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdClosed event received");
+        
+        SetCorrectBehaviour();
 
         interstitial.Destroy();
-
-        SetCorrectBehaviour();
     }
 
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)

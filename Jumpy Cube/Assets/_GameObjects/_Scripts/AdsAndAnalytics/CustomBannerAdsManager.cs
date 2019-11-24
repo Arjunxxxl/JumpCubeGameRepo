@@ -10,10 +10,13 @@ public class CustomBannerAdsManager : MonoBehaviour
 
     bool showBannerAds, showTopBannerAds;
 
+    CustomAnalytics customAnalytics;
     
     // Start is called before the first frame update
     void Start()
     {
+        customAnalytics = CustomAnalytics.Instance;
+
         appId = "ca-app-pub-3940256099942544~3347511713";
         adUnitId = "ca-app-pub-3940256099942544/6300978111";
 
@@ -60,6 +63,8 @@ public class CustomBannerAdsManager : MonoBehaviour
             // Load the banner with the request.
             this.bannerView.LoadAd(request);
         }
+
+        customAnalytics.BannerAdsShown();
 
         bannerView.Show();
     }
@@ -173,6 +178,8 @@ public class CustomBannerAdsManager : MonoBehaviour
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdOpened event received");
+
+        customAnalytics.BannerAdsOpened();
     }
 
     public void HandleOnAdClosed(object sender, EventArgs args)

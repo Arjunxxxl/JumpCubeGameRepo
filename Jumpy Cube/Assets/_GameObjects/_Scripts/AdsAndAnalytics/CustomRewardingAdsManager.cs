@@ -23,6 +23,8 @@ public class CustomRewardingAdsManager : MonoBehaviour
     GameOverMenu gameOverMenu;
     InGameMenu inGameMenu;
     TimelinePlayer timelinePlayer;
+    CustomAnalytics customAnalytics;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class CustomRewardingAdsManager : MonoBehaviour
         gameOverMenu = GameOverMenu.Instance;
         inGameMenu = InGameMenu.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        customAnalytics = CustomAnalytics.Instance;
+        audioManager = AudioManager.Instance;
 
         adUnitId = "ca-app-pub-3940256099942544/5224354917";
 
@@ -79,6 +83,13 @@ public class CustomRewardingAdsManager : MonoBehaviour
     {
         if (this.rewardedAd_store.IsLoaded())
         {
+            if (!audioManager)
+            {
+                audioManager = AudioManager.Instance;
+            }
+            
+            audioManager.Set_AdsOpen();
+
             //isStoreAdShowing = true;
             this.rewardedAd_store.Show();
         }
@@ -111,6 +122,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
         }*/
     }
 
+
     #region RewardingAds Events
 
     public void HandleRewardedAdLoaded(object sender, EventArgs args)
@@ -128,6 +140,27 @@ public class CustomRewardingAdsManager : MonoBehaviour
     public void HandleRewardedAdOpening(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleRewardedAdOpening event received");
+
+        if (!customAnalytics)
+        {
+            customAnalytics = CustomAnalytics.Instance;
+        }
+
+        if(isStoreAdShowing)
+        {
+            customAnalytics.FreeDiamonds_Open();
+        }
+
+        if (isExtraLifeAdShowing)
+        {
+            customAnalytics.Revive_Open();
+        }
+
+        if (isDoubleRewardAdShowing || isDoubleRewardAdShowing_levelEnd)
+        {
+            customAnalytics.RewardDoubled_Open();
+        }
+        
     }
 
     public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
@@ -140,8 +173,9 @@ public class CustomRewardingAdsManager : MonoBehaviour
     public void HandleRewardedAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleRewardedAdClosed event received");
-        
-        if(isStoreAdShowing)
+
+
+        if (isStoreAdShowing)
         {
             rewardedAd_store = RequestRewardingAds(adUnitId);
 
@@ -158,7 +192,7 @@ public class CustomRewardingAdsManager : MonoBehaviour
         if(isDoubleRewardAdShowing)
         {
             //rewardedAd_store = RequestRewardingAds(adUnitId);
-            
+
             isDoubleRewardAdShowing = false;
         }
 
@@ -168,6 +202,8 @@ public class CustomRewardingAdsManager : MonoBehaviour
 
             isDoubleRewardAdShowing_levelEnd = false;
         }
+
+        
     }
 
     public void HandleUserEarnedReward(object sender, Reward args)
@@ -183,6 +219,11 @@ public class CustomRewardingAdsManager : MonoBehaviour
             diamondScore = DiamondScore.Instance;
         }
 
+        if(!customAnalytics)
+        {
+            customAnalytics = CustomAnalytics.Instance;
+        }
+        
         if (isStoreAdShowing)
         {
             if (!store)
@@ -194,13 +235,19 @@ public class CustomRewardingAdsManager : MonoBehaviour
             {
                 timelinePlayer = TimelinePlayer.Instance;
             }
+            
+            if (!audioManager) { audioManager = AudioManager.Instance; }
+
+            audioManager.Set_InTheMenues();
 
             diamondScore.SaveDiamondsCollected(100, true);
 
             timelinePlayer.PlayDiamondReward();
 
             store.ownedDiamonds = diamondScore.GetDiamonds();
-            store.ownedDiamondTxt.text = store.ownedDiamonds + ""; 
+            store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+
+            customAnalytics.FreeDiamonds_Done();
         }
 
         if (isExtraLifeAdShowing)
@@ -209,8 +256,12 @@ public class CustomRewardingAdsManager : MonoBehaviour
             {
                 revivePlayer = RevivePlayer.Instance;
             }
+            
 
+            customAnalytics.Revive_Done();
             revivePlayer.ReviePlayerFunction_AdReward();
+
+            //backgroundAudioManager.gameState = GameState.gamePlaying;
         }
 
         if(isDoubleRewardAdShowing)
@@ -218,6 +269,9 @@ public class CustomRewardingAdsManager : MonoBehaviour
             if (!revivePlayer) { revivePlayer = RevivePlayer.Instance; }
             if (!gameOverMenu) { gameOverMenu = GameOverMenu.Instance; }
             if (!timelinePlayer) { timelinePlayer = TimelinePlayer.Instance; }
+            if (!audioManager) { audioManager = AudioManager.Instance; }
+
+            audioManager.Set_PlayerDead();
 
             gameOverMenu.disableWatchAdsPannel_button.SetActive(true);
             gameOverMenu.disableWatchAdsPannel.SetActive(true);
@@ -227,7 +281,10 @@ public class CustomRewardingAdsManager : MonoBehaviour
             timelinePlayer.PlayDiamondReward();
 
             revivePlayer.currentDiamondsTxt.text = revivePlayer.currentDiamonds * 2 + " ";
-            
+
+            customAnalytics.RewardDoubled_Done();
+
+            //backgroundAudioManager.gameState = GameState.playerDead;
         }
 
         if (isDoubleRewardAdShowing_levelEnd)
@@ -236,6 +293,9 @@ public class CustomRewardingAdsManager : MonoBehaviour
             {
                 inGameMenu = InGameMenu.Instance;
             }
+            if (!audioManager) { audioManager = AudioManager.Instance; }
+
+            audioManager.Set_GamePlaying();
 
             inGameMenu.levelEnd_disableWatchAdsPannel_button.SetActive(true);
             inGameMenu.levelEnd_disableWatchAdsPannel.SetActive(true);
@@ -244,7 +304,11 @@ public class CustomRewardingAdsManager : MonoBehaviour
 
             inGameMenu.diamondsTxt.text = inGameMenu.currentDiamonds * 2 + " ";
 
+            customAnalytics.RewardDoubled_Done();
+
+            //backgroundAudioManager.gameState = GameState.gamePlaying;
         }
+        
     }
     #endregion
 }

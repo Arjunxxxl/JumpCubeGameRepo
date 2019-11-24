@@ -21,6 +21,7 @@ public class MissionManager : MonoBehaviour
 
     public CustomStrings customStrings;
     public TimelinePlayer timelinePlayer;
+    AudioManager audioManager;
 
     #region SingleTon
     public static MissionManager Instance;
@@ -43,6 +44,7 @@ public class MissionManager : MonoBehaviour
     private void Start()
     {
         timelinePlayer = TimelinePlayer.Instance;
+        audioManager = AudioManager.Instance;
     }
 
     public void GetMissionActiveStatus()
@@ -118,6 +120,8 @@ public class MissionManager : MonoBehaviour
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE0, 1);
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (coinCollectMissions.isActiveTire2)
@@ -127,6 +131,8 @@ public class MissionManager : MonoBehaviour
                     coinCollectMissions.isActiveTire2 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (coinCollectMissions.isActiveTire3)
@@ -136,6 +142,8 @@ public class MissionManager : MonoBehaviour
                     coinCollectMissions.isActiveTire3 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
         }
@@ -159,6 +167,8 @@ public class MissionManager : MonoBehaviour
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE1, 1);
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (distanceScoreMissions.isActiveTire2)
@@ -168,6 +178,8 @@ public class MissionManager : MonoBehaviour
                     distanceScoreMissions.isActiveTire2 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (distanceScoreMissions.isActiveTire3)
@@ -177,6 +189,8 @@ public class MissionManager : MonoBehaviour
                     distanceScoreMissions.isActiveTire3 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
         }
@@ -202,6 +216,8 @@ public class MissionManager : MonoBehaviour
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE2, 1);
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (timesGameplayedMission.isActiveTire2)
@@ -211,6 +227,8 @@ public class MissionManager : MonoBehaviour
                     timesGameplayedMission.isActiveTire2 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (timesGameplayedMission.isActiveTire3)
@@ -220,6 +238,8 @@ public class MissionManager : MonoBehaviour
                     timesGameplayedMission.isActiveTire3 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
         }
@@ -245,6 +265,8 @@ public class MissionManager : MonoBehaviour
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE4, 1);
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (diamondsSpendMissions.isActiveTire2)
@@ -254,6 +276,8 @@ public class MissionManager : MonoBehaviour
                     diamondsSpendMissions.isActiveTire2 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (diamondsSpendMissions.isActiveTire3)
@@ -263,6 +287,8 @@ public class MissionManager : MonoBehaviour
                     diamondsSpendMissions.isActiveTire3 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
         }
@@ -290,6 +316,8 @@ public class MissionManager : MonoBehaviour
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE3, 1);
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (scoreShareMissions.isActiveTire2)
@@ -299,6 +327,8 @@ public class MissionManager : MonoBehaviour
                     scoreShareMissions.isActiveTire2 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (scoreShareMissions.isActiveTire3)
@@ -308,6 +338,8 @@ public class MissionManager : MonoBehaviour
                     scoreShareMissions.isActiveTire3 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
         }
@@ -339,6 +371,8 @@ public class MissionManager : MonoBehaviour
                     PlayerPrefs.SetInt(customStrings.MISSION_CUBE5, 1);
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (jumpMissions.isActiveTire2)
@@ -348,6 +382,8 @@ public class MissionManager : MonoBehaviour
                     jumpMissions.isActiveTire2 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
             if (jumpMissions.isActiveTire3)
@@ -357,6 +393,8 @@ public class MissionManager : MonoBehaviour
                     jumpMissions.isActiveTire3 = false;
 
                     timelinePlayer.PlayMisionCompleteAnimation();
+
+                    audioManager.Play_MissionCompleteAudio();
                 }
             }
         }

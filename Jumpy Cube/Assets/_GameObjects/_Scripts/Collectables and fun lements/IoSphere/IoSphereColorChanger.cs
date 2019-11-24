@@ -24,7 +24,7 @@ public class IoSphereColorChanger : MonoBehaviour
     public static string SOUND_TAG = "IO_SphereHitSound";
 
     float currentTime = 0;
-    float soundDelay = 0.5f;
+    float soundDelay = 1f;
 
     SelectColorScheme selectColorScheme;
     ObjectPooler objectPooler;

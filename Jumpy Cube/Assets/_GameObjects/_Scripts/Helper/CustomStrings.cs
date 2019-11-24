@@ -194,5 +194,23 @@ public class CustomStrings : MonoBehaviour
     public string INSTAGRAM_REWARD = "INSTAGRAM REWARD";
     public string YOUTUBE_REWARD = "YOUTUBE REWARD";
     public string SHARE_REWARD = "SHARE REWARD";
+
+    public string FACEBOOK_BUFFER = "FACEBOOK BUFFER";
+    public string RATE_BUFFER = "RATE BUFFER";
+    public string INSTAGRAM_BUFFER = "INSTAGRAM BUFFER";
+    public string YOUTUBE_BUFFER = "YOUTUBE BUFFER";
+    public string SHARE_BUFFER = "SHARE BUFFER";
+    #endregion
+
+    #region SHARING TEXTS
+    public string MSG_SUBJECT = "Check out this game - TAP'n'JUMP ";
+    public string MSG_TEXT = "You gotta check out this calm, beautiful and challenging game - #TAP'n'JUMP. https://play.google.com/store/apps/details?id=com.kumobius.android.highrisers";
+    public string MSG_TITLE = "Check out this game - TAP'n'JUMP ";
+
+    public string MSG_TEXT_GAMEOVER_1 = "I've just scored ";
+    public string MSG_TEXT_GAMEOVER_2 = "in #TAP'n'JUMP game! https://play.google.com/store/apps/details?id=com.kumobius.android.highrisers Can you beat me?";
+
+    public string MSG_TEXT_LEVELOVER_1 = "I've just completed level ";
+    public string MSG_TEXT_LEVELOVER_2 = "in #TAP'n'JUMP game! Check out this calm, beautiful and challenging game. https://play.google.com/store/apps/details?id=com.kumobius.android.highrisers";
     #endregion
 }

@@ -62,6 +62,8 @@ public class RevivePlayer : MonoBehaviour
     PlayerKiller playerKiller;
     CustomAdManager customAdManager;
     DiamondScore diamondScore;
+    CustomAnalytics customAnalytics;
+    BackgroundAudioManager backgroundAudioManager;
 
     #region SingleTon
     public static RevivePlayer Instance;
@@ -93,6 +95,8 @@ public class RevivePlayer : MonoBehaviour
         playerKiller = PlayerKiller.Instance;
         customAdManager = CustomAdManager.Instance;
         diamondScore = DiamondScore.Instance;
+        customAnalytics = CustomAnalytics.Instance;
+        backgroundAudioManager = BackgroundAudioManager.Instance;
 
         reviveScreenCommandExecutionDelay = buttonClickCommandExecutionDelay.revivalMenuCommandExecutionDelay;
 
@@ -139,6 +143,8 @@ public class RevivePlayer : MonoBehaviour
 
         diamondScore.CubeBought(100);
 
+        customAnalytics.DiamondRevive();
+
         Invoke("RevivePlayer_Function", reviveScreenCommandExecutionDelay);
     }
 
@@ -161,6 +167,8 @@ public class RevivePlayer : MonoBehaviour
 
     void WatchAds_Function()
     {
+        customAnalytics.Revive_Requested();
+
         customAdManager.ShowRewardingAds_ExtraLife();
         EnableAllButtons();
     }
@@ -196,7 +204,9 @@ public class RevivePlayer : MonoBehaviour
             playerSpawner.isDisolveEffectDone = false;
             playerSpawner.disolveEffect = 0;
         }
-        
+
+        backgroundAudioManager.gameState = GameState.gamePlaying;
+
         EnableAllButtons();
     }
 

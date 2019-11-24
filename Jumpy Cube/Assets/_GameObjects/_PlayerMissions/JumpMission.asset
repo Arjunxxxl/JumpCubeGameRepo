@@ -23,7 +23,7 @@ MonoBehaviour:
     requiredPlayCount: 0
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
-    requiredJumps: 2
+    requiredJumps: 100
   missionGoalTire2:
     tile: tire2
     description: desc2

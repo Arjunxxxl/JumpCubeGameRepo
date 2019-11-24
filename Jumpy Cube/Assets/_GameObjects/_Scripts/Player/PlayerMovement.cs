@@ -440,6 +440,8 @@ public class PlayerMovement : MonoBehaviour
             other.gameObject.SetActive(false);
 
             inGameMenu.DiamondCollected();
+
+            audioManager.PlayDiamondAudio();
         }
 
         if(other.gameObject.CompareTag("levelend"))
@@ -452,6 +454,8 @@ public class PlayerMovement : MonoBehaviour
                 levelMenu.CaptureScreenShot();
 
                 customAdManager.ShowBannerAds_Top_LevelEnd();
+
+                audioManager.Play_LevelComplete_HighScoreCrossed();
             }
         }
 

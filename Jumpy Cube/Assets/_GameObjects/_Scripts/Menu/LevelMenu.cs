@@ -45,6 +45,7 @@ public class LevelMenu : MonoBehaviour
     InGameMenu inGameMenu;
     CustomAdManager customAdManager;
     TimelinePlayer timelinePlayer;
+    CustomAnalytics customAnalytics;
 
     float levelMenuCommandExecutionDelay;
     float levelOverMenuCommandExecutionDelay;
@@ -100,6 +101,7 @@ public class LevelMenu : MonoBehaviour
         inGameMenu = InGameMenu.Instance;
         customAdManager = CustomAdManager.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        customAnalytics = CustomAnalytics.Instance;
 
         levelNo = 0;
         finnalName = levelname + levelNo;
@@ -268,6 +270,8 @@ public class LevelMenu : MonoBehaviour
 
         DisableAllButtons();
 
+        customAnalytics.ScoreShared_Levelover();
+
         Invoke("ShareScreenShotFunction", levelOverMenuCommandExecutionDelay);
     }
 
@@ -281,7 +285,9 @@ public class LevelMenu : MonoBehaviour
 #endif
 
         //new method
-        new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
+        new NativeShare().AddFile(path).SetSubject(customStrings.MSG_SUBJECT)
+            .SetText(customStrings.MSG_TEXT_LEVELOVER_1 + levelNo + customStrings.MSG_TEXT_LEVELOVER_2)
+            .SetTitle(customStrings.MSG_TEXT).Share();
         
         sharing = true;
 
@@ -522,6 +528,9 @@ public class LevelMenu : MonoBehaviour
     public void WatchAdsForDoubleReward()
     {
         DisableAllButtons();
+
+        customAnalytics.RewardDoubled_Requested();
+
         Invoke("WatchAdsForDoubleRewardFunction", levelOverMenuCommandExecutionDelay);
     }
 
@@ -618,218 +627,272 @@ public class LevelMenu : MonoBehaviour
         switch (levelNumbers)
         {
             case LevelNumbers._1:
+                customAnalytics.UpdateLevelComplete(1);
                 PlayerPrefs.SetInt(customStrings.LevelComplete1, 1);
                 break;
 
             case LevelNumbers._2:
+                customAnalytics.UpdateLevelComplete(2);
                 PlayerPrefs.SetInt(customStrings.LevelComplete2, 1);
                 break;
 
             case LevelNumbers._3:
+                customAnalytics.UpdateLevelComplete(3);
                 PlayerPrefs.SetInt(customStrings.LevelComplete3, 1);
                 break;
 
             case LevelNumbers._4:
+                customAnalytics.UpdateLevelComplete(4);
                 PlayerPrefs.SetInt(customStrings.LevelComplete4, 1);
                 break;
 
             case LevelNumbers._5:
+                customAnalytics.UpdateLevelComplete(5);
                 PlayerPrefs.SetInt(customStrings.LevelComplete5, 1);
                 break;
 
             case LevelNumbers._6:
+                customAnalytics.UpdateLevelComplete(6);
                 PlayerPrefs.SetInt(customStrings.LevelComplete6, 1);
                 break;
 
             case LevelNumbers._7:
+                customAnalytics.UpdateLevelComplete(7);
                 PlayerPrefs.SetInt(customStrings.LevelComplete7, 1);
                 break;
 
             case LevelNumbers._8:
+                customAnalytics.UpdateLevelComplete(8);
                 PlayerPrefs.SetInt(customStrings.LevelComplete8, 1);
                 break;
 
             case LevelNumbers._9:
+                customAnalytics.UpdateLevelComplete(9);
                 PlayerPrefs.SetInt(customStrings.LevelComplete9, 1);
                 break;
 
             case LevelNumbers._10:
+                customAnalytics.UpdateLevelComplete(10);
                 PlayerPrefs.SetInt(customStrings.LevelComplete10, 1);
                 break;
 
             case LevelNumbers._11:
+                customAnalytics.UpdateLevelComplete(11);
                 PlayerPrefs.SetInt(customStrings.LevelComplete11, 1);
                 break;
 
             case LevelNumbers._12:
+                customAnalytics.UpdateLevelComplete(12);
                 PlayerPrefs.SetInt(customStrings.LevelComplete12, 1);
                 break;
 
             case LevelNumbers._13:
+                customAnalytics.UpdateLevelComplete(13);
                 PlayerPrefs.SetInt(customStrings.LevelComplete13, 1);
                 break;
 
             case LevelNumbers._14:
+                customAnalytics.UpdateLevelComplete(14);
                 PlayerPrefs.SetInt(customStrings.LevelComplete14, 1);
                 break;
 
             case LevelNumbers._15:
+                customAnalytics.UpdateLevelComplete(15);
                 PlayerPrefs.SetInt(customStrings.LevelComplete15, 1);
                 break;
 
             case LevelNumbers._16:
+                customAnalytics.UpdateLevelComplete(16);
                 PlayerPrefs.SetInt(customStrings.LevelComplete16, 1);
                 break;
 
             case LevelNumbers._17:
+                customAnalytics.UpdateLevelComplete(17);
                 PlayerPrefs.SetInt(customStrings.LevelComplete17, 1);
                 break;
 
             case LevelNumbers._18:
+                customAnalytics.UpdateLevelComplete(18);
                 PlayerPrefs.SetInt(customStrings.LevelComplete18, 1);
                 break;
 
             case LevelNumbers._19:
+                customAnalytics.UpdateLevelComplete(19);
                 PlayerPrefs.SetInt(customStrings.LevelComplete19, 1);
                 break;
 
             case LevelNumbers._20:
+                customAnalytics.UpdateLevelComplete(20);
                 PlayerPrefs.SetInt(customStrings.LevelComplete20, 1);
                 break;
 
             case LevelNumbers._21:
+                customAnalytics.UpdateLevelComplete(21);
                 PlayerPrefs.SetInt(customStrings.LevelComplete21, 1);
                 break;
 
             case LevelNumbers._22:
+                customAnalytics.UpdateLevelComplete(22);
                 PlayerPrefs.SetInt(customStrings.LevelComplete22, 1);
                 break;
 
             case LevelNumbers._23:
+                customAnalytics.UpdateLevelComplete(23);
                 PlayerPrefs.SetInt(customStrings.LevelComplete23, 1);
                 break;
 
             case LevelNumbers._24:
+                customAnalytics.UpdateLevelComplete(24);
                 PlayerPrefs.SetInt(customStrings.LevelComplete24, 1);
                 break;
 
             case LevelNumbers._25:
+                customAnalytics.UpdateLevelComplete(25);
                 PlayerPrefs.SetInt(customStrings.LevelComplete25, 1);
                 break;
 
             case LevelNumbers._26:
+                customAnalytics.UpdateLevelComplete(26);
                 PlayerPrefs.SetInt(customStrings.LevelComplete26, 1);
                 break;
 
             case LevelNumbers._27:
+                customAnalytics.UpdateLevelComplete(27);
                 PlayerPrefs.SetInt(customStrings.LevelComplete27, 1);
                 break;
 
             case LevelNumbers._28:
+                customAnalytics.UpdateLevelComplete(28);
                 PlayerPrefs.SetInt(customStrings.LevelComplete28, 1);
                 break;
 
             case LevelNumbers._29:
+                customAnalytics.UpdateLevelComplete(29);
                 PlayerPrefs.SetInt(customStrings.LevelComplete29, 1);
                 break;
 
             case LevelNumbers._30:
+                customAnalytics.UpdateLevelComplete(30);
                 PlayerPrefs.SetInt(customStrings.LevelComplete30, 1);
                 break;
 
             case LevelNumbers._31:
+                customAnalytics.UpdateLevelComplete(31);
                 PlayerPrefs.SetInt(customStrings.LevelComplete31, 1);
                 break;
 
             case LevelNumbers._32:
+                customAnalytics.UpdateLevelComplete(32);
                 PlayerPrefs.SetInt(customStrings.LevelComplete32, 1);
                 break;
 
             case LevelNumbers._33:
+                customAnalytics.UpdateLevelComplete(33);
                 PlayerPrefs.SetInt(customStrings.LevelComplete33, 1);
                 break;
 
             case LevelNumbers._34:
+                customAnalytics.UpdateLevelComplete(34);
                 PlayerPrefs.SetInt(customStrings.LevelComplete34, 1);
                 break;
 
             case LevelNumbers._35:
+                customAnalytics.UpdateLevelComplete(35);
                 PlayerPrefs.SetInt(customStrings.LevelComplete35, 1);
                 break;
 
             case LevelNumbers._36:
+                customAnalytics.UpdateLevelComplete(36);
                 PlayerPrefs.SetInt(customStrings.LevelComplete36, 1);
                 break;
 
             case LevelNumbers._37:
+                customAnalytics.UpdateLevelComplete(37);
                 PlayerPrefs.SetInt(customStrings.LevelComplete37, 1);
                 break;
 
             case LevelNumbers._38:
+                customAnalytics.UpdateLevelComplete(38);
                 PlayerPrefs.SetInt(customStrings.LevelComplete38, 1);
                 break;
 
             case LevelNumbers._39:
+                customAnalytics.UpdateLevelComplete(39);
                 PlayerPrefs.SetInt(customStrings.LevelComplete39, 1);
                 break;
 
             case LevelNumbers._40:
+                customAnalytics.UpdateLevelComplete(40);
                 PlayerPrefs.SetInt(customStrings.LevelComplete40, 1);
                 break;
 
             case LevelNumbers._41:
+                customAnalytics.UpdateLevelComplete(41);
                 PlayerPrefs.SetInt(customStrings.LevelComplete41, 1);
                 break;
 
             case LevelNumbers._42:
+                customAnalytics.UpdateLevelComplete(42);
                 PlayerPrefs.SetInt(customStrings.LevelComplete42, 1);
                 break;
 
             case LevelNumbers._43:
+                customAnalytics.UpdateLevelComplete(43);
                 PlayerPrefs.SetInt(customStrings.LevelComplete43, 1);
                 break;
 
             case LevelNumbers._44:
+                customAnalytics.UpdateLevelComplete(44);
                 PlayerPrefs.SetInt(customStrings.LevelComplete44, 1);
                 break;
 
             case LevelNumbers._45:
+                customAnalytics.UpdateLevelComplete(45);
                 PlayerPrefs.SetInt(customStrings.LevelComplete45, 1);
                 break;
 
             case LevelNumbers._46:
+                customAnalytics.UpdateLevelComplete(46);
                 PlayerPrefs.SetInt(customStrings.LevelComplete46, 1);
                 break;
 
             case LevelNumbers._47:
+                customAnalytics.UpdateLevelComplete(47);
                 PlayerPrefs.SetInt(customStrings.LevelComplete47, 1);
                 break;
 
             case LevelNumbers._48:
+                customAnalytics.UpdateLevelComplete(48);
                 PlayerPrefs.SetInt(customStrings.LevelComplete48, 1);
                 break;
 
             case LevelNumbers._49:
+                customAnalytics.UpdateLevelComplete(49);
                 PlayerPrefs.SetInt(customStrings.LevelComplete49, 1);
                 break;
 
             case LevelNumbers._50:
+                customAnalytics.UpdateLevelComplete(50);
                 PlayerPrefs.SetInt(customStrings.LevelComplete50, 1);
                 break;
 
             case LevelNumbers._51:
+                customAnalytics.UpdateLevelComplete(51);
                 PlayerPrefs.SetInt(customStrings.LevelComplete51, 1);
                 break;
 
             case LevelNumbers._52:
+                customAnalytics.UpdateLevelComplete(52);
                 PlayerPrefs.SetInt(customStrings.LevelComplete52, 1);
                 break;
 
             case LevelNumbers._53:
+                customAnalytics.UpdateLevelComplete(53);
                 PlayerPrefs.SetInt(customStrings.LevelComplete53, 1);
                 break;
 
             case LevelNumbers._54:
+                customAnalytics.UpdateLevelComplete(54);
                 PlayerPrefs.SetInt(customStrings.LevelComplete54, 1);
                 break;
         }

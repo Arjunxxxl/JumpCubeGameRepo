@@ -21,6 +21,7 @@ public class SharingAppScript : MonoBehaviour
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     CustomStrings customStrings;
     CustomSocialMediaScript customSocialMediaScript;
+    CustomAnalytics customAnalytics;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class SharingAppScript : MonoBehaviour
     {
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         customStrings = CustomStrings.Instance;
+        customAnalytics = CustomAnalytics.Instance;
 
         buttonClickDelay = buttonClickCommandExecutionDelay.storeMenuCommandExecutionDelay;
 
@@ -90,23 +92,27 @@ public class SharingAppScript : MonoBehaviour
 
     public void ShareSocialMedia_Store()
     {
+        customAnalytics.GameShare_Store();
         Invoke("ShareSocialMedia_Store_Function", buttonClickDelay);
     }
 
     void ShareSocialMedia_Store_Function()
     {
         sharing = true;
-        
-        new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
+
+        PlayerPrefs.SetInt(customStrings.SHARE_BUFFER, 1);
+
+        new NativeShare().AddFile(path).SetSubject(customStrings.MSG_SUBJECT).SetText(customStrings.MSG_TEXT).SetTitle(customStrings.MSG_TITLE).Share();
     }
 
     public void ShareSocialMedia_Home()
     {
+        customAnalytics.GameShared_Home();
         Invoke("ShareSocialMedia_Home_Function", buttonClickDelay);
     }
 
     void ShareSocialMedia_Home_Function()
     {
-        new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
+        new NativeShare().AddFile(path).SetSubject(customStrings.MSG_SUBJECT).SetText(customStrings.MSG_TEXT).SetTitle(customStrings.MSG_TITLE).Share();
     }
 }

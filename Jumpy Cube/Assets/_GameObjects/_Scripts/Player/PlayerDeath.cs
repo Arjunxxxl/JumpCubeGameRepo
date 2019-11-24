@@ -15,6 +15,8 @@ public class PlayerDeath : MonoBehaviour
     SavedData savedData;
     Vibration1 vibration;
     AudioManager audioManager;
+    CustomAnalytics customAnalytics;
+    BackgroundAudioManager backgroundAudioManager;
 
     [Header("Revival Data")]
     public GameObject hitEnemy;
@@ -47,6 +49,8 @@ public class PlayerDeath : MonoBehaviour
         savedData = SavedData.Instance;
         vibration = Vibration1.Instance;
         audioManager = AudioManager.Instance;
+        customAnalytics = CustomAnalytics.Instance;
+        backgroundAudioManager = BackgroundAudioManager.Instance;
 
         SetPlayerChildCube();
 
@@ -88,6 +92,10 @@ public class PlayerDeath : MonoBehaviour
             inGameMenu.realNumberOfDiamondsCollected = 0;
 
             gameOverMenu.CaptureScreenShot();
+
+            customAnalytics.UpdatePlayerDeath();
+
+            backgroundAudioManager.gameState = GameState.playerDead;
         }
     }
 
@@ -114,6 +122,10 @@ public class PlayerDeath : MonoBehaviour
         inGameMenu.realNumberOfDiamondsCollected = 0;
 
         gameOverMenu.CaptureScreenShot();
+
+        customAnalytics.UpdatePlayerDeath();
+
+        backgroundAudioManager.gameState = GameState.playerDead;
     }
 
     public void SetPlayerChildCube(GameObject overrideCube = null)

@@ -50,6 +50,9 @@ public class MainMenu : MonoBehaviour
     SavedData savedData;
     LevelMenu levelMenu;
     CustomAdManager customAdManager;
+    BackgroundAudioManager backgroundAudioManager;
+
+    CustomAnalytics customAnalytics;
 
     #region SingleTon
     public static MainMenu Instance;
@@ -80,7 +83,12 @@ public class MainMenu : MonoBehaviour
         levelMenu = LevelMenu.Instance;
         customAdManager = CustomAdManager.Instance;
 
+        customAnalytics = CustomAnalytics.Instance;
+        backgroundAudioManager = BackgroundAudioManager.Instance;
+
         commandExecuationDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
+
+        backgroundAudioManager.gameState = GameState.gameStart;
         
         levelNumberUI.SetActive(false);
 
@@ -205,6 +213,9 @@ public class MainMenu : MonoBehaviour
         }
 
         gameModeManager.showStartingCanvas++;
+
+        customAnalytics.UpdatePlayCount();
+        backgroundAudioManager.gameState = GameState.gamePlaying;
     }
 
     IEnumerator DisableMainMenuWithDelay()
@@ -216,6 +227,7 @@ public class MainMenu : MonoBehaviour
     
     public void HomeButton()
     {
+        backgroundAudioManager.gameState = GameState.gameStart;
         Invoke("HomeButtonFunction", commandExecuationDelay);
     }
 
@@ -236,6 +248,9 @@ public class MainMenu : MonoBehaviour
 
     public void StoreButton()
     {
+        customAnalytics.StoreVisited();
+        backgroundAudioManager.gameState = GameState.inTheMenues;
+
         Invoke("StoreButtonFunction", commandExecuationDelay);
     }
 
@@ -256,6 +271,7 @@ public class MainMenu : MonoBehaviour
     public void LevelButton()
     {
         levelMenu.SetLevelCompleteUI();
+        backgroundAudioManager.gameState = GameState.inTheMenues;
         Invoke("LevelButtonFunction", commandExecuationDelay);
     }
 
@@ -270,6 +286,9 @@ public class MainMenu : MonoBehaviour
 
     public void StatsButton()
     {
+        customAnalytics.Stats_Visited();
+        backgroundAudioManager.gameState = GameState.inTheMenues;
+
         Invoke("StatsButtonFunction", commandExecuationDelay);
     }
 
@@ -284,6 +303,9 @@ public class MainMenu : MonoBehaviour
 
     public void SettingButton()
     {
+        customAnalytics.Settings_Visited();
+        backgroundAudioManager.gameState = GameState.inTheMenues;
+
         Invoke("SettingsButtonFunction", commandExecuationDelay);
     }
 
@@ -354,6 +376,9 @@ public class MainMenu : MonoBehaviour
         customAdManager.UpdatePlayCount();
 
         gameModeManager.showStartingCanvas++;
+        
+        customAnalytics.UpdatePlayCount();
+        backgroundAudioManager.gameState = GameState.gamePlaying;
     }
 
     public void Play_Level()
@@ -389,6 +414,9 @@ public class MainMenu : MonoBehaviour
         customAdManager.UpdatePlayCount();
 
         gameModeManager.showStartingCanvas++;
+
+        customAnalytics.UpdatePlayCount();
+        backgroundAudioManager.gameState = GameState.gamePlaying;
     }
 
     IEnumerator StartGameWithDelay()

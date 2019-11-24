@@ -18,11 +18,12 @@ MonoBehaviour:
   missionGoalTire1:
     tile: diamond collect
     description: diamond collect
-    requiredCoins: 10
+    requiredCoins: 800
     requiredDistance: 0
     requiredPlayCount: 0
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
+    requiredJumps: 0
   missionGoalTire2:
     tile: tire2
     description: desc2
@@ -31,6 +32,7 @@ MonoBehaviour:
     requiredPlayCount: 0
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
+    requiredJumps: 0
   missionGoalTire3:
     tile: tire3
     description: desc3
@@ -39,4 +41,5 @@ MonoBehaviour:
     requiredPlayCount: 0
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
+    requiredJumps: 0
   missionType: 0

@@ -73,6 +73,9 @@ public class Store : MonoBehaviour
 
     CubeBoughtManager.CubeType previousType;
 
+    AudioManager audioManager;
+    CustomAnalytics customAnalytics;
+
     #region SingleTon
     public static Store Instance;
     private void Awake()
@@ -97,6 +100,12 @@ public class Store : MonoBehaviour
         totalMissionCubes = cubeBoughtManager.totalMissionCubes;
     }
     #endregion
+
+    private void Start()
+    {
+        audioManager = AudioManager.Instance;
+        customAnalytics = CustomAnalytics.Instance;
+    }
 
     public void SetStoreButton(bool _override = false)
     {
@@ -376,27 +385,27 @@ public class Store : MonoBehaviour
                 switch(i)
                 {
                     case 0:
-                        missionStatus[i].text = "Collect " + inGameCollectedDiamonds + "/" + 200;
+                        missionStatus[i].text = "Collect " + inGameCollectedDiamonds + "/" + 800;
                         break;
 
                     case 1:
-                        missionStatus[i].text = "Reach 60 Points";
+                        missionStatus[i].text = "Reach 2000 Points";
                         break;
 
                     case 2:
-                        missionStatus[i].text = "Play game " + PlayerPrefs.GetInt(customStrings.TIMES_GAME_PLAYED, 0) + "/" + 2; 
+                        missionStatus[i].text = "Play game " + PlayerPrefs.GetInt(customStrings.TIMES_GAME_PLAYED, 0) + "/" + 20; 
                         break;
 
                     case 3:
-                        missionStatus[i].text = "Share Score " + PlayerPrefs.GetInt(customStrings.TIMES_SCORE_SHARED, 0) + "/" + 1;
+                        missionStatus[i].text = "Share Score " + PlayerPrefs.GetInt(customStrings.TIMES_SCORE_SHARED, 0) + "/" + 5;
                         break;
 
                     case 4:
-                        missionStatus[i].text = "Spend " + PlayerPrefs.GetInt(customStrings.TOTAL_DIAMONDS_SPEND, 0) + "/" + 200;
+                        missionStatus[i].text = "Use " + PlayerPrefs.GetInt(customStrings.TOTAL_DIAMONDS_SPEND, 0) + "/" + 1000;
                         break;
 
                     case 5:
-                        missionStatus[i].text = "Jump " + PlayerPrefs.GetInt(customStrings.TIMES_PLAYER_JUMPED, 0) + "/" + 10;
+                        missionStatus[i].text = "Jump " + PlayerPrefs.GetInt(customStrings.TIMES_PLAYER_JUMPED, 0) + "/" + 100;
                         break;
                 }
             }
@@ -419,6 +428,13 @@ public class Store : MonoBehaviour
 
         cubeBoughtManager.GetOwnedMissionCubes();
         SetMissionCubeButton(true);
+
+        audioManager.PlayBuy_Success_Audio();
+    }
+
+    void BuyingFailed()
+    {
+        audioManager.PlayBuy_Fail_Audio();
     }
 
     ///*   FUNCTION FOR STORE BUTTON - COLOR SCHEME   *///
@@ -460,6 +476,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -502,6 +524,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
                 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -544,6 +572,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -586,6 +620,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -628,6 +668,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -670,6 +716,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -712,6 +764,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -754,6 +812,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -796,6 +860,12 @@ public class Store : MonoBehaviour
                 selectColorScheme.SetColor(true);
 
                 SetColorSchemeButton(true);
+
+                customAnalytics.WorldUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -840,6 +910,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -882,6 +958,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -924,6 +1006,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -966,6 +1054,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1008,6 +1102,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1050,6 +1150,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1092,6 +1198,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1134,6 +1246,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1176,6 +1294,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.CommonCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1220,6 +1344,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1262,6 +1392,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1304,6 +1440,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1346,6 +1488,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1388,6 +1536,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1430,6 +1584,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1473,6 +1633,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1515,6 +1681,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1557,6 +1729,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.RareCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1601,6 +1779,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1643,6 +1827,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1685,6 +1875,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1727,6 +1923,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1769,6 +1971,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1811,6 +2019,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1853,6 +2067,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1895,6 +2115,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1937,6 +2163,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.LegendaryCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -1984,6 +2216,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.MissionCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -2029,6 +2267,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.MissionCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -2074,6 +2318,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.MissionCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -2119,6 +2369,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.MissionCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -2164,6 +2420,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.MissionCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }
@@ -2209,6 +2471,12 @@ public class Store : MonoBehaviour
                 cubeBoughtManager.SetCube_From_Store();
 
                 SetStoreButton();
+
+                customAnalytics.MissionCubeUnlocked();
+            }
+            else
+            {
+                BuyingFailed();
             }
         }
     }

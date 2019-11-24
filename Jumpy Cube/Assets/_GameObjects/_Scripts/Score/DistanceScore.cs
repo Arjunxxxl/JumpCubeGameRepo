@@ -25,6 +25,7 @@ public class DistanceScore : MonoBehaviour
     ObjectPooler objectPooler;
     CustomStrings customStrings;
     TimelinePlayer timelinePlayer;
+    AudioManager audioManager;
 
     int highScore;
     bool isHighScoreMade;
@@ -57,6 +58,7 @@ public class DistanceScore : MonoBehaviour
         objectPooler = ObjectPooler.Instance;
         customStrings = CustomStrings.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        audioManager = AudioManager.Instance;
 
         if(!player)
         {
@@ -127,6 +129,8 @@ public class DistanceScore : MonoBehaviour
                     timelinePlayer.PlayHighScore();
                     objectPooler.SpawnFormPool("HighScoreEffect", player.transform.position + playerLeftPos, Quaternion.identity);
                     objectPooler.SpawnFormPool("HighScoreEffect", player.transform.position + playerRightPos, Quaternion.identity);
+
+                    audioManager.Play_LevelComplete_HighScoreCrossed();
                 }
             }
         }

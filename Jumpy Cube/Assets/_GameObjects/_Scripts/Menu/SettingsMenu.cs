@@ -36,17 +36,25 @@ public class SettingsMenu : MonoBehaviour
     public PostProcessLayer postProcessLayer;
     public PostProcessVolume postProcessVol;
 
+    [Header("Privacy policy")]
+    public GameObject privacyPolicyObj;
+    float commandExecutionDelay;
+
     string on = "ON";
     string off = "OFF";
 
     CustomStrings customStrings;
     SavedData savedData;
+    ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
 
     // Start is called before the first frame update
     void Start()
     {
         customStrings = CustomStrings.Instance;
         savedData = SavedData.Instance;
+        buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+
+        commandExecutionDelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
 
         isSoundOn = PlayerPrefs.GetInt(customStrings.GAME_SOUND_STRING, 1);
         isVibrationOn = PlayerPrefs.GetInt(customStrings.VIBRATION_STRING, 1);
@@ -95,6 +103,8 @@ public class SettingsMenu : MonoBehaviour
         {
             SetGameQualityAuto();
         }
+
+        privacyPolicyObj.SetActive(false);
     }
     
     public void SoundButtonPressed()
@@ -169,8 +179,8 @@ public class SettingsMenu : MonoBehaviour
     {
         if(SystemInfo.processorFrequency <= 1550 || SystemInfo.systemMemorySize < 1600)
         {
-            postProcessLayer.enabled = false;
-            postProcessVol.enabled = false;
+            //postProcessLayer.enabled = false;
+            //postProcessVol.enabled = false;
 
             HighQualityButtonPressed();
         }
@@ -179,5 +189,25 @@ public class SettingsMenu : MonoBehaviour
             postProcessLayer.enabled = true;
             postProcessVol.enabled = true;
         }
+    }
+
+    public void ShowPrivacyPolicy()
+    {
+        Invoke("ShowPrivacyPolicy_Function", commandExecutionDelay);
+    }
+
+    void ShowPrivacyPolicy_Function()
+    {
+        privacyPolicyObj.SetActive(true);
+    }
+
+    public void ClosePrivacyPolicy()
+    {
+        Invoke("ClosePrivacyPolicy_Function", commandExecutionDelay);
+    }
+
+    void ClosePrivacyPolicy_Function()
+    {
+        privacyPolicyObj.SetActive(false);
     }
 }

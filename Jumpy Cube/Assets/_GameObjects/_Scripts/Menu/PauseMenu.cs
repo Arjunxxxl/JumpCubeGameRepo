@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     GameModeManager gameModeManager;
     PlayerMovement playerMovement;
     CustomAdManager customAdManager;
+    BackgroundAudioManager backgroundAudioManager;
 
     #region SingleTon
     public static PauseMenu Instance;
@@ -62,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         gameModeManager = GameModeManager.Instance;
         playerMovement = PlayerMovement.Instance;
         customAdManager = CustomAdManager.Instance;
+        backgroundAudioManager = BackgroundAudioManager.Instance;
 
         pauseMenu.SetActive(false);
         resumeDelayCounter.SetActive(false);
@@ -135,6 +137,8 @@ public class PauseMenu : MonoBehaviour
         timelinePlayer.PlayPausePlayable();
 
         isPaused = true;
+
+        backgroundAudioManager.gameState = GameState.gamePaused;
     }
 
     public void ResumeGame()
@@ -153,6 +157,8 @@ public class PauseMenu : MonoBehaviour
         timelinePlayer.PlayResumeCountDown();
 
         StartCoroutine(AfterResumeDalay());
+
+        backgroundAudioManager.gameState = GameState.gamePlaying;
     }
 
     IEnumerator AfterResumeDalay()

@@ -15,6 +15,7 @@ public class CustomAdManager : MonoBehaviour
     CustomBannerAdsManager customBannerAds;
     CustomInterstialAdsManager customInterstialAdsManager;
     CustomRewardingAdsManager customRewardingAdsManager;
+    CustomAnalytics customAnalytics;
 
     #region SingleTon
     public static CustomAdManager Instance;
@@ -43,6 +44,7 @@ public class CustomAdManager : MonoBehaviour
     void Start()
     {
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
+        customAnalytics = CustomAnalytics.Instance;
 
         menuButtondelay = buttonClickCommandExecutionDelay.mainmenuCommandExecutionDelay;
         inGameMenuDelay = buttonClickCommandExecutionDelay.ingameMenuCommandExecutionDelay;
@@ -223,6 +225,8 @@ public class CustomAdManager : MonoBehaviour
     #region REWARDING ADS
     public void ShowRewardingAds_Store()
     {
+        customAnalytics.FreeDiamonds_Requested();
+
         customRewardingAdsManager.isStoreAdShowing = true;
         customRewardingAdsManager.ShowRewardingAds_Store();
     }

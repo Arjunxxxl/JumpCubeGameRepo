@@ -76,6 +76,8 @@ public class GameOverMenu : MonoBehaviour
     RevivePlayer revivePlayer;
     CustomAdManager customAdManager;
     NetworkManager networkManager;
+    CustomAnalytics customAnalytics;
+    CustomStrings customStrings;
 
     #region SingleTon
     public static GameOverMenu Instance;
@@ -105,6 +107,8 @@ public class GameOverMenu : MonoBehaviour
         gameModeManager = GameModeManager.Instance;
         customAdManager = CustomAdManager.Instance;
         networkManager = NetworkManager.Instance;
+        customAnalytics = CustomAnalytics.Instance;
+        customStrings = CustomStrings.Instance;
 
         if(!revivePlayer)
         {
@@ -311,6 +315,8 @@ public class GameOverMenu : MonoBehaviour
 
         DisableAllButtons();
 
+        customAnalytics.ScoreShared_Gameover();
+
         Invoke("ShareScreenShotFunction", gameoverMenuCommandExecutionDelay);
     }
 
@@ -324,7 +330,9 @@ public class GameOverMenu : MonoBehaviour
         #endif
 
         //new method
-        new NativeShare().AddFile(path).SetSubject("Subject").SetText("Text").SetTitle("Title").Share();
+        new NativeShare().AddFile(path).SetSubject(customStrings.MSG_SUBJECT)
+            .SetText(customStrings.MSG_TEXT_GAMEOVER_1 + revivePlayer.currentScore + customStrings.MSG_TEXT_GAMEOVER_2)
+            .SetTitle(customStrings.MSG_TITLE).Share();
         
         sharing = true;
 
@@ -360,6 +368,9 @@ public class GameOverMenu : MonoBehaviour
     public void WatchAdsForDoubleReward()
     {
         DisableAllButtons();
+
+        customAnalytics.RewardDoubled_Requested();
+
         Invoke("WatchAdsForDoubleRewardFunction", gameoverMenuCommandExecutionDelay);
     }
 

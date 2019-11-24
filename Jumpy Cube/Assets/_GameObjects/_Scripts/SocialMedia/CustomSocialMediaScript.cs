@@ -56,11 +56,20 @@ public class CustomSocialMediaScript : MonoBehaviour
 
     float buttomClickDelay;
 
+    #region Reward Buffer
+    int facebook_buffer;
+    int rate_buffer;
+    int instagram_buffer;
+    int youtube_buffer;
+    int share_buffer;
+    #endregion
+
     CustomStrings customStrings;
     Store store;
     DiamondScore diamondScore;
     ButtonClickCommandExecutionDelay buttonClickCommandExecutionDelay;
     TimelinePlayer timelinePlayer;
+    CustomAnalytics customAnalytics;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +79,7 @@ public class CustomSocialMediaScript : MonoBehaviour
         diamondScore = DiamondScore.Instance;
         buttonClickCommandExecutionDelay = ButtonClickCommandExecutionDelay.Instance;
         timelinePlayer = TimelinePlayer.Instance;
+        customAnalytics = CustomAnalytics.Instance;
 
         buttomClickDelay = buttonClickCommandExecutionDelay.storeMenuCommandExecutionDelay;
 
@@ -94,9 +104,10 @@ public class CustomSocialMediaScript : MonoBehaviour
         instagramOpenChecker = false;
         activateInstagramReward = false;
         instagramRewardGiven = PlayerPrefs.GetInt(customStrings.INSTAGRAM_REWARD, 0);
-
         
         shareRewardGiven = PlayerPrefs.GetInt(customStrings.SHARE_REWARD, 0);
+
+        CheckIfBufferIsPresent();
 
         if (facebookRewardGiven == 0) { facebookRewardUI.SetActive(true); } else { facebookRewardUI.SetActive(false); }
         if (rateRewardGiven == 0) { rateRewardUI.SetActive(true); } else { rateRewardUI.SetActive(false); }
@@ -104,6 +115,103 @@ public class CustomSocialMediaScript : MonoBehaviour
         if (instagramRewardGiven == 0) { instagramRewardUI.SetActive(true); } else { instagramRewardUI.SetActive(false); }
         if (shareRewardGiven == 0) { shareRewardUI.SetActive(true); } else { shareRewardUI.SetActive(false); }
     } 
+
+    void CheckIfBufferIsPresent()
+    {
+        if (facebookRewardGiven == 0)
+        {
+            facebook_buffer = PlayerPrefs.GetInt(customStrings.FACEBOOK_BUFFER, 0);
+
+            if (facebook_buffer == 1)
+            {
+                diamondScore.SaveDiamondsCollected(rewardValue, true);
+
+                store.ownedDiamonds = diamondScore.GetDiamonds();
+                store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+
+                facebookRewardGiven = 1;
+                PlayerPrefs.SetInt(customStrings.FACEBOOK_REWARD, facebookRewardGiven);
+                PlayerPrefs.SetInt(customStrings.FACEBOOK_BUFFER, 0);
+
+                if (facebookRewardGiven == 0) { facebookRewardUI.SetActive(true); } else { facebookRewardUI.SetActive(false); }
+            }
+        }
+
+        if(rateRewardGiven == 0)
+        {
+            rate_buffer = PlayerPrefs.GetInt(customStrings.RATE_BUFFER, 0);
+
+            if (rate_buffer == 1)
+            {
+                diamondScore.SaveDiamondsCollected(rewardValue, true);
+
+                store.ownedDiamonds = diamondScore.GetDiamonds();
+                store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+
+                rateRewardGiven = 1;
+                PlayerPrefs.SetInt(customStrings.RATE_REWARD, rateRewardGiven);
+                PlayerPrefs.SetInt(customStrings.RATE_BUFFER, 0);
+
+                if (rateRewardGiven == 0) { rateRewardUI.SetActive(true); } else { rateRewardUI.SetActive(false); }
+            }
+        }
+
+        if(instagramRewardGiven == 0)
+        {
+            instagram_buffer = PlayerPrefs.GetInt(customStrings.INSTAGRAM_BUFFER, 0);
+            if(instagram_buffer == 1)
+            {
+                diamondScore.SaveDiamondsCollected(rewardValue, true);
+
+                store.ownedDiamonds = diamondScore.GetDiamonds();
+                store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+
+                instagramRewardGiven = 1;
+                PlayerPrefs.SetInt(customStrings.INSTAGRAM_REWARD, instagramRewardGiven);
+                PlayerPrefs.SetInt(customStrings.INSTAGRAM_BUFFER, 0);
+
+                if (instagramRewardGiven == 0) { instagramRewardUI.SetActive(true); } else { instagramRewardUI.SetActive(false); }
+            }
+        }
+
+        if(youtubeRewardGiven == 0)
+        {
+            youtube_buffer = PlayerPrefs.GetInt(customStrings.YOUTUBE_BUFFER, 0);
+
+            if(youtube_buffer == 1)
+            {
+                diamondScore.SaveDiamondsCollected(rewardValue, true);
+
+                store.ownedDiamonds = diamondScore.GetDiamonds();
+                store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+
+                youtubeRewardGiven = 1;
+                PlayerPrefs.SetInt(customStrings.YOUTUBE_REWARD, youtubeRewardGiven);
+                PlayerPrefs.SetInt(customStrings.YOUTUBE_BUFFER, 0);
+
+                if (youtubeRewardGiven == 0) { youtubeRewardUI.SetActive(true); } else { youtubeRewardUI.SetActive(false); }
+            }
+        }
+
+        if(shareRewardGiven == 0)
+        {
+            share_buffer = PlayerPrefs.GetInt(customStrings.SHARE_BUFFER, 0);
+
+            if(share_buffer == 1)
+            {
+                diamondScore.SaveDiamondsCollected(rewardValue, true);
+
+                store.ownedDiamonds = diamondScore.GetDiamonds();
+                store.ownedDiamondTxt.text = store.ownedDiamonds + "";
+
+                shareRewardGiven = 1;
+                PlayerPrefs.SetInt(customStrings.SHARE_REWARD, shareRewardGiven);
+                PlayerPrefs.SetInt(customStrings.SHARE_BUFFER, 0);
+
+                if (shareRewardGiven == 0) { shareRewardUI.SetActive(true); } else { shareRewardUI.SetActive(false); }
+            }
+        }
+    }
 
     private void OnApplicationPause(bool pause)
     {
@@ -196,6 +304,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
     public void Open_GooglePlay_Store()
     {
+        customAnalytics.Google_Play_Visited_Store();
        Invoke("OpenPlayStore_Function", buttomClickDelay);
     }
     
@@ -203,6 +312,9 @@ public class CustomSocialMediaScript : MonoBehaviour
     {
         pageIsOpened = false;
         rateOpen = true;
+
+        PlayerPrefs.SetInt(customStrings.RATE_BUFFER, 1);
+
         StartCoroutine("OpenPlayStore");
     }
 
@@ -221,6 +333,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
     public void Open_Facebook_Store()
     {
+        customAnalytics.Facebook_Visited();
         Invoke("OpenFacebook_Function", buttomClickDelay);
     }
 
@@ -228,6 +341,9 @@ public class CustomSocialMediaScript : MonoBehaviour
     {
         pageIsOpened = false;
         facebookOpen = true;
+
+        PlayerPrefs.SetInt(customStrings.FACEBOOK_BUFFER, 1);
+
         StartCoroutine("OpenFacebookPage");
     }
 
@@ -247,6 +363,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
     public void Open_Youtube_Store()
     {
+        customAnalytics.Youtube_Visited();
         Invoke("OpenYoutube_Function", buttomClickDelay);
     }
 
@@ -254,6 +371,9 @@ public class CustomSocialMediaScript : MonoBehaviour
     {
         pageIsOpened = false;
         youtubeOpen = true;
+
+        PlayerPrefs.SetInt(customStrings.YOUTUBE_BUFFER, 1);
+
         StartCoroutine("OpenYoutube");
     }
 
@@ -272,6 +392,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
     public void Open_Instagram_Store()
     {
+        customAnalytics.Instagram_Visited();
         Invoke("OpenInstagram_Function", buttomClickDelay);
     }
 
@@ -279,6 +400,9 @@ public class CustomSocialMediaScript : MonoBehaviour
     {
         pageIsOpened = false;
         instagramOpen = true;
+
+        PlayerPrefs.SetInt(customStrings.INSTAGRAM_BUFFER, 1);
+
         StartCoroutine("OpenInstagram");
     }
 
@@ -308,6 +432,7 @@ public class CustomSocialMediaScript : MonoBehaviour
         {
             facebookRewardGiven++;
             PlayerPrefs.SetInt(customStrings.FACEBOOK_REWARD, facebookRewardGiven);
+            PlayerPrefs.SetInt(customStrings.FACEBOOK_BUFFER, 0);
 
             if (facebookRewardGiven == 0) { facebookRewardUI.SetActive(true); } else { facebookRewardUI.SetActive(false); }
 
@@ -319,6 +444,7 @@ public class CustomSocialMediaScript : MonoBehaviour
         {
             rateRewardGiven++;
             PlayerPrefs.SetInt(customStrings.RATE_REWARD, rateRewardGiven);
+            PlayerPrefs.SetInt(customStrings.RATE_BUFFER, 0);
 
             if (rateRewardGiven == 0) { rateRewardUI.SetActive(true); } else { rateRewardUI.SetActive(false); }
 
@@ -330,6 +456,7 @@ public class CustomSocialMediaScript : MonoBehaviour
         {
             youtubeRewardGiven++;
             PlayerPrefs.SetInt(customStrings.YOUTUBE_REWARD, youtubeRewardGiven);
+            PlayerPrefs.SetInt(customStrings.YOUTUBE_BUFFER, 0);
 
             if (youtubeRewardGiven == 0) { youtubeRewardUI.SetActive(true); } else { youtubeRewardUI.SetActive(false); }
 
@@ -341,6 +468,7 @@ public class CustomSocialMediaScript : MonoBehaviour
         {
             instagramRewardGiven++;
             PlayerPrefs.SetInt(customStrings.INSTAGRAM_REWARD, instagramRewardGiven);
+            PlayerPrefs.SetInt(customStrings.INSTAGRAM_BUFFER, 0);
 
             if (instagramRewardGiven == 0) { instagramRewardUI.SetActive(true); } else { instagramRewardUI.SetActive(false); }
 
@@ -361,6 +489,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
         shareRewardGiven++;
         PlayerPrefs.SetInt(customStrings.SHARE_REWARD, shareRewardGiven);
+        PlayerPrefs.SetInt(customStrings.SHARE_BUFFER, 0);
 
         if (shareRewardGiven == 0) { shareRewardUI.SetActive(true); } else { shareRewardUI.SetActive(false); }
         
@@ -369,6 +498,7 @@ public class CustomSocialMediaScript : MonoBehaviour
 
     public void Open_GooglePlay_Home()
     {
+        customAnalytics.GooglePlayerVisited_Home();
         Invoke("OpenPlayStore_Home_Function", buttomClickDelay);
     }
 

@@ -20,9 +20,10 @@ MonoBehaviour:
     description: TimesGamePlayed
     requiredCoins: 0
     requiredDistance: 0
-    requiredPlayCount: 2
+    requiredPlayCount: 20
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
+    requiredJumps: 0
   missionGoalTire2:
     tile: tire2
     description: desc2
@@ -31,6 +32,7 @@ MonoBehaviour:
     requiredPlayCount: 0
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
+    requiredJumps: 0
   missionGoalTire3:
     tile: tire3
     description: desc3
@@ -39,4 +41,5 @@ MonoBehaviour:
     requiredPlayCount: 0
     requiedDiamondsSpendInStore: 0
     scoreShareCount: 0
+    requiredJumps: 0
   missionType: 2
